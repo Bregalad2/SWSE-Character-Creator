@@ -1,552 +1,948 @@
 classstring = `{
-    "Lightsaber Force Acolyte": {
-        "abilities": "A Force Acolyte should be gifted in all abilities, but Wisdom and Charisma or Willpower are the most important, as these determine the acolyte’s interaction with the force. Strength and Dexterity are also useful for combat.",
-        "forcepoints": 5,
-        "classfeatures": {
-            "base-attack-bonus": 2,
-            "defense-bonuses": {
-                "Fortitude": 1,
-                "Reflex": 1,
-                "Will": 1
-            },
-            "starting-skills": 2,
-            "other-feats": ["Force Sensitivity", "Weapon Proficiency (Lightsabers)", "Weapon Proficiency (Simple Weapons)"],
-            "talent-trees": "odd",
-            "bonus-feats": "even"
-        },
-        "credits": "A 1st-level Acolyte starts play with 600 credits.",
-        "talents": [
-            {
-                "name": "Block",
-                "prerequisite": [],
-                "description": "As a Reaction, you may negate a melee attack by making a successful Use the Force check. The DC of the check is equal to the result of the attack roll you wish to negate, and you must take a cumulative -5 penalty on your Use the Force check for every time you have used Block or Deflect since the beginning of your last turn. You may use the Block Talent to negate melee Area Attacks, such as those made by the Whirlwind Attack Feat. If you succeed on the Use the Force check, you take half damage if the attack hits, and no damage if the attack misses. You may spend a Force Point to use this Talent to negate an attack against an adjacent character. You must have a Lightsaber drawn and ignited to use this Talent, and you must be aware of the attack and not Flat-Footed."
-            },
-            {
-                "name": "Deflect",
-                "prerequisite": [],
-                "description": "As a Reaction, you may negate a ranged attack by making a successful Use the Force check. The DC of the check is equal to the result of the attack roll you wish to negate, and you take a cumulative -5 penalty on your Use the Force check for every time you used Block or Deflect since the beginning of your last turn. You may spend a Force Point to use this Talent to negate an attack against an adjacent character. You can use this Talent to deflect some of the barrage of shots fired from a ranged weapon set on Autofire, or the Force Lightning Force Power. If you succeed on the Use the Force check, you take half damage if the attack hits, and no damage if the attack misses. You must have a Lightsaber drawn and ignited to use this Talent, and you must be aware of the attack and not Flat-Footed. This Talent cannot be used to negate attacks made by Colossal (Frigate) or larger-size Vehicles unless the attack is made with a Point-Defense Weapon System."
-            },
-            {
-                "name": "Lightsaber Defense",
-                "prerequisite": [],
-                "description": "As a Swift Action you can use your Lightsaber to parry your opponents' attacks, gaining a +1 deflection bonus to your Reflex Defense until the start of your next turn. You must have a Lightsaber drawn and ignited to use this Talent, and you don't gain the deflection bonus if you are Flat-Footed or otherwise unaware of the incoming attack. You can take this Talent multiple times; each time you take this Talent, the deflection bonus increases by +1 (maximum +3)."
-            },
-            {
-                "name": "Weapon Specialization (Lightsabers)",
-                "prerequisite": ["Weapon Focus (Lightsabers)"],
-                "description": "You gain a +2 bonus on melee damage rolls with Lightsabers."
-            },
-            {
-                "name": "Lightsaber Throw",
-                "prerequisite": [],
-                "description": "You can throw a Lightsaber as a Standard Action, treating it as a Thrown weapon (without this Talent, a thrown Lightsaber is considered an Improvised Thrown Weapon). You are considered proficient with the thrown Lightsaber, and you apply the normal Range penalties to the attack roll. The thrown Lightsaber deals normal weapon damage if it hits. If your target is no more than 6 spaces away, you can pull your Lightsaber back to your hand as a Swift Action by making a DC 20 Use the Force check."
-            },
-            {
-                "name": "Redirect Shot",
-                "prerequisite": ["Deflect", "Base Attack Bonus +5"],
-                "description": "This Talent allows you to redirect a deflected blaster bolt along a specific trajectory, so that it damages another creature or object in its path. Once per round when you successfully Deflect a blaster bolt, you can make an immediate ranged attack against another target with which you have line of sight. Apply the normal range penalties to the attack roll, not counting the distance the bolt traveled to reach you. If the attack succeeds, it deals normal weapon damage to the target. Only single blaster bolts can be redirected in this manner. Barrages from Autofire weapons and other types of projectiles can't be redirected."
-            },
-            {
-                "name": "Cortosis Gauntlet Block",
-                "prerequisite": ["Armor Proficiency (Light)", "Armor Proficiency (Medium)"],
-                "description": "You have received additional training in the use of Cortosis Gauntlets. You can use the Block Talent, even when not armed with a Lightsaber, provided you are wearing a Cortosis Gauntlet. If you successfully Block an attack with a Lightsaber while wearing a Cortosis Gauntlet, the attacking Lightsaber is deactivated."
-            },
-            {
-                "name": "Precise Redirect",
-                "prerequisite": ["Redirect Shot"],
-                "description": "Whenever you successfully Redirect a blaster bolt and hit your target, the redirected attack deals +1 die of damage."
-            },
-            {
-                "name": "Precision",
-                "prerequisite": [],
-                "description": "As a Standard Action, you can make a melee attack with a Lightsaber against an adjacent opponent. If the attack hits, it deals normal damage and also reduces the target's speed to 2 spaces until the end of your next turn."
-            },
-            {
-                "name": "Riposte",
-                "prerequisite": ["Block", "Base Attack Bonus +5"],
-                "description": "As a Reaction once per encounter, you can make a Lightsaber attack against a being whose attack you successfully negated using the Block Talent. Only non- area melee attacks can be Riposted in this manner; you cannot use this Talent when negating the damage from melee Area Attacks (such as those made with the Whirlwind Attack feat)."
-            },
-            {
-                "name": "Shoto Focus",
-                "prerequisite": [],
-                "description": "Whenever you wield both a one-handed Lightsaber and a Short Lightsaber (or Guard Shoto), you gain a +2 competence bonus on attack rolls made with the Short Lightsaber (or Guard Shoto)."
-            }
-        ]
-    },
-    "Jedi Force Acolyte": {
-        "abilities": "A Force Acolyte should be gifted in all abilities, but Wisdom and Charisma or Willpower are the most important, as these determine the acolyte’s interaction with the force. Strength and Dexterity are also useful for combat.",
-        "forcepoints": 5,
-        "classfeatures": {
-            "base-attack-bonus": 2,
-            "defense-bonuses": {
-                "Fortitude": 1,
-                "Reflex": 1,
-                "Will": 1
-            },
-            "starting-skills": 2,
-            "other-feats": ["Force Sensitivity", "Weapon Proficiency (Lightsabers)", "Weapon Proficiency (Simple Weapons)"],
-            "talent-trees": "odd",
-            "bonus-feats": "even"
-        },
-        "credits": "A 1st-level Acolyte starts play with 600 credits.",
-        "talents": [
-            {
-                "name": "Block",
-                "prerequisite": [],
-                "description": "As a Reaction, you may negate a melee attack by making a successful Use the Force check. The DC of the check is equal to the result of the attack roll you wish to negate, and you must take a cumulative -5 penalty on your Use the Force check for every time you have used Block or Deflect since the beginning of your last turn. You may use the Block Talent to negate melee Area Attacks, such as those made by the Whirlwind Attack Feat. If you succeed on the Use the Force check, you take half damage if the attack hits, and no damage if the attack misses. You may spend a Force Point to use this Talent to negate an attack against an adjacent character. You must have a Lightsaber drawn and ignited to use this Talent, and you must be aware of the attack and not Flat-Footed."
-            },
-            {
-                "name": "Deflect",
-                "prerequisite": [],
-                "description": "As a Reaction, you may negate a ranged attack by making a successful Use the Force check. The DC of the check is equal to the result of the attack roll you wish to negate, and you take a cumulative -5 penalty on your Use the Force check for every time you used Block or Deflect since the beginning of your last turn. You may spend a Force Point to use this Talent to negate an attack against an adjacent character. You can use this Talent to deflect some of the barrage of shots fired from a ranged weapon set on Autofire, or the Force Lightning Force Power. If you succeed on the Use the Force check, you take half damage if the attack hits, and no damage if the attack misses. You must have a Lightsaber drawn and ignited to use this Talent, and you must be aware of the attack and not Flat-Footed. This Talent cannot be used to negate attacks made by Colossal (Frigate) or larger-size Vehicles unless the attack is made with a Point-Defense Weapon System."
-            },
-            {
-                "name": "Lightsaber Defense",
-                "prerequisite": [],
-                "description": "As a Swift Action you can use your Lightsaber to parry your opponents' attacks, gaining a +1 deflection bonus to your Reflex Defense until the start of your next turn. You must have a Lightsaber drawn and ignited to use this Talent, and you don't gain the deflection bonus if you are Flat-Footed or otherwise unaware of the incoming attack. You can take this Talent multiple times; each time you take this Talent, the deflection bonus increases by +1 (maximum +3)."
-            },
-            {
-                "name": "Weapon Specialization (Lightsabers)",
-                "prerequisite": ["Weapon Focus (Lightsabers)"],
-                "description": "You gain a +2 bonus on melee damage rolls with Lightsabers."
-            },
-            {
-                "name": "Lightsaber Throw",
-                "prerequisite": [],
-                "description": "You can throw a Lightsaber as a Standard Action, treating it as a Thrown weapon (without this Talent, a thrown Lightsaber is considered an Improvised Thrown Weapon). You are considered proficient with the thrown Lightsaber, and you apply the normal Range penalties to the attack roll. The thrown Lightsaber deals normal weapon damage if it hits. If your target is no more than 6 spaces away, you can pull your Lightsaber back to your hand as a Swift Action by making a DC 20 Use the Force check."
-            },
-            {
-                "name": "Redirect Shot",
-                "prerequisite": ["Deflect", "Base Attack Bonus +5"],
-                "description": "This Talent allows you to redirect a deflected blaster bolt along a specific trajectory, so that it damages another creature or object in its path. Once per round when you successfully Deflect a blaster bolt, you can make an immediate ranged attack against another target with which you have line of sight. Apply the normal range penalties to the attack roll, not counting the distance the bolt traveled to reach you. If the attack succeeds, it deals normal weapon damage to the target. Only single blaster bolts can be redirected in this manner. Barrages from Autofire weapons and other types of projectiles can't be redirected."
-            },
-            {
-                "name": "Cortosis Gauntlet Block",
-                "prerequisite": ["Armor Proficiency (Light)", "Armor Proficiency (Medium)"],
-                "description": "You have received additional training in the use of Cortosis Gauntlets. You can use the Block Talent, even when not armed with a Lightsaber, provided you are wearing a Cortosis Gauntlet. If you successfully Block an attack with a Lightsaber while wearing a Cortosis Gauntlet, the attacking Lightsaber is deactivated."
-            },
-            {
-                "name": "Precise Redirect",
-                "prerequisite": ["Redirect Shot"],
-                "description": "Whenever you successfully Redirect a blaster bolt and hit your target, the redirected attack deals +1 die of damage."
-            },
-            {
-                "name": "Precision",
-                "prerequisite": [],
-                "description": "As a Standard Action, you can make a melee attack with a Lightsaber against an adjacent opponent. If the attack hits, it deals normal damage and also reduces the target's speed to 2 spaces until the end of your next turn."
-            },
-            {
-                "name": "Riposte",
-                "prerequisite": ["Block", "Base Attack Bonus +5"],
-                "description": "As a Reaction once per encounter, you can make a Lightsaber attack against a being whose attack you successfully negated using the Block Talent. Only non- area melee attacks can be Riposted in this manner; you cannot use this Talent when negating the damage from melee Area Attacks (such as those made with the Whirlwind Attack feat)."
-            },
-            {
-                "name": "Shoto Focus",
-                "prerequisite": [],
-                "description": "Whenever you wield both a one-handed Lightsaber and a Short Lightsaber (or Guard Shoto), you gain a +2 competence bonus on attack rolls made with the Short Lightsaber (or Guard Shoto)."
-            },
-            {
-                "name": "Adept Negotiator",
-                "prerequisite": [],
-                "description": "Have an Intelligence of 3 or higher, and it must be able to see, hear, and understand you. Make a Persuasion check; if the result equals or exceeds the target's Will Defense, it moves 1 step along the Attitude Track towards Helpful. If the result is less than the targets Will Defense, they become resistant to the talent, and gain a +5 to its Will Defense if you try to use this talent again. The target gets a +5 bonus to its Will Defense if it is higher level than you.\n\nAt the end of the encounter, their attitude resets to what it was at the start of the encounter or one step closer to helpful than it was at the ST’s discretion.\n\nThis is a Mind-Affecting effect."
-            },
-            {
-                "name": "Force Persuasion",
-                "prerequisite": ["Adept Negotiator"],
-                "description": "You can use your Use the Force modifier instead of your Persuasion check modifier when making a Persuasion check. You are considered Trained in the Persuasion skill. If you are entitled to a Persuasion check reroll, you may reroll your Use the Force check instead (subject to the same circumstances and limitations)."
-            },
-            {
-                "name": "Master Negotiator",
-                "prerequisite": ["Adept Negotiator"],
-                "description": "If you successfully use the Adept Negotiator Talent, your target moves an additional step along the Attitude Track. This is a Mind-Affecting effect."
-            },
-            {
-                "name": "Skilled Advisor",
-                "prerequisite": [],
-                "description": "You can spend a Full-Round Action advising an ally, thereby granting them a +5 bonus on their next Skill Check. If you spend a Force Point, the bonus increases to +10. The target must be able to (and willing) to hear and understand your voice. You cannot advise yourself. This is a Mind-Affecting effect."
-            },
-            {
-                "name": "Adversary Lore",
-                "prerequisite": [],
-                "description": "As a Standard Action, you can peer into The Force and search for weaknesses in the defenses of your enemies. Make a Use the Force check against the Will Defense of a target creature within 12 spaces of you and in your line of sight.\n\nIf the Skill Check equals or exceeds the target's Will Defense, that target takes a -2 penalty to their Reflex Defense against you and all allies who can hear and understand you until the end of your next turn."
-            },
-            {
-                "name": "Aggressive Negotiator",
-                "prerequisite": ["Adept Negotiator"],
-                "description": "Whenever you damage an opponent with a Lightsaber attack, you can Take 10 on any Persuasion checks you make before the end of your next turn, even if you would not normally be able to."
-            },
-            {
-                "name": "Cleanse Mind",
-                "prerequisite": [],
-                "description": "Once per turn as a Swift Action, you can remove one ongoing Mind-Affecting effect (such as the effects of the Demand Surrender, Weaken Resolve, Adept Negotiator Talents, or the ongoing effects of the Mind Trick Force Power) from a single allied target within line of sight."
-            },
-            {
-                "name": "Collective Visions",
-                "prerequisite": ["Farseeing"],
-                "description": "When you use Farseeing, or a Force Power or Talent that has Farseeing as a prerequisite, other Force-users with Farseeing in their Force Power Suite can Aid Another on your Use the Force check as a Reaction, if they are within 6 spaces of you."
-            },
-            {
-                "name": "Consular's Vitality",
-                "prerequisite": [],
-                "description": "Once per round as a Swift Action, you grant one ally within 12 spaces of you (and within your line of sight) bonus damage reduction equal to your Charisma modifier.\n\nThis Bonus Damage Reduction last until the beginning of your next turn.\n\nYou take a -5 penalty on all Use the Force checks until the beginning of your next turn."
-            },
-            {
-                "name": "Consular's Wisdom",
-                "prerequisite": ["Adept Negotiator"],
-                "description": "Once per encounter as a Swift Action, you can choose one ally within your line of sight that can hear and understand you. Until the end of the encounter, that ally adds your Wisdom bonus to its Will Defense against Mind- Affecting effects."
-            },
-            {
-                "name": "Entreat Aid",
-                "prerequisite": [],
-                "description": "Once per turn as a Swift Action, you can spend a Force Point to let one adjacent ally use the Aid Another Action (as a Reaction) to assist you with a Skill Check. You must make the Skill Check before the end of your turn, or the benefit of the Aid Another Action is lost.\n\nAn ally that has already used the Aid Another Action to assist you since the end of your last turn may not be targeted by this Talent."
-            },
-            {
-                "name": "Force of Will",
-                "prerequisite": [],
-                "description": "You gain a +2 insight bonus to your Will Defense. Also, as a Swift Action, you can spend a Force Point to give all allies within 6 spaces of you a +2 insight bonus to their Will Defense that lasts for the remainder of the encounter. This bonus does not extend to allies outside the range of the effect, even if they move within 6 spaces of you later on.\n\nAllies who benefit from this Talent must remain within 6 spaces of you to retain the insight bonus, and they lose it if you are knocked unconscious or killed. This is a Mind- Affecting effect."
-            },
-            {
-                "name": "Guiding Strikes",
-                "prerequisite": [],
-                "description": "When you deal damage to a target by making a Lightsaber attack on your turn, you can use a Swift Action before the end of your turn to activate this Talent. If you do so, allies adjacent to the target at the time you make the attack gain a +2 circumstance bonus to melee attack rolls against the target until the start of your next turn."
-            },
-            {
-                "name": "Improved Consular's Vitality",
-                "prerequisite": ["Consular's Vitality"],
-                "description": "Whenever you damage a target with a successful Lightsaber attack, you may use the Consular's Vitality Talent as a Free Action instead of a Swift Action until the start of your next turn."
-            },
-            {
-                "name": "Know Weakness",
-                "prerequisite": ["Adversary Lore"],
-                "description": "Whenever you use Adversary Lore on a target successfully, that target also takes an additional 1d6 points of damage from any successful attack made against it by you or an ally who can hear and understand you until the end of your next turn."
-            },
-            {
-                "name": "Recall",
-                "prerequisite": [],
-                "description": "Whenever you spend a Force Point to return a Force Power to your Force Power Suite, you regain two Force Powers instead of one."
-            },
-            {
-                "name": "Renew Vision",
-                "prerequisite": ["Farseeing"],
-                "description": "Once per encounter, you can regain all expended uses of the Farseeing Force Power as a Swift Action."
-            },
-            {
-                "name": "Visionary Attack",
-                "prerequisite": ["Farseeing", "WatchCircle Initiate"],
-                "description": "As a Reaction, you can make a Use the Force check after you or an ally within 12 spaces misses with a melee or ranged attack, removing one use of the Farseeing Force Power from your active Force Power Suite (as though you had activated the Force Power). If your check result equals or exceeds the Will Defense of the target of that missed attack, the attacker can reroll the missed attack roll.\n\nThis counts as using the Farseeing Force Power against the target, but this Talent replaces the normal rules and effects of Farseeing. Any attack can only be affected by this Talent once (thus, multiple characters cannot use this Talent on the same attack to allow multiple rerolls).\n\nYou take a cumulative -5 penalty on Use the Force checks until the beginning of your next turn when you use this Talent."
-            },
-            {
-                "name": "Visionary Defense",
-                "prerequisite": ["Farseeing", "WatchCircle Initiate"],
-                "description": "As a Reaction, you can make a Use the Force check after you or an ally within 12 spaces is the target of a melee or ranged attack (but before the results of the attack roll are known), removing one use of the Farseeing Force Power from your active Force Power Suite (as though you had activated the Force Power).\n\nIf your check result equals or exceeds the Will Defense of the attacker, you grant the target of that attack a +5 Force bonus to their Reflex Defense against that attack.\n\nThis counts as using the Farseeing Force Power against the attacker, but this Talent replaces the normal rules and effects of Farseeing. Any attack can only be affected by this Talent once (thus, multiple characters cannot use this Talent on the same attack to allow multiple rerolls).\n\nYou take a cumulative -5 penalty on Use the Force checks until the beginning of your next turn when you use this Talent."
-            },
-            {
-                "name": "Watch Circle Initiate",
-                "prerequisite": ["Farseeing"],
-                "description": "As a Reaction, you can make a DC 15 Use the Force check and remove one use of the Farseeing Force Power from your active Force Power Suite (as though you had just activated the Force Power).\n\nIf successful, you subtract 1 from your Force Point total (this cannot be subtracted from temporary Force Points, and does not count as spending a Force Point), and add 1 to the Force Point total of an ally within line of sight.\n\nThis counts as using the Farseeing Force Power against the target, but this Talent replaces the normal rules and effects of Farseeing."
-            }
-        ]
-    },
-    "Noble": {
-      "abilities": "Charisma is undoubtedly the Noble's most important Ability Score, as the Noble's skill at interacting with others and projecting a sense of confidence are crucial for his or her success. Wisdom and Intelligence form the basis of other important Skills, so these Ability Scores are also significant.",
-      "forcepoints": 5,
-      "classfeatures": {
-        "base-attack-bonus": 0,
-        "defense-bonuses": {
-          "will": 2,
-          "Reflex": 1,
-          "con": 0
-        },
-        "starting-skills": 6,
-        "other-feats": ["Linguist", "Weapon Proficiency (Pistols)", "Weapon Proficiency (Simple Weapons)"],
-        "talent-trees": "odd",
-        "bonus-feats": "even"
+  "Lightsaber Force Acolyte": {
+    "abilities": "A Force Acolyte should be gifted in all abilities, but Wisdom and Charisma or Willpower are the most important, as these determine the acolyte’s interaction with the force. Strength and Dexterity are also useful for combat.",
+    "forcepoints": 5,
+    "classfeatures": {
+      "base-attack-bonus": 2,
+      "defense-bonuses": {
+        "Fortitude": 1,
+        "Reflex": 1,
+        "Will": 1
       },
-      "credits": 2400,
-      "talents": [
-        {
-          "name": "Leadership",
-          "prerequisite": [],
-          "description": "Once per encounter, as a Swift Action, you grant all allies within your line of sight a +1 insight bonus on attack rolls. This effect lasts for as long as they remain within line of sight of you. An ally loses this bonus immediately if line of sight is broken or you are unconscious or dead."
-        },
-        {
-          "name": "Born Leader",
-          "prerequisite": ["Leadership"],
-          "description": "You have a knack for getting people to work together. When you use this Talent as a Standard Action, all allies within your line of sight grant an additional +1 bonus when they use the Aid Another Action until the start of your next turn."
-        },
-        {
-          "name": "Distant Command",
-          "prerequisite": ["Born Leader"],
-          "description": "Any ally who gains the benefit of your Born Leader Talent does not lose the benefit if their line of sight to you is broken."
-        },
-        {
-          "name": "Fearless Leader",
-          "prerequisite": ["Born Leader"],
-          "description": "As a Swift Action, you can provide a courageous example for your allies. For the remainder of the encounter, your allies receive a +5 morale bonus to their Will Defense against any Fear effect. Your allies lose this benefit if they lose line of sight to you, or you are killed or knocked unconscious."
-        },
-        {
-          "name": "Rally",
-          "prerequisite": ["Born Leader", "Distant Command"],
-          "description": "Once per encounter, you can rally your allies and bring them back from the edge of defeat. As a Swift Action, any allies within your line of sight who have 1 or more crippled body parts gain a +2 morale bonus to their Reflex Defense and Will Defense, and a +2 bonus to all damage rolls for the remainder of the encounter. Unlike other Mind-Affecting Talents, Rally affects both allied Vehicles and characters."
-        },
-        {
-          "name": "Trust",
-          "prerequisite": ["Born Leader", "Coordinate"],
-          "description": "You can give up your Standard Action to give one ally within your line of sight an extra Standard Action or Move Action on their next turn, to do with as they please. The ally does not lose the Action if line of sight is later broken."
-        },
-        {
-          "name": "Commanding Presence",
-          "prerequisite": ["Born Leader", "Tactical Savvy"],
-          "description": "You excel at leading others into battle, issuing quick commands, demonstrating a gift for strategy, decimating your enemies, and impressing your peers. You can use each of the following Actions once per encounter as a Standard Action: Hold the Line!, Lead the Assault, Turn the Tide."
-        }
-      ]
+      "starting-skills": 2,
+      "other-feats": [
+        "Force Sensitivity",
+        "Weapon Proficiency (Lightsabers)",
+        "Weapon Proficiency (Simple Weapons)"
+      ],
+      "talent-trees": "odd",
+      "bonus-feats": "even"
     },
-    "Scoundrel": {
-      "abilities": "Dexterity and Intelligence are the Scoundrel's most important Ability Scores, because they must have quick reflexes and a sharp wit to survive. Charisma is important for talking one's way out of trouble, and Wisdom is useful for spotting trouble before it finds the Scoundrel.",
-      "forcepoints": 5,
-      "classfeatures": {
-        "base-attack-bonus": 1,
-        "defense-bonuses": {
-          "will": 1,
-          "Reflex": 2,
-          "con": 0
-        },
-        "starting-skills": 4,
-        "other-feats": ["Point-Blank Shot", "Weapon Proficiency (Pistols)", "Weapon Proficiency (Simple Weapons)"],
-        "talent-trees": "odd",
-        "bonus-feats": "even"
+    "credits": "A 1st-level Acolyte starts play with 600 credits.",
+    "talents": [
+      {
+        "name": "Block",
+        "prerequisite": [],
+        "description": "As a Reaction, you may negate a melee attack by making a successful Use the Force check. The DC of the check is equal to the result of the attack roll you wish to negate, and you must take a cumulative -5 penalty on your Use the Force check for every time you have used Block or Deflect since the beginning of your last turn. You may use the Block Talent to negate melee Area Attacks, such as those made by the Whirlwind Attack Feat. If you succeed on the Use the Force check, you take half damage if the attack hits, and no damage if the attack misses. You may spend a Force Point to use this Talent to negate an attack against an adjacent character. You must have a Lightsaber drawn and ignited to use this Talent, and you must be aware of the attack and not Flat-Footed."
       },
-      "credits": 1500,
-      "talents": [
-        {
-          "name": "Fortune",
-          "prerequisite": [],
-          "description": "As a Standard Action, you can spend a Force Point to gain one of the following benefits for the rest of the encounter: +1 competence bonus to attack rolls, +5 competence bonus on Skill Checks, +1 competence bonus to all your Defenses."
-        },
-        {
-          "name": "Fool's Luck",
-          "prerequisite": ["Fortune"],
-          "description": "Whenever you score a Critical Hit with a melee or ranged attack, you gain a free Standard Action. You must take the extra Standard Action before the end of your turn, or else it is lost."
-        },
-        {
-          "name": "Gambler",
-          "prerequisite": [],
-          "description": "You gain a +2 competence bonus on Wisdom checks when you Gamble."
-        },
-        {
-          "name": "Knack",
-          "prerequisite": [],
-          "description": "Once per day, you can reroll a Skill Check and take the better result."
-        },
-        {
-          "name": "Lucky Shot",
-          "prerequisite": ["Knack"],
-          "description": "Once per day, you can reroll an attack roll and take the better result."
-        }
-      ]
-    },
-    "Scout": {
-        "abilities": "Most of the Scout's key skills rely on Dexterity, Intelligence, and Wisdom. Strength is also useful for the Scout Trained in athletic Skills.",
-        "forcepoints": 5,
-        "classfeatures": {
-            "base-attack-bonus": 1,
-            "defense-bonuses": {
-                "Fortitude": 1,
-                "Reflex": 2,
-                "con": 0
-            },
-            "starting-skills": 5,
-            "other-feats": ["Shake It Off", "Weapon Proficiency (Pistols)", "Weapon Proficiency (Rifles)", "Weapon Proficiency (Simple Weapons)"],
-            "talent-trees": "odd",
-            "bonus-feats": "even"
-        },
-        "credits": 1500,
-        "talents": [
-            {
-                "name": "Camouflage",
-                "prerequisite": [],
-                "description": "You're very good at hiding when mobile. You take no penalty on your Stealth check when moving your normal Speed."
-            },
-            {
-                "name": "Hidden Movement",
-                "prerequisite": ["Improved Stealth"],
-                "description": "You're very good at hiding when mobile. You take no penalty on your Stealth check when moving your normal Speed. This Talent applies to Stealth checks made while Piloting a Starship."
-            },
-            {
-                "name": "Improved Stealth",
-                "prerequisite": [],
-                "description": "You may choose to reroll any Stealth check, but the result of the reroll must be accepted, even if it is worse. This Talent applies to Stealth checks made while Piloting a Starship."
-            },
-            {
-                "name": "Total Concealment",
-                "prerequisite": ["Hidden Movement", "Improved Stealth"],
-                "description": "Any situation that would give you Concealment grants you Total Concealment instead."
-            },
-            {
-                "name": "Dig In",
-                "prerequisite": [],
-                "description": "When Prone, you can spend a Swift Action to gain Concealment until the start of your next turn. If you stand up or move, you lose this benefit."
-            },
-            {
-                "name": "Confusing Strike",
-                "prerequisite": [],
-                "description": "Make a single melee or ranged attack against an opponent within Range. If this opponent is denied its Dexterity bonus to its Reflex Defense, or if you have Concealment from this opponent, a successful attack also causes the opponent to be able to take only a Swift Action on its next turn."
-            },
-            {
-                "name": "Unexpected Attack",
-                "prerequisite": [],
-                "description": "Make a melee or ranged attack within your Range against an opponent from whom you have Concealment. You gain a +2 bonus on this attack roll if you have Concealment, or a +5 bonus if you have Total Concealment."
-            },
-            {
-                "name": "Slip By",
-                "prerequisite": [],
-                "description": "When you would normally provoke an Attack of Opportunity by moving out of a Threatened Area, you can roll a Stealth check, replacing your Reflex Defense with the results of your Stealth check if it is higher."
-            },
-            {
-                "name": "Extended Ambush",
-                "prerequisite": ["Improved Stealth"],
-                "description": "During a Surprise Round, if you make a ranged attack against a target that is Surprised, you can Aim at the target as a Free Action."
-            },
-            {
-                "name": "Ghost Assailant",
-                "prerequisite": [],
-                "description": "If you start your turn with Total Concealment or Total Cover from a target, during that turn you can make a Stealth check as a Swift Action, opposed by the target's Perception check. If you succeed, the target is considered Flat-Footed against you until the end of your turn."
-            },
-            {
-                "name": "Hide in Plain Sight",
-                "prerequisite": ["Hidden Movement", "Improved Stealth"],
-                "description": "Once per encounter, when you are within 2 spaces of Cover or Concealment, you can move to that Cover or Concealment and make a Stealth check to hide as a single Move Action."
-            },
-            {
-                "name": "Hunker Down",
-                "prerequisite": [],
-                "description": "Whenever you benefit from Cover, you can spend a Standard Action to Hunker Down and maximize the benefit of the Cover. You increase the benefit of Cover to Improved Cover or Improved Cover to Total Cover."
-            },
-            {
-                "name": "Shadow Striker",
-                "prerequisite": ["Hidden Movement", "Improved Stealth"],
-                "description": "You excel at fighting from the shadows, hitting your opponents when they least expect it. You can use each of the following actions once per encounter as a Standard Action:\nBlinding Strike: Make a single melee or ranged attack against an opponent within Range. If you damage the target, you gain Total Concealment against that target until the beginning of your next turn."
-            }
-        ]
-    },
-    "Soldier":{
-        "abilities": "Since most combat in the Star Wars universe uses blasters and other ranged weapons, Dexterity is the Soldier's most important Ability Score, followed closely by Constitution and Strength. Intelligence and Wisdom are also important as many of a Soldier's useful Skills are based on these abilities.",
-        "forcepoints": 5,
-        "classfeatures": {
-          "base-attack-bonus": 2,
-          "defense-bonuses": {
-            "Fortitude": 2,
-            "Reflex": 1,
-            "Will": 0
-          },
-          "starting-skills": 3,
-          "other-feats": ["Armor Proficiency (Light)", "Armor Proficiency (Medium)", "Weapon Proficiency (Pistols)", "Weapon Proficiency (Rifles)", "Weapon Proficiency (Simple Weapons)"],
-          "talent-trees": "odd",
-          "bonus-feats": "even"
-        },
-        "credits": "A 1st-level Soldier starts play with 1500 credits.",
-        "talents": [
-          {
-            "name": "Weapon Specialist",
-            "prerequisite": [],
-            "description": "Choose a single Exotic Weapon or weapon group with which you are proficient. Whenever you make a successful attack against a target using such a weapon, you treat your target's Damage Threshold as if it were 5 points lower when determining the result of your attack. If you select Heavy Weapons as the weapon group this Talent applies to, you may also use the Talent with Vehicle Weapon attacks."
-          },
-          {
-            "name": "Devastating Attack",
-            "prerequisite": ["Weapon Specialist"],
-            "description": "Choose a single Exotic Weapon or weapon group with which you are proficient. Whenever you make a successful attack against a target with such a weapon, you treat your target's Damage Reduction as if it were 5 points lower when determining the result of your attack. If you select Heavy Weapons as the weapon group this Talent applies to, you may also use the Talent with Vehicle Weapon attacks."
-          },
-          {
-            "name": "Weapon Specialization",
-            "prerequisite": ["Weapon Specialist"],
-            "description": "Choose a single Exotic Weapon or weapon group with which you are proficient. You gain a +2 bonus on damage rolls with such weapons. If you select Heavy Weapons as the weapon group this Talent applies to, you may also use the Talent with Vehicle Weapon attacks."
-          },
-          {
-            "name": "Autofire Assault",
-            "prerequisite": ["Weapon Proficiency (Heavy Weapons)"],
-            "description": "When making an Autofire attack, you can Brace a Weapon that is not restricted to Autofire-only. You must be proficient with the Weapon being used to activate this Talent."
-          },
-          {
-            "name": "Crushing Assault",
-            "prerequisite": ["Weapon Specialization"],
-            "description": "You use your attacks to beat down your opponents' defenses. When you successfully damage an opponent using a Bludgeoning weapon that you have the Weapon Specialization Talent for, your next attack against that opponent made before the end of the encounter gains a +2 bonus on the attack roll and to the damage roll. The effects of multiple Crushing Assaults do not stack."
-          },
-          {
-            "name": "Disarming Attack",
-            "prerequisite": ["Intelligence 13", "Improved Disarm", "Weapon Specialization"],
-            "description": "Choose a single Exotic Weapon or weapon group with which you are proficient. You ignore a target's armor bonus to Reflex Defense when Disarming with such a weapon. Additionally, as a Free Action, once per encounter, you can grant yourself a +10 bonus on your attack roll when attempting to Disarm an opponent while using such a weapon."
-          },
-          {
-            "name": "Impaling Assault",
-            "prerequisite": ["Weapon Specialization"],
-            "description": "You can hit your opponents to slow them down. Whenever you successfully damage an opponent using a Piercing weapon that you have the Weapon Specialization Talent for, your opponent reduces its speed by 2 spaces until the end of your next turn. The effects of multiple Impaling Assaults do not stack."
-          },
-          {
-            "name": "Improved Suppression Fire",
-            "prerequisite": [],
-            "description": "When you successfully suppress an enemy using the Aid Another Action, that enemy takes a -5 penalty on its attack rolls until the start of your next turn. When targeting an area with an Autofire Weapon, each enemy in the attack area takes a -2 penalty on its attack rolls until the start of your next turn, regardless of whether your attack hits."
-          },
-          {
-            "name": "Stinging Assault",
-            "prerequisite": ["Weapon Specialization"],
-            "description": "You can deliver nasty injuries that leave your opponents reeling. Whenever you successfully damage an opponent using a Slashing weapon that you have the Weapon Specialization Talent for, your opponent takes a -2 penalty on melee attacks against you until the start of your next turn. The effects of multiple Stinging Assaults do not stack."
-          }
-        ]
+      {
+        "name": "Deflect",
+        "prerequisite": [],
+        "description": "As a Reaction, you may negate a ranged attack by making a successful Use the Force check. The DC of the check is equal to the result of the attack roll you wish to negate, and you take a cumulative -5 penalty on your Use the Force check for every time you used Block or Deflect since the beginning of your last turn. You may spend a Force Point to use this Talent to negate an attack against an adjacent character. You can use this Talent to deflect some of the barrage of shots fired from a ranged weapon set on Autofire, or the Force Lightning Force Power. If you succeed on the Use the Force check, you take half damage if the attack hits, and no damage if the attack misses. You must have a Lightsaber drawn and ignited to use this Talent, and you must be aware of the attack and not Flat-Footed. This Talent cannot be used to negate attacks made by Colossal (Frigate) or larger-size Vehicles unless the attack is made with a Point-Defense Weapon System."
       },
-      "Technician":{
-        "abilities": "Intelligence is by far the most important ability for a Technician, as they specialize in any use of technology, from simple datacards, to planet destroying weapons.",
-        "forcepoints": 5,
-        "classfeatures": {
-          "base-attack-bonus": 0,
-          "defense-bonuses": {
-            "Fortitude": 1,
-            "Reflex": 0,
-            "Will": 2
-          },
-          "starting-skills": 7,
-          "other-feats": ["Skill Focus (Knowledge (Any), Mechanics, Treat Injury, or Use Computer)", "Tech Specialist*", "Weapon Proficiency (Simple Weapons)"],
-          "talent-trees": "odd",
-          "bonus-feats": "even"
-        },
-        "credits": "A 1st-level Technician begins play with 1500 credits.",
-        "talents": [
-          {
-            "name": "Slicer",
-            "prerequisite": [],
-            "description": "You can Issue Routine Command to a computer as a Swift Action."
-          },
-          {
-            "name": "Gimmick",
-            "prerequisite": ["Slicer"],
-            "description": "You may choose to reroll any Use Computer check made to Improve Access on a computer, keeping the better of the two results."
-          },
-          {
-            "name": "Trace",
-            "prerequisite": [],
-            "description": "You can substitute your Use Computer Skill for any Gather Information check as long as you have access to a computer network."
-          },
-          {
-            "name": "Electronic Forgery",
-            "prerequisite": ["Trained in Use Computer"],
-            "description": "You can use your Use Computer modifier in place of your Deception modifier to create a deceptive appearance with forged electronic documents."
-          },
-          {
-            "name": "Electronic Sabotage",
-            "prerequisite": ["Trained in Use Computer"],
-            "description": "You excel at causing havoc with computers and electronics. As a Standard Action, you can lock down a computer terminal by making a Use Computer check, making it potentially difficult for anyone else to access. That computer is considered Unfriendly to anyone other than you who attempts to use it, and the result of your Use Computer check replaces the computer's Will Defense on an attempt to change its Attitude."
-          },
-          {
-            "name": "Security Slicer",
-            "prerequisite": ["Trained in Mechanics"],
-            "description": "You are an expert in electronic security. When you make a Mechanics check to Disable Device, you can do so without the help of a Security Kit. Additionally, something goes wrong only when you fail the Mechanics check by 10 or more."
-          },
-          {
-            "name": "Virus",
-            "prerequisite": ["Electronic Sabotage", "Trained in Use Computer"],
-            "description": "You can substitute a Use Computer check for a Mechanics check when disabling a computerized device. The effort takes 1 minute and the DC is equal to the computer's Will Defense. In addition, whenever anyone accesses the afflicted computer using a Droid or another computer, that computer or Droid's Attitude immediately becomes Unfriendly."
-          }
-        ]
+      {
+        "name": "Lightsaber Defense",
+        "prerequisite": [],
+        "description": "As a Swift Action you can use your Lightsaber to parry your opponents' attacks, gaining a +1 deflection bonus to your Reflex Defense until the start of your next turn. You must have a Lightsaber drawn and ignited to use this Talent, and you don't gain the deflection bonus if you are Flat-Footed or otherwise unaware of the incoming attack. You can take this Talent multiple times; each time you take this Talent, the deflection bonus increases by +1 (maximum +3)."
+      },
+      {
+        "name": "Weapon Specialization (Lightsabers)",
+        "prerequisite": [
+          "Weapon Focus (Lightsabers)"
+        ],
+        "description": "You gain a +2 bonus on melee damage rolls with Lightsabers."
+      },
+      {
+        "name": "Lightsaber Throw",
+        "prerequisite": [],
+        "description": "You can throw a Lightsaber as a Standard Action, treating it as a Thrown weapon (without this Talent, a thrown Lightsaber is considered an Improvised Thrown Weapon). You are considered proficient with the thrown Lightsaber, and you apply the normal Range penalties to the attack roll. The thrown Lightsaber deals normal weapon damage if it hits. If your target is no more than 6 spaces away, you can pull your Lightsaber back to your hand as a Swift Action by making a DC 20 Use the Force check."
+      },
+      {
+        "name": "Redirect Shot",
+        "prerequisite": [
+          "Deflect",
+          "Base Attack Bonus +5"
+        ],
+        "description": "This Talent allows you to redirect a deflected blaster bolt along a specific trajectory, so that it damages another creature or object in its path. Once per round when you successfully Deflect a blaster bolt, you can make an immediate ranged attack against another target with which you have line of sight. Apply the normal range penalties to the attack roll, not counting the distance the bolt traveled to reach you. If the attack succeeds, it deals normal weapon damage to the target. Only single blaster bolts can be redirected in this manner. Barrages from Autofire weapons and other types of projectiles can't be redirected."
+      },
+      {
+        "name": "Cortosis Gauntlet Block",
+        "prerequisite": [
+          "Armor Proficiency (Light)",
+          "Armor Proficiency (Medium)"
+        ],
+        "description": "You have received additional training in the use of Cortosis Gauntlets. You can use the Block Talent, even when not armed with a Lightsaber, provided you are wearing a Cortosis Gauntlet. If you successfully Block an attack with a Lightsaber while wearing a Cortosis Gauntlet, the attacking Lightsaber is deactivated."
+      },
+      {
+        "name": "Precise Redirect",
+        "prerequisite": [
+          "Redirect Shot"
+        ],
+        "description": "Whenever you successfully Redirect a blaster bolt and hit your target, the redirected attack deals +1 die of damage."
+      },
+      {
+        "name": "Precision",
+        "prerequisite": [],
+        "description": "As a Standard Action, you can make a melee attack with a Lightsaber against an adjacent opponent. If the attack hits, it deals normal damage and also reduces the target's speed to 2 spaces until the end of your next turn."
+      },
+      {
+        "name": "Riposte",
+        "prerequisite": [
+          "Block",
+          "Base Attack Bonus +5"
+        ],
+        "description": "As a Reaction once per encounter, you can make a Lightsaber attack against a being whose attack you successfully negated using the Block Talent. Only non- area melee attacks can be Riposted in this manner; you cannot use this Talent when negating the damage from melee Area Attacks (such as those made with the Whirlwind Attack feat)."
+      },
+      {
+        "name": "Shoto Focus",
+        "prerequisite": [],
+        "description": "Whenever you wield both a one-handed Lightsaber and a Short Lightsaber (or Guard Shoto), you gain a +2 competence bonus on attack rolls made with the Short Lightsaber (or Guard Shoto)."
       }
-      
-  }`
-  
+    ]
+  },
+  "Sith Force Acolyte": {
+    "abilities": "A Force Acolyte should be gifted in all abilities, but Wisdom and Charisma or Willpower are the most important, as these determine the acolyte’s interaction with the force. Strength and Dexterity are also useful for combat.",
+    "forcepoints": 5,
+    "classfeatures": {
+      "base-attack-bonus": 2,
+      "defense-bonuses": {
+        "Fortitude": 1,
+        "Reflex": 1,
+        "Will": 1
+      },
+      "starting-skills": 2,
+      "other-feats": [
+        "Force Sensitivity",
+        "Weapon Proficiency (Lightsabers)",
+        "Weapon Proficiency (Simple Weapons)"
+      ],
+      "talent-trees": "odd",
+      "bonus-feats": "even"
+    },
+    "credits": "A 1st-level Acolyte starts play with 600 credits.",
+    "talents": [
+      {
+        "name": "Block",
+        "prerequisite": [],
+        "description": "As a Reaction, you may negate a melee attack by making a successful Use the Force check. The DC of the check is equal to the result of the attack roll you wish to negate, and you must take a cumulative -5 penalty on your Use the Force check for every time you have used Block or Deflect since the beginning of your last turn. You may use the Block Talent to negate melee Area Attacks, such as those made by the Whirlwind Attack Feat. If you succeed on the Use the Force check, you take half damage if the attack hits, and no damage if the attack misses. You may spend a Force Point to use this Talent to negate an attack against an adjacent character. You must have a Lightsaber drawn and ignited to use this Talent, and you must be aware of the attack and not Flat-Footed."
+      },
+      {
+        "name": "Deflect",
+        "prerequisite": [],
+        "description": "As a Reaction, you may negate a ranged attack by making a successful Use the Force check. The DC of the check is equal to the result of the attack roll you wish to negate, and you take a cumulative -5 penalty on your Use the Force check for every time you used Block or Deflect since the beginning of your last turn. You may spend a Force Point to use this Talent to negate an attack against an adjacent character. You can use this Talent to deflect some of the barrage of shots fired from a ranged weapon set on Autofire, or the Force Lightning Force Power. If you succeed on the Use the Force check, you take half damage if the attack hits, and no damage if the attack misses. You must have a Lightsaber drawn and ignited to use this Talent, and you must be aware of the attack and not Flat-Footed. This Talent cannot be used to negate attacks made by Colossal (Frigate) or larger-size Vehicles unless the attack is made with a Point-Defense Weapon System."
+      },
+      {
+        "name": "Lightsaber Defense",
+        "prerequisite": [],
+        "description": "As a Swift Action you can use your Lightsaber to parry your opponents' attacks, gaining a +1 deflection bonus to your Reflex Defense until the start of your next turn. You must have a Lightsaber drawn and ignited to use this Talent, and you don't gain the deflection bonus if you are Flat-Footed or otherwise unaware of the incoming attack. You can take this Talent multiple times; each time you take this Talent, the deflection bonus increases by +1 (maximum +3)."
+      },
+      {
+        "name": "Weapon Specialization (Lightsabers)",
+        "prerequisite": [
+          "Weapon Focus (Lightsabers)"
+        ],
+        "description": "You gain a +2 bonus on melee damage rolls with Lightsabers."
+      },
+      {
+        "name": "Lightsaber Throw",
+        "prerequisite": [],
+        "description": "You can throw a Lightsaber as a Standard Action, treating it as a Thrown weapon (without this Talent, a thrown Lightsaber is considered an Improvised Thrown Weapon). You are considered proficient with the thrown Lightsaber, and you apply the normal Range penalties to the attack roll. The thrown Lightsaber deals normal weapon damage if it hits. If your target is no more than 6 spaces away, you can pull your Lightsaber back to your hand as a Swift Action by making a DC 20 Use the Force check."
+      },
+      {
+        "name": "Redirect Shot",
+        "prerequisite": [
+          "Deflect",
+          "Base Attack Bonus +5"
+        ],
+        "description": "This Talent allows you to redirect a deflected blaster bolt along a specific trajectory, so that it damages another creature or object in its path. Once per round when you successfully Deflect a blaster bolt, you can make an immediate ranged attack against another target with which you have line of sight. Apply the normal range penalties to the attack roll, not counting the distance the bolt traveled to reach you. If the attack succeeds, it deals normal weapon damage to the target. Only single blaster bolts can be redirected in this manner. Barrages from Autofire weapons and other types of projectiles can't be redirected."
+      },
+      {
+        "name": "Cortosis Gauntlet Block",
+        "prerequisite": [
+          "Armor Proficiency (Light)",
+          "Armor Proficiency (Medium)"
+        ],
+        "description": "You have received additional training in the use of Cortosis Gauntlets. You can use the Block Talent, even when not armed with a Lightsaber, provided you are wearing a Cortosis Gauntlet. If you successfully Block an attack with a Lightsaber while wearing a Cortosis Gauntlet, the attacking Lightsaber is deactivated."
+      },
+      {
+        "name": "Precise Redirect",
+        "prerequisite": [
+          "Redirect Shot"
+        ],
+        "description": "Whenever you successfully Redirect a blaster bolt and hit your target, the redirected attack deals +1 die of damage."
+      },
+      {
+        "name": "Precision",
+        "prerequisite": [],
+        "description": "As a Standard Action, you can make a melee attack with a Lightsaber against an adjacent opponent. If the attack hits, it deals normal damage and also reduces the target's speed to 2 spaces until the end of your next turn."
+      },
+      {
+        "name": "Riposte",
+        "prerequisite": [
+          "Block",
+          "Base Attack Bonus +5"
+        ],
+        "description": "As a Reaction once per encounter, you can make a Lightsaber attack against a being whose attack you successfully negated using the Block Talent. Only non- area melee attacks can be Riposted in this manner; you cannot use this Talent when negating the damage from melee Area Attacks (such as those made with the Whirlwind Attack feat)."
+      },
+      {
+        "name": "Shoto Focus",
+        "prerequisite": [],
+        "description": "Whenever you wield both a one-handed Lightsaber and a Short Lightsaber (or Guard Shoto), you gain a +2 competence bonus on attack rolls made with the Short Lightsaber (or Guard Shoto)."
+      },
+      {
+        "name": "Cower Enemies",
+        "prerequisite": [
+          "Force Interrogation"
+        ],
+        "description": "When you use the Persuasion skill to Intimidate, you can Intimidate all targets in a 6-Square Cone (originating from your square) instead of Intimidating a single target. All other limitations to the Intimidation use of the Persuasion skill still apply."
+      },
+      {
+        "name": "Adept Intimidator",
+        "prerequisite": [],
+        "description": "As a Standard Action, you can weaken the resolve of one opponent with your words. The target must have an Intelligence of 3 or higher, and it must be able to see, hear, and understand you. Make a Persuasion check; if the result equals or exceeds the target's Will Defense, out of fear it moves 1 step along the Attitude Track towards Helpful. If the result is less than the targets Will Defense, they become resistant to the talent, and gain a +5 to its Will Defense if you try to use this talent again. The target gets a +5 bonus to its Will Defense if it is higher level than you."
+      },
+      {
+        "name": "Master Intimidator",
+        "prerequisite": [
+          "Adept Intimidator"
+        ],
+        "description": "If you successfully use the Adept Intimidator Talent, your target moves an additional step along the Attitude Track. This is a Mind-Affecting effect."
+      },
+      {
+        "name": "Force Interrogation",
+        "prerequisite": [],
+        "description": "When you deal damage to one or more creatures by using a Force Power, you can immediately make a Persuasion check as a Free Action to Intimidate a single target you damaged."
+      },
+      {
+        "name": "Inquisition",
+        "prerequisite": [],
+        "description": "You are particularly adept at dealing with Force-sensitive foes. You gain a +1 bonus on attack rolls and deal +1 die of damage against targets that have the Force Sensitivity feat."
+      },
+      {
+        "name": "Unsettling Presence",
+        "prerequisite": [
+          "Force Interrogation"
+        ],
+        "description": "You can spend a Force Point as a Standard Action to create an aura of unsettling discomfort around you. You make a Use the Force check when you activate this Talent and compare the check result to the Will Defense of any creature that comes within 6 spaces of you. If your Use the Force check result equals or exceeds the creature's Will Defense, that target takes a -2 penalty on attack rolls and Skill Checks while within 6 spaces of you. This aura lasts for"
+      },
+      {
+        "name": "Sith Surge",
+        "prerequisite": [],
+        "description": "Whenever a body part is un-crippled by any means, you gain Bonus Damage Reduction equal to your Heroic Level. This Bonus Damage Reduction go away at the end of the encounter. Bonus Damage Reduction from multiple sources do not stack."
+      },
+      {
+        "name": "Force Fighter",
+        "prerequisite": [],
+        "description": "Whenever you spend a Force Point to add to an attack roll, you gain a bonus Damage Reduction equal to the Force Point result if the attack hits. This Bonus Damage Reduction go away at the start of your next turn. Bonus Damage Reduction from multiple sources do not stack."
+      },
+      {
+        "name": "Resist Enervation",
+        "prerequisite": [],
+        "description": "Whenever an effect would cripple one of your body parts, you can spend a Force Point to negate it."
+      },
+      {
+        "name": "Victorious Force Mastery",
+        "prerequisite": [
+          "Force Training"
+        ],
+        "description": "Whenever an enemy you have damaged in this encounter has their torso or head crippled, you may automatically return one spent Force Power to your Force Power Suite as a Free Action."
+      },
+      {
+        "name": "Acrobatic Recovery",
+        "prerequisite": [],
+        "description": "If any effect causes you to fall Prone, you can make a DC 20 Acrobatics check to remain on your feet."
+      },
+      {
+        "name": "Battle Meditation",
+        "prerequisite": [],
+        "description": "The Jedi technique known as Battle Meditation allows you and your allies to work together seamlessly and with a level of precision that can only come from The Force. As a Full-Round Action, you can spend a Force Point to give you and all allies within 6 spaces of you a +1 insight bonus on attack rolls that lasts until the end of the encounter. This bonus does not extend to allies outside the range of the effect, even if they move within 6 spaces of you later on. Allies who benefit from the Battle Meditation must remain within 6 spaces of you to retain the insight bonus, and they lose it if you are knocked unconscious or killed. This is a Mind-Affecting effect."
+      },
+      {
+        "name": "Elusive Target",
+        "prerequisite": [],
+        "description": "When fighting an opponent or multiple opponents in melee, other opponents attempting to target you with ranged attacks take a -5 penalty. This penalty is in addition to the normal -5 penalty for firing into melee, making the penalty to target you -10."
+      },
+      {
+        "name": "Force Intuition",
+        "prerequisite": [],
+        "description": "You can use your Use the Force check modifier instead of your Initiative modifier when making Initiative checks. You are considered Trained in the Initiative skill. If you are entitled to an Initiative check reroll, you may reroll your Use the Force check instead (subject to the same circumstances and limitations). You may use this Talent to determine the Initiative of a Starship if you are the Pilot."
+      },
+      {
+        "name": "Resilience",
+        "prerequisite": [],
+        "description": "You can spend a Full-Round Action to un-cripple 2 body parts."
+      },
+      {
+        "name": "Close Maneuvering",
+        "prerequisite": [],
+        "description": "Once per turn, you can use a Swift Action to designate a target. Until the start of your next turn, your movement does not provoke Attacks of Opportunity from that target, provided that you end your movement adjacent to that target."
+      },
+      {
+        "name": "Cover Escape",
+        "prerequisite": [
+          "Block or Deflect"
+        ],
+        "description": "When you successfully spend a Force Point to negate a attack against an adjacent ally with the Block or Deflect Talents, that ally can move up to 2 spaces as a Free Action. This movement does not provoke Attacks of Opportunity."
+      },
+      {
+        "name": "Defensive Acuity",
+        "prerequisite": [],
+        "description": "When you take the Fight Defensively Action, you deal +1 die of damage with Lightsaber attacks and gain a +2 circumstance bonus on Use the Force checks made to negate an attack with the Block or Deflect Talents. These benefits last until the end of your next turn."
+      },
+      {
+        "name": "Exposing Strike",
+        "prerequisite": [],
+        "description": "When you use a Lightsaber to deal damage to a target, you can spend a Force Point to make that target Flat- Footed until the end of your next turn."
+      },
+      {
+        "name": "Forceful Warrior",
+        "prerequisite": [],
+        "description": "When you score a Critical Hit with a Lightsaber, you gain 1 temporary Force Point. If the Force Point is not used before the end of the encounter, it is lost."
+      },
+      {
+        "name": "Grenade Defense",
+        "prerequisite": [],
+        "description": "You can use the Move Light Object application of the Use the Force skill to cast aside Grenades that are thrown at you. As a Reaction when you are attacked by a Grenade of any kind, you can make a Use the Force check with a DC equal to the attack roll of the incoming Grenade attack. If your check equals or exceeds the DC, you hurl the Grenade to a location where it explodes harmlessly, negating the attack. Whether or not you are successful, you take a -5 penalty on Use the Force checks until the start of your next turn."
+      },
+      {
+        "name": "Warrior Strike",
+        "prerequisite": [],
+        "description": "Whenever you use a Lightsaber to deal damage to a target, that target takes a -2 penalty on attack rolls against any target other than you until the beginning of your next turn."
+      },
+      {
+        "name": "Hold the Line",
+        "prerequisite": [],
+        "description": "When you make a successful Attack of Opportunity against a target leaving your Threatened Area, you stop the target's movement, ending its Action."
+      },
+      {
+        "name": "Immovable",
+        "prerequisite": [],
+        "description": "You can activate this Talent as a Swift Action. Until the start of your next turn, anyone attempting to move you involuntarily (such as with a Bantha Rush or the Move Object Force Power) takes a -5 penalty to attack rolls or Skill Checks made to use that effect that would move you. An enemy can only take the penalty from this Talent once per attempt, regardless of how many targets have used this Talent."
+      },
+      {
+        "name": "Improved Battle Meditation",
+        "prerequisite": [
+          "Battle Meditation"
+        ],
+        "description": "You may activate your Battle Meditation Talent as a Swift Action, instead of as a Full-Round Action. The range of the Battle Meditation extends out to 12 spaces. Opponents within the radius of your Battle Meditation suffer a -1 penalty to all attack rolls."
+      },
+      {
+        "name": "Mobile Combatant",
+        "prerequisite": [],
+        "description": "When you end your movement adjacent to an opponent, you can spend a Swift Action to activate this Talent. If the designated opponent Moves or Withdraws before the beginning of your next turn, you can choose to move with that opponent, up to a total distance equal to your current speed. Unless your opponent uses the Withdraw Action or makes an Acrobatics check to avoid Attacks of Opportunity, its movement provokes an Attack of Opportunity from you for the first square moved as normal (but no subsequent spaces in the same movement). If your target moves farther than your speed, you must still end this movement closer to the target than you began."
+      },
+      {
+        "name": "Intuition",
+        "prerequisite": [],
+        "description": "As a Reaction, when an opponent successfully attacks you, make a Use the Force check and compare the result to your opponent's attack roll. If the check equals or exceeds the result of the attack roll, you can add your Charisma modifier to your Reflex Defense."
+      },
+      {
+        "name": "Defense Boost",
+        "prerequisite": [],
+        "description": "As a Swift Action, you can make a DC 15 Use the Force check. If the check succeeds, you gain a +1 Force bonus to your Fortitude Defense until the end of the encounter. Before you make your Use the Force check, you can increase the target number to DC 20 to gain a +1 Force bonus to all your Defenses."
+      },
+      {
+        "name": "Hardiness",
+        "prerequisite": [],
+        "description": "You can spend a Force Point to reduce the number of Swift Actions it takes you to un-cripple 1 body part by one."
+      },
+      {
+        "name": "High Impact",
+        "prerequisite": [],
+        "description": "As a Swift Action, make a DC 15 Use the Force check. If your check succeeds, double your Strength bonus to the next melee damage roll you make before the end of your turn."
+      },
+      {
+        "name": "Sith Reverence",
+        "prerequisite": [],
+        "description": "You gain a +1 morale bonus on your attack rolls while you are within 20 spaces and in line of sight of an ally with a Dark Side Score equal to or greater than your own."
+      }
+    ]
+  },
+  "Jedi Force Acolyte": {
+    "abilities": "A Force Acolyte should be gifted in all abilities, but Wisdom and Charisma or Willpower are the most important, as these determine the acolyte’s interaction with the force. Strength and Dexterity are also useful for combat.",
+    "forcepoints": 5,
+    "classfeatures": {
+      "base-attack-bonus": 2,
+      "defense-bonuses": {
+        "Fortitude": 1,
+        "Reflex": 1,
+        "Will": 1
+      },
+      "starting-skills": 2,
+      "other-feats": [
+        "Force Sensitivity",
+        "Weapon Proficiency (Lightsabers)",
+        "Weapon Proficiency (Simple Weapons)"
+      ],
+      "talent-trees": "odd",
+      "bonus-feats": "even"
+    },
+    "credits": "A 1st-level Acolyte starts play with 600 credits.",
+    "talents": [
+      {
+        "name": "Block",
+        "prerequisite": [],
+        "description": "As a Reaction, you may negate a melee attack by making a successful Use the Force check. The DC of the check is equal to the result of the attack roll you wish to negate, and you must take a cumulative -5 penalty on your Use the Force check for every time you have used Block or Deflect since the beginning of your last turn. You may use the Block Talent to negate melee Area Attacks, such as those made by the Whirlwind Attack Feat. If you succeed on the Use the Force check, you take half damage if the attack hits, and no damage if the attack misses. You may spend a Force Point to use this Talent to negate an attack against an adjacent character. You must have a Lightsaber drawn and ignited to use this Talent, and you must be aware of the attack and not Flat-Footed."
+      },
+      {
+        "name": "Deflect",
+        "prerequisite": [],
+        "description": "As a Reaction, you may negate a ranged attack by making a successful Use the Force check. The DC of the check is equal to the result of the attack roll you wish to negate, and you take a cumulative -5 penalty on your Use the Force check for every time you used Block or Deflect since the beginning of your last turn. You may spend a Force Point to use this Talent to negate an attack against an adjacent character. You can use this Talent to deflect some of the barrage of shots fired from a ranged weapon set on Autofire, or the Force Lightning Force Power. If you succeed on the Use the Force check, you take half damage if the attack hits, and no damage if the attack misses. You must have a Lightsaber drawn and ignited to use this Talent, and you must be aware of the attack and not Flat-Footed. This Talent cannot be used to negate attacks made by Colossal (Frigate) or larger-size Vehicles unless the attack is made with a Point-Defense Weapon System."
+      },
+      {
+        "name": "Lightsaber Defense",
+        "prerequisite": [],
+        "description": "As a Swift Action you can use your Lightsaber to parry your opponents' attacks, gaining a +1 deflection bonus to your Reflex Defense until the start of your next turn. You must have a Lightsaber drawn and ignited to use this Talent, and you don't gain the deflection bonus if you are Flat-Footed or otherwise unaware of the incoming attack. You can take this Talent multiple times; each time you take this Talent, the deflection bonus increases by +1 (maximum +3)."
+      },
+      {
+        "name": "Weapon Specialization (Lightsabers)",
+        "prerequisite": [
+          "Weapon Focus (Lightsabers)"
+        ],
+        "description": "You gain a +2 bonus on melee damage rolls with Lightsabers."
+      },
+      {
+        "name": "Lightsaber Throw",
+        "prerequisite": [],
+        "description": "You can throw a Lightsaber as a Standard Action, treating it as a Thrown weapon (without this Talent, a thrown Lightsaber is considered an Improvised Thrown Weapon). You are considered proficient with the thrown Lightsaber, and you apply the normal Range penalties to the attack roll. The thrown Lightsaber deals normal weapon damage if it hits. If your target is no more than 6 spaces away, you can pull your Lightsaber back to your hand as a Swift Action by making a DC 20 Use the Force check."
+      },
+      {
+        "name": "Redirect Shot",
+        "prerequisite": [
+          "Deflect",
+          "Base Attack Bonus +5"
+        ],
+        "description": "This Talent allows you to redirect a deflected blaster bolt along a specific trajectory, so that it damages another creature or object in its path. Once per round when you successfully Deflect a blaster bolt, you can make an immediate ranged attack against another target with which you have line of sight. Apply the normal range penalties to the attack roll, not counting the distance the bolt traveled to reach you. If the attack succeeds, it deals normal weapon damage to the target. Only single blaster bolts can be redirected in this manner. Barrages from Autofire weapons and other types of projectiles can't be redirected."
+      },
+      {
+        "name": "Cortosis Gauntlet Block",
+        "prerequisite": [
+          "Armor Proficiency (Light)",
+          "Armor Proficiency (Medium)"
+        ],
+        "description": "You have received additional training in the use of Cortosis Gauntlets. You can use the Block Talent, even when not armed with a Lightsaber, provided you are wearing a Cortosis Gauntlet. If you successfully Block an attack with a Lightsaber while wearing a Cortosis Gauntlet, the attacking Lightsaber is deactivated."
+      },
+      {
+        "name": "Precise Redirect",
+        "prerequisite": [
+          "Redirect Shot"
+        ],
+        "description": "Whenever you successfully Redirect a blaster bolt and hit your target, the redirected attack deals +1 die of damage."
+      },
+      {
+        "name": "Precision",
+        "prerequisite": [],
+        "description": "As a Standard Action, you can make a melee attack with a Lightsaber against an adjacent opponent. If the attack hits, it deals normal damage and also reduces the target's speed to 2 spaces until the end of your next turn."
+      },
+      {
+        "name": "Riposte",
+        "prerequisite": [
+          "Block",
+          "Base Attack Bonus +5"
+        ],
+        "description": "As a Reaction once per encounter, you can make a Lightsaber attack against a being whose attack you successfully negated using the Block Talent. Only non- area melee attacks can be Riposted in this manner; you cannot use this Talent when negating the damage from melee Area Attacks (such as those made with the Whirlwind Attack feat)."
+      },
+      {
+        "name": "Shoto Focus",
+        "prerequisite": [],
+        "description": "Whenever you wield both a one-handed Lightsaber and a Short Lightsaber (or Guard Shoto), you gain a +2 competence bonus on attack rolls made with the Short Lightsaber (or Guard Shoto)."
+      },
+      {
+        "name": "Adept Negotiator",
+        "prerequisite": [],
+        "description": "Have an Intelligence of 3 or higher, and it must be able to see, hear, and understand you. Make a Persuasion check; if the result equals or exceeds the target's Will Defense, it moves 1 step along the Attitude Track towards Helpful. If the result is less than the targets Will Defense, they become resistant to the talent, and gain a +5 to its Will Defense if you try to use this talent again. The target gets a +5 bonus to its Will Defense if it is higher level than you.At the end of the encounter, their attitude resets to what it was at the start of the encounter or one step closer to helpful than it was at the ST's discretion.This is a Mind-Affecting effect."
+      },
+      {
+        "name": "Force Persuasion",
+        "prerequisite": [
+          "Adept Negotiator"
+        ],
+        "description": "You can use your Use the Force modifier instead of your Persuasion check modifier when making a Persuasion check. You are considered Trained in the Persuasion skill. If you are entitled to a Persuasion check reroll, you may reroll your Use the Force check instead (subject to the same circumstances and limitations)."
+      },
+      {
+        "name": "Master Negotiator",
+        "prerequisite": [
+          "Adept Negotiator"
+        ],
+        "description": "If you successfully use the Adept Negotiator Talent, your target moves an additional step along the Attitude Track. This is a Mind-Affecting effect."
+      },
+      {
+        "name": "Skilled Advisor",
+        "prerequisite": [],
+        "description": "You can spend a Full-Round Action advising an ally, thereby granting them a +5 bonus on their next Skill Check. If you spend a Force Point, the bonus increases to +10. The target must be able to (and willing) to hear and understand your voice. You cannot advise yourself. This is a Mind-Affecting effect."
+      },
+      {
+        "name": "Adversary Lore",
+        "prerequisite": [],
+        "description": "As a Standard Action, you can peer into The Force and search for weaknesses in the defenses of your enemies. Make a Use the Force check against the Will Defense of a target creature within 12 spaces of you and in your line of sight.If the Skill Check equals or exceeds the target's Will Defense, that target takes a -2 penalty to their Reflex Defense against you and all allies who can hear and understand you until the end of your next turn."
+      },
+      {
+        "name": "Aggressive Negotiator",
+        "prerequisite": [
+          "Adept Negotiator"
+        ],
+        "description": "Whenever you damage an opponent with a Lightsaber attack, you can Take 10 on any Persuasion checks you make before the end of your next turn, even if you would not normally be able to."
+      },
+      {
+        "name": "Cleanse Mind",
+        "prerequisite": [],
+        "description": "Once per turn as a Swift Action, you can remove one ongoing Mind-Affecting effect (such as the effects of the Demand Surrender, Weaken Resolve, Adept Negotiator Talents, or the ongoing effects of the Mind Trick Force Power) from a single allied target within line of sight."
+      },
+      {
+        "name": "Collective Visions",
+        "prerequisite": [
+          "Farseeing"
+        ],
+        "description": "When you use Farseeing, or a Force Power or Talent that has Farseeing as a prerequisite, other Force-users with Farseeing in their Force Power Suite can Aid Another on your Use the Force check as a Reaction, if they are within 6 spaces of you."
+      },
+      {
+        "name": "Consular's Vitality",
+        "prerequisite": [],
+        "description": "Once per round as a Swift Action, you grant one ally within 12 spaces of you (and within your line of sight) bonus damage reduction equal to your Charisma modifier.This Bonus Damage Reduction last until the beginning of your next turn.You take a -5 penalty on all Use the Force checks until the beginning of your next turn."
+      },
+      {
+        "name": "Consular's Wisdom",
+        "prerequisite": [
+          "Adept Negotiator"
+        ],
+        "description": "Once per encounter as a Swift Action, you can choose one ally within your line of sight that can hear and understand you. Until the end of the encounter, that ally adds your Wisdom bonus to its Will Defense against Mind- Affecting effects."
+      },
+      {
+        "name": "Entreat Aid",
+        "prerequisite": [],
+        "description": "Once per turn as a Swift Action, you can spend a Force Point to let one adjacent ally use the Aid Another Action (as a Reaction) to assist you with a Skill Check. You must make the Skill Check before the end of your turn, or the benefit of the Aid Another Action is lost.An ally that has already used the Aid Another Action to assist you since the end of your last turn may not be targeted by this Talent."
+      },
+      {
+        "name": "Force of Will",
+        "prerequisite": [],
+        "description": "You gain a +2 insight bonus to your Will Defense. Also, as a Swift Action, you can spend a Force Point to give all allies within 6 spaces of you a +2 insight bonus to their Will Defense that lasts for the remainder of the encounter. This bonus does not extend to allies outside the range of the effect, even if they move within 6 spaces of you later on.Allies who benefit from this Talent must remain within 6 spaces of you to retain the insight bonus, and they lose it if you are knocked unconscious or killed. This is a Mind- Affecting effect."
+      },
+      {
+        "name": "Guiding Strikes",
+        "prerequisite": [],
+        "description": "When you deal damage to a target by making a Lightsaber attack on your turn, you can use a Swift Action before the end of your turn to activate this Talent. If you do so, allies adjacent to the target at the time you make the attack gain a +2 circumstance bonus to melee attack rolls against the target until the start of your next turn."
+      },
+      {
+        "name": "Improved Consular's Vitality",
+        "prerequisite": [
+          "Consular's Vitality"
+        ],
+        "description": "Whenever you damage a target with a successful Lightsaber attack, you may use the Consular's Vitality Talent as a Free Action instead of a Swift Action until the start of your next turn."
+      },
+      {
+        "name": "Know Weakness",
+        "prerequisite": [
+          "Adversary Lore"
+        ],
+        "description": "Whenever you use Adversary Lore on a target successfully, that target also takes an additional 1d6 points of damage from any successful attack made against it by you or an ally who can hear and understand you until the end of your next turn."
+      },
+      {
+        "name": "Recall",
+        "prerequisite": [],
+        "description": "Whenever you spend a Force Point to return a Force Power to your Force Power Suite, you regain two Force Powers instead of one."
+      },
+      {
+        "name": "Renew Vision",
+        "prerequisite": [
+          "Farseeing"
+        ],
+        "description": "Once per encounter, you can regain all expended uses of the Farseeing Force Power as a Swift Action."
+      },
+      {
+        "name": "Visionary Attack",
+        "prerequisite": [
+          "Farseeing",
+          "WatchCircle Initiate"
+        ],
+        "description": "As a Reaction, you can make a Use the Force check after you or an ally within 12 spaces misses with a melee or ranged attack, removing one use of the Farseeing Force Power from your active Force Power Suite (as though you had activated the Force Power). If your check result equals or exceeds the Will Defense of the target of that missed attack, the attacker can reroll the missed attack roll.This counts as using the Farseeing Force Power against the target, but this Talent replaces the normal rules and effects of Farseeing. Any attack can only be affected by this Talent once (thus, multiple characters cannot use this Talent on the same attack to allow multiple rerolls).You take a cumulative -5 penalty on Use the Force checks until the beginning of your next turn when you use this Talent."
+      },
+      {
+        "name": "Visionary Defense",
+        "prerequisite": [
+          "Farseeing",
+          "WatchCircle Initiate"
+        ],
+        "description": "As a Reaction, you can make a Use the Force check after you or an ally within 12 spaces is the target of a melee or ranged attack (but before the results of the attack roll are known), removing one use of the Farseeing Force Power from your active Force Power Suite (as though you had activated the Force Power).If your check result equals or exceeds the Will Defense of the attacker, you grant the target of that attack a +5 Force bonus to their Reflex Defense against that attack.This counts as using the Farseeing Force Power against the attacker, but this Talent replaces the normal rules and effects of Farseeing. Any attack can only be affected by this Talent once (thus, multiple characters cannot use this Talent on the same attack to allow multiple rerolls).You take a cumulative -5 penalty on Use the Force checks until the beginning of your next turn when you use this Talent."
+      },
+      {
+        "name": "Watch Circle Initiate",
+        "prerequisite": [
+          "Farseeing"
+        ],
+        "description": "As a Reaction, you can make a DC 15 Use the Force check and remove one use of the Farseeing Force Power from your active Force Power Suite (as though you had just activated the Force Power).If successful, you subtract 1 from your Force Point total (this cannot be subtracted from temporary Force Points, and does not count as spending a Force Point), and add 1 to the Force Point total of an ally within line of sight.This counts as using the Farseeing Force Power against the target, but this Talent replaces the normal rules and effects of Farseeing."
+      }
+    ]
+  },
+  "Noble": {
+    "abilities": "Charisma is undoubtedly the Noble's most important Ability Score, as the Noble's skill at interacting with others and projecting a sense of confidence are crucial for his or her success. Wisdom and Intelligence form the basis of other important Skills, so these Ability Scores are also significant.",
+    "forcepoints": 5,
+    "classfeatures": {
+      "base-attack-bonus": 0,
+      "defense-bonuses": {
+        "will": 2,
+        "Reflex": 1,
+        "con": 0
+      },
+      "starting-skills": 6,
+      "other-feats": [
+        "Linguist",
+        "Weapon Proficiency (Pistols)",
+        "Weapon Proficiency (Simple Weapons)"
+      ],
+      "talent-trees": "odd",
+      "bonus-feats": "even"
+    },
+    "credits": 2400,
+    "talents": [
+      {
+        "name": "Leadership",
+        "prerequisite": [],
+        "description": "Once per encounter, as a Swift Action, you grant all allies within your line of sight a +1 insight bonus on attack rolls. This effect lasts for as long as they remain within line of sight of you. An ally loses this bonus immediately if line of sight is broken or you are unconscious or dead."
+      },
+      {
+        "name": "Born Leader",
+        "prerequisite": [
+          "Leadership"
+        ],
+        "description": "You have a knack for getting people to work together. When you use this Talent as a Standard Action, all allies within your line of sight grant an additional +1 bonus when they use the Aid Another Action until the start of your next turn."
+      },
+      {
+        "name": "Distant Command",
+        "prerequisite": [
+          "Born Leader"
+        ],
+        "description": "Any ally who gains the benefit of your Born Leader Talent does not lose the benefit if their line of sight to you is broken."
+      },
+      {
+        "name": "Fearless Leader",
+        "prerequisite": [
+          "Born Leader"
+        ],
+        "description": "As a Swift Action, you can provide a courageous example for your allies. For the remainder of the encounter, your allies receive a +5 morale bonus to their Will Defense against any Fear effect. Your allies lose this benefit if they lose line of sight to you, or you are killed or knocked unconscious."
+      },
+      {
+        "name": "Rally",
+        "prerequisite": [
+          "Born Leader",
+          "Distant Command"
+        ],
+        "description": "Once per encounter, you can rally your allies and bring them back from the edge of defeat. As a Swift Action, any allies within your line of sight who have 1 or more crippled body parts gain a +2 morale bonus to their Reflex Defense and Will Defense, and a +2 bonus to all damage rolls for the remainder of the encounter. Unlike other Mind-Affecting Talents, Rally affects both allied Vehicles and characters."
+      },
+      {
+        "name": "Trust",
+        "prerequisite": [
+          "Born Leader",
+          "Coordinate"
+        ],
+        "description": "You can give up your Standard Action to give one ally within your line of sight an extra Standard Action or Move Action on their next turn, to do with as they please. The ally does not lose the Action if line of sight is later broken."
+      },
+      {
+        "name": "Commanding Presence",
+        "prerequisite": [
+          "Born Leader",
+          "Tactical Savvy"
+        ],
+        "description": "You excel at leading others into battle, issuing quick commands, demonstrating a gift for strategy, decimating your enemies, and impressing your peers. You can use each of the following Actions once per encounter as a Standard Action: Hold the Line!, Lead the Assault, Turn the Tide."
+      }
+    ]
+  },
+  "Scoundrel": {
+    "abilities": "Dexterity and Intelligence are the Scoundrel's most important Ability Scores, because they must have quick reflexes and a sharp wit to survive. Charisma is important for talking one's way out of trouble, and Wisdom is useful for spotting trouble before it finds the Scoundrel.",
+    "forcepoints": 5,
+    "classfeatures": {
+      "base-attack-bonus": 1,
+      "defense-bonuses": {
+        "will": 1,
+        "Reflex": 2,
+        "con": 0
+      },
+      "starting-skills": 4,
+      "other-feats": [
+        "Point-Blank Shot",
+        "Weapon Proficiency (Pistols)",
+        "Weapon Proficiency (Simple Weapons)"
+      ],
+      "talent-trees": "odd",
+      "bonus-feats": "even"
+    },
+    "credits": 1500,
+    "talents": [
+      {
+        "name": "Fortune",
+        "prerequisite": [],
+        "description": "As a Standard Action, you can spend a Force Point to gain one of the following benefits for the rest of the encounter: +1 competence bonus to attack rolls, +5 competence bonus on Skill Checks, +1 competence bonus to all your Defenses."
+      },
+      {
+        "name": "Fool's Luck",
+        "prerequisite": [
+          "Fortune"
+        ],
+        "description": "Whenever you score a Critical Hit with a melee or ranged attack, you gain a free Standard Action. You must take the extra Standard Action before the end of your turn, or else it is lost."
+      },
+      {
+        "name": "Gambler",
+        "prerequisite": [],
+        "description": "You gain a +2 competence bonus on Wisdom checks when you Gamble."
+      },
+      {
+        "name": "Knack",
+        "prerequisite": [],
+        "description": "Once per day, you can reroll a Skill Check and take the better result."
+      },
+      {
+        "name": "Lucky Shot",
+        "prerequisite": [
+          "Knack"
+        ],
+        "description": "Once per day, you can reroll an attack roll and take the better result."
+      }
+    ]
+  },
+  "Scout": {
+    "abilities": "Most of the Scout's key skills rely on Dexterity, Intelligence, and Wisdom. Strength is also useful for the Scout Trained in athletic Skills.",
+    "forcepoints": 5,
+    "classfeatures": {
+      "base-attack-bonus": 1,
+      "defense-bonuses": {
+        "Fortitude": 1,
+        "Reflex": 2,
+        "con": 0
+      },
+      "starting-skills": 5,
+      "other-feats": [
+        "Shake It Off",
+        "Weapon Proficiency (Pistols)",
+        "Weapon Proficiency (Rifles)",
+        "Weapon Proficiency (Simple Weapons)"
+      ],
+      "talent-trees": "odd",
+      "bonus-feats": "even"
+    },
+    "credits": 1500,
+    "talents": [
+      {
+        "name": "Camouflage",
+        "prerequisite": [],
+        "description": "You're very good at hiding when mobile. You take no penalty on your Stealth check when moving your normal Speed."
+      },
+      {
+        "name": "Hidden Movement",
+        "prerequisite": [
+          "Improved Stealth"
+        ],
+        "description": "You're very good at hiding when mobile. You take no penalty on your Stealth check when moving your normal Speed. This Talent applies to Stealth checks made while Piloting a Starship."
+      },
+      {
+        "name": "Improved Stealth",
+        "prerequisite": [],
+        "description": "You may choose to reroll any Stealth check, but the result of the reroll must be accepted, even if it is worse. This Talent applies to Stealth checks made while Piloting a Starship."
+      },
+      {
+        "name": "Total Concealment",
+        "prerequisite": [
+          "Hidden Movement",
+          "Improved Stealth"
+        ],
+        "description": "Any situation that would give you Concealment grants you Total Concealment instead."
+      },
+      {
+        "name": "Dig In",
+        "prerequisite": [],
+        "description": "When Prone, you can spend a Swift Action to gain Concealment until the start of your next turn. If you stand up or move, you lose this benefit."
+      },
+      {
+        "name": "Confusing Strike",
+        "prerequisite": [],
+        "description": "Make a single melee or ranged attack against an opponent within Range. If this opponent is denied its Dexterity bonus to its Reflex Defense, or if you have Concealment from this opponent, a successful attack also causes the opponent to be able to take only a Swift Action on its next turn."
+      },
+      {
+        "name": "Unexpected Attack",
+        "prerequisite": [],
+        "description": "Make a melee or ranged attack within your Range against an opponent from whom you have Concealment. You gain a +2 bonus on this attack roll if you have Concealment, or a +5 bonus if you have Total Concealment."
+      },
+      {
+        "name": "Slip By",
+        "prerequisite": [],
+        "description": "When you would normally provoke an Attack of Opportunity by moving out of a Threatened Area, you can roll a Stealth check, replacing your Reflex Defense with the results of your Stealth check if it is higher."
+      },
+      {
+        "name": "Extended Ambush",
+        "prerequisite": [
+          "Improved Stealth"
+        ],
+        "description": "During a Surprise Round, if you make a ranged attack against a target that is Surprised, you can Aim at the target as a Free Action."
+      },
+      {
+        "name": "Ghost Assailant",
+        "prerequisite": [],
+        "description": "If you start your turn with Total Concealment or Total Cover from a target, during that turn you can make a Stealth check as a Swift Action, opposed by the target's Perception check. If you succeed, the target is considered Flat-Footed against you until the end of your turn."
+      },
+      {
+        "name": "Hide in Plain Sight",
+        "prerequisite": [
+          "Hidden Movement",
+          "Improved Stealth"
+        ],
+        "description": "Once per encounter, when you are within 2 spaces of Cover or Concealment, you can move to that Cover or Concealment and make a Stealth check to hide as a single Move Action."
+      },
+      {
+        "name": "Hunker Down",
+        "prerequisite": [],
+        "description": "Whenever you benefit from Cover, you can spend a Standard Action to Hunker Down and maximize the benefit of the Cover. You increase the benefit of Cover to Improved Cover or Improved Cover to Total Cover."
+      },
+      {
+        "name": "Shadow Striker",
+        "prerequisite": [
+          "Hidden Movement",
+          "Improved Stealth"
+        ],
+        "description": "You excel at fighting from the shadows, hitting your opponents when they least expect it. You can use each of the following actions once per encounter as a Standard Action:Blinding Strike: Make a single melee or ranged attack against an opponent within Range. If you damage the target, you gain Total Concealment against that target until the beginning of your next turn."
+      }
+    ]
+  },
+  "Soldier": {
+    "abilities": "Since most combat in the Star Wars universe uses blasters and other ranged weapons, Dexterity is the Soldier's most important Ability Score, followed closely by Constitution and Strength. Intelligence and Wisdom are also important as many of a Soldier's useful Skills are based on these abilities.",
+    "forcepoints": 5,
+    "classfeatures": {
+      "base-attack-bonus": 2,
+      "defense-bonuses": {
+        "Fortitude": 2,
+        "Reflex": 1,
+        "Will": 0
+      },
+      "starting-skills": 3,
+      "other-feats": [
+        "Armor Proficiency (Light)",
+        "Armor Proficiency (Medium)",
+        "Weapon Proficiency (Pistols)",
+        "Weapon Proficiency (Rifles)",
+        "Weapon Proficiency (Simple Weapons)"
+      ],
+      "talent-trees": "odd",
+      "bonus-feats": "even"
+    },
+    "credits": "A 1st-level Soldier starts play with 1500 credits.",
+    "talents": [
+      {
+        "name": "Weapon Specialist",
+        "prerequisite": [],
+        "description": "Choose a single Exotic Weapon or weapon group with which you are proficient. Whenever you make a successful attack against a target using such a weapon, you treat your target's Damage Threshold as if it were 5 points lower when determining the result of your attack. If you select Heavy Weapons as the weapon group this Talent applies to, you may also use the Talent with Vehicle Weapon attacks."
+      },
+      {
+        "name": "Devastating Attack",
+        "prerequisite": [
+          "Weapon Specialist"
+        ],
+        "description": "Choose a single Exotic Weapon or weapon group with which you are proficient. Whenever you make a successful attack against a target with such a weapon, you treat your target's Damage Reduction as if it were 5 points lower when determining the result of your attack. If you select Heavy Weapons as the weapon group this Talent applies to, you may also use the Talent with Vehicle Weapon attacks."
+      },
+      {
+        "name": "Weapon Specialization",
+        "prerequisite": [
+          "Weapon Specialist"
+        ],
+        "description": "Choose a single Exotic Weapon or weapon group with which you are proficient. You gain a +2 bonus on damage rolls with such weapons. If you select Heavy Weapons as the weapon group this Talent applies to, you may also use the Talent with Vehicle Weapon attacks."
+      },
+      {
+        "name": "Autofire Assault",
+        "prerequisite": [
+          "Weapon Proficiency (Heavy Weapons)"
+        ],
+        "description": "When making an Autofire attack, you can Brace a Weapon that is not restricted to Autofire-only. You must be proficient with the Weapon being used to activate this Talent."
+      },
+      {
+        "name": "Crushing Assault",
+        "prerequisite": [
+          "Weapon Specialization"
+        ],
+        "description": "You use your attacks to beat down your opponents' defenses. When you successfully damage an opponent using a Bludgeoning weapon that you have the Weapon Specialization Talent for, your next attack against that opponent made before the end of the encounter gains a +2 bonus on the attack roll and to the damage roll. The effects of multiple Crushing Assaults do not stack."
+      },
+      {
+        "name": "Disarming Attack",
+        "prerequisite": [
+          "Intelligence 13",
+          "Improved Disarm",
+          "Weapon Specialization"
+        ],
+        "description": "Choose a single Exotic Weapon or weapon group with which you are proficient. You ignore a target's armor bonus to Reflex Defense when Disarming with such a weapon. Additionally, as a Free Action, once per encounter, you can grant yourself a +10 bonus on your attack roll when attempting to Disarm an opponent while using such a weapon."
+      },
+      {
+        "name": "Impaling Assault",
+        "prerequisite": [
+          "Weapon Specialization"
+        ],
+        "description": "You can hit your opponents to slow them down. Whenever you successfully damage an opponent using a Piercing weapon that you have the Weapon Specialization Talent for, your opponent reduces its speed by 2 spaces until the end of your next turn. The effects of multiple Impaling Assaults do not stack."
+      },
+      {
+        "name": "Improved Suppression Fire",
+        "prerequisite": [],
+        "description": "When you successfully suppress an enemy using the Aid Another Action, that enemy takes a -5 penalty on its attack rolls until the start of your next turn. When targeting an area with an Autofire Weapon, each enemy in the attack area takes a -2 penalty on its attack rolls until the start of your next turn, regardless of whether your attack hits."
+      },
+      {
+        "name": "Stinging Assault",
+        "prerequisite": [
+          "Weapon Specialization"
+        ],
+        "description": "You can deliver nasty injuries that leave your opponents reeling. Whenever you successfully damage an opponent using a Slashing weapon that you have the Weapon Specialization Talent for, your opponent takes a -2 penalty on melee attacks against you until the start of your next turn. The effects of multiple Stinging Assaults do not stack."
+      }
+    ]
+  },
+  "Technician": {
+    "abilities": "Intelligence is by far the most important ability for a Technician, as they specialize in any use of technology, from simple datacards, to planet destroying weapons.",
+    "forcepoints": 5,
+    "classfeatures": {
+      "base-attack-bonus": 0,
+      "defense-bonuses": {
+        "Fortitude": 1,
+        "Reflex": 0,
+        "Will": 2
+      },
+      "starting-skills": 7,
+      "other-feats": [
+        "Skill Focus (Knowledge (Any), Mechanics, Treat Injury, or Use Computer)",
+        "Tech Specialist*",
+        "Weapon Proficiency (Simple Weapons)"
+      ],
+      "talent-trees": "odd",
+      "bonus-feats": "even"
+    },
+    "credits": "A 1st-level Technician begins play with 1500 credits.",
+    "talents": [
+      {
+        "name": "Slicer",
+        "prerequisite": [],
+        "description": "You can Issue Routine Command to a computer as a Swift Action."
+      },
+      {
+        "name": "Gimmick",
+        "prerequisite": [
+          "Slicer"
+        ],
+        "description": "You may choose to reroll any Use Computer check made to Improve Access on a computer, keeping the better of the two results."
+      },
+      {
+        "name": "Trace",
+        "prerequisite": [],
+        "description": "You can substitute your Use Computer Skill for any Gather Information check as long as you have access to a computer network."
+      },
+      {
+        "name": "Electronic Forgery",
+        "prerequisite": [
+          "Trained in Use Computer"
+        ],
+        "description": "You can use your Use Computer modifier in place of your Deception modifier to create a deceptive appearance with forged electronic documents."
+      },
+      {
+        "name": "Electronic Sabotage",
+        "prerequisite": [
+          "Trained in Use Computer"
+        ],
+        "description": "You excel at causing havoc with computers and electronics. As a Standard Action, you can lock down a computer terminal by making a Use Computer check, making it potentially difficult for anyone else to access. That computer is considered Unfriendly to anyone other than you who attempts to use it, and the result of your Use Computer check replaces the computer's Will Defense on an attempt to change its Attitude."
+      },
+      {
+        "name": "Security Slicer",
+        "prerequisite": [
+          "Trained in Mechanics"
+        ],
+        "description": "You are an expert in electronic security. When you make a Mechanics check to Disable Device, you can do so without the help of a Security Kit. Additionally, something goes wrong only when you fail the Mechanics check by 10 or more."
+      },
+      {
+        "name": "Virus",
+        "prerequisite": [
+          "Electronic Sabotage",
+          "Trained in Use Computer"
+        ],
+        "description": "You can substitute a Use Computer check for a Mechanics check when disabling a computerized device. The effort takes 1 minute and the DC is equal to the computer's Will Defense. In addition, whenever anyone accesses the afflicted computer using a Droid or another computer, that computer or Droid's Attitude immediately becomes Unfriendly."
+      }
+    ]
+  }
+}`

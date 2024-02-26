@@ -25,6 +25,10 @@
             <button id="pdf" onclick="pdfclick()">
                 <p3>PDF</p3>
             </button>
+            <button id="print-button" onclick="printpdf()">
+                <p1>Print</p1><br>
+                <p2>Popup</p2>
+            </button>
             <button  id="levelup" onclick="levelup()">
                 <p1>Level Up!</p1>
             </button>
@@ -87,6 +91,19 @@
         <div id="classdiv", class="main">
             <form>
                 <label>Your Class:</label>
+                <br>
+                <select name="species" id="classform" onchange="changeclass();">
+                    <option value="Lightsaber Force Acolyte">Lightsaber Force Acolyte</option>
+                    <option value="Jedi Force Acolyte">Jedi Force Acolyte</option>
+                    <option value="Sith Force Acolyte">Sith Force Acolyte</option>
+                    <option value="Noble">Noble</option>
+                    <option value="Scoundrel">Scoundrel</option>
+                    <option value="Scout">Scout</option>
+                    <option value="Soldier">Soldier</option>
+                    <option value="Technician">Technician</option>
+                </select>
+                <p id="class-desc"></p>
+                <br>
             </form>
         </div>
         <div id="skillsdiv", class="main">
@@ -100,7 +117,7 @@
             </form>
         </div>
         <div id="pdfdiv", class="main">
-            <div class="page", style="background-image: url('img/page_1.png');background-size: 100%;width: 100%;aspect-ratio: 1225/1585;">
+            <div class="page", style="background-image: url('img/page_1.png');background-size: 100%;width: 100%;aspect-ratio: 1225/1585;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
                 <p4 style="position:absolute;padding-top:7.9%;padding-left:22.7%;font-size:1.4vw;" id="character"></p4>
                 <p4 style="position:absolute;padding-top:7.9%;padding-left:48.4%;font-size:1.4vw;" id="player"></p4>
                 <p4 style="position:absolute;padding-top:14.5%;padding-left:22.7%;font-size:1.4vw;" id="species"></p4>
@@ -109,12 +126,14 @@
                 <p4 style="position:absolute;padding-top:14.5%;padding-left:46.7%;font-size:1.4vw;" id="age"></p4>
                 <p4 style="position:absolute;padding-top:14.5%;padding-left:41%;font-size:1.4vw;" id="sex"></p4>
                 <p4 style="position:absolute;padding-top:39.8%;padding-left:64.3%;font-size:1.4vw;" id="speed"></p4>
-                <p4 style="position:absolute;padding-top:109.7%;padding-left:13.5%;font-size:1.4vw;" id="special-actions"></p4>
             </div>
-            <div class="page", style="background-image: url('img/page_2.png');background-size: 100%;width: 100%;aspect-ratio: 1225/1585;">
+            <div class="page", style="background-image: url('img/page_2.png');background-size: 100%;width: 100%;aspect-ratio: 1225/1585;-webkit-print-color-adjust:exact;print-color-adjust:exact;">
+                <p4 style="position:absolute;padding-top:13.4%;padding-left:7.5%;font-size:1.4vw;" id="species-feats"></p4>
+                <p4 style="position:absolute;padding-top:63.2%;padding-left:7.5%;font-size:1.4vw;width:25%;" id="species-notes"></p4>
             </div>
         </div>
         <script src="species.json"></script>
+        <script src="class.json"></script>
         <script src="character_editor.js"></script>
     </body>
 </html>

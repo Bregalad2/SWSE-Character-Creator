@@ -5,14 +5,21 @@ p {
     padding: 0px;
     margin: 5px;
 }
+
+@font-face {
+    font-family: swfont;
+    src: url(SWFont2.ttf);
+}
+
 p1 {
+    font-family: swfont;
     text-align: center;
     font-weight: normal;
     font-size: 15px;
     margin-top: 5px;
 }
 p2 {
-    
+    font-family: swfont;
     text-align: center;
     font-weight: normal;
     font-size: 8px;
@@ -20,10 +27,6 @@ p2 {
     margin-bottom: 5px;
 }
 
-@font-face {
-    font-family: swfont;
-    src: url(SWFont2.ttf);
-}
 button {
     font-family: swfont;
     height: 40px;
