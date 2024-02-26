@@ -1,0 +1,236 @@
+{
+  "Noble": {
+    "abilities": "Charisma is undoubtedly the Noble's most important Ability Score, as the Noble's skill at interacting with others and projecting a sense of confidence are crucial for his or her success. Wisdom and Intelligence form the basis of other important Skills, so these Ability Scores are also significant."
+    "forcepoints": 5
+    "classfeatures": {
+      "base-attack-bonus": 0,
+      "defense-bonuses: {
+        "will": 2,
+        "Reflex": 1,
+        "con": 0
+      }
+      "starting-feats": 6
+      "other-feats": ["Linguist", "Weapon Proficiency (Pistols)", "Weapon Proficiency (Simple Weapons)"]
+      "Talent Trees": "odd",
+      "Bonus Feats": "even"
+    },
+    "Credits": "A 1st level Noble starts play with 2400 credits.",
+    "Talents": [
+      {
+        "Name": "Leadership",
+        "Prerequisite": "",
+        "Description": "Once per encounter, as a Swift Action, you grant all allies within your line of sight a +1 insight bonus on attack rolls. This effect lasts for as long as they remain within line of sight of you. An ally loses this bonus immediately if line of sight is broken or you are unconscious or dead."
+      },
+      {
+        "Name": "Example 2",
+        "Prerequisite": "Leadership",
+        "Description": "Od lorum ipsum homo espus."
+      },
+    ]
+  },
+}
+
+Could you format the data below to match the JSON above?
+Scout Abilities*
+Most of the Scout's key skills rely on Dexterity, Intelligence, and Wisdom. Strength is also useful for the Scout Trained in athletic Skills.
+Force Points*
+Scout Class Table
+    CLASS LEVEL 1
+2
+3
+4
+CLASS FEATURES
+Defense Bonuses, Starting Feats, Talent Bonus Feat
+Talent
+Bonus Feat
+Talent
+Bonus Feat
+Talent
+Bonus Feat
+Talent
+Bonus Feat
+Talent
+Bonus Feat
+Talent
+Bonus Feat
+Talent
+Bonus Feat
+Talent
+Bonus Feat
+Talent
+Bonus Feat
+     Scouts gain a number of Force Points equal to 5 + one- 5
+half their Character Level (rounded down) at 1st level, and every time they gain a new level in this class. Any Force Points left over from previous levels are lost.
+Class Features
+All of the following are features of the Scout class.
+Base Attack
+Scouts have a base attack of +1.
+Defense Bonuses*
+At 1st level, a Scout gains a +1 Class bonus to their Fortitude Defense and a +2 Class bonus to their Reflex Defense.
+Starting Feats*
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+20
+              Training in 5 skills
+ Shake It Off* 19
+  Weapon Proficiency (Pistols)
+ Weapon Proficiency (Rifles)
+ Weapon Proficiency (Simple Weapons)
+*You must meet the prerequisite of this Feat (minimum Constitution 13 and Trained in Endurance) to gain it.
+Talent Trees*
+At every odd-numbered level (1st, 3rd, 5th, and so on), a Scout gains an additional Talent. A Scout may choose a Talent from any of the Scout or Force Talent Trees they wish, but they must meet the prerequisites (if any) of the chosen Talent. No Talent can be selected more than once unless expressly indicated.
+Bonus Feats*
+At every even-numbered level (2nd, 4th, 6th, etc.), a Scout gains a bonus Feat.
+Credits*
+A 1st level Scout starts play with 1500 credits.
+Talents
+Camouflage
+Hidden Movement*
+Prerequisite: Improved Stealth
+You're very good at hiding when mobile. You take no penalty on your Stealth check when moving your normal Speed. This Talent applies to Stealth checks made while Piloting a Starship (see Starship Stealth).
+Improved Stealth*
+You may choose to reroll any Stealth check, but the result of the reroll must be accepted, even if it is worse. This Talent applies to Stealth checks made while Piloting a Starship (see Starship Stealth).
+Total Concealment*
+Prerequisites: Hidden Movement, Improved Stealth Any situation that would give you Concealment grants
+ *= This rule was copy pasted from the Star Wars Saga Edition Wiki and then modified.
+The Stellar Fantasies: Handbook + Legends Content is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.
+you Total Concealment instead.
+74
+Dig In*
+Reference Book: Star Wars Saga Edition Galaxy at War
+When Prone, you can spend a Swift Action to gain Concealment until the start of your next turn. If you stand up or move, you lose this benefit.
+Confusing Strike: Make a single melee or ranged attack against an opponent within Range. If this opponent is denied its Dexterity bonus to its Reflex Defense, or if you have Concealment form this opponent, a successful attack also causes the opponent to be able to take only a Swift Action on its next turn.
+Unexpected Attack: Make a melee or ranged attack within your Range against an opponent from whom you have Concealment. You gain a +2 bonus on this attack roll if you have Concealment, or a +5 bonus if you have Total Concealment.
+Slip By*
+Reference Book: Star Wars Saga Edition Galaxy at War
+When you would normally provoke an Attack of Opportunity by moving out of a Threatened Area, you can roll a Stealth check, replacing your Reflex Defense with the results of your Stealth check if it is higher.
+Extended Ambush*
+Reference Book: Star Wars Saga Regions
+Prerequisite: Improved Stealth
+Edition
+Unknown
+During a Surprise Round, if you make a ranged attack against a target that is Surprised, you can Aim at the target as a Free Action.
+Ghost Assailant*
+Reference Book: Star Wars Saga Edition Galaxy at War
+If you start your turn with Total Concealment or Total Cover from a target, during that turn you can make a Stealth check as a Swift Action, opposed by the target's Perception check. If you succeed, the target is considered Flat-Footed against you until the end of your turn.
+Hide in Plain Sight*
+Reference Book: Star Wars Saga Edition Scum and Villainy
+Prerequisites: Hidden Movement, Improved Stealth
+Once per encounter, when you are within 2 spaces of Cover or Concealment, you can move to that Cover or Concealment and make a Stealth check to hide as a single Move Action.
+Hunker Down*
+Reference Book: Star Wars Saga Edition Scum and Villainy
+Whenever you benefit from Cover, you can spend a Standard Action to Hunker Down and maximize the benefit of the Cover. You increase the benefit of Cover to Improved Cover or Improved Cover to Total Cover.
+Shadow Striker*
+Reference Book: Star Wars Saga Edition Scum and Villainy
+Prerequisites: Hidden Movement, Improved Stealth
+You excel at fighting from the shadows, hitting your opponents when they least expect it. You can use each of the following actions once per encounter as a Standard Action:
+Blinding Strike: Make a single melee or ranged attack against an opponent within Range. If you damage the target, you gain Total Concealment against that target until the beginning of your next turn.
+*= This rule was copy pasted from the Star Wars Saga Edition Wiki and then modified.
+The Stellar Fantasies: Handbook + Legends Content is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.
+75
+
+Soldier Abilities*
+Since most combat in the Star Wars universe uses
+blasters and other ranged weapons, Dexterity is the
+Soldier's most important Ability Score, followed closely by
+Constitution and Strength. Don't underestimate the 5th importance of Intelligence and Wisdom, however, since
+many of a Soldier's useful Skills are based on these abilities.
+Force Points*
+Soldiers gain a number of Force Points equal to 5 + one- half their Character Level (rounded down) at 1st level, and every time they gain a new level in this class. Any Force Points left over from previous levels are lost.
+Class Features*
+All of the following are features of the Soldier class.
+Base Attack
+The Soldier has a base attack of +2.
+Defense Bonuses*
+At 1st level, a Soldier gains a +1 Class bonus to their Reflex Defense and a +2 Class bonus to their Fortitude Defense.
+Starting Feats*
+ Training in 3 skills
+ Armor Proficiency (Light)
+ Armor Proficiency (Medium)
+ Weapon Proficiency (Pistols)
+ Weapon Proficiency (Rifles)
+ Weapon Proficiency (Simple Weapons)
+Talent Trees*
+At every odd-numbered level (1st, 3rd, 5th, and so on), a Soldier gains an additional Talent. A Soldier may choose a Talent from any of the Soldier or Force Talent Trees they wish, but they must meet the prerequisites (if any) of the chosen Talent. No Talent can be selected more than once unless expressly indicated.
+Bonus Feats*
+At every even-numbered level (2nd, 4th, 6th, etc.), a Soldier gains a bonus Feat.
+Credits
+A 1st-level Soldier starts play with 1500 credits.
+6th 7th 8th 9th 10th 11th 12th 13th 14th 15th 16th 17th 18th 19th 20th
+Talents
+*= This rule was copy pasted from the Star Wars Saga Edition Wiki and then modified.
+The Stellar Fantasies: Handbook + Legends Content is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.
+Soldier Class Table
+CLASS LEVEL 1st
+2nd
+3rd
+4th
+CLASS FEATURES
+Defense Bonuses, Starting Feats, Talent Bonus Feat
+Talent
+Bonus Feat
+Talent
+Bonus Feat
+Talent
+Bonus Feat
+Talent
+Bonus Feat
+Talent
+Bonus Feat
+Talent
+Bonus Feat
+Talent
+Bonus Feat
+Talent
+Bonus Feat
+Talent
+Bonus Feat
+Weapon Specialist
+Devastating Attack*
+Choose a single Exotic Weapon or weapon group with which you are proficient. Whenever you make a successful attack against a target using such a weapon, you treat your target's Damage Threshold as if it were 5 points lower when determining the result of your attack. If you select Heavy Weapons as the weapon group this Talent applies to, you may also use the Talent with Vehicle Weapon attacks.
+You may select this Talent multiple times. Each time you select this Talent, it applies to a different Exotic Weapon or weapon group.
+Penetrating Attack*
+Prerequisite: Weapon Focus with chosen Exotic Weapon or Weapon Group
+Choose a single Exotic Weapon or weapon group with which you are proficient. Whenever you make a successful attack against a target with such a weapon, you treat your target's Damage Reduction as if it were 5 points lower when determining the result of your attack. If you select Heavy Weapons as the weapon group this Talent applies
+76
+
+to, you may also use the Talent with Vehicle Weapon attacks.
+You may select this Talent multiple times. Each time you select this Talent, it applies to a different Exotic Weapon or weapon group.
+Weapon Specialization*
+Prerequisite: Weapon Focus with chosen Exotic Weapon or Weapon Group
+Choose a single Exotic Weapon or weapon group with which you are proficient. You gain a +2 bonus on damage rolls with such weapons. If you select Heavy Weapons as the weapon group this Talent applies to, you may also use the Talent with Vehicle Weapon attacks.
+You may select this Talent multiple times. Each time you select this Talent, it applies to a different Exotic Weapon or weapon group.
+Autofire Assault*
+Reference Book: Star Wars Saga Edition Galaxy at War
+Prerequisite: Weapon Proficiency (Heavy Weapons)
+When making an Autofire attack, you can Brace a Weapon that is not restricted to Autofire-only. You must be proficient with the Weapon being used to activate this Talent.
+Crushing Assault*
+Reference Book: Star Wars Saga Edition Scum and Villainy
+Prerequisite: Weapon Specialization
+You use your attacks to beat down your opponents' defenses. When you successfully damage an opponent using a Bludgeoning weapon that you have the Weapon Specialization Talent for, your next attack against that opponent made before the end of the encounter gains a +2 bonus on the attack roll and to the damage roll. The effects of multiple Crushing Assaults do not stack.
+Disarming Attack*
+Reference Book: Star Wars Saga Edition Knights of the Old Republic Campaign Guide
+Prerequisites: Intelligence 13, Improved Disarm, Weapon Specialization
+Choose a single Exotic Weapon or weapon group with which you are proficient. You ignore a target's armor bonus to Reflex Defense when Disarming with such a weapon. Additionally, as a Free Action, once per encounter, you can grant yourself a +10 bonus on your attack roll when attempting to Disarm an opponent while using such a weapon.
+Impaling Assault*
+Reference Book: Star Wars Saga Edition Scum and Villainy
+Prerequisite: Weapon Specialization
+You can hit your opponents to slow them down. Whenever you successfully damage an opponent using a Piercing weapon that you have the Weapon Specialization Talent for, your opponent reduces its speed by 2 spaces until the end of your next turn. The effects of multiple Impaling Assaults do not stack.
+Improved Suppression Fire*
+Reference Book:Star Wars Saga Edition Legacy Era Campaign Guide
+When you successfully suppress an enemy using the Aid Another Action, that enemy takes a -5 penalty on its attack rolls until the start of your next turn. When targeting an area with an Autofire Weapon, each enemy in the attack area takes a -2 penalty on its attack rolls until the start of your next turn, regardless of whether your attack hits.
+Stinging Assault*
+Reference Book: Star Wars Saga Edition Scum and Villainy
+Prerequisite: Weapon Specialization
+You can deliver nasty injuries that leave your opponents reeling. Whenever you successfully damage an opponent using a Slashing weapon that you have the Weapon Specialization Talent for, your opponent takes a -2 penalty on melee attacks against you until the start of your next turn. The effects of multiple Stinging Assaults do not stack.

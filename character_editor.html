@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Character Editor</title>
+        <link rel="stylesheet" href="character_editor.css">
+    </head>
+    <body onload="nameclick()">
+        <div id="head" class="header">
+            <button id="name" onclick="nameclick();">
+                <p1>Name</p1><br>
+                <p2>Species, Info</p2> 
+            </button>
+            <button id="class" onclick="classclick();">
+                <p1>Class</p1><br>
+                <p2>Multiclassing</p2> 
+            </button>
+            <button id="skills" onclick="skillsclick()">
+                <p1>Skills</p1><br>
+                <p2>Feats, Talents</p2>
+            </button>
+            <button id="abilities" onclick="abilitiesclick()">
+                <p1>Abilities</p1><br>
+                <p2>Defences</p2>
+            </button>
+            <button id="pdf" onclick="pdfclick()">
+                <p3>PDF</p3>
+            </button>
+            <button  id="levelup" onclick="levelup()">
+                <p1>Level Up!</p1>
+            </button>
+        </div>
+        <div id="namediv" class="main">
+            <form>
+                <label>Your Name:</label>
+                <br>
+                <input type="text" id="playerform" name="playerform" onkeyup="save();">
+                <br>
+                <label>Your Character's Name:</label>
+                <br>
+                <input type="text" id="characterform" name="characterform" onkeyup="save();">
+                <br>
+                <label>Sex:</label>
+                <input type="text" id="sexform" name="sexform" onkeyup="save();" style="width:20px;">
+                <label>Age:</label>
+                <input type="text" id="ageform" name="ageform" onkeyup="save();" style="width:20px;">
+                <label>Height:</label>
+                <input type="text" id="heightform" name="heightform" onkeyup="save();" style="width:40px;">
+                <label>Weight:</label>
+                <input type="text" id="weightform" name="weightform" onkeyup="save();" style="width:40px;">
+                <br>
+                <label>Species:</label>
+                <br>
+                <select name="species" id="speciesform" onchange="changespecies();">
+                    <option value="Near-Human">Near Human</option>
+                    <option value="Bith">Bith</option>
+                    <option value="Bothan">Bothan</option>
+                    <option value="Cerean">Cerean</option>
+                    <option value="Clawdite">Clawdite</option>
+                    <option value="Codru-Ji">Codru-Ji</option>
+                    <option value="Devaronian">Devaronian</option>
+                    <option value="Duros">Duros</option>
+                    <option value="Ewok">Ewok</option>
+                    <option value="Falleen">Falleen</option>
+                    <option value="Gungan">Gungan</option>
+                    <option value="Hutt">Hutt</option>
+                    <option value="Jawa">Jawa</option>
+                    <option value="Kaleesh">Kaleesh</option>
+                    <option value="Kaminoan">Kaminoan</option>
+                    <option value="Kel-Dor">Kel Dor</option>
+                    <option value="Mon-Calamari">Mon Calamari</option>
+                    <option value="Nautolan">Nautolan</option>
+                    <option value="Quarren">Quarren</option>
+                    <option value="Rodian">Rodian</option>
+                    <option value="Togruta">Togruta</option>
+                    <option value="Trandoshan">Trandoshan</option>
+                    <option value="Twi'lek">Twi'lek</option>
+                    <option value="Wookiee">Wookiee</option>
+                    <option value="Zabrak">Zabrak</option>
+                </select>
+                <br>
+            </form>
+            <p class="descriptor" id="species-description"></p>
+            <p class="descriptor" id="species-names"></p>
+            <p class="descriptor" id="species-able-size-speed"></p>
+            <div id="bonus-traits"></div>
+        </div>
+        <div id="classdiv", class="main">
+            <form>
+                <label>Your Class:</label>
+            </form>
+        </div>
+        <div id="skillsdiv", class="main">
+            <form>
+                <label>Your Skills:</label>
+            </form>
+        </div>
+        <div id="abilitiesdiv", class="main">
+            <form>
+                <label>Your Abilities:</label>
+            </form>
+        </div>
+        <div id="pdfdiv", class="main">
+            <div class="page", style="background-image: url('img/page_1.png');background-size: 100%;width: 100%;aspect-ratio: 1225/1585;">
+                <p4 style="position:absolute;padding-top:7.9%;padding-left:22.7%;font-size:1.4vw;" id="character"></p4>
+                <p4 style="position:absolute;padding-top:7.9%;padding-left:48.4%;font-size:1.4vw;" id="player"></p4>
+                <p4 style="position:absolute;padding-top:14.5%;padding-left:22.7%;font-size:1.4vw;" id="species"></p4>
+                <p4 style="position:absolute;padding-top:14.5%;padding-left:53%;font-size:1.4vw;" id="height"></p4>
+                <p4 style="position:absolute;padding-top:14.5%;padding-left:61.5%;font-size:1.4vw;" id="weight"></p4>
+                <p4 style="position:absolute;padding-top:14.5%;padding-left:46.7%;font-size:1.4vw;" id="age"></p4>
+                <p4 style="position:absolute;padding-top:14.5%;padding-left:41%;font-size:1.4vw;" id="sex"></p4>
+                <p4 style="position:absolute;padding-top:39.8%;padding-left:64.3%;font-size:1.4vw;" id="speed"></p4>
+                <p4 style="position:absolute;padding-top:109.7%;padding-left:13.5%;font-size:1.4vw;" id="special-actions"></p4>
+            </div>
+            <div class="page", style="background-image: url('img/page_2.png');background-size: 100%;width: 100%;aspect-ratio: 1225/1585;">
+            </div>
+        </div>
+        <script src="species.json"></script>
+        <script src="character_editor.js"></script>
+    </body>
+</html>
