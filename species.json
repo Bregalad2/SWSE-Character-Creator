@@ -29,7 +29,7 @@ speciesstring = `{
         "Sia-Lan",
         "Rann",
         "Talon",
-        "Vor 'en",
+        "Vor'en",
         "Wedge",
         "Winter"
       ],
@@ -52,7 +52,7 @@ speciesstring = `{
           },
           {
             "name": "Bonus Trained Skill",
-            "description": "Near-Humans choose one additional Trained Skill at 1st level from the character 's list of Class Skills."
+            "description": "Near-Humans choose one additional Trained Skill at 1st level from the character's list of Class Skills."
           },
           {
             "name": "Ability Adjustment",
@@ -140,11 +140,11 @@ speciesstring = `{
           },
           {
             "name": "Strength Surge",
-            "description": "Once per encounter, can reroll one Strength-based Ability or Skill Check, doubling the character 's Strength modifier, or can add 2 to a single damage roll on a successful melee attack."
+            "description": "Once per encounter, can reroll one Strength-based Ability or Skill Check, doubling the character's Strength modifier, or can add 2 to a single damage roll on a successful melee attack."
           },
           {
             "name": "Visually Striking",
-            "description": "Character 's appearance is visually surprising or stunning. The character 's Charisma bonus is doubled when using the Persuasion skill on Humans, Near-Humans, and similar humanoids."
+            "description": "Character's appearance is visually surprising or stunning. The character's Charisma bonus is doubled when using the Persuasion skill on Humans, Near-Humans, and similar humanoids."
           },
           {
             "name": "Weapon Familiarity",
@@ -205,11 +205,11 @@ speciesstring = `{
       "name": "Bothan",
       "description": "Native to Bothawui, these short, fur-covered humanoids have had hyperspace travel for thousands of years. Bothans use information as a measure of wealth and power, even wielding it as a weapon when necessary.",
       "example-names": [
-        "Borsk Fey 'lya",
-        "Karka Kre 'fey",
+        "Borsk Fey'lya",
+        "Karka Kre'fey",
         "Koth Melan",
-        "Tav Breil 'lya",
-        "Tereb Ab 'lon"
+        "Tav Breil'lya",
+        "Tereb Ab'lon"
       ],
       "species-traits": {
         "ability-score-adjustment": {
@@ -268,7 +268,7 @@ speciesstring = `{
           },
           {
             "name": "Intuitive Initiative",
-            "description": "Despite their general lack of coordination, Cereans ' reaction speed is superior to that of most other Species."
+            "description": "Despite their general lack of coordination, Cereans' reaction speed is superior to that of most other Species."
           }
         ],
         "automatic-language": [
@@ -306,7 +306,7 @@ speciesstring = `{
           },
           {
             "name": "Startle",
-            "description": "Once per encounter, as a reaction to being attacked, a Clawdite can make a Deception check against the attacker 's Will Defense. If successful, the attacker takes a -5 penalty on their attack roll."
+            "description": "Once per encounter, as a reaction to being attacked, a Clawdite can make a Deception check against the attacker's Will Defense. If successful, the attacker takes a -5 penalty on their attack roll."
           }
         ],
         "automatic-language": [
@@ -427,7 +427,7 @@ speciesstring = `{
         "bonus-traits": [
           {
             "name": "Expert Pilot",
-            "description": "A Duros may choose to reroll any Pilot check, but must accept the result of the reroll even if it 's worse."
+            "description": "A Duros may choose to reroll any Pilot check, but must accept the result of the reroll even if it's worse."
           }
         ],
         "automatic-language": [
@@ -473,7 +473,7 @@ speciesstring = `{
           },
           {
             "name": "Sneaky",
-            "description": "An Ewok may choose to reroll any Stealth check, but must accept the result of the reroll even if it 's worse."
+            "description": "An Ewok may choose to reroll any Stealth check, but must accept the result of the reroll even if it's worse."
           }
         ],
         "automatic-language": [
@@ -551,7 +551,7 @@ speciesstring = `{
         "bonus-traits": [
           {
             "name": "Expert Swimmer",
-            "description": "A Gungan may choose to reroll any Swim check, but must accept the result of the reroll even if it 's worse."
+            "description": "A Gungan may choose to reroll any Swim check, but must accept the result of the reroll even if it's worse."
           },
           {
             "name": "Lightning Reflexes",
@@ -605,11 +605,11 @@ speciesstring = `{
           },
           {
             "name": "Force Resistance",
-            "description": "A Hutt 's sharp mind allows them to resist Force abilities. Hutts receive a +5 bonus to their Will Defense against any use of the Use the Force skill."
+            "description": "A Hutt's sharp mind allows them to resist Force abilities. Hutts receive a +5 bonus to their Will Defense against any use of the Use the Force skill."
           },
           {
             "name": "Supreme Stability",
-            "description": "A Hutt 's sluglike body structure and lack of any kind of legs allows a Hutt to become completely immune to being knocked Prone."
+            "description": "A Hutt's sluglike body structure and lack of any kind of legs allows a Hutt to become completely immune to being knocked Prone."
           },
           {
             "name": "Silver Tongued",
@@ -675,7 +675,7 @@ speciesstring = `{
       "example-names": [
         "Qymaen jai Sheelal",
         "Ronderu lij Kummar",
-        "Bentilais san Sk 'ar"
+        "Bentilais san Sk'ar"
       ],
       "species-traits": {
         "ability-score-adjustment": {
@@ -783,7 +783,7 @@ speciesstring = `{
             "description": "Kel Dor ignore Concealment (but not Total Concealment) from darkness."
           }
         ],
-        "special-equipment": "Kel Dor require breath masks and goggles to survive outside Dorin 's atmosphere. Without them, they cannot breathe or see.",
+        "special-equipment": "Kel Dor require breath masks and goggles to survive outside Dorin's atmosphere. Without them, they cannot breathe or see.",
         "automatic-language": [
           "Basic",
           "Kel Dor"
@@ -841,7 +841,7 @@ speciesstring = `{
     },
     "Nautolan": {
       "name": "Nautolan",
-      "description": "Nautolans are one of the sentient Species native to the planet Glee Anselm. Their language, Nautila, evolved underwater and is heavily tied to pheromones. Out of water, Nautila loses much of its meaning. As a result, Nautolans learn another language, typically either Basic or Anselmian, the language of the Anselmi people, who are native to Glee Anselm 's land masses. Nautolans are hardy and excellent swimmers.",
+      "description": "Nautolans are one of the sentient Species native to the planet Glee Anselm. Their language, Nautila, evolved underwater and is heavily tied to pheromones. Out of water, Nautila loses much of its meaning. As a result, Nautolans learn another language, typically either Basic or Anselmian, the language of the Anselmi people, who are native to Glee Anselm's land masses. Nautolans are hardy and excellent swimmers.",
       "example-names": [
         "Hiskar Dorset",
         "Kit Fisto",
@@ -865,7 +865,7 @@ speciesstring = `{
         "bonus-traits": [
           {
             "name": "Breathe Underwater",
-            "description": "Nautolans can 't drown in water."
+            "description": "Nautolans can't drown in water."
           },
           {
             "name": "Damage Reduction",
@@ -892,7 +892,7 @@ speciesstring = `{
     },
     "Quarren": {
       "name": "Quarren",
-      "description": "Quarren hail from the distant Outer Rim planet of Mon Calamari, sharing the world with the sentient humanoid Species of the same name. Quarren generally stay clear of galactic politics, involving themselves in shadowy occupations such as pirates, smugglers, and spy networks. They tend to blame both the Empire and the Rebels for their homeworld 's devastation during the Galactic Civil War.",
+      "description": "Quarren hail from the distant Outer Rim planet of Mon Calamari, sharing the world with the sentient humanoid Species of the same name. Quarren generally stay clear of galactic politics, involving themselves in shadowy occupations such as pirates, smugglers, and spy networks. They tend to blame both the Empire and the Rebels for their homeworld's devastation during the Galactic Civil War.",
       "example-names": [
         "Kelmut",
         "Seggor",
@@ -916,7 +916,7 @@ speciesstring = `{
         "bonus-traits": [
           {
             "name": "Breathe Underwater",
-            "description": "Quarren can 't drown in water."
+            "description": "Quarren can't drown in water."
           },
           {
             "name": "Conditional Bonus Feat",
@@ -1078,9 +1078,9 @@ speciesstring = `{
         ]
       }
     },
-    "Twi 'lek": {
-      "name": "Twi 'lek",
-      "description": "From the dry, rocky world of Ryloth, Twi 'leks have made a place for themselves along the Galaxy. These tall, thin humanoids include a variety of distinct subraces, but all are instantly recognizable by the tentacular  'Head-Tails ' (called Lekku) that protrude from the backs of their heads. Sly, calculating beings, Twi 'leks prefer to avoid trouble and stick to the shadows until an opportunity to act without undue danger to themselves presents itself. Their entrepreneurial spirit frequently leads them to positions of influence, and Twi 'lek corporate executives and ambassadors are no less common than unscrupulous Twi 'lek freighter captains and crime lords.",
+    "Twi'lek": {
+      "name": "Twi'lek",
+      "description": "From the dry, rocky world of Ryloth, Twi'leks have made a place for themselves along the Galaxy. These tall, thin humanoids include a variety of distinct subraces, but all are instantly recognizable by the tentacular 'Head-Tails' (called Lekku) that protrude from the backs of their heads. Sly, calculating beings, Twi'leks prefer to avoid trouble and stick to the shadows until an opportunity to act without undue danger to themselves presents itself. Their entrepreneurial spirit frequently leads them to positions of influence, and Twi'lek corporate executives and ambassadors are no less common than unscrupulous Twi'lek freighter captains and crime lords.",
       "example-names": [
         "Bib Fortuna",
         "Deel Surool",
@@ -1105,11 +1105,11 @@ speciesstring = `{
         "bonus-traits": [
           {
             "name": "Deceptive",
-            "description": "Naturally gifted at manipulation, a Twi 'lek may choose to reroll any Deception check, but the result of the reroll must be accepted, even if it is worse."
+            "description": "Naturally gifted at manipulation, a Twi'lek may choose to reroll any Deception check, but the result of the reroll must be accepted, even if it is worse."
           },
           {
             "name": "Great Fortitude",
-            "description": "Twi 'leks gain a +2 Species bonus to their Fortitude Defense. Twi 'leks have great health with a natural resistance to toxins and illnesses."
+            "description": "Twi'leks gain a +2 Species bonus to their Fortitude Defense. Twi'leks have great health with a natural resistance to toxins and illnesses."
           }
         ],
         "automatic-language": [

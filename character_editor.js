@@ -1,12 +1,26 @@
-namediv = document.getElementById('namediv')
-classdiv = document.getElementById('classdiv')
-skillsdiv = document.getElementById('skillsdiv')
-abilitiesdiv = document.getElementById('abilitiesdiv')
-pdfdiv = document.getElementById('pdfdiv')
 species = JSON.parse(speciesstring)
 classes = JSON.parse(classstring)
 
+function clickchange (name) {
+    document.getElementById('namediv').style.display = 'none'
+    document.getElementById('classdiv').style.display = 'none'
+    document.getElementById('skillsdiv').style.display = 'none'
+    document.getElementById('abilitiesdiv').style.display = 'none'
+    document.getElementById('pdfdiv').style.display = 'none'
+    document.getElementById(name+"div").style.display = 'revert'
+    document.getElementById('name').style.background = '#c0bfdf'
+    document.getElementById('class').style.background = '#c0bfdf'
+    document.getElementById('skills').style.background = '#c0bfdf'
+    document.getElementById('abilities').style.background = '#c0bfdf'
+    document.getElementById('pdf').style.background = '#c0bfdf'
+    document.getElementById(name).style.background = "#9b96ca"
+
+
+}
+
 function nameclick () {
+    clickchange("name")
+    save()
     namediv.style.display      = 'revert'
     classdiv.style.display     = 'none'
     skillsdiv.style.display    = 'none'
@@ -22,6 +36,8 @@ function nameclick () {
     changespecies()
 }
 function classclick () {
+    clickchange("class")
+    save()
     namediv.style.display      = 'none'
     classdiv.style.display     = 'revert'
     skillsdiv.style.display    = 'none'
@@ -29,8 +45,13 @@ function classclick () {
     pdfdiv.style.display       = 'none'
     document.getElementById("classform").value = localStorage.getItem("class")
     changeclass()
+    document.getElementById("levelform").value = localStorage.getItem("level")
+    document.getElementById("creditform").value = localStorage.getItem("credits")
 }
 function skillsclick () {
+    clickchange("skills")
+    document.getElementById("skilllabel").innerHTML = "Skills (you have "+classes[localStorage.getItem("class")]["classfeatures"]["starting-skills"]+" by default):"
+    save()
     namediv.style.display      = 'none'
     classdiv.style.display     = 'none'
     skillsdiv.style.display    = 'revert'
@@ -38,6 +59,8 @@ function skillsclick () {
     pdfdiv.style.display       = 'none'
 }
 function abilitiesclick () {
+    clickchange("abilities")
+    save()
     namediv.style.display      = 'none'
     classdiv.style.display     = 'none'
     skillsdiv.style.display    = 'none'
@@ -45,6 +68,7 @@ function abilitiesclick () {
     pdfdiv.style.display       = 'none'
 }
 function pdfclick () {
+    clickchange("pdf")
     namediv.style.display      = 'none'
     classdiv.style.display     = 'none'
     skillsdiv.style.display    = 'none'
@@ -63,6 +87,18 @@ function pdfclick () {
         document.getElementById("speed").innerHTML += "Swim: "+species[currentspecies]["species-traits"]["speed"]["swim"]
     } else {document.getElementById("speed").innerHTML +=species[currentspecies]["species-traits"]["speed"]}
     document.getElementById("species-feats").innerHTML = localStorage.getItem("species-feats")
+    document.getElementById("classes").innerHTML = localStorage.getItem("class")+", "+ (localStorage.getItem("class2") || " ")
+    document.getElementById("level").innerHTML = localStorage.getItem("level")
+    document.getElementById("force-points").innerHTML = classes[localStorage.getItem("class")]["forcepoints"]+Math.floor(localStorage.getItem("level")/2)
+    document.getElementById("base-attack").innerHTML = classes[localStorage.getItem("class")]["classfeatures"]["base-attack-bonus"]
+    document.getElementById("fort-lvl").innerHTML = Math.floor(localStorage.getItem("level")/2)
+    document.getElementById("ref-lvl").innerHTML = Math.floor(localStorage.getItem("level")/2)
+    document.getElementById("will-lvl").innerHTML = Math.floor(localStorage.getItem("level")/2)
+    document.getElementById("fort-class").innerHTML = classes[localStorage.getItem("class")]["classfeatures"]["defense-bonuses"]["Fortitude"] || 0
+    document.getElementById("ref-class").innerHTML = classes[localStorage.getItem("class")]["classfeatures"]["defense-bonuses"]["Reflex"] || 0
+    document.getElementById("will-class").innerHTML = classes[localStorage.getItem("class")]["classfeatures"]["defense-bonuses"]["Will"] || 0
+    document.getElementById("credits").innerHTML = localStorage.getItem("credits")
+    document.getElementById("force-uses").innerHTML = Math.floor(localStorage.getItem("level")/2)+1
 }
 
 function processhuman (currentspecies) {
@@ -122,6 +158,16 @@ function save() {
     localStorage.setItem("height", document.getElementById("heightform").value)
     localStorage.setItem("age", document.getElementById("ageform").value)
     localStorage.setItem("sex", document.getElementById("sexform").value)
+    localStorage.setItem("level", document.getElementById("levelform").value)
+    if (document.getElementById("levelform").value > 11) {
+        
+    } else if (document.getElementById("levelform").value > 1) {
+        document.getElementById("multiclass").style.display = 'revert'
+    } else {
+        localStorage.setItem("class2", undefined)
+        document.getElementById("multiclass").style.display = 'none'
+    }
+    localStorage.setItem("credits", document.getElementById("creditform").value)
 }
 
 function printpdf () {
@@ -150,4 +196,20 @@ function changeclass () {
     document.getElementById("class-desc").innerHTML += classes[currentclass]["classfeatures"]["other-feats"].join(", ")
     document.getElementById("class-desc").innerHTML += " and "+classes[currentclass]["classfeatures"]["starting-skills"]+" other starting skills of your choice."
     
+}
+function changeclass2 () {
+    currentclass = document.getElementById("classform2").value
+    localStorage.setItem("class2", currentclass)
+    document.getElementById("class2-desc").innerHTML = classes[currentclass]["abilities"]+" You also receive "
+    if (classes[currentclass]["classfeatures"]["defense-bonuses"]["Fortitude"]) {
+        document.getElementById("class2-desc").innerHTML += "+"+classes[currentclass]["classfeatures"]["defense-bonuses"]["Fortitude"]+" to your Fortitude defence, "
+    }
+    if (classes[currentclass]["classfeatures"]["defense-bonuses"]["Reflex"]) {
+        document.getElementById("class2-desc").innerHTML += "+"+classes[currentclass]["classfeatures"]["defense-bonuses"]["Reflex"]+" to your Reflex defence, "
+    }
+    if (classes[currentclass]["classfeatures"]["defense-bonuses"]["Will"]) {
+        document.getElementById("class2-desc").innerHTML += "+"+classes[currentclass]["classfeatures"]["defense-bonuses"]["Will"]+" to your Will defence, "
+    }
+    document.getElementById("class2-desc").innerHTML += classes[currentclass]["classfeatures"]["other-feats"].join(", ")
+    document.getElementById("class2-desc").innerHTML += " and "+classes[currentclass]["classfeatures"]["starting-skills"]+" other starting skills of your choice."
 }
