@@ -5,12 +5,14 @@ function clickchange (name) {
     document.getElementById('namediv').style.display = 'none'
     document.getElementById('classdiv').style.display = 'none'
     document.getElementById('skillsdiv').style.display = 'none'
+    document.getElementById('featsdiv').style.display = 'none'
     document.getElementById('abilitiesdiv').style.display = 'none'
     document.getElementById('pdfdiv').style.display = 'none'
     document.getElementById(name+"div").style.display = 'revert'
     document.getElementById('name').style.background = '#c0bfdf'
     document.getElementById('class').style.background = '#c0bfdf'
     document.getElementById('skills').style.background = '#c0bfdf'
+    document.getElementById('feats').style.background = '#c0bfdf'
     document.getElementById('abilities').style.background = '#c0bfdf'
     document.getElementById('pdf').style.background = '#c0bfdf'
     document.getElementById(name).style.background = "#9b96ca"
@@ -21,11 +23,6 @@ function clickchange (name) {
 function nameclick () {
     clickchange("name")
     save()
-    namediv.style.display      = 'revert'
-    classdiv.style.display     = 'none'
-    skillsdiv.style.display    = 'none'
-    abilitiesdiv.style.display = 'none'
-    pdfdiv.style.display       = 'none'
     document.getElementById("characterform").value = localStorage.getItem("character")
     document.getElementById("playerform").value = localStorage.getItem("player")
     document.getElementById("speciesform").value = localStorage.getItem("species")
@@ -38,11 +35,6 @@ function nameclick () {
 function classclick () {
     clickchange("class")
     save()
-    namediv.style.display      = 'none'
-    classdiv.style.display     = 'revert'
-    skillsdiv.style.display    = 'none'
-    abilitiesdiv.style.display = 'none'
-    pdfdiv.style.display       = 'none'
     document.getElementById("classform").value = localStorage.getItem("class")
     changeclass()
     document.getElementById("levelform").value = localStorage.getItem("level")
@@ -50,30 +42,28 @@ function classclick () {
 }
 function skillsclick () {
     clickchange("skills")
-    document.getElementById("skilllabel").innerHTML = "Skills (you have "+classes[localStorage.getItem("class")]["classfeatures"]["starting-skills"]+" by default):"
+    if (classes[localStorage.getItem("class")]["classfeatures"]["starting-skills"] <= localStorage.getItem("skills").split(",").length-1) {
+        document.getElementById("skilllabel").innerHTML = "Skills (you have reached your maximum, make sure you are leveling yourself up correcly before continueing):"
+    } else {
+        document.getElementById("skilllabel").innerHTML = "Skills (you have "+classes[localStorage.getItem("class")]["classfeatures"]["starting-skills"]+" by default):"
+    }
+    for (const skill of localStorage.getItem("skills").split(",")){
+        if (skill) {
+            document.getElementById(skill+"-checkbox").checked = true
+        }
+    }
     save()
-    namediv.style.display      = 'none'
-    classdiv.style.display     = 'none'
-    skillsdiv.style.display    = 'revert'
-    abilitiesdiv.style.display = 'none'
-    pdfdiv.style.display       = 'none'
+}
+function abilitiesclick () {
+    clickchange("feats")
+    save()
 }
 function abilitiesclick () {
     clickchange("abilities")
     save()
-    namediv.style.display      = 'none'
-    classdiv.style.display     = 'none'
-    skillsdiv.style.display    = 'none'
-    abilitiesdiv.style.display = 'revert'
-    pdfdiv.style.display       = 'none'
 }
 function pdfclick () {
     clickchange("pdf")
-    namediv.style.display      = 'none'
-    classdiv.style.display     = 'none'
-    skillsdiv.style.display    = 'none'
-    abilitiesdiv.style.display = 'none'
-    pdfdiv.style.display       = 'revert'
     document.getElementById("character").innerHTML = localStorage.getItem("character")
     document.getElementById("player").innerHTML = localStorage.getItem("player")
     document.getElementById("species").innerHTML = species[localStorage.getItem("species")]["name"]
@@ -86,7 +76,7 @@ function pdfclick () {
         document.getElementById("speed").innerHTML += "Land: "+species[currentspecies]["species-traits"]["speed"]["land"]+", <br>"
         document.getElementById("speed").innerHTML += "Swim: "+species[currentspecies]["species-traits"]["speed"]["swim"]
     } else {document.getElementById("speed").innerHTML +=species[currentspecies]["species-traits"]["speed"]}
-    document.getElementById("species-feats").innerHTML = localStorage.getItem("species-feats")
+    document.getElementById("species-1").innerHTML = localStorage.getItem("species-feats")
     document.getElementById("classes").innerHTML = localStorage.getItem("class")+", "+ (localStorage.getItem("class2") || " ")
     document.getElementById("level").innerHTML = localStorage.getItem("level")
     document.getElementById("force-points").innerHTML = classes[localStorage.getItem("class")]["forcepoints"]+Math.floor(localStorage.getItem("level")/2)
@@ -99,6 +89,9 @@ function pdfclick () {
     document.getElementById("will-class").innerHTML = classes[localStorage.getItem("class")]["classfeatures"]["defense-bonuses"]["Will"] || 0
     document.getElementById("credits").innerHTML = localStorage.getItem("credits")
     document.getElementById("force-uses").innerHTML = Math.floor(localStorage.getItem("level")/2)+1
+    for (const skill of localStorage.getItem("skills").split(",")) {
+        if (skill) {document.getElementById(skill).innerHTML += "  ▣"}
+    }
 }
 
 function processhuman (currentspecies) {
@@ -170,16 +163,6 @@ function save() {
     localStorage.setItem("credits", document.getElementById("creditform").value)
 }
 
-function printpdf () {
-    pdfclick()
-    var prtContent = document.getElementById("pdfdiv")
-    var WinPrint = window.open()
-    WinPrint.document.write(prtContent.innerHTML)
-    WinPrint.document.close()
-    WinPrint.focus()
-    WinPrint.print()
-}
-
 function changeclass () {
     currentclass = document.getElementById("classform").value
     localStorage.setItem("class", currentclass)
@@ -212,4 +195,24 @@ function changeclass2 () {
     }
     document.getElementById("class2-desc").innerHTML += classes[currentclass]["classfeatures"]["other-feats"].join(", ")
     document.getElementById("class2-desc").innerHTML += " and "+classes[currentclass]["classfeatures"]["starting-skills"]+" other starting skills of your choice."
+}
+
+function saveskill () {
+    checked_skills = ""
+    for (const skill of document.getElementsByClassName("skill")) {
+        if (skill.checked) {
+            checked_skills += skill.value+","
+        }
+    }
+    if (classes[localStorage.getItem("class")]["classfeatures"]["starting-skills"] <= checked_skills.split(",").length-1) {
+        document.getElementById("skilllabel").innerHTML = "Skills (you have reached your maximum, make sure you are leveling yourself up correcly before continueing):"
+        console.log(classes[localStorage.getItem("class")]["classfeatures"]["starting-skills"], checked_skills.split(",").length)
+    } else {
+        document.getElementById("skilllabel").innerHTML = "Skills (you have "+classes[localStorage.getItem("class")]["classfeatures"]["starting-skills"]+" by default):"
+    }
+    localStorage.setItem("skills", checked_skills)
+}
+
+function featclick (button) {
+    localStorage.setItem("feats", localStorage.getItem("feats")+button.id)
 }

@@ -1,50 +1,51 @@
-<label>Acrobatics (Dex)</label>
-<input type="checkbox" id="Acrobatics" name="Acrobatics" value="Acrobatics"><input type="checkbox" id="Acrobatics2" name="Acrobatics2" value="Acrobatics2"><br>
-<label>Climb (Str)</label>
-<input type="checkbox" id="Climb" name="Climb" value="Climb"><input type="checkbox" id="Climb2" name="Climb2" value="Climb2"><br>
-<label>Deception (Cha)</label>
-<input type="checkbox" id="Deception" name="Deception" value="Deception"><input type="checkbox" id="Deception2" name="Deception2" value="Deception2"><br>
-<label>Endurance (Con)</label>
-<input type="checkbox" id="Endurance" name="Endurance" value="Endurance"><input type="checkbox" id="Endurance2" name="Endurance2" value="Endurance2"><br>
-<label>Gather Information (Cha)</label>
-<input type="checkbox" id="Gather Information" name="Gather Information" value="Gather Information"><input type="checkbox" id="Gather Information2" name="Gather Information2" value="Gather Information2"><br>
-<label>Initiative (Dex)</label>
-<input type="checkbox" id="Initiative" name="Initiative" value="Initiative"><input type="checkbox" id="Initiative2" name="Initiative2" value="Initiative2"><br>
-<label>Jump (Str)</label>
-<input type="checkbox" id="Jump" name="Jump" value="Jump"><input type="checkbox" id="Jump2" name="Jump2" value="Jump2"><br>
-<label>Knowledge: Bureaucracy (Int)</label>
-<input type="checkbox" id="Bureaucracy " name="Bureaucracy " value="Bureaucracy "><input type="checkbox" id="Bureaucracy2" name="Bureaucracy2" value="Bureaucracy2"><br>
-<label>Knowledge: Galactic Lore (Int)</label>
-<input type="checkbox" id="Galactic " name="Galactic " value="Galactic "><input type="checkbox" id="Galactic2" name="Galactic2 " value="Galactic2"><br>
-<label>Knowledge: Life Science (Int)</label>
-<input type="checkbox" id="Life " name="Life " value="Life "><input type="checkbox" id="Life2" name="Life2 " value="Life2"><br>
-<label>Knowledge: Physical Science (Int)</label>
-<input type="checkbox" id="Physical " name="Physical " value="Physical "><input type="checkbox" id="Physical2" name="Physical2 " value="Physical2"><br>
-<label>Knowledge: Social Science (Int)</label>
-<input type="checkbox" id="Social " name="Social " value="Social "><input type="checkbox" id="Social2" name="Social2 " value="Social2"><br>
-<label>Knowledge: Tactics (Int)</label>
-<input type="checkbox" id="Tactics " name="Tactics " value="Tactics "><input type="checkbox" id="Tactics2" name="Tactics2" value="Tactics2"><br>
-<label>Knowledge: Technology (Int)</label>
-<input type="checkbox" id="Technology " name="Technology " value="Technology "><input type="checkbox" id="Technology2" name="Technology2" value="Technology2"><br>
-<label>Mechanics (Int)</label>
-<input type="checkbox" id="Mechanics" name="Mechanics" value="Mechanics"><input type="checkbox" id="Mechanics2" name="Mechanics2" value="Mechanics2"><br>
-<label>Perception (Wis)</label>
-<input type="checkbox" id="Perception" name="Perception" value="Perception"><input type="checkbox" id="Perception2" name="Perception2" value="Perception2"><br>
-<label>Persuasion (Cha)</label>
-<input type="checkbox" id="Persuasion" name="Persuasion" value="Persuasion"><input type="checkbox" id="Persuasion2" name="Persuasion2" value="Persuasion2"><br>
-<label>Pilot (Dex)</label>
-<input type="checkbox" id="Pilot" name="Pilot" value="Pilot"><input type="checkbox" id="Pilot2" name="Pilot2" value="Pilot2"><br>
-<label>Ride (Dex)</label>
-<input type="checkbox" id="Ride" name="Ride" value="Ride"><input type="checkbox" id="Ride2" name="Ride2" value="Ride2"><br>
-<label>Stealth (Dex)</label>
-<input type="checkbox" id="Stealth" name="Stealth" value="Stealth"><input type="checkbox" id="Stealth2" name="Stealth2" value="Stealth2"><br>
-<label>Survival (Wis)</label>
-<input type="checkbox" id="Survival" name="Survival" value="Survival"><input type="checkbox" id="Survival2" name="Survival2" value="Survival2"><br>
-<label>Swim (Str)</label>
-<input type="checkbox" id="Swim" name="Swim" value="Swim"><input type="checkbox" id="Swim2" name="Swim2" value="Swim2"><br>
-<label>Treat Injury (Wis)</label>
-<input type="checkbox" id="Treat Injury" name="Treat Injury" value="Treat Injury"><input type="checkbox" id="Treat Injury2" name="Treat Injury2" value="Treat Injury2"><br>
-<label>Use Computer (Int)</label>
-<input type="checkbox" id="Use Computer" name="Use Computer" value="Use Computer"><input type="checkbox" id="Use Computer2" name="Use Computer2" value="Use Computer2"><br>
-<label>Use the Force (Cha)</label>
-<input type="checkbox" id="Use the Force" name="Use the Force" value="Use the Force"><input type="checkbox" id="Use the Force2" name="Use the Force2" value="Use the Force2"><br>
+
+acro
+acro-2
+climb
+climb2
+dec
+dec-2
+endu
+endu-2
+info
+info-2
+init
+init2
+jump
+jump-2
+bure
+lore
+life
+phys
+soci
+tact
+tech
+mech
+perc
+pers
+pil
+ride
+stea
+surv
+swim
+inj
+comp
+forc
+bure-2
+lore-2
+life-2
+phys-2
+soci-2
+tact-2
+tech-2
+mech-2
+perc-2
+pers-2
+pil-2
+ride-2
+stea-2
+surv-2
+swim-2
+inj-2
+comp-2
+forc-2

@@ -2,6 +2,24 @@
     font-family: orbitron;
     src: url(Orbitron.ttf);
 }
+@media print {
+    * {
+        font-family: orbitron;
+    }
+    .header {
+        visibility: hidden;
+    }
+    div {
+        border: 0px !important;
+        border-radius: 0px !important;
+        margin: 0px !important;
+        padding: 0px !important;
+    }
+    svg {
+        border: 0px !important;
+        margin: 0px !important;
+    }
+}
 
 * {
     font-family: orbitron;
@@ -67,6 +85,14 @@ img {
     max-width: 100%;
 }
 
+svg {
+    border: 2px;
+    border-radius: 8px;
+    border-color: #9b96ca;
+    border-style: solid;
+    margin: 10px;
+}
+
 input {
     border: 0px;
     border-radius: 2px;
@@ -113,21 +139,33 @@ input:focus-visible {
     
 }
 .skill {
-    position: absolute;
-    left: 24%;
+    border-radius: 2;
+    height: 25px;
+    width: 25px;
+    border: 0px;
+    background-color: #9b96ca;
+    color: #54516d;
+}
+.skill::after {
+    border-radius: 2;
+    height: 25px;
+    width: 25px;
+    border: 0px;
+    background-color: #9b96ca;
+    color: #54516d;
 }
 
-.skillb {
-    position: absolute;
-    left: 26%;
+.tables {
+    border: 2px;
+    border-color: #9b96ca;
+    border-radius: 8px;
+    border-style: solid;
+    border-left: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
 }
 
 .guidebox {
-    border-radius: 0px;
-    border-left: 0px;
-    border-right: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-    padding-left: 0px;
-    padding-right: 0px;
+    background-color: #c0bfdf;
 }
+
