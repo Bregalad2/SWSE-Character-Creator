@@ -43,6 +43,15 @@
                 <p1>Display</p1><br>
                 <p2>Cool Text!</p2>
             </button>
+            <button id="download" onclick="downloadLocalStorageAsJSON()">
+                <p1>Download</p1><br>
+                <p2>As JSON File</p2>
+            </button>
+            <button id="upload" onclick="document.getElementById('uploader').click()">
+                <p1>Upload</p1><br>
+                <p2>A JSON File</p2>
+            </button>
+            <input type="file" id="uploader" style="visibility: hidden;" accept=".character" onchange="uploadJSONToLocalStorage(event)">
         </div>
         <div id="namediv" class="main">
             <form>
@@ -99,7 +108,7 @@
         <div id="classdiv" class="main">
             <form>
                 <label>Class:</label>
-                <select name="classes" id="classform" onchange="changeclass();">
+                <select name="classes" id="classform" onchange="changeclass(this);">
                     <option value="Lightsaber Force Acolyte">Lightsaber Force Acolyte</option>
                     <option value="Jedi Force Acolyte">Jedi Force Acolyte</option>
                     <option value="Sith Force Acolyte">Sith Force Acolyte</option>
@@ -119,8 +128,8 @@
             </form>
             <form id="multiclass">
                 <label>MultiClass:</label>
-                <select name="classes2" id="classform2" onchange="changeclass2();">
-                    <option value=""    >None</option>
+                <select name="classes" id="class-2form" onchange="changeclass2(this);">
+                    <option value="">None</option>
                     <option value="Lightsaber Force Acolyte">Lightsaber Force Acolyte</option>
                     <option value="Jedi Force Acolyte">Jedi Force Acolyte</option>
                     <option value="Sith Force Acolyte">Sith Force Acolyte</option>
@@ -130,7 +139,7 @@
                     <option value="Soldier">Soldier</option>
                     <option value="Technician">Technician</option>
                 </select>
-                <p id="class2-desc"></p>
+                <p id="class-2desc"></p>
             </form>
         </div>
         <div id="skillsdiv" class="main">
@@ -474,12 +483,107 @@
                         <td><input type="text" class="abilities-input" id="wil-overrideform" name="will-overrideform" onkeyup="saveability(this);"></td>
                         <td class="abilities-label" id="wil-result"></td>
                     </tr>
-                </table>                                
+                </table>
+                <label>Misc items you may need to edit:</label>
+                <table class="tables">
+                    <tr>
+                        <td>Torso ±:</td>
+                        <td><input type="text" class="abilities-input" id="torso-miscform" name="misc" onkeyup="save(this);"></td>
+                    </tr>
+                    <tr class="guidebox">
+                        <td>Head ±:</td>
+                        <td><input type="text" class="abilities-input" id="head-miscform" name="misc" onkeyup="save(this);"></td>
+                    </tr>
+                    <tr>
+                        <td>Limb ±:</td>
+                        <td><input type="text" class="abilities-input" id="limb-miscform" name="misc" onkeyup="save(this);"></td>
+                    </tr>
+                    <tr class="guidebox">
+                        <td>Damage Reduction ±:</td>
+                        <td><input type="text" class="abilities-input" id="dmg-redform" name="misc" onkeyup="save(this);"></td>
+                    </tr>
+                    <tr>
+                        <td>Base Attack ±:</td>
+                        <td><input type="text" class="abilities-input" id="base-attackform" name="will-baseform" onkeyup="save(this);"></td>
+                    </tr>
+                    <tr class="guidebox">
+                        <td>Speed ±:</td>
+                        <td><input type="text" class="abilities-input" id="speedform" name="will-baseform" onkeyup="save(this);"></td>
+                    </tr>
+                    <tr>
+                        <td>Force Points ±:</td>
+                        <td><input type="text" class="abilities-input" id="force-pointsform" name="will-baseform" onkeyup="save(this);"></td>
+                    </tr>
+                    <tr class="guidebox">
+                        <td>Destiny Points ±:</td>
+                        <td><input type="text" class="abilities-input" id="destiny-pointsform" name="will-baseform" onkeyup="save(this);"></td>
+                    </tr>
+                    <tr>
+                        <td>Fortitude ±:</td>
+                        <td><input type="text" class="abilities-input" id="fort-miscform" name="will-baseform" onkeyup="save(this);"></td>
+                    </tr>
+                    <tr class="guidebox">
+                        <td>Reflex ±:</td>
+                        <td><input type="text" class="abilities-input" id="ref-miscform" name="will-baseform" onkeyup="save(this);"></td>
+                    </tr>
+                    <tr>
+                        <td>Will ±:</td>
+                        <td><input type="text" class="abilities-input" id="will-miscform" name="will-baseform" onkeyup="save(this);"></td>
+                    </tr>
+                </table>
             </form>
         </div>
         <div id="talentsdiv" class="main">
             <form>
-                <label>Your Talents:</label>
+                <label id="talentslabel"></label>
+                <select name="talentsform" class="talentsform" onchange="savetalent(this);" id="talents-1form" style="display:none">
+                </select>
+                <label class="talentdesc" id="talents-1desc"></label>
+                <select name="talentsform" class="talentsform" onchange="savetalent(this);" id="talents-2form" style="display:none">
+                </select>
+                <label class="talentdesc" id="talents-2desc"></label>
+                <select name="talentsform" class="talentsform" onchange="savetalent(this);" id="talents-3form" style="display:none">
+                </select>
+                <label class="talentdesc" id="talents-3desc"></label>
+                <select name="talentsform" class="talentsform" onchange="savetalent(this);" id="talents-4form" style="display:none">
+                </select>
+                <label class="talentdesc" id="talents-4desc"></label>
+                <select name="talentsform" class="talentsform" onchange="savetalent(this);" id="talents-5form" style="display:none">
+                </select>
+                <label class="talentdesc" id="talents-5desc"></label>
+                <select name="talentsform" class="talentsform" onchange="savetalent(this);" id="talents-6form" style="display:none">
+                </select>
+                <label class="talentdesc" id="talents-6desc"></label>
+                <select name="talentsform" class="talentsform" onchange="savetalent(this);" id="talents-7form" style="display:none">
+                </select>
+                <label class="talentdesc" id="talents-7desc"></label>
+                <select name="talentsform" class="talentsform" onchange="savetalent(this);" id="talents-8form" style="display:none">
+                </select>
+                <label class="talentdesc" id="talents-8desc"></label>
+                <select name="talentsform" class="talentsform" onchange="savetalent(this);" id="talents-9form" style="display:none">
+                </select>
+                <label class="talentdesc" id="talents-9desc"></label>
+                <select name="talentsform" class="talentsform" onchange="savetalent(this);" id="talents-10form" style="display:none">
+                </select>
+                <label class="talentdesc" id="talents-10desc"></label>
+                <select name="talentsform" class="talentsform" onchange="savetalent(this);" id="talents-11form" style="display:none">
+                </select>
+                <label class="talentdesc" id="talents-11desc"></label>
+                <select name="talentsform" class="talentsform" onchange="savetalent(this);" id="talents-12form" style="display:none">
+                </select>
+                <label class="talentdesc" id="talents-12desc"></label>
+                <select name="talentsform" class="talentsform" onchange="savetalent(this);" id="talents-13form" style="display:none">
+                </select>
+                <label class="talentdesc" id="talents-13desc"></label>
+                <select name="talentsform" class="talentsform" onchange="savetalent(this);" id="talents-14form" style="display:none">
+                </select>
+                <label class="talentdesc" id="talents-14desc"></label>
+                <select name="talentsform" class="talentsform" onchange="savetalent(this);" id="talents-15form" style="display:none">
+                </select>
+                <label class="talentdesc" id="talents-15desc"></label>
+                <select name="talentsform" class="talentsform" onchange="savetalent(this);" id="talents-16form" style="display:none">
+                </select>
+                <label class="talentdesc" id="talents-16desc"></label>
             </form>
         </div>
         <div id="forcesdiv" class="main">
@@ -555,7 +659,7 @@
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="will-class" y="751.5" x="558" stroke-width="0" stroke="#000000" fill="#000000" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="fort-misc" y="661.5" x="627" stroke-width="0" stroke="#000000" fill="#000000" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="ref-misc" y="706.5" x="625.42609" stroke-width="0" stroke="#000000" fill="#000000" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="will-misc" y="751.5" x="558" stroke-width="0" stroke="#000000" fill="#000000" />
+<text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="will-misc" y="751.5" x="625.5" stroke-width="0" stroke="#000000" fill="#000000" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="acro" y="821.5" x="642" stroke-width="0" stroke="#000000" fill="#000000" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="acro-2" y="821.5" x="691" stroke-width="0" stroke="#000000" fill="#000000" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="climb" y="842.5" x="641" stroke-width="0" stroke="#000000" fill="#000000" />
