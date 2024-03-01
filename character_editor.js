@@ -1,5 +1,91 @@
 species = JSON.parse(speciesstring)
 classes = JSON.parse(classstring)
+feats_check = [
+"checkbox-acro-strike",
+"checkbox-armor-prof-light",
+"checkbox-armor-prof-med",
+"checkbox-armor-prof-heavy",
+"checkbox-bantha-rush",
+"checkbox-charging-fire",
+"checkbox-combat-ref",
+"checkbox-coord-attack",
+"checkbox-cyber-surgery",
+"checkbox-dodge",
+"checkbox-mobile",
+"checkbox-improved-charge",
+"checkbox-dread-rage",
+"checkbox-dual-weapon-1",
+"checkbox-dual-weapon-2",
+"checkbox-dual-weapon-3",
+"checkbox-exotic-weapons",
+"checkbox-extra-rage",
+"checkbox-extra-rage-3",
+"checkbox-extra-rage-2",
+"checkbox-extra-rage-1",
+"checkbox-second-wind",
+"checkbox-second-wind-3",
+"checkbox-second-wind-2",
+"checkbox-second-wind-1",
+"checkbox-force-sensitivity",
+"checkbox-force-training-3",
+"checkbox-force-training-2",
+"checkbox-force-training-1",
+"checkbox-force-training",
+"checkbox-force-boon",
+"checkbox-improved-def",
+"checkbox-improved-damage-thresh-3",
+"checkbox-improved-damage-thresh-1",
+"checkbox-improved-damage-thresh",
+"checkbox-linguist-3",
+"checkbox-linguist-1",
+"checkbox-linguist",
+"checkbox-mart-art-1",
+"checkbox-mart-art-2",
+"checkbox-mart-art-3",
+"checkbox-melee-def",
+"checkbox-impoved-disarm",
+"checkbox-whirlwind-attack",
+"checkbox-might-swing",
+"checkbox-pin",
+"checkbox-crush",
+"checkbox-shiper",
+"checkbox-deadeye",
+"checkbox-precise-shot",
+"checkbox-far-shot",
+"checkbox-careful-shot",
+"checkbox-point-blank-shot",
+"checkbox-power-attack",
+"checkbox-cleave",
+"checkbox-great-cleave",
+"checkbox-power-charge",
+"checkbox-quick-draw",
+"checkbox-run-attack",
+"checkbox-shake-off",
+"checkbox-skill-foc",
+"checkbox-skill-train",
+"checkbox-strong-in-force",
+"checkbox-surgical-expert",
+"checkbox-tough",
+"checkbox-trip",
+"checkbox-throw",
+"checkbox-vehicular-combat",
+"checkbox-weapon-finesse",
+"checkbox-weapon-prof",
+"checkbox-doube-attack",
+"checkbox-burst-fire",
+"checkbox-triple-attack",
+"checkbox-rapid-shot",
+"checkbox-rapid-strike",
+"checkbox-triple-crit",
+"checkbox-weapon-focus",
+"checkbox-self-1",
+"checkbox-self-2",
+"checkbox-self-3",
+"checkbox-self-4",
+"checkbox-self-5",
+"checkbox-self-6",
+"checkbox-self-7"
+]
 feats_text = [
     "checkbox-exotic-weapon-1",
     "checkbox-exotic-weapon-2",
@@ -47,12 +133,30 @@ languages=["language-1",
 "language-6",
 "language-7"]
 
+abilities_forms = ["str-base",
+"str-override",
+"dex-base",
+"dex-override",
+"con-base",
+"con-override",
+"int-base",
+"int-override",
+"wis-base",
+"wis-override",
+"cha-base",
+"cha-override",
+"wil-base",
+"wil-override",]
+
 function clickchange (name) {
     document.getElementById('namediv').style.display = 'none'
     document.getElementById('classdiv').style.display = 'none'
     document.getElementById('skillsdiv').style.display = 'none'
     document.getElementById('featsdiv').style.display = 'none'
     document.getElementById('abilitiesdiv').style.display = 'none'
+    document.getElementById('talentsdiv').style.display = 'none'
+    document.getElementById('forcesdiv').style.display = 'none'
+    document.getElementById('inventorydiv').style.display = 'none'
     document.getElementById('pdfdiv').style.display = 'none'
     document.getElementById(name+"div").style.display = 'revert'
     document.getElementById('name').style.background = '#c0bfdf'
@@ -60,6 +164,9 @@ function clickchange (name) {
     document.getElementById('skills').style.background = '#c0bfdf'
     document.getElementById('feats').style.background = '#c0bfdf'
     document.getElementById('abilities').style.background = '#c0bfdf'
+    document.getElementById('talents').style.background = '#c0bfdf'
+    document.getElementById('forces').style.background = '#c0bfdf'
+    document.getElementById('inventory').style.background = '#c0bfdf'
     document.getElementById('pdf').style.background = '#c0bfdf'
     document.getElementById(name).style.background = "#9b96ca"
 
@@ -101,26 +208,60 @@ function skillsclick () {
 }
 function featsclick () {
     clickchange("feats")
-    console.log(classes[localStorage.getItem("class")]["classfeatures"]["other-feats"].length+Math.floor(localStorage.getItem("level")/2) , localStorage.getItem("feats").split(",").length-1)
     if (classes[localStorage.getItem("class")]["classfeatures"]["other-feats"].length+Math.floor(localStorage.getItem("level")/2) <= localStorage.getItem("feats").split(",").length-1) {
         document.getElementById("class-feats").innerHTML = "Feats (you have reached your maximum, make sure you are leveling yourself up correcly before continueing):"
     } else {
         document.getElementById("class-feats").innerHTML = "Feats (you start with "+classes[localStorage.getItem("class")]["classfeatures"]["other-feats"].join(", ")+" and "+Math.floor(localStorage.getItem("level")/2)+" others at your current level and class):"
     }
+    linguist = 0
     for (const feat of localStorage.getItem("feats").split(",")){
         if (feat) {
             document.getElementById(feat).checked = true
+            console.log(feat)
+            if (feat.startsWith("checkbox-linguist")) {linguist += 2}
         }
     }
     for (const feat of feats_text) {
         try {
             document.getElementById(feat).value = localStorage.getItem(feat)
         } catch  {console.log(localStorage.getItem(feat))}
-        console.log(localStorage.getItem(feat))
+    }
+    document.getElementById("languagelabel").innerHTML = "Languages (by default you should have "+species[localStorage.getItem("species")]["species-traits"]["automatic-language"].join(", ")+", and "+String(linguist)+" others):"
+    for (const language of languages) {
+        document.getElementById(language+"form").value = localStorage.getItem(language)
     }
 }
 function abilitiesclick () {
     clickchange("abilities")
+    var result = JSON.parse('{"str": 0,"dex": 0,"con": 0,"int": 0,"wis": 0,"cha": 0,"wil": 0}')
+    for (const id of abilities_forms) {
+        document.getElementById(id+"form").value = localStorage.getItem(id)
+        if (id.endsWith("-base")) {
+            result[id.split("-base")[0]] += parseInt(localStorage.getItem(id), 10) || 0
+        }
+        if (id.endsWith("-override")) {
+            result[id.split("-override")[0]] += parseInt(localStorage.getItem(id), 10) || 0
+        }
+    }
+    for (const key in species[localStorage.getItem("species")]["species-traits"]["ability-score-adjustment"]) {
+        document.getElementById(key+"-species").innerHTML = species[localStorage.getItem("species")]["species-traits"]["ability-score-adjustment"][key]
+        result[key.toLowerCase()] += parseInt(species[localStorage.getItem("species")]["species-traits"]["ability-score-adjustment"][key]) || 0
+    }
+    for (const key in result) {
+        document.getElementById(key+"-result").innerHTML = String(result[key])+" (mod "+Math.floor((result[key]-10)/2)+")"
+    }
+
+}
+function talentsclick () {
+    clickchange("talents")
+    
+}
+function forcesclick () {
+    clickchange("forces")
+    
+}
+function inventoryclick () {
+    clickchange("inventory")
     
 }
 function pdfclick () {
@@ -133,10 +274,10 @@ function pdfclick () {
     document.getElementById("age").innerHTML = localStorage.getItem("age")
     document.getElementById("sex").innerHTML = localStorage.getItem("sex")
     document.getElementById("speed").innerHTML = ""
-    if (isNaN(species[currentspecies]["species-traits"]["speed"])) {
-        document.getElementById("speed").innerHTML += "Land: "+species[currentspecies]["species-traits"]["speed"]["land"]+", <br>"
-        document.getElementById("speed").innerHTML += "Swim: "+species[currentspecies]["species-traits"]["speed"]["swim"]
-    } else {document.getElementById("speed").innerHTML +=species[currentspecies]["species-traits"]["speed"]}
+    if (isNaN(species[localStorage.getItem("species")]["species-traits"]["speed"])) {
+        document.getElementById("speed").innerHTML += "Land: "+species[localStorage.getItem("species")]["species-traits"]["speed"]["land"]+", <br>"
+        document.getElementById("speed").innerHTML += "Swim: "+species[localStorage.getItem("species")]["species-traits"]["speed"]["swim"]
+    } else {document.getElementById("speed").innerHTML +=species[localStorage.getItem("species")]["species-traits"]["speed"]}
     document.getElementById("species-1").innerHTML = localStorage.getItem("species-feats")
     document.getElementById("classes").innerHTML = localStorage.getItem("class")+", "+ (localStorage.getItem("class2") || " ")
     document.getElementById("level").innerHTML = localStorage.getItem("level")
@@ -156,11 +297,31 @@ function pdfclick () {
     for (const feat of localStorage.getItem("feats").split(",")) {
         if (feat) {document.getElementById(feat.split("checkbox-")[1]).innerHTML = "▣"}
     }
+    linguist = 0
     for (const feat of feats_text) {
         try {
             document.getElementById(feat.split("checkbox-")[1]).innerHTML = localStorage.getItem(feat)
+            if (feat.startswith("linguist")) {linguist += 2}
         } catch  {console.log(localStorage.getItem(feat))}
-        console.log(localStorage.getItem(feat))
+    }
+    for (const language of languages) {
+        document.getElementById(language).innerHTML = localStorage.getItem(language)
+    }
+    var result = JSON.parse('{"str": 0,"dex": 0,"con": 0,"int": 0,"wis": 0,"cha": 0,"wil": 0}')
+    for (const id of abilities_forms) {
+        if (id.endsWith("-base")) {
+            result[id.split("-base")[0]] += parseInt(localStorage.getItem(id), 10) || 0
+        }
+        if (id.endsWith("-override")) {
+            result[id.split("-override")[0]] += parseInt(localStorage.getItem(id), 10) || 0
+        }
+    }
+    for (const key in species[localStorage.getItem("species")]["species-traits"]["ability-score-adjustment"]) {
+        result[key.toLowerCase()] += parseInt(species[localStorage.getItem("species")]["species-traits"]["ability-score-adjustment"][key]) || 0
+    }
+    for (const key in result) {
+        document.getElementById(key+"-score").innerHTML = String(result[key])
+        document.getElementById(key+"-mod").innerHTML = Math.floor((result[key]-10)/2)
     }
 }
 
@@ -215,6 +376,7 @@ function changespecies() {
 }
 
 function save(element) {
+    console.log(element.id.split("form")[0], element.value)
     localStorage.setItem(element.id.split("form")[0], element.value)
 }
 
@@ -261,7 +423,6 @@ function saveskill () {
     }
     if (classes[localStorage.getItem("class")]["classfeatures"]["starting-skills"] <= checked_skills.split(",").length-1) {
         document.getElementById("skilllabel").innerHTML = "Skills (you have reached your maximum, make sure you are leveling yourself up correcly before continueing):"
-        console.log(classes[localStorage.getItem("class")]["classfeatures"]["starting-skills"], checked_skills.split(",").length)
     } else {
         document.getElementById("skilllabel").innerHTML = "Skills (you have "+classes[localStorage.getItem("class")]["classfeatures"]["starting-skills"]+" by default):"
     }
@@ -277,17 +438,37 @@ function featclick (button) {
             feats[feats.indexOf(button.value)] = ""
         }
         feats = feats.filter(item => item !== "")
-        console.log(feats)
         localStorage.setItem("feats", feats.join(","))
+        featsclick()
     }
     if (button.type == "text") {
         localStorage.setItem(button.id, button.value)
-        console.log(button.value)
         
     }
     if (classes[localStorage.getItem("class")]["classfeatures"]["other-feats"].length+Math.floor(localStorage.getItem("level")/2) <= localStorage.getItem("feats").split(",").length-1) {
         document.getElementById("class-feats").innerHTML = "Feats (you have reached your maximum, make sure you are leveling yourself up correcly before continueing):"
     } else {
         document.getElementById("class-feats").innerHTML = "Feats (you start with "+classes[localStorage.getItem("class")]["classfeatures"]["other-feats"].join(", ")+" and "+Math.floor(localStorage.getItem("level")/2)+" others at your current level and class):"
+    }
+    
+}
+function saveability (input) {
+    save(input)
+    var result = JSON.parse('{"str": 0,"dex": 0,"con": 0,"int": 0,"wis": 0,"cha": 0,"wil": 0}')
+    for (const id of abilities_forms) {
+        document.getElementById(id+"form").value = localStorage.getItem(id)
+        if (id.endsWith("-base")) {
+            result[id.split("-base")[0]] += parseInt(localStorage.getItem(id), 10) || 0
+        }
+        if (id.endsWith("-override")) {
+            result[id.split("-override")[0]] += parseInt(localStorage.getItem(id), 10) || 0
+        }
+    }
+    for (const key in species[localStorage.getItem("species")]["species-traits"]["ability-score-adjustment"]) {
+        document.getElementById(key+"-species").innerHTML = species[localStorage.getItem("species")]["species-traits"]["ability-score-adjustment"][key]
+        result[key.toLowerCase()] += parseInt(species[localStorage.getItem("species")]["species-traits"]["ability-score-adjustment"][key]) || 0
+    }
+    for (const key in result) {
+        document.getElementById(key+"-result").innerHTML = String(result[key])+" (mod "+Math.floor((result[key]-10)/2)+")"
     }
 }

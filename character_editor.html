@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="character_editor.css" />
         <link rel="stylesheet" type="text/css" media="print" href="character-editor-print.css" />
     </head>
-    <body onload="nameclick()">
+    <body onload="nameclick();">
         <div id="header" class="header" >
             <button id="name" onclick="nameclick();" style="border-top-left-radius: 7px;">
                 <p1>Name</p1><br>
@@ -26,6 +26,18 @@
             <button id="abilities" onclick="abilitiesclick()">
                 <p1>Abilities</p1><br>
                 <p2>Defences</p2>
+            </button>
+            <button id="talents" onclick="talentsclick()">
+                <p1>Talents</p1><br>
+                <p2>more stuff!</p2>
+            </button>
+            <button id="forces" onclick="forcesclick()">
+                <p1>Force Things</p1><br>
+                <p2>more stuff!</p2>
+            </button>
+            <button id="inventory" onclick="inventoryclick()">
+                <p1>Inventory</p1><br>
+                <p2>more stuff!</p2>
             </button>
             <button id="pdf" onclick="pdfclick()">
                 <p1>Display</p1><br>
@@ -306,7 +318,7 @@
 <foreignobject width="18px" height="18px" id="feat-improved-damage-thresh-1" x="603" y="450"><input type="checkbox" class="feat-checkbox" id="checkbox-improved-damage-thresh-1" name="checkbox-improved-damage-thresh-1" value="checkbox-improved-damage-thresh-1" onclick="featclick(this);" /></foreignobject>
 <foreignobject width="18px" height="18px" id="feat-improved-damage-thresh" x="404" y="450"><input type="checkbox" class="feat-checkbox" id="checkbox-improved-damage-thresh" name="checkbox-improved-damage-thresh" value="checkbox-improved-damage-thresh" onclick="featclick(this);" /></foreignobject>
 <foreignobject width="18px" height="18px" id="feat-linguist-3" x="525" y="463"><input type="checkbox" class="feat-checkbox" id="checkbox-linguist-3" name="checkbox-linguist-3" value="checkbox-linguist-3" onclick="featclick(this);" /></foreignobject>
-<foreignobject width="18px" height="18px" id="feat-text2" x="511" y="463"><input type="checkbox" class="feat-checkbox" id="checkbox-text2" name="checkbox-text2" value="checkbox-text2" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-linguist-2" x="511" y="463"><input type="checkbox" class="feat-checkbox" id="checkbox-linguist-2" name="checkbox-linguist-2" value="checkbox-linguist-2" onclick="featclick(this);" /></foreignobject>
 <foreignobject width="18px" height="18px" id="feat-linguist-1" x="498" y="463"><input type="checkbox" class="feat-checkbox" id="checkbox-linguist-1" name="checkbox-linguist-1" value="checkbox-linguist-1" onclick="featclick(this);" /></foreignobject>
 <foreignobject width="18px" height="18px" id="feat-linguist" x="404" y="463"><input type="checkbox" class="feat-checkbox" id="checkbox-linguist" name="checkbox-linguist" value="checkbox-linguist" onclick="featclick(this);" /></foreignobject>
 <foreignobject width="18px" height="18px" id="feat-mart-art-1" x="404" y="475"><input type="checkbox" class="feat-checkbox" id="checkbox-mart-art-1" name="checkbox-mart-art-1" value="checkbox-mart-art-1" onclick="featclick(this);" /></foreignobject>
@@ -392,19 +404,92 @@
 </g>
 </svg>
                 <form>
-                    <label>Languages:</label>
-                    <input type="text" class="language" id="language-1form" name="language" onclick="save(this)" value="language-1form">
-                    <input type="text" class="language" id="language-2form" name="language" onclick="save(this)" value="language-1form">
-                    <input type="text" class="language" id="language-3form" name="language" onclick="save(this)" value="language-1form">
-                    <input type="text" class="language" id="language-4form" name="language" onclick="save(this)" value="language-1form">
-                    <input type="text" class="language" id="language-5form" name="language" onclick="save(this)" value="language-1form">
-                    <input type="text" class="language" id="language-6form" name="language" onclick="save(this)" value="language-1form">
-                    <input type="text" class="language" id="language-7form" name="language" onclick="save(this)" value="language-1form">
+                    <label id="languagelabel"></label><br>
+                    <input type="text" class="language" id="language-1form" name="language" onkeyup="save(this)"><br>
+                    <input type="text" class="language" id="language-2form" name="language" onkeyup="save(this)"><br>
+                    <input type="text" class="language" id="language-3form" name="language" onkeyup="save(this)"><br>
+                    <input type="text" class="language" id="language-4form" name="language" onkeyup="save(this)"><br>
+                    <input type="text" class="language" id="language-5form" name="language" onkeyup="save(this)"><br>
+                    <input type="text" class="language" id="language-6form" name="language" onkeyup="save(this)"><br>
+                    <input type="text" class="language" id="language-7form" name="language" onkeyup="save(this)">
                 </form>
             </div>
         <div id="abilitiesdiv" class="main">
             <form>
                 <label>Your Abilities:</label>
+                <table class="tables">
+                    <tr>
+                        <th>Name</th>
+                        <th>Base</th>
+                        <th>± Species</th>
+                        <th>± Override</th>
+                        <th>= Result</th>
+                    </tr>
+                    <tr class="guidebox">
+                        <td class="abilities-label" id="str-label">Strength</td>
+                        <td><input type="text" class="abilities-input" id="str-baseform" name="str-baseform" onkeyup="saveability(this);"></td>
+                        <td class="abilities-label" id="str-species"></td>
+                        <td><input type="text" class="abilities-input" id="str-overrideform" name="str-overrideform" onkeyup="saveability(this);"></td>
+                        <td class="abilities-label" id="str-result"></td>
+                    </tr>
+                    <tr>
+                        <td class="abilities-label" id="dex-label">Dexterity</td>
+                        <td><input type="text" class="abilities-input" id="dex-baseform" name="dex-baseform" onkeyup="saveability(this);"></td>
+                        <td class="abilities-label" id="dex-species"></td>
+                        <td><input type="text" class="abilities-input" id="dex-overrideform" name="dex-overrideform" onkeyup="saveability(this);"></td>
+                        <td class="abilities-label" id="dex-result"></td>
+                    </tr>
+                    <tr class="guidebox">
+                        <td class="abilities-label" id="con-label">Constitution</td>
+                        <td><input type="text" class="abilities-input" id="con-baseform" name="con-baseform" onkeyup="saveability(this);"></td>
+                        <td class="abilities-label" id="con-species"></td>
+                        <td><input type="text" class="abilities-input" id="con-overrideform" name="con-overrideform" onkeyup="saveability(this);"></td>
+                        <td class="abilities-label" id="con-result"></td>
+                    </tr>
+                    <tr>
+                        <td class="abilities-label" id="int-label">Intelligence</td>
+                        <td><input type="text" class="abilities-input" id="int-baseform" name="int-baseform" onkeyup="saveability(this);"></td>
+                        <td class="abilities-label" id="int-species"></td>
+                        <td><input type="text" class="abilities-input" id="int-overrideform" name="int-overrideform" onkeyup="saveability(this);"></td>
+                        <td class="abilities-label" id="int-result"></td>
+                    </tr>
+                    <tr class="guidebox">
+                        <td class="abilities-label" id="wis-label">Wisdom</td>
+                        <td><input type="text" class="abilities-input" id="wis-baseform" name="wis-baseform" onkeyup="saveability(this);"></td>
+                        <td class="abilities-label" id="wis-species"></td>
+                        <td><input type="text" class="abilities-input" id="wis-overrideform" name="wis-overrideform" onkeyup="saveability(this);"></td>
+                        <td class="abilities-label" id="wis-result"></td>
+                    </tr>
+                    <tr>
+                        <td class="abilities-label" id="cha-label">Charisma</td>
+                        <td><input type="text" class="abilities-input" id="cha-baseform" name="cha-baseform" onkeyup="saveability(this);"></td>
+                        <td class="abilities-label" id="cha-species"></td>
+                        <td><input type="text" class="abilities-input" id="cha-overrideform" name="cha-overrideform" onkeyup="saveability(this);"></td>
+                        <td class="abilities-label" id="cha-result"></td>
+                    </tr>
+                    <tr class="guidebox">
+                        <td class="abilities-label" id="wil-label">Willpower</td>
+                        <td><input type="text" class="abilities-input" id="wil-baseform" name="will-baseform" onkeyup="saveability(this);"></td>
+                        <td class="abilities-label" id="wil-species"></td>
+                        <td><input type="text" class="abilities-input" id="wil-overrideform" name="will-overrideform" onkeyup="saveability(this);"></td>
+                        <td class="abilities-label" id="wil-result"></td>
+                    </tr>
+                </table>                                
+            </form>
+        </div>
+        <div id="talentsdiv" class="main">
+            <form>
+                <label>Your Talents:</label>
+            </form>
+        </div>
+        <div id="forcesdiv" class="main">
+            <form>
+                <label>Your Force:</label>
+            </form>
+        </div>
+        <div id="inventorydiv" class="main">
+            <form>
+                <label>Your inventory:</label>
             </form>
         </div>
         <div id="pdfdiv" class="main">
@@ -562,9 +647,9 @@
 <defs id="defs2"><rect x="516.75358" y="146.4721" width="48.04285" height="26.950867" id="rect190" /></defs>
 <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1">
 <image width="1000" height="1243.568" preserveAspectRatio="none" xlink:href="img/page_2.png" id="image1" x="-0.43862459" y="5" inkscape:transform-center-x="20.135593" inkscape:transform-center-y="-10.067797" />
-<text xml:space="preserve" style="font-size:17.3333px;line-height:0.99;white-space:pre;inline-size:281.036;display:inline;fill:#000000" x="74.993713" y="141.785" id="text185" transform="translate(0,3.5153305)"  /><tspan x="74.993713" y="141.785" id="talents-1"  /><tspan x="74.993713" y="158.94498" id="talents-2"  /><tspan x="74.993713" y="176.10495" id="talents-3"  /><tspan x="74.993713" y="193.26493" id="talents-4"  /><tspan x="74.993713" y="210.4249" id="talents-5"  /><tspan x="74.993713" y="227.58487" id="talents-6"  /><tspan x="74.993713" y="244.74484" id="talents-7"  /><tspan x="74.993713" y="261.90482" id="talents-8"  /><tspan x="74.993713" y="279.06479" id="talents-9"  /><tspan x="74.993713" y="296.22476" id="talents-10"  /><tspan x="74.993713" y="313.38474" id="talents-12"  /><tspan x="74.993713" y="330.54471" id="talents-13"  /><tspan x="74.993713" y="347.70468" id="talents-14"  /><tspan x="74.993713" y="364.86466" id="talents-15"  /><tspan x="74.993713" y="382.02463" id="talents-15"  /><tspan x="74.993713" y="399.1846" id="talents-16" />
-<text xml:space="preserve" style="font-size:17.3333px;line-height:0.99;white-space:pre;inline-size:238.852;display:inline;fill:#000000" x="74.993713" y="141.785" id="text185-7" transform="translate(0.04280294,314.80093)"  /><tspan x="74.993713" y="141.785" id="language-1"  /><tspan x="74.993713" y="158.94498" id="language-2"  /><tspan x="74.993713" y="176.10495" id="language-3"  /><tspan x="74.993713" y="193.26493" id="language-4"  /><tspan x="74.993713" y="210.4249" id="language-5"  /><tspan x="74.993713" y="227.58487" id="language-6"  /><tspan x="74.993713" y="244.74484" id="language-7" />
-<text xml:space="preserve" style="font-size:17.3333px;line-height:0.99;white-space:pre;inline-size:238.852;display:inline;fill:#000000" x="74.993713" y="141.785" id="text185-7-1" transform="translate(-0.7488531,486.5863)"  /><tspan x="74.993713" y="141.785" id="species-1"  /><tspan x="74.993713" y="158.94498" id="species-2"  /><tspan x="74.993713" y="176.10495" id="species-3"  /><tspan x="74.993713" y="193.26493" id="species-4"  /><tspan x="74.993713" y="210.4249" id="species-5" />
+<text xml:space="preserve" style="font-size:17.3333px;line-height:0.99;white-space:pre;inline-size:281.036;display:inline;fill:#000000" x="74.993713" y="141.785" id="text185" transform="translate(0,3.5153305)"><tspan x="74.993713" y="141.785" id="talents-1"  /><tspan x="74.993713" y="158.94498" id="talents-2"  /><tspan x="74.993713" y="176.10495" id="talents-3"  /><tspan x="74.993713" y="193.26493" id="talents-4"  /><tspan x="74.993713" y="210.4249" id="talents-5"  /><tspan x="74.993713" y="227.58487" id="talents-6"  /><tspan x="74.993713" y="244.74484" id="talents-7"  /><tspan x="74.993713" y="261.90482" id="talents-8"  /><tspan x="74.993713" y="279.06479" id="talents-9"  /><tspan x="74.993713" y="296.22476" id="talents-10"  /><tspan x="74.993713" y="313.38474" id="talents-12"  /><tspan x="74.993713" y="330.54471" id="talents-13"  /><tspan x="74.993713" y="347.70468" id="talents-14"  /><tspan x="74.993713" y="364.86466" id="talents-15"  /><tspan x="74.993713" y="382.02463" id="talents-15"  /><tspan x="74.993713" y="399.1846" id="talents-16" /></text>
+<text xml:space="preserve" style="font-size:17.3333px;line-height:0.99;white-space:pre;inline-size:238.852;display:inline;fill:#000000" x="74.993713" y="141.785" id="text185-7" transform="translate(0.04280294,318.80093)"><tspan x="74.993713" y="141.785" id="language-1"  /><tspan x="74.993713" y="158.94498" id="language-2"  /><tspan x="74.993713" y="176.10495" id="language-3"  /><tspan x="74.993713" y="193.26493" id="language-4"  /><tspan x="74.993713" y="210.4249" id="language-5"  /><tspan x="74.993713" y="227.58487" id="language-6"  /><tspan x="74.993713" y="244.74484" id="language-7" /></text>
+<text xml:space="preserve" style="font-size:17.3333px;line-height:0.99;white-space:pre;inline-size:238.852;display:inline;fill:#000000" x="74.993713" y="141.785" id="text185-7-1" transform="translate(-0.7488531,489.5863)"><tspan x="74.993713" y="141.785" id="species-1"  /><tspan x="74.993713" y="158.94498" id="species-2"  /><tspan x="74.993713" y="176.10495" id="species-3"  /><tspan x="74.993713" y="193.26493" id="species-4"  /><tspan x="74.993713" y="210.4249" id="species-5" /></text>
 <text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="acro-strike" x="404.263" y="135.92612" />
 <text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="armor-prof-med" x="431.21387" y="160.53343" />
 <text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="armor-prof-heavy" x="458.16473" y="173.42297" />
