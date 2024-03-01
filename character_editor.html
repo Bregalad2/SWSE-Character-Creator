@@ -19,7 +19,7 @@
                 <p1>Skills</p1><br>
                 <p2>more stuff!</p2>
             </button>
-            <button id="feats" onclick="skillsclick()">
+            <button id="feats" onclick="featsclick()">
                 <p1>Feats</p1><br>
                 <p2>more stuff!</p2>
             </button>
@@ -35,19 +35,19 @@
         <div id="namediv" class="main">
             <form>
                 <label>Your Name:</label>
-                <input type="text" id="playerform" name="playerform" onkeyup="save();">
+                <input type="text" id="playerform" name="playerform" onkeyup="save(this);">
                 <br>
                 <label>Your Character's Name:</label>
-                <input type="text" id="characterform" name="characterform" onkeyup="save();">
+                <input type="text" id="characterform" name="characterform" onkeyup="save(this);">
                 <br>
                 <label>Sex:</label>
-                <input type="text" id="sexform" name="sexform" onkeyup="save();" style="width:20px;">
+                <input type="text" id="sexform" name="sexform" onkeyup="save(this);" style="width:20px;">
                 <label>Age:</label>
-                <input type="text" id="ageform" name="ageform" onkeyup="save();" style="width:20px;">
+                <input type="text" id="ageform" name="ageform" onkeyup="save(this);" style="width:20px;">
                 <label>Height:</label>
-                <input type="text" id="heightform" name="heightform" onkeyup="save();" style="width:40px;">
+                <input type="text" id="heightform" name="heightform" onkeyup="save(this);" style="width:40px;">
                 <label>Weight:</label>
-                <input type="text" id="weightform" name="weightform" onkeyup="save();" style="width:40px;">
+                <input type="text" id="weightform" name="weightform" onkeyup="save(this);" style="width:40px;">
                 <br>
                 <label>Species:</label>
                 <select name="species" id="speciesform" onchange="changespecies();">
@@ -82,9 +82,9 @@
             <p class="descriptor" id="species-description"></p>
             <p class="descriptor" id="species-names"></p>
             <p class="descriptor" id="species-able-size-speed"></p>
-            <div id="bonus-traits", style="border: 0px;"></div>
+        <div id="bonus-traits" style="border: 0px;"></div>
         </div>
-        <div id="classdiv", class="main">
+        <div id="classdiv" class="main">
             <form>
                 <label>Class:</label>
                 <select name="classes" id="classform" onchange="changeclass();">
@@ -100,9 +100,9 @@
                 <p id="class-desc"></p>
                 <br>
                 <label>Level:</label>
-                <input type="text" id="levelform" name="levelform" onkeyup="save();" style="width:20px">
+                <input type="text" id="levelform" name="levelform" onkeyup="save(this);" style="width:20px">
                 <label>Credits:</label>
-                <input type="text" id="creditform" name="creditform" onkeyup="save();" style="width:50px">
+                <input type="text" id="creditsform" name="creditsform" onkeyup="save(this);" style="width:50px">
                 <br>
             </form>
             <form id="multiclass">
@@ -121,7 +121,7 @@
                 <p id="class2-desc"></p>
             </form>
         </div>
-        <div id="skillsdiv", class="main">
+        <div id="skillsdiv" class="main">
             <form>
                 <label id="skilllabel"></label><br>
                 <table class="tables">
@@ -259,15 +259,156 @@
             </form>
         </div>
         <div id="featsdiv" class="main">
-            <form>
-            </form>
-        </div>
-        <div id="abilitiesdiv", class="main">
+            <label id="class-feats"></label><br>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="570" height="700" viewBox="0 0 570 700" version="1.1" id="feat-svg2" xml:space="preserve" inkscape:version="1.3.2 (091e20e, 2023-11-25)" sodipodi:docname="page_2.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<sodipodi:namedview id="feat-namedview2" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" inkscape:document-units="mm" inkscape:zoom="0.85340482" inkscape:cx="246.65902" inkscape:cy="434.72921" inkscape:window-width="1280" inkscape:window-height="667" inkscape:window-x="0" inkscape:window-y="25" inkscape:window-maximized="0" inkscape:current-layer="layer1" />
+<defs id="feat-defs2" />
+<g inkscape:label="Layer 1" inkscape:groupmode="layer" id="feat-layer1" transform="translate(-370.28148,-70.306611)">
+<image width="1000" height="1243.568" preserveAspectRatio="none" xlink:href="img/page_2.png" id="feat-image1" x="8" y="16" inkscape:transform-center-x="20.135593" inkscape:transform-center-y="-10.067797" />
+<foreignobject width="18px" height="18px" id="feat-acro-strike" x="404" y="136"><input type="checkbox" class="feat-checkbox" id="checkbox-acro-strike" name="checkbox-acro-strike" value="checkbox-acro-strike" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-armor-prof-light" x="404" y="149"><input type="checkbox" class="feat-checkbox" id="checkbox-armor-prof-light" name="checkbox-armor-prof-light" value="checkbox-armor-prof-light" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-armor-prof-med" x="431" y="161"><input type="checkbox" class="feat-checkbox" id="checkbox-armor-prof-med" name="checkbox-armor-prof-med" value="checkbox-armor-prof-med" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-armor-prof-heavy" x="458" y="173"><input type="checkbox" class="feat-checkbox" id="checkbox-armor-prof-heavy" name="checkbox-armor-prof-heavy" value="checkbox-armor-prof-heavy" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-bantha-rush" x="404" y="185"><input type="checkbox" class="feat-checkbox" id="checkbox-bantha-rush" name="checkbox-bantha-rush" value="checkbox-bantha-rush" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-charging-fire" x="404" y="197"><input type="checkbox" class="feat-checkbox" id="checkbox-charging-fire" name="checkbox-charging-fire" value="checkbox-charging-fire" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-combat-ref" x="404" y="209"><input type="checkbox" class="feat-checkbox" id="checkbox-combat-ref" name="checkbox-combat-ref" value="checkbox-combat-ref" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-coord-attack" x="404" y="220"><input type="checkbox" class="feat-checkbox" id="checkbox-coord-attack" name="checkbox-coord-attack" value="checkbox-coord-attack" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-cyber-surgery" x="404" y="233"><input type="checkbox" class="feat-checkbox" id="checkbox-cyber-surgery" name="checkbox-cyber-surgery" value="checkbox-cyber-surgery" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-dodge" x="404" y="245"><input type="checkbox" class="feat-checkbox" id="checkbox-dodge" name="checkbox-dodge" value="checkbox-dodge" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-mobile" x="431" y="258"><input type="checkbox" class="feat-checkbox" id="checkbox-mobile" name="checkbox-mobile" value="checkbox-mobile" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-improved-charge" x="458" y="270"><input type="checkbox" class="feat-checkbox" id="checkbox-improved-charge" name="checkbox-improved-charge" value="checkbox-improved-charge" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-dread-rage" x="404" y="281"><input type="checkbox" class="feat-checkbox" id="checkbox-dread-rage" name="checkbox-dread-rage" value="checkbox-dread-rage" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-dual-weapon-1" x="404" y="294"><input type="checkbox" class="feat-checkbox" id="checkbox-dual-weapon-1" name="checkbox-dual-weapon-1" value="checkbox-dual-weapon-1" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-dual-weapon-2" x="431" y="306"><input type="checkbox" class="feat-checkbox" id="checkbox-dual-weapon-2" name="checkbox-dual-weapon-2" value="checkbox-dual-weapon-2" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-dual-weapon-3" x="458" y="316"><input type="checkbox" class="feat-checkbox" id="checkbox-dual-weapon-3" name="checkbox-dual-weapon-3" value="checkbox-dual-weapon-3" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-exotic-weapons" x="404" y="328"><input type="checkbox" class="feat-checkbox" id="checkbox-exotic-weapons" name="checkbox-exotic-weapons" value="checkbox-exotic-weapons" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-exotic-weapon-1" x="431" y="340"><input type="text" class="feat-text" id="checkbox-exotic-weapon-1" name="checkbox-exotic-weapon-1" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-exotic-weapon-2" x="431" y="352"><input type="text" class="feat-text" id="checkbox-exotic-weapon-2" name="checkbox-exotic-weapon-2" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-exotic-weapon-3" x="431" y="362"><input type="text" class="feat-text" id="checkbox-exotic-weapon-3" name="checkbox-exotic-weapon-3" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-extra-rage" x="404" y="377"><input type="checkbox" class="feat-checkbox" id="checkbox-extra-rage" name="checkbox-extra-rage" value="checkbox-extra-rage" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-extra-rage-3" x="551" y="377"><input type="checkbox" class="feat-checkbox" id="checkbox-extra-rage-3" name="checkbox-extra-rage-3" value="checkbox-extra-rage-3" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-extra-rage-2" x="539" y="377"><input type="checkbox" class="feat-checkbox" id="checkbox-extra-rage-2" name="checkbox-extra-rage-2" value="checkbox-extra-rage-2" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-extra-rage-1" x="526" y="377"><input type="checkbox" class="feat-checkbox" id="checkbox-extra-rage-1" name="checkbox-extra-rage-1" value="checkbox-extra-rage-1" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-second-wind" x="404" y="390"><input type="checkbox" class="feat-checkbox" id="checkbox-second-wind" name="checkbox-second-wind" value="checkbox-second-wind" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-second-wind-3" x="605" y="390"><input type="checkbox" class="feat-checkbox" id="checkbox-second-wind-3" name="checkbox-second-wind-3" value="checkbox-second-wind-3" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-second-wind-2" x="594" y="390"><input type="checkbox" class="feat-checkbox" id="checkbox-second-wind-2" name="checkbox-second-wind-2" value="checkbox-second-wind-2" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-second-wind-1" x="581" y="390"><input type="checkbox" class="feat-checkbox" id="checkbox-second-wind-1" name="checkbox-second-wind-1" value="checkbox-second-wind-1" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-force-sensitivity" x="404" y="403"><input type="checkbox" class="feat-checkbox" id="checkbox-force-sensitivity" name="checkbox-force-sensitivity" value="checkbox-force-sensitivity" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-force-training-3" x="602" y="427"><input type="checkbox" class="feat-checkbox" id="checkbox-force-training-3" name="checkbox-force-training-3" value="checkbox-force-training-3" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-force-training-2" x="589" y="427"><input type="checkbox" class="feat-checkbox" id="checkbox-force-training-2" name="checkbox-force-training-2" value="checkbox-force-training-2" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-force-training-1" x="577" y="427"><input type="checkbox" class="feat-checkbox" id="checkbox-force-training-1" name="checkbox-force-training-1" value="checkbox-force-training-1" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-force-training" x="431" y="427"><input type="checkbox" class="feat-checkbox" id="checkbox-force-training" name="checkbox-force-training" value="checkbox-force-training" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-force-boon" x="431" y="412"><input type="checkbox" class="feat-checkbox" id="checkbox-force-boon" name="checkbox-force-boon" value="checkbox-force-boon" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-improved-def" x="404" y="438"><input type="checkbox" class="feat-checkbox" id="checkbox-improved-def" name="checkbox-improved-def" value="checkbox-improved-def" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-improved-damage-thresh-3" x="632" y="450"><input type="checkbox" class="feat-checkbox" id="checkbox-improved-damage-thresh-3" name="checkbox-improved-damage-thresh-3" value="checkbox-improved-damage-thresh-3" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-text1" x="618" y="450"><input type="checkbox" class="feat-checkbox" id="checkbox-text1" name="checkbox-text1" value="checkbox-text1" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-improved-damage-thresh-1" x="603" y="450"><input type="checkbox" class="feat-checkbox" id="checkbox-improved-damage-thresh-1" name="checkbox-improved-damage-thresh-1" value="checkbox-improved-damage-thresh-1" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-improved-damage-thresh" x="404" y="450"><input type="checkbox" class="feat-checkbox" id="checkbox-improved-damage-thresh" name="checkbox-improved-damage-thresh" value="checkbox-improved-damage-thresh" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-linguist-3" x="525" y="463"><input type="checkbox" class="feat-checkbox" id="checkbox-linguist-3" name="checkbox-linguist-3" value="checkbox-linguist-3" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-text2" x="511" y="463"><input type="checkbox" class="feat-checkbox" id="checkbox-text2" name="checkbox-text2" value="checkbox-text2" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-linguist-1" x="498" y="463"><input type="checkbox" class="feat-checkbox" id="checkbox-linguist-1" name="checkbox-linguist-1" value="checkbox-linguist-1" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-linguist" x="404" y="463"><input type="checkbox" class="feat-checkbox" id="checkbox-linguist" name="checkbox-linguist" value="checkbox-linguist" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-mart-art-1" x="404" y="475"><input type="checkbox" class="feat-checkbox" id="checkbox-mart-art-1" name="checkbox-mart-art-1" value="checkbox-mart-art-1" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-mart-art-2" x="431" y="486"><input type="checkbox" class="feat-checkbox" id="checkbox-mart-art-2" name="checkbox-mart-art-2" value="checkbox-mart-art-2" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-mart-art-3" x="458" y="499"><input type="checkbox" class="feat-checkbox" id="checkbox-mart-art-3" name="checkbox-mart-art-3" value="checkbox-mart-art-3" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-melee-def" x="404" y="511"><input type="checkbox" class="feat-checkbox" id="checkbox-melee-def" name="checkbox-melee-def" value="checkbox-melee-def" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-impoved-disarm" x="431" y="523"><input type="checkbox" class="feat-checkbox" id="checkbox-impoved-disarm" name="checkbox-impoved-disarm" value="checkbox-impoved-disarm" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-whirlwind-attack" x="431" y="534"><input type="checkbox" class="feat-checkbox" id="checkbox-whirlwind-attack" name="checkbox-whirlwind-attack" value="checkbox-whirlwind-attack" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-might-swing" x="404" y="546"><input type="checkbox" class="feat-checkbox" id="checkbox-might-swing" name="checkbox-might-swing" value="checkbox-might-swing" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-pin" x="404" y="558"><input type="checkbox" class="feat-checkbox" id="checkbox-pin" name="checkbox-pin" value="checkbox-pin" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-crush" x="431" y="571"><input type="checkbox" class="feat-checkbox" id="checkbox-crush" name="checkbox-crush" value="checkbox-crush" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-shiper" x="458" y="642"><input type="checkbox" class="feat-checkbox" id="checkbox-shiper" name="checkbox-shiper" value="checkbox-shiper" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-deadeye" x="458" y="629"><input type="checkbox" class="feat-checkbox" id="checkbox-deadeye" name="checkbox-deadeye" value="checkbox-deadeye" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-precise-shot" x="431" y="619"><input type="checkbox" class="feat-checkbox" id="checkbox-precise-shot" name="checkbox-precise-shot" value="checkbox-precise-shot" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-far-shot" x="431" y="605"><input type="checkbox" class="feat-checkbox" id="checkbox-far-shot" name="checkbox-far-shot" value="checkbox-far-shot" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-careful-shot" x="429" y="593"><input type="checkbox" class="feat-checkbox" id="checkbox-careful-shot" name="checkbox-careful-shot" value="checkbox-careful-shot" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-point-blank-shot" x="404" y="582"><input type="checkbox" class="feat-checkbox" id="checkbox-point-blank-shot" name="checkbox-point-blank-shot" value="checkbox-point-blank-shot" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-power-attack" x="404" y="655"><input type="checkbox" class="feat-checkbox" id="checkbox-power-attack" name="checkbox-power-attack" value="checkbox-power-attack" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-cleave" x="431" y="666"><input type="checkbox" class="feat-checkbox" id="checkbox-cleave" name="checkbox-cleave" value="checkbox-cleave" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-great-cleave" x="458" y="677"><input type="checkbox" class="feat-checkbox" id="checkbox-great-cleave" name="checkbox-great-cleave" value="checkbox-great-cleave" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-power-charge" x="404" y="689"><input type="checkbox" class="feat-checkbox" id="checkbox-power-charge" name="checkbox-power-charge" value="checkbox-power-charge" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-quick-draw" x="404" y="702"><input type="checkbox" class="feat-checkbox" id="checkbox-quick-draw" name="checkbox-quick-draw" value="checkbox-quick-draw" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-run-attack" x="404" y="715"><input type="checkbox" class="feat-checkbox" id="checkbox-run-attack" name="checkbox-run-attack" value="checkbox-run-attack" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-shake-off" x="404" y="727"><input type="checkbox" class="feat-checkbox" id="checkbox-shake-off" name="checkbox-shake-off" value="checkbox-shake-off" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-skill-foc" x="683" y="127"><input type="checkbox" class="feat-checkbox" id="checkbox-skill-foc" name="checkbox-skill-foc" value="checkbox-skill-foc" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-skill-foc-1" x="710" y="135"><input type="text" class="feat-text" id="checkbox-skill-foc-1" name="checkbox-skill-foc-1" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-skill-foc-2" x="710" y="146"><input type="text" class="feat-text" id="checkbox-skill-foc-2" name="checkbox-skill-foc-2" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-skill-foc-3" x="710" y="159"><input type="text" class="feat-text" id="checkbox-skill-foc-3" name="checkbox-skill-foc-3" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-skill-foc-4" x="710" y="171"><input type="text" class="feat-text" id="checkbox-skill-foc-4" name="checkbox-skill-foc-4" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-skill-train" x="683" y="186"><input type="checkbox" class="feat-checkbox" id="checkbox-skill-train" name="checkbox-skill-train" value="checkbox-skill-train" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-skill-train-1" x="710" y="195"><input type="text" class="feat-text" id="checkbox-skill-train-1" name="checkbox-skill-train-1" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-skill-train-2" x="710" y="207"><input type="text" class="feat-text" id="checkbox-skill-train-2" name="checkbox-skill-train-2" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-skill-train-3" x="710" y="218"><input type="text" class="feat-text" id="checkbox-skill-train-3" name="checkbox-skill-train-3" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-skill-train-4" x="710" y="230"><input type="text" class="feat-text" id="checkbox-skill-train-4" name="checkbox-skill-train-4" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-skill-train-5" x="710" y="243"><input type="text" class="feat-text" id="checkbox-skill-train-5" name="checkbox-skill-train-5" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-strong-in-force" x="683" y="256"><input type="checkbox" class="feat-checkbox" id="checkbox-strong-in-force" name="checkbox-strong-in-force" value="checkbox-strong-in-force" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-surgical-expert" x="683" y="268"><input type="checkbox" class="feat-checkbox" id="checkbox-surgical-expert" name="checkbox-surgical-expert" value="checkbox-surgical-expert" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-tough" x="683" y="282"><input type="checkbox" class="feat-checkbox" id="checkbox-tough" name="checkbox-tough" value="checkbox-tough" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-trip" x="683" y="293"><input type="checkbox" class="feat-checkbox" id="checkbox-trip" name="checkbox-trip" value="checkbox-trip" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-throw" x="710" y="306"><input type="checkbox" class="feat-checkbox" id="checkbox-throw" name="checkbox-throw" value="checkbox-throw" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-vehicular-combat" x="683" y="318"><input type="checkbox" class="feat-checkbox" id="checkbox-vehicular-combat" name="checkbox-vehicular-combat" value="checkbox-vehicular-combat" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-weapon-finesse" x="683" y="330"><input type="checkbox" class="feat-checkbox" id="checkbox-weapon-finesse" name="checkbox-weapon-finesse" value="checkbox-weapon-finesse" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-weapon-prof" x="683" y="342"><input type="checkbox" class="feat-checkbox" id="checkbox-weapon-prof" name="checkbox-weapon-prof" value="checkbox-weapon-prof" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-weapon-prof-1" x="710" y="351"><input type="text" class="feat-text" id="checkbox-weapon-prof-1" name="checkbox-weapon-prof-1" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-weapon-pro-2" x="710" y="362"><input type="text" class="feat-text" id="checkbox-weapon-pro-2" name="checkbox-weapon-pro-2" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-weapon-pro-3" x="710" y="374"><input type="text" class="feat-text" id="checkbox-weapon-pro-3" name="checkbox-weapon-pro-3" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-weapon-pro-4" x="710" y="387"><input type="text" class="feat-text" id="checkbox-weapon-pro-4" name="checkbox-weapon-pro-4" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-weapon-pro-5" x="710" y="398"><input type="text" class="feat-text" id="checkbox-weapon-pro-5" name="checkbox-weapon-pro-5" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-weapon-pro6" x="710" y="410"><input type="text" class="feat-text" id="checkbox-weapon-pro6" name="checkbox-weapon-pro6" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-doube-attack" x="710" y="437"><input type="checkbox" class="feat-checkbox" id="checkbox-doube-attack" name="checkbox-doube-attack" value="checkbox-doube-attack" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-burst-fire" x="710" y="427"><input type="checkbox" class="feat-checkbox" id="checkbox-burst-fire" name="checkbox-burst-fire" value="checkbox-burst-fire" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-burst-attack-1" x="741" y="446"><input type="text" class="feat-text" id="checkbox-burst-attack-1" name="checkbox-burst-attack-1" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-burst-attack-2" x="741" y="458"><input type="text" class="feat-text" id="checkbox-burst-attack-2" name="checkbox-burst-attack-2" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-burst-attack-3" x="741" y="470"><input type="text" class="feat-text" id="checkbox-burst-attack-3" name="checkbox-burst-attack-3" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-triple-attack" x="741" y="485"><input type="checkbox" class="feat-checkbox" id="checkbox-triple-attack" name="checkbox-triple-attack" value="checkbox-triple-attack" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-triple-attack-1" x="769" y="493"><input type="text" class="feat-text" id="checkbox-triple-attack-1" name="checkbox-triple-attack-1" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-triple-attack-2" x="769" y="506"><input type="text" class="feat-text" id="checkbox-triple-attack-2" name="checkbox-triple-attack-2" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-triple-attack-3" x="769" y="517"><input type="text" class="feat-text" id="checkbox-triple-attack-3" name="checkbox-triple-attack-3" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-rapid-shot" x="710" y="533"><input type="checkbox" class="feat-checkbox" id="checkbox-rapid-shot" name="checkbox-rapid-shot" value="checkbox-rapid-shot" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-rapid-strike" x="710" y="545"><input type="checkbox" class="feat-checkbox" id="checkbox-rapid-strike" name="checkbox-rapid-strike" value="checkbox-rapid-strike" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-triple-crit" x="710" y="557"><input type="checkbox" class="feat-checkbox" id="checkbox-triple-crit" name="checkbox-triple-crit" value="checkbox-triple-crit" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-triple-crit-1" x="741" y="567"><input type="text" class="feat-text" id="checkbox-triple-crit-1" name="checkbox-triple-crit-1" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-triple-crit-2" x="741" y="577"><input type="text" class="feat-text" id="checkbox-triple-crit-2" name="checkbox-triple-crit-2" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-triple-crit-3" x="741" y="590"><input type="text" class="feat-text" id="checkbox-triple-crit-3" name="checkbox-triple-crit-3" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-weapon-focus" x="710" y="606"><input type="checkbox" class="feat-checkbox" id="checkbox-weapon-focus" name="checkbox-weapon-focus" value="checkbox-weapon-focus" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-weapon-focus-1" x="741" y="615"><input type="text" class="feat-text" id="checkbox-weapon-focus-1" name="checkbox-weapon-focus-1" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-weapon-focus-2" x="741" y="627"><input type="text" class="feat-text" id="checkbox-weapon-focus-2" name="checkbox-weapon-focus-2" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-weapon-focus-3" x="741" y="640"><input type="text" class="feat-text" id="checkbox-weapon-focus-3" name="checkbox-weapon-focus-3" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-self-fill-1" x="710" y="663"><input type="text" class="feat-text" id="checkbox-self-fill-1" name="checkbox-self-fill-1" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-self-fill-2" x="710" y="675"><input type="text" class="feat-text" id="checkbox-self-fill-2" name="checkbox-self-fill-2" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-self-fill-3" x="710" y="686"><input type="text" class="feat-text" id="checkbox-self-fill-3" name="checkbox-self-fill-3" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-self-fill-4" x="710" y="699"><input type="text" class="feat-text" id="checkbox-self-fill-4" name="checkbox-self-fill-4" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-self-fill-5" x="710" y="710"><input type="text" class="feat-text" id="checkbox-self-fill-5" name="checkbox-self-fill-5" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-self-fill-6" x="710" y="722"><input type="text" class="feat-text" id="checkbox-self-fill-6" name="checkbox-self-fill-6" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="145px" height="18px" id="feat-self-fill-7" x="710" y="735"><input type="text" class="feat-text" id="checkbox-self-fill-7" name="checkbox-self-fill-7" style="height: 11px;font-size: 11px;width: 128px;margin-left: 10px;border: 0px;background-color: transparent;" value="..." onkeyup="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-self-1" x="683" y="663"><input type="checkbox" class="feat-checkbox" id="checkbox-self-1" name="checkbox-self-1" value="checkbox-self-1" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-self-2" x="683" y="676"><input type="checkbox" class="feat-checkbox" id="checkbox-self-2" name="checkbox-self-2" value="checkbox-self-2" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-self-3" x="683" y="690"><input type="checkbox" class="feat-checkbox" id="checkbox-self-3" name="checkbox-self-3" value="checkbox-self-3" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-self-4" x="683" y="700"><input type="checkbox" class="feat-checkbox" id="checkbox-self-4" name="checkbox-self-4" value="checkbox-self-4" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-self-5" x="683" y="714"><input type="checkbox" class="feat-checkbox" id="checkbox-self-5" name="checkbox-self-5" value="checkbox-self-5" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-self-6" x="683" y="725"><input type="checkbox" class="feat-checkbox" id="checkbox-self-6" name="checkbox-self-6" value="checkbox-self-6" onclick="featclick(this);" /></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-self-7" x="683" y="738"><input type="checkbox" class="feat-checkbox" id="checkbox-self-7" name="checkbox-self-7" value="checkbox-self-7" onclick="featclick(this);" /></foreignobject>
+</g>
+</svg>
+                <form>
+                    <label>Languages:</label>
+                    <input type="text" class="language" id="language-1form" name="language" onclick="save(this)" value="language-1form">
+                    <input type="text" class="language" id="language-2form" name="language" onclick="save(this)" value="language-1form">
+                    <input type="text" class="language" id="language-3form" name="language" onclick="save(this)" value="language-1form">
+                    <input type="text" class="language" id="language-4form" name="language" onclick="save(this)" value="language-1form">
+                    <input type="text" class="language" id="language-5form" name="language" onclick="save(this)" value="language-1form">
+                    <input type="text" class="language" id="language-6form" name="language" onclick="save(this)" value="language-1form">
+                    <input type="text" class="language" id="language-7form" name="language" onclick="save(this)" value="language-1form">
+                </form>
+            </div>
+        <div id="abilitiesdiv" class="main">
             <form>
                 <label>Your Abilities:</label>
             </form>
         </div>
-        <div id="pdfdiv", class="main">
+        <div id="pdfdiv" class="main">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg width="1000" height="1245" viewBox="0 0 1000 1245" version="1.1" id="svg1" xml:space="preserve" inkscape:version="1.3.2 (091e20e, 2023-11-25)" sodipodi:docname="page_1.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
 <sodipodi:namedview id="namedview1" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" inkscape:document-units="mm" inkscape:zoom="0.85340482" inkscape:cx="727.08752" inkscape:cy="903.43994" inkscape:window-width="1280" inkscape:window-height="667" inkscape:window-x="0" inkscape:window-y="25" inkscape:window-maximized="0" inkscape:current-layer="layer1" />
 <defs id="defs1"><rect x="516.75358" y="146.4721" width="48.04285" height="26.950867" id="rect189" /></defs>
@@ -415,207 +556,206 @@
 </g>
 </g>
 </svg>
-
+            <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg width="1000" height="1245" viewBox="0 0 1000 1245" version="1.1" id="svg2" xml:space="preserve" inkscape:version="1.3.2 (091e20e, 2023-11-25)" sodipodi:docname="page_2.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
 <sodipodi:namedview id="namedview2" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" inkscape:document-units="mm" inkscape:zoom="0.85340482" inkscape:cx="727.08752" inkscape:cy="903.43994" inkscape:window-width="1280" inkscape:window-height="667" inkscape:window-x="0" inkscape:window-y="25" inkscape:window-maximized="0" inkscape:current-layer="layer1" />
 <defs id="defs2"><rect x="516.75358" y="146.4721" width="48.04285" height="26.950867" id="rect190" /></defs>
 <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1">
-<image width="1000" height="1243.568" preserveAspectRatio="none" xlink:href="img/page_2.png" id="image1" x="-0.43862459" y="1.1609408" inkscape:transform-center-x="20.135593" inkscape:transform-center-y="-10.067797" />
+<image width="1000" height="1243.568" preserveAspectRatio="none" xlink:href="img/page_2.png" id="image1" x="-0.43862459" y="5" inkscape:transform-center-x="20.135593" inkscape:transform-center-y="-10.067797" />
 <text xml:space="preserve" style="font-size:17.3333px;line-height:0.99;white-space:pre;inline-size:281.036;display:inline;fill:#000000" x="74.993713" y="141.785" id="text185" transform="translate(0,3.5153305)"  /><tspan x="74.993713" y="141.785" id="talents-1"  /><tspan x="74.993713" y="158.94498" id="talents-2"  /><tspan x="74.993713" y="176.10495" id="talents-3"  /><tspan x="74.993713" y="193.26493" id="talents-4"  /><tspan x="74.993713" y="210.4249" id="talents-5"  /><tspan x="74.993713" y="227.58487" id="talents-6"  /><tspan x="74.993713" y="244.74484" id="talents-7"  /><tspan x="74.993713" y="261.90482" id="talents-8"  /><tspan x="74.993713" y="279.06479" id="talents-9"  /><tspan x="74.993713" y="296.22476" id="talents-10"  /><tspan x="74.993713" y="313.38474" id="talents-12"  /><tspan x="74.993713" y="330.54471" id="talents-13"  /><tspan x="74.993713" y="347.70468" id="talents-14"  /><tspan x="74.993713" y="364.86466" id="talents-15"  /><tspan x="74.993713" y="382.02463" id="talents-15"  /><tspan x="74.993713" y="399.1846" id="talents-16" />
 <text xml:space="preserve" style="font-size:17.3333px;line-height:0.99;white-space:pre;inline-size:238.852;display:inline;fill:#000000" x="74.993713" y="141.785" id="text185-7" transform="translate(0.04280294,314.80093)"  /><tspan x="74.993713" y="141.785" id="language-1"  /><tspan x="74.993713" y="158.94498" id="language-2"  /><tspan x="74.993713" y="176.10495" id="language-3"  /><tspan x="74.993713" y="193.26493" id="language-4"  /><tspan x="74.993713" y="210.4249" id="language-5"  /><tspan x="74.993713" y="227.58487" id="language-6"  /><tspan x="74.993713" y="244.74484" id="language-7" />
 <text xml:space="preserve" style="font-size:17.3333px;line-height:0.99;white-space:pre;inline-size:238.852;display:inline;fill:#000000" x="74.993713" y="141.785" id="text185-7-1" transform="translate(-0.7488531,486.5863)"  /><tspan x="74.993713" y="141.785" id="species-1"  /><tspan x="74.993713" y="158.94498" id="species-2"  /><tspan x="74.993713" y="176.10495" id="species-3"  /><tspan x="74.993713" y="193.26493" id="species-4"  /><tspan x="74.993713" y="210.4249" id="species-5" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="acro-strike" x="404.263" y="135.92612" />
-<text xml:space="preserve" id="text189" style="font-size:13.3333px;line-height:0.99;white-space:pre;shape-inside:url(#rect189);display:inline;fill:#000000" /><text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="armor-prof-light" x="403.09122" y="148.81566" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="armor-prof-med" x="431.21387" y="160.53343" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="armor-prof-heavy" x="458.16473" y="173.42297" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="bantha-rush" x="403.09122" y="185.14075" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="charging-fire" x="404.263" y="196.85851" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="combat-ref" x="403.09122" y="208.57628" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="coord-attack" x="403.09122" y="220.29404" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="cyber-surgery" x="404.263" y="233.18359" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="dodge" x="404.263" y="244.90137" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="mobile" x="431.21387" y="257.79089" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="improved-charge" x="459.33652" y="269.50867" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="dread-rage" x="404.263" y="281.22644" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="duall-weapon-1" x="404.263" y="294.11597" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="dual-weapon-2" x="431.21387" y="305.83374" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="dual-weapon-3" x="458.16473" y="316.37973" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="exotic-weapons" x="403.09122" y="328.0975" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="exotic-weapon-1" x="432.38565" y="339.81528" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="exotic-weapon-2" x="432.38565" y="351.53305" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="exotic-weapon-3" x="433.55743" y="362.07904" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="extra-rage" x="403.09122" y="376.14035" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="extra-rage-3" x="550.73511" y="377.31213" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="extra-rage-2" x="539.01733" y="378.48392" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="extra-rage-1" x="526.12781" y="377.31213" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="second-wind" x="403.09122" y="389.02991" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="second-wind-3" x="604.63684" y="391.37347" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="second-wind-2" x="594.09082" y="390.20169" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="second-wind-1" x="581.20129" y="390.20169" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="force-sensitivity" x="403.09122" y="403.09122" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="force-training-3" x="602.29327" y="426.52676" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="force-training-2" x="589.40375" y="426.52676" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="force-training-1" x="576.51422" y="426.52676" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="force-training" x="430.04211" y="425.35498" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="force-boon" x="431.21387" y="412.46545" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="improved-def" x="404.263" y="438.24454" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="improved-damage-thresh-3" x="631.58771" y="449.96231" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="improved-damage-thresh-3" x="617.52637" y="449.96231" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="improved-damage-thresh-1" x="603.46509" y="449.96231" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="improved-damage-thresh" x="404.263" y="449.96231" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="linguist-3" x="524.95599" y="461.68008" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="linguist-3" x="510.89471" y="461.68008" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="linguist-1" x="498.00516" y="462.85184" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="linguist" x="403.09122" y="461.68008" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="mart-art-1" x="403.09122" y="474.56961" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="mart-art-2" x="431.21387" y="486.28738" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="mart-art-3" x="458.16473" y="499.17694" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="melee-def" x="403.09122" y="510.89471" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="impoved-disarm" x="431.21387" y="522.61249" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="whirlwind-attack" x="431.21387" y="534.33026" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="might-swing" x="403.09122" y="546.04797" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="pin" x="403.09122" y="557.76575" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="crush" x="431.21387" y="570.65533" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="shiper" x="458.16473" y="642.13373" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="deadeye" x="458.16473" y="629.24414" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="precise-shot" x="430.04211" y="618.69818" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="far-shot" x="430.04211" y="604.63684" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="careful-shot" x="428.87033" y="592.91907" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="point-blank-shot" x="403.09122" y="582.37311" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="power-attack" x="403.09122" y="655.02325" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="cleave" x="430.04211" y="665.56921" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="great-cleave" x="458.16473" y="677.28699" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="power-charge" x="403.09122" y="689.00476" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="quick-draw" x="403.09122" y="701.89435" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="run-attack" x="404.263" y="714.78387" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="shake-off" x="404.263" y="726.50165" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="skill-foc" x="681.97412" y="126.5519" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="skill-foc-1" x="712.44031" y="138.26967" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="skill-foc-2" x="714.78387" y="148.81566" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="skill-foc-3" x="715.95563" y="161.7052" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="skill-foc-4" x="713.61206" y="174.59476" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="skill-train" x="681.97412" y="186.31252" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="skill-train-1" x="715.95563" y="198.03027" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="skill-train-2" x="717.12744" y="210.91983" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="skill-train-3" x="714.78387" y="221.46582" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="skill-train-4" x="713.61206" y="233.18359" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="skill-train-5" x="713.61206" y="246.07314" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="strong-in-force" x="683.14587" y="257.79089" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="surgical-expert" x="683.14587" y="269.50867" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="tough" x="683.14587" y="282.39822" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="trip" x="683.14587" y="292.94421" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="throw" x="710.09674" y="305.83374" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="vehicular-combat" x="683.14587" y="317.55151" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="weapon-finesse" x="681.97412" y="330.44107" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="weapon-prof" x="684.31769" y="342.15884" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="weapon-prof-1" x="711.26855" y="355.04837" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="weapon-pro-2" x="713.61206" y="365.59436" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="weapon-pro-3" x="713.61206" y="377.31213" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="weapon-pro-4" x="712.44031" y="387.85815" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="weapon-pro-5" x="712.44031" y="399.5759" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="weapon-pro6" x="712.44031" y="411.29367" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="doube-attack" x="710.09674" y="437.07275" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="burst-fire" x="710.09674" y="425.35501" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="burst-attack-1" x="741.73474" y="448.79053" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="burst-attack-2" x="742.90649" y="462.85184" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="burst-attack-3" x="742.90649" y="473.39783" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="triple-attack" x="738.21942" y="485.1156" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="triple-attack-1" x="765.17029" y="495.66162" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="triple-attack-2" x="768.68561" y="508.55115" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="triple-attack-3" x="765.17029" y="519.09717" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="rapid-shot" x="710.09674" y="533.15845" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="rapid-strike" x="710.09674" y="544.87622" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="triple-crit" x="710.09674" y="556.59399" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="triple-crit-1" x="740.56299" y="569.48352" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="triple-crit-2" x="740.56299" y="577.68597" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="triple-crit-3" x="740.56299" y="590.5755" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="weapon-focus" x="711.26855" y="605.80859" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="weapon-focus-1" x="742.90649" y="617.52637" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="weapon-focus-2" x="741.73474" y="629.24414" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="weapon-focus-3" x="740.56299" y="640.96191" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="self-fill-1" x="713.61206" y="666.74103" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="self-fill-2" x="712.44031" y="677.28699" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="self-fill-3" x="712.44031" y="689.00476" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="self-fill-4" x="712.44031" y="701.89435" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="self-fill-5" x="711.26855" y="712.44031" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="self-fill-6" x="713.61206" y="725.32983" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="self-fill-7" x="712.44031" y="738.21942" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="self-1" x="681.97412" y="663.22571" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="self-2" x="683.14587" y="676.11523" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="self-3" x="683.14587" y="690.17657" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="self-4" x="683.14587" y="699.55078" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="self-5" x="681.97412" y="713.61206" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="self-6" x="683.14587" y="725.32983" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="self-7" x="683.14587" y="738.21942" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="gear-1" x="104.28814" y="812.04132" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="w-1" x="324.58218" y="813.21313" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="gear-2" x="104.28814" y="828.44623" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="gear-3" x="104.28814" y="847.19464" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="gear-4" x="104.28814" y="864.7713" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="gear-5" x="105.45991" y="881.17621" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="gear-6" x="105.45991" y="898.75281" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="gear-7" x="104.28814" y="917.50128" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="gear-8" x="106.63169" y="931.56256" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="gear-9" x="101.94458" y="949.13922" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="gear-10" x="101.94458" y="967.88763" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="gear-11" x="103.11636" y="984.29254" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="gear-12" x="104.28814" y="999.52563" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="gear-13" x="103.11636" y="1017.1023" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="gear-14" x="103.11636" y="1035.8507" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="gear-15" x="101.94458" y="1052.2556" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="gear-16" x="104.28814" y="1071.004" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="w-2" x="323.4104" y="828.44623" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="w-3" x="323.4104" y="846.02289" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="w-4" x="323.4104" y="863.59955" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="w-5" x="323.4104" y="881.17621" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="w-6" x="325.75397" y="897.58105" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="w-7" x="323.4104" y="916.32947" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="w-8" x="323.4104" y="930.39081" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="w-9" x="322.23862" y="949.13922" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="w-10" x="322.23862" y="967.88763" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="w-11" x="323.4104" y="983.12079" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="w-12" x="324.58218" y="1000.6974" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="w-13" x="322.23862" y="1018.2741" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="w-14" x="323.4104" y="1035.8507" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="w-15" x="324.58218" y="1052.2556" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="w-16" x="323.4104" y="1069.8322" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="total-weight" x="325.75397" y="1086.2371" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="carry-cap" x="323.4104" y="1120.2188" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="al-3" x="426.52676" y="851.88177" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="al-2" x="411.29367" y="853.05353" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="al-1" x="394.88879" y="851.88177" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="aug-3" x="427.69855" y="875.31726" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="aug-2" x="411.29367" y="877.66083" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="aug-1" x="394.88879" y="876.48907" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="cog-3" x="428.87033" y="898.75281" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="cog-2" x="412.46545" y="897.58105" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="cog-1" x="394.88879" y="897.58105" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="sor-3" x="426.52676" y="922.18835" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="sor-2" x="412.46545" y="923.36017" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="sor-1" x="396.06058" y="922.18835" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="tel-3" x="427.69855" y="949.13922" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="tel-2" x="411.29367" y="947.96747" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="tel-1" x="396.06058" y="949.13922" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="tec-3" x="427.69855" y="973.74652" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="tec-2" x="412.46545" y="973.74652" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="tec-1" x="394.88879" y="973.74652" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="vit-3" x="430.04211" y="1001.8692" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="vit-2" x="412.46545" y="998.35388" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="vit-1" x="394.88879" y="998.35388" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="credits" x="205.06094" y="1169.4333" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="force-uses" x="535.50201" y="1076.8629" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="force-teq-1" x="708.92499" y="842.50757" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="force-teq-2" x="707.75323" y="853.05353" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="force-teq-3" x="707.75323" y="858.91241" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="force-teq-4" x="707.75323" y="869.45844" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="force-sec-1" x="707.75323" y="913.9859" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="force-sec-2" x="710.09674" y="923.36017" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="force-sec-3" x="710.09674" y="933.90613" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="force-sec-4" x="708.92499" y="942.10858" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="force-sec-5" x="711.26855" y="951.48279" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="acro-strike" x="404.263" y="135.92612" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="armor-prof-med" x="431.21387" y="160.53343" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="armor-prof-heavy" x="458.16473" y="173.42297" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="bantha-rush" x="403.09122" y="185.14075" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="charging-fire" x="404.263" y="196.85851" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="combat-ref" x="403.09122" y="208.57628" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="coord-attack" x="403.09122" y="220.29404" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="cyber-surgery" x="404.263" y="233.18359" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="dodge" x="404.263" y="244.90137" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="mobile" x="431.21387" y="257.79089" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="improved-charge" x="459.33652" y="269.50867" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="dread-rage" x="404.263" y="281.22644" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="dual-weapon-1" x="404.263" y="294.11597" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="dual-weapon-2" x="431.21387" y="305.83374" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="dual-weapon-3" x="458.16473" y="316.37973" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="exotic-weapons" x="403.09122" y="328.0975" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="exotic-weapon-1" x="432.38565" y="339.81528" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="exotic-weapon-2" x="432.38565" y="351.53305" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="exotic-weapon-3" x="433.55743" y="362.07904" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="extra-rage" x="403.09122" y="376.14035" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="extra-rage-3" x="550.73511" y="377.31213" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="extra-rage-2" x="539.01733" y="378.48392" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="extra-rage-1" x="526.12781" y="377.31213" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="second-wind" x="403.09122" y="389.02991" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="second-wind-3" x="604.63684" y="391.37347" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="second-wind-2" x="594.09082" y="390.20169" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="second-wind-1" x="581.20129" y="390.20169" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="force-sensitivity" x="403.09122" y="403.09122" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="force-training-3" x="602.29327" y="426.52676" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="force-training-2" x="589.40375" y="426.52676" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="force-training-1" x="576.51422" y="426.52676" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="force-training" x="430.04211" y="425.35498" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="force-boon" x="431.21387" y="412.46545" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="improved-def" x="404.263" y="438.24454" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="improved-damage-thresh-3" x="631.58771" y="449.96231" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="improved-damage-thresh-3" x="617.52637" y="449.96231" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="improved-damage-thresh-1" x="603.46509" y="449.96231" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="improved-damage-thresh" x="404.263" y="449.96231" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="linguist-3" x="524.95599" y="461.68008" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="linguist-3" x="510.89471" y="461.68008" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="linguist-1" x="498.00516" y="462.85184" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="linguist" x="403.09122" y="461.68008" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="mart-art-1" x="403.09122" y="474.56961" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="mart-art-2" x="431.21387" y="486.28738" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="mart-art-3" x="458.16473" y="499.17694" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="melee-def" x="403.09122" y="510.89471" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="impoved-disarm" x="431.21387" y="522.61249" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="whirlwind-attack" x="431.21387" y="534.33026" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="might-swing" x="403.09122" y="546.04797" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="pin" x="403.09122" y="557.76575" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="crush" x="431.21387" y="570.65533" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="shiper" x="458.16473" y="642.13373" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="deadeye" x="458.16473" y="629.24414" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="precise-shot" x="430.04211" y="618.69818" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="far-shot" x="430.04211" y="604.63684" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="careful-shot" x="428.87033" y="592.91907" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="point-blank-shot" x="403.09122" y="582.37311" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="power-attack" x="403.09122" y="655.02325" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="cleave" x="430.04211" y="665.56921" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="great-cleave" x="458.16473" y="677.28699" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="power-charge" x="403.09122" y="689.00476" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="quick-draw" x="403.09122" y="701.89435" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="run-attack" x="404.263" y="714.78387" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="shake-off" x="404.263" y="726.50165" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="skill-foc" x="681.97412" y="126.5519" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="skill-foc-1" x="712.44031" y="138.26967" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="skill-foc-2" x="714.78387" y="148.81566" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="skill-foc-3" x="715.95563" y="161.7052" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="skill-foc-4" x="713.61206" y="174.59476" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="skill-train" x="681.97412" y="186.31252" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="skill-train-1" x="715.95563" y="198.03027" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="skill-train-2" x="717.12744" y="210.91983" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="skill-train-3" x="714.78387" y="221.46582" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="skill-train-4" x="713.61206" y="233.18359" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="skill-train-5" x="713.61206" y="246.07314" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="strong-in-force" x="683.14587" y="257.79089" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="surgical-expert" x="683.14587" y="269.50867" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="tough" x="683.14587" y="282.39822" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="trip" x="683.14587" y="292.94421" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="throw" x="710.09674" y="305.83374" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="vehicular-combat" x="683.14587" y="317.55151" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="weapon-finesse" x="681.97412" y="330.44107" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="weapon-prof" x="684.31769" y="342.15884" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="weapon-prof-1" x="711.26855" y="355.04837" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="weapon-pro-2" x="713.61206" y="365.59436" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="weapon-pro-3" x="713.61206" y="377.31213" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="weapon-pro-4" x="712.44031" y="387.85815" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="weapon-pro-5" x="712.44031" y="399.5759" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="weapon-pro6" x="712.44031" y="411.29367" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="doube-attack" x="710.09674" y="437.07275" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="burst-fire" x="710.09674" y="425.35501" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="burst-attack-1" x="741.73474" y="448.79053" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="burst-attack-2" x="742.90649" y="462.85184" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="burst-attack-3" x="742.90649" y="473.39783" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="triple-attack" x="738.21942" y="485.1156" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="triple-attack-1" x="765.17029" y="495.66162" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="triple-attack-2" x="768.68561" y="508.55115" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="triple-attack-3" x="765.17029" y="519.09717" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="rapid-shot" x="710.09674" y="533.15845" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="rapid-strike" x="710.09674" y="544.87622" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="triple-crit" x="710.09674" y="556.59399" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="triple-crit-1" x="740.56299" y="569.48352" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="triple-crit-2" x="740.56299" y="577.68597" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="triple-crit-3" x="740.56299" y="590.5755" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="weapon-focus" x="711.26855" y="605.80859" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="weapon-focus-1" x="742.90649" y="617.52637" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="weapon-focus-2" x="741.73474" y="629.24414" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="weapon-focus-3" x="740.56299" y="640.96191" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="self-fill-1" x="713.61206" y="666.74103" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="self-fill-2" x="712.44031" y="677.28699" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="self-fill-3" x="712.44031" y="689.00476" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="self-fill-4" x="712.44031" y="701.89435" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="self-fill-5" x="711.26855" y="712.44031" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="self-fill-6" x="713.61206" y="725.32983" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="self-fill-7" x="712.44031" y="738.21942" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="self-1" x="681.97412" y="663.22571" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="self-2" x="683.14587" y="676.11523" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="self-3" x="683.14587" y="690.17657" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="self-4" x="683.14587" y="699.55078" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="self-5" x="681.97412" y="713.61206" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="self-6" x="683.14587" y="725.32983" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="self-7" x="683.14587" y="738.21942" />
+<text xml:space="preserve" text-anchor="start" class="gear" font-family="Orbitron" id="gear-1" x="104.28814" y="812.04132" />
+<text xml:space="preserve" text-anchor="start" class="weight" font-family="Orbitron" id="w-1" x="324.58218" y="813.21313" />
+<text xml:space="preserve" text-anchor="start" class="gear" font-family="Orbitron" id="gear-2" x="104.28814" y="828.44623" />
+<text xml:space="preserve" text-anchor="start" class="gear" font-family="Orbitron" id="gear-3" x="104.28814" y="847.19464" />
+<text xml:space="preserve" text-anchor="start" class="gear" font-family="Orbitron" id="gear-4" x="104.28814" y="864.7713" />
+<text xml:space="preserve" text-anchor="start" class="gear" font-family="Orbitron" id="gear-5" x="105.45991" y="881.17621" />
+<text xml:space="preserve" text-anchor="start" class="gear" font-family="Orbitron" id="gear-6" x="105.45991" y="898.75281" />
+<text xml:space="preserve" text-anchor="start" class="gear" font-family="Orbitron" id="gear-7" x="104.28814" y="917.50128" />
+<text xml:space="preserve" text-anchor="start" class="gear" font-family="Orbitron" id="gear-8" x="106.63169" y="931.56256" />
+<text xml:space="preserve" text-anchor="start" class="gear" font-family="Orbitron" id="gear-9" x="101.94458" y="949.13922" />
+<text xml:space="preserve" text-anchor="start" class="gear" font-family="Orbitron" id="gear-10" x="101.94458" y="967.88763" />
+<text xml:space="preserve" text-anchor="start" class="gear" font-family="Orbitron" id="gear-11" x="103.11636" y="984.29254" />
+<text xml:space="preserve" text-anchor="start" class="gear" font-family="Orbitron" id="gear-12" x="104.28814" y="999.52563" />
+<text xml:space="preserve" text-anchor="start" class="gear" font-family="Orbitron" id="gear-13" x="103.11636" y="1017.1023" />
+<text xml:space="preserve" text-anchor="start" class="gear" font-family="Orbitron" id="gear-14" x="103.11636" y="1035.8507" />
+<text xml:space="preserve" text-anchor="start" class="gear" font-family="Orbitron" id="gear-15" x="101.94458" y="1052.2556" />
+<text xml:space="preserve" text-anchor="start" class="gear" font-family="Orbitron" id="gear-16" x="104.28814" y="1071.004" />
+<text xml:space="preserve" text-anchor="start" class="weight" font-family="Orbitron" id="w-2" x="323.4104" y="828.44623" />
+<text xml:space="preserve" text-anchor="start" class="weight" font-family="Orbitron" id="w-3" x="323.4104" y="846.02289" />
+<text xml:space="preserve" text-anchor="start" class="weight" font-family="Orbitron" id="w-4" x="323.4104" y="863.59955" />
+<text xml:space="preserve" text-anchor="start" class="weight" font-family="Orbitron" id="w-5" x="323.4104" y="881.17621" />
+<text xml:space="preserve" text-anchor="start" class="weight" font-family="Orbitron" id="w-6" x="325.75397" y="897.58105" />
+<text xml:space="preserve" text-anchor="start" class="weight" font-family="Orbitron" id="w-7" x="323.4104" y="916.32947" />
+<text xml:space="preserve" text-anchor="start" class="weight" font-family="Orbitron" id="w-8" x="323.4104" y="930.39081" />
+<text xml:space="preserve" text-anchor="start" class="weight" font-family="Orbitron" id="w-9" x="322.23862" y="949.13922" />
+<text xml:space="preserve" text-anchor="start" class="weight" font-family="Orbitron" id="w-10" x="322.23862" y="967.88763" />
+<text xml:space="preserve" text-anchor="start" class="weight" font-family="Orbitron" id="w-11" x="323.4104" y="983.12079" />
+<text xml:space="preserve" text-anchor="start" class="weight" font-family="Orbitron" id="w-12" x="324.58218" y="1000.6974" />
+<text xml:space="preserve" text-anchor="start" class="weight" font-family="Orbitron" id="w-13" x="322.23862" y="1018.2741" />
+<text xml:space="preserve" text-anchor="start" class="weight" font-family="Orbitron" id="w-14" x="323.4104" y="1035.8507" />
+<text xml:space="preserve" text-anchor="start" class="weight" font-family="Orbitron" id="w-15" x="324.58218" y="1052.2556" />
+<text xml:space="preserve" text-anchor="start" class="weight" font-family="Orbitron" id="w-16" x="323.4104" y="1069.8322" />
+<text xml:space="preserve" text-anchor="start" class="weight" font-family="Orbitron" id="total-weight" x="325.75397" y="1086.2371" />
+<text xml:space="preserve" text-anchor="start" class="weight" font-family="Orbitron" id="carry-cap" x="323.4104" y="1120.2188" />
+<text xml:space="preserve" text-anchor="start" class="force-school" font-family="Orbitron" id="al-3" x="426.52676" y="851.88177" />
+<text xml:space="preserve" text-anchor="start" class="force-school" font-family="Orbitron" id="al-2" x="411.29367" y="853.05353" />
+<text xml:space="preserve" text-anchor="start" class="force-school" font-family="Orbitron" id="al-1" x="394.88879" y="851.88177" />
+<text xml:space="preserve" text-anchor="start" class="force-school" font-family="Orbitron" id="aug-3" x="427.69855" y="875.31726" />
+<text xml:space="preserve" text-anchor="start" class="force-school" font-family="Orbitron" id="aug-2" x="411.29367" y="877.66083" />
+<text xml:space="preserve" text-anchor="start" class="force-school" font-family="Orbitron" id="aug-1" x="394.88879" y="876.48907" />
+<text xml:space="preserve" text-anchor="start" class="force-school" font-family="Orbitron" id="cog-3" x="428.87033" y="898.75281" />
+<text xml:space="preserve" text-anchor="start" class="force-school" font-family="Orbitron" id="cog-2" x="412.46545" y="897.58105" />
+<text xml:space="preserve" text-anchor="start" class="force-school" font-family="Orbitron" id="cog-1" x="394.88879" y="897.58105" />
+<text xml:space="preserve" text-anchor="start" class="force-school" font-family="Orbitron" id="sor-3" x="426.52676" y="922.18835" />
+<text xml:space="preserve" text-anchor="start" class="force-school" font-family="Orbitron" id="sor-2" x="412.46545" y="923.36017" />
+<text xml:space="preserve" text-anchor="start" class="force-school" font-family="Orbitron" id="sor-1" x="396.06058" y="922.18835" />
+<text xml:space="preserve" text-anchor="start" class="force-school" font-family="Orbitron" id="tel-3" x="427.69855" y="949.13922" />
+<text xml:space="preserve" text-anchor="start" class="force-school" font-family="Orbitron" id="tel-2" x="411.29367" y="947.96747" />
+<text xml:space="preserve" text-anchor="start" class="force-school" font-family="Orbitron" id="tel-1" x="396.06058" y="949.13922" />
+<text xml:space="preserve" text-anchor="start" class="force-school" font-family="Orbitron" id="tec-3" x="427.69855" y="973.74652" />
+<text xml:space="preserve" text-anchor="start" class="force-school" font-family="Orbitron" id="tec-2" x="412.46545" y="973.74652" />
+<text xml:space="preserve" text-anchor="start" class="force-school" font-family="Orbitron" id="tec-1" x="394.88879" y="973.74652" />
+<text xml:space="preserve" text-anchor="start" class="force-school" font-family="Orbitron" id="vit-3" x="430.04211" y="1001.8692" />
+<text xml:space="preserve" text-anchor="start" class="force-school" font-family="Orbitron" id="vit-2" x="412.46545" y="998.35388" />
+<text xml:space="preserve" text-anchor="start" class="force-school" font-family="Orbitron" id="vit-1" x="394.88879" y="998.35388" />
+<text xml:space="preserve" text-anchor="start" class="credits" font-family="Orbitron" id="credits" x="205.06094" y="1169.4333" />
+<text xml:space="preserve" text-anchor="start" class="force-uses" font-family="Orbitron" id="force-uses" x="535.50201" y="1076.8629" />
+<text xml:space="preserve" text-anchor="start" class="force-teq" font-family="Orbitron" id="force-teq-1" x="708.92499" y="842.50757" />
+<text xml:space="preserve" text-anchor="start" class="force-teq" font-family="Orbitron" id="force-teq-2" x="707.75323" y="853.05353" />
+<text xml:space="preserve" text-anchor="start" class="force-teq" font-family="Orbitron" id="force-teq-3" x="707.75323" y="858.91241" />
+<text xml:space="preserve" text-anchor="start" class="force-teq" font-family="Orbitron" id="force-teq-4" x="707.75323" y="869.45844" />
+<text xml:space="preserve" text-anchor="start" class="force-sec" font-family="Orbitron" id="force-sec-1" x="707.75323" y="913.9859" />
+<text xml:space="preserve" text-anchor="start" class="force-sec" font-family="Orbitron" id="force-sec-2" x="710.09674" y="923.36017" />
+<text xml:space="preserve" text-anchor="start" class="force-sec" font-family="Orbitron" id="force-sec-3" x="710.09674" y="933.90613" />
+<text xml:space="preserve" text-anchor="start" class="force-sec" font-family="Orbitron" id="force-sec-4" x="708.92499" y="942.10858" />
+<text xml:space="preserve" text-anchor="start" class="force-sec" font-family="Orbitron" id="force-sec-5" x="711.26855" y="951.48279" />
 </g>
 </svg>
-            
+
         </div>
         <script src="species.json"></script>
         <script src="class.json"></script>

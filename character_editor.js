@@ -1,5 +1,51 @@
 species = JSON.parse(speciesstring)
 classes = JSON.parse(classstring)
+feats_text = [
+    "checkbox-exotic-weapon-1",
+    "checkbox-exotic-weapon-2",
+    "checkbox-exotic-weapon-3",
+    "checkbox-skill-foc-1",
+    "checkbox-skill-foc-2",
+    "checkbox-skill-foc-3",
+    "checkbox-skill-foc-4",
+    "checkbox-skill-train-1",
+    "checkbox-skill-train-2",
+    "checkbox-skill-train-3",
+    "checkbox-skill-train-4",
+    "checkbox-skill-train-5",
+    "checkbox-weapon-prof-1",
+    "checkbox-weapon-pro-2",
+    "checkbox-weapon-pro-3",
+    "checkbox-weapon-pro-4",
+    "checkbox-weapon-pro-5",
+    "checkbox-weapon-pro6",
+    "checkbox-burst-attack-1",
+    "checkbox-burst-attack-2",
+    "checkbox-burst-attack-3",
+    "checkbox-triple-attack-1",
+    "checkbox-triple-attack-2",
+    "checkbox-triple-attack-3",
+    "checkbox-triple-crit-1",
+    "checkbox-triple-crit-2",
+    "checkbox-triple-crit-3",
+    "checkbox-weapon-focus-1",
+    "checkbox-weapon-focus-2",
+    "checkbox-weapon-focus-3",
+    "checkbox-self-fill-1",
+    "checkbox-self-fill-2",
+    "checkbox-self-fill-3",
+    "checkbox-self-fill-4",
+    "checkbox-self-fill-5",
+    "checkbox-self-fill-6",
+    "checkbox-self-fill-7"]
+
+languages=["language-1",
+"language-2",
+"language-3",
+"language-4",
+"language-5",
+"language-6",
+"language-7"]
 
 function clickchange (name) {
     document.getElementById('namediv').style.display = 'none'
@@ -22,7 +68,6 @@ function clickchange (name) {
 
 function nameclick () {
     clickchange("name")
-    save()
     document.getElementById("characterform").value = localStorage.getItem("character")
     document.getElementById("playerform").value = localStorage.getItem("player")
     document.getElementById("speciesform").value = localStorage.getItem("species")
@@ -34,11 +79,11 @@ function nameclick () {
 }
 function classclick () {
     clickchange("class")
-    save()
+    
     document.getElementById("classform").value = localStorage.getItem("class")
     changeclass()
     document.getElementById("levelform").value = localStorage.getItem("level")
-    document.getElementById("creditform").value = localStorage.getItem("credits")
+    document.getElementById("creditsform").value = localStorage.getItem("credits")
 }
 function skillsclick () {
     clickchange("skills")
@@ -52,15 +97,31 @@ function skillsclick () {
             document.getElementById(skill+"-checkbox").checked = true
         }
     }
-    save()
+    
 }
-function abilitiesclick () {
+function featsclick () {
     clickchange("feats")
-    save()
+    console.log(classes[localStorage.getItem("class")]["classfeatures"]["other-feats"].length+Math.floor(localStorage.getItem("level")/2) , localStorage.getItem("feats").split(",").length-1)
+    if (classes[localStorage.getItem("class")]["classfeatures"]["other-feats"].length+Math.floor(localStorage.getItem("level")/2) <= localStorage.getItem("feats").split(",").length-1) {
+        document.getElementById("class-feats").innerHTML = "Feats (you have reached your maximum, make sure you are leveling yourself up correcly before continueing):"
+    } else {
+        document.getElementById("class-feats").innerHTML = "Feats (you start with "+classes[localStorage.getItem("class")]["classfeatures"]["other-feats"].join(", ")+" and "+Math.floor(localStorage.getItem("level")/2)+" others at your current level and class):"
+    }
+    for (const feat of localStorage.getItem("feats").split(",")){
+        if (feat) {
+            document.getElementById(feat).checked = true
+        }
+    }
+    for (const feat of feats_text) {
+        try {
+            document.getElementById(feat).value = localStorage.getItem(feat)
+        } catch  {console.log(localStorage.getItem(feat))}
+        console.log(localStorage.getItem(feat))
+    }
 }
 function abilitiesclick () {
     clickchange("abilities")
-    save()
+    
 }
 function pdfclick () {
     clickchange("pdf")
@@ -90,17 +151,26 @@ function pdfclick () {
     document.getElementById("credits").innerHTML = localStorage.getItem("credits")
     document.getElementById("force-uses").innerHTML = Math.floor(localStorage.getItem("level")/2)+1
     for (const skill of localStorage.getItem("skills").split(",")) {
-        if (skill) {document.getElementById(skill).innerHTML += "  ▣"}
+        if (skill) {document.getElementById(skill).innerHTML = "  ▣"}
+    }
+    for (const feat of localStorage.getItem("feats").split(",")) {
+        if (feat) {document.getElementById(feat.split("checkbox-")[1]).innerHTML = "▣"}
+    }
+    for (const feat of feats_text) {
+        try {
+            document.getElementById(feat.split("checkbox-")[1]).innerHTML = localStorage.getItem(feat)
+        } catch  {console.log(localStorage.getItem(feat))}
+        console.log(localStorage.getItem(feat))
     }
 }
 
 function processhuman (currentspecies) {
     interestring = "<label>Choose Two Bonus Feats:</label>"
-    interestring += "<form></form><select name=\"bonus-feat\" id=\"bonus-feat\" onchange=\"humansave()\">"
+    interestring += "<form></form><select name=\"bonus-feat\" id=\"bonus-feat\" onchange=\"human\">"
     for (item in species[currentspecies]["species-traits"]["bonus-traits"]){
         interestring += "<option value="+species[currentspecies]["species-traits"]["bonus-traits"][item]["name"].replace(" ", "-")+">"+species[currentspecies]["species-traits"]["bonus-traits"][item]["name"]+": "+species[currentspecies]["species-traits"]["bonus-traits"][item]["description"]+"</option>"
     }
-    interestring += "</select><select name=\"bonus-feat2\" id=\"bonus-feat2\" onchange=\"humansave()\">"
+    interestring += "</select><select name=\"bonus-feat2\" id=\"bonus-feat2\" onchange=\"human\">"
     for (item in species[currentspecies]["species-traits"]["bonus-traits"]){
         interestring += "<option value="+species[currentspecies]["species-traits"]["bonus-traits"][item]["name"].replace(" ", "-")+">"+species[currentspecies]["species-traits"]["bonus-traits"][item]["name"]+": "+species[currentspecies]["species-traits"]["bonus-traits"][item]["description"]+"</option>"
     }
@@ -144,23 +214,8 @@ function changespecies() {
     }
 }
 
-function save() {
-    localStorage.setItem("character", document.getElementById("characterform").value)
-    localStorage.setItem("player", document.getElementById("playerform").value)
-    localStorage.setItem("weight", document.getElementById("weightform").value)
-    localStorage.setItem("height", document.getElementById("heightform").value)
-    localStorage.setItem("age", document.getElementById("ageform").value)
-    localStorage.setItem("sex", document.getElementById("sexform").value)
-    localStorage.setItem("level", document.getElementById("levelform").value)
-    if (document.getElementById("levelform").value > 11) {
-        
-    } else if (document.getElementById("levelform").value > 1) {
-        document.getElementById("multiclass").style.display = 'revert'
-    } else {
-        localStorage.setItem("class2", undefined)
-        document.getElementById("multiclass").style.display = 'none'
-    }
-    localStorage.setItem("credits", document.getElementById("creditform").value)
+function save(element) {
+    localStorage.setItem(element.id.split("form")[0], element.value)
 }
 
 function changeclass () {
@@ -214,5 +269,25 @@ function saveskill () {
 }
 
 function featclick (button) {
-    localStorage.setItem("feats", localStorage.getItem("feats")+button.id)
+    if (button.type == "checkbox") {
+        feats = localStorage.getItem("feats").split(",")
+        if ((button.checked) && !(button.value in feats)) {
+            feats.push(button.value)
+        } else if (!(button.checked) && !(button.value in feats)) {
+            feats[feats.indexOf(button.value)] = ""
+        }
+        feats = feats.filter(item => item !== "")
+        console.log(feats)
+        localStorage.setItem("feats", feats.join(","))
+    }
+    if (button.type == "text") {
+        localStorage.setItem(button.id, button.value)
+        console.log(button.value)
+        
+    }
+    if (classes[localStorage.getItem("class")]["classfeatures"]["other-feats"].length+Math.floor(localStorage.getItem("level")/2) <= localStorage.getItem("feats").split(",").length-1) {
+        document.getElementById("class-feats").innerHTML = "Feats (you have reached your maximum, make sure you are leveling yourself up correcly before continueing):"
+    } else {
+        document.getElementById("class-feats").innerHTML = "Feats (you start with "+classes[localStorage.getItem("class")]["classfeatures"]["other-feats"].join(", ")+" and "+Math.floor(localStorage.getItem("level")/2)+" others at your current level and class):"
+    }
 }

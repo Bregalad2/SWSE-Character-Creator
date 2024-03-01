@@ -20,7 +20,7 @@
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="mobile" x="431.21387" y="257.79089" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="improved-charge" x="459.33652" y="269.50867" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="dread-rage" x="404.263" y="281.22644" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="duall-weapon-1" x="404.263" y="294.11597" />
+<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="dual-weapon-1" x="404.263" y="294.11597" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="dual-weapon-2" x="431.21387" y="305.83374" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="dual-weapon-3" x="458.16473" y="316.37973" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="exotic-weapons" x="403.09122" y="328.0975" />
@@ -179,9 +179,9 @@
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="tel-3" x="427.69855" y="949.13922" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="tel-2" x="411.29367" y="947.96747" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="tel-1" x="396.06058" y="949.13922" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="tech-3" x="427.69855" y="973.74652" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="tech-2" x="412.46545" y="973.74652" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="tech-1" x="394.88879" y="973.74652" />
+<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="tec-3" x="427.69855" y="973.74652" />
+<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="tec-2" x="412.46545" y="973.74652" />
+<text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="tec-1" x="394.88879" y="973.74652" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="vit-3" x="430.04211" y="1001.8692" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="vit-2" x="412.46545" y="998.35388" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" id="vit-1" x="394.88879" y="998.35388" />

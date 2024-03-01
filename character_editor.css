@@ -108,7 +108,12 @@ input:focus-visible {
     outline: 2px solid #9b96ca;
     border-radius: 3px;
   }
-
+iframe {
+    padding: 0px;
+    border: 0px;
+    margin: 8px;
+    border-radius: 8px;
+}
 
 .header {
     height: 50px;
@@ -169,3 +174,13 @@ input:focus-visible {
     background-color: #c0bfdf;
 }
 
+.feat-checkbox {
+    margin-top: 0px;
+    height: 18px;
+}
+
+.feat {
+    margin: 0px;
+    padding: 0px;
+    font-size: 8px;
+}
