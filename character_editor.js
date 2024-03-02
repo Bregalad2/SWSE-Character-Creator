@@ -1,5 +1,6 @@
 species = JSON.parse(speciesstring)
 classes = JSON.parse(classstring)
+talenttrees = JSON.parse(talenttreesjson)
 feats_check = [
 "checkbox-acro-strike",
 "checkbox-armor-prof-light",
@@ -264,22 +265,29 @@ function abilitiesclick () {
 function talentsclick () {
     clickchange("talents")
     document.getElementById("talentslabel").innerHTML = "Talents (you have "+Math.ceil(localStorage.getItem("level")/2)+" talents based on your current level):"
-    console.log(Array(Math.ceil(localStorage.getItem("level")/2)).keys())
-    options = "<option value=\"\">None</option>"
-    console.log(classes[localStorage.getItem("class")]["talents"])
+    options = ""
     for (var item of classes[localStorage.getItem("class")]["talents"]) {
         options += "<option value=\""+item["name"]+"\">"+item["name"]+"</option>"
+    }
+    for (var item in talenttrees) {
+        if (localStorage.getItem("class") in talenttrees[item]["classes"]) {
+            for (var talent of item["talents"]) {
+                console.log(localStorage.getItem("class"),talenttrees[item]["classes"])
+                options += "<option value=\""+talent["name"]+"\">"+talent["name"]+"</option>"
+            }
+        }
     }
     if (localStorage.getItem("class-2")) {
         console.log(localStorage.getItem("class-2"))
         for (var item of classes[localStorage.getItem("class-2")]["talents"]) {
         options += "<option value=\""+item["name"]+"\">"+item["name"]+"</option>"
     }}
-    for (const number of Array(Math.ceil(localStorage.getItem("level")/2)).keys()) {
-        var select = document.getElementById("talents-"+(number+1)+"form")
-        select.style.display = "block"
-        select.innerHTML = options
-    }    
+    document.getElementById("talents-list").innerHTML = options
+    for (const number of Array(Math.ceil(parseInt(localStorage.getItem("level"))/2)+1).keys()) {
+        talent = document.getElementById("talents-"+(number+1)+"form")
+        talent.style.display = "block"
+        talent.value = localStorage.getItem("talents-"+(number+1))
+    }
 }
 function forcesclick () {
     clickchange("forces")
@@ -308,9 +316,9 @@ function pdfclick () {
     try{document.getElementById("level").innerHTML = localStorage.getItem("level")} catch (e) {console.log(e)}
     try{document.getElementById("force-points").innerHTML = parseInt(classes[localStorage.getItem("class")]["forcepoints"]+Math.floor(localStorage.getItem("level")/2))+(parseInt(localStorage.getItem("force-points")) || 0)} catch (e) {console.log(e)}
     try{document.getElementById("base-attack").innerHTML = classes[localStorage.getItem("class")]["classfeatures"]["base-attack-bonus"]+(parseInt(localStorage.getItem("base-attack"))|| 0)} catch (e) {console.log(e)}
-    try{document.getElementById("fort-lvl").innerHTML = Math.floor(localStorage.getItem("level")/2)} catch (e) {console.log(e)}
-    try{document.getElementById("ref-lvl").innerHTML = Math.floor(localStorage.getItem("level")/2)} catch (e) {console.log(e)}
-    try{document.getElementById("will-lvl").innerHTML = Math.floor(localStorage.getItem("level")/2)} catch (e) {console.log(e)}
+    try{document.getElementById("fort-lvl").innerHTML = 0} catch (e) {console.log(e)}
+    try{document.getElementById("ref-lvl").innerHTML = 0} catch (e) {console.log(e)}
+    try{document.getElementById("will-lvl").innerHTML = 0} catch (e) {console.log(e)}
     try{document.getElementById("fort-class").innerHTML = classes[localStorage.getItem("class")]["classfeatures"]["defense-bonuses"]["Fortitude"] || 0} catch (e) {console.log(e)}
     try{document.getElementById("ref-class").innerHTML = classes[localStorage.getItem("class")]["classfeatures"]["defense-bonuses"]["Reflex"] || 0} catch (e) {console.log(e)}
     try{document.getElementById("will-class").innerHTML = classes[localStorage.getItem("class")]["classfeatures"]["defense-bonuses"]["Will"] || 0} catch (e) {console.log(e)}
@@ -355,6 +363,11 @@ function pdfclick () {
     try{document.getElementById("fort-abil").innerHTML = result["con"]} catch (e) {console.log(e)}
     try{document.getElementById("ref-abil").innerHTML = result["dex"]} catch (e) {console.log(e)}
     try{document.getElementById("will-abil").innerHTML = result["wil"]} catch (e) {console.log(e)}
+    try{
+    for (const number of Array(Math.ceil(parseInt(localStorage.getItem("level"))/2)+1).keys()) {
+        document.getElementById("talents-"+(number+1)).innerHTML = localStorage.getItem("talents-"+(number+1))
+    }
+    } catch (e) {console.log(e)}
 }
 function downloadLocalStorageAsJSON() {
     let localStorageData = {};
@@ -554,8 +567,27 @@ function savetalent (select) {
     label.innerHTML = ""
     for (var item of classes[localStorage.getItem("class")]["talents"]) {
         if (item["name"] == select.value) {
-            label.innerHTML += item["description"]
+            label.innerHTML += item["description"]+"<br>"
+            if (item["prerequisites"].length>1) {
+            label.innerHTML += "Make sure you meet the prerequisites: "+item["prerequisites"].join(", ")+"."
+            } else if (item["prerequisites"].length==1) {
+                label.innerHTML += "Make sure you meet the prerequisite "+item["prerequisites"]+"."
+            }
             return
+        }
+    }
+    if (localStorage.getItem("class-2")) {
+        for (var item of classes[localStorage.getItem("class-2")]["talents"]) {
+            if (item["name"] == select.value) {
+                label.innerHTML += item["description"]+"<br>"
+                if (item["prerequisites"].length>1) {
+                label.innerHTML += "Make sure you meet the prerequisites: "+item["prerequisites"].join(", ")+"."
+                return
+                } else if (item["prerequisites"].length==1) {
+                    label.innerHTML += "Make sure you meet the prerequisite "+item["prerequisites"]+"."
+                }
+                return
+            }
         }
     }
     

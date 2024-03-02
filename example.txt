@@ -1,29 +1,48 @@
-"str-baseform",
-"str-overrideform",
-"dex-baseform",
-"dex-overrideform",
-"con-baseform",
-"con-overrideform",
-"int-baseform",
-"int-overrideform",
-"wis-baseform",
-"wis-overrideform",
-"cha-baseform",
-"cha-overrideform",
-"wil-baseform",
-"wil-overrideform",
-
-"str-species",
-"str-result",
-"dex-species",
-"dex-result",
-"con-species",
-"con-result",
-"int-species",
-"int-result",
-"wis-species",
-"wis-result",
-"cha-species",
-"cha-result",
-"wil-species",
-"wil-result",
+<table>
+  <thead>
+    <tr>
+      <th>Alchemy</th>
+      <td><input type="checkbox" class="force-checkbox" id="aug-1-checkbox"></td>
+      <td><input type="checkbox" class="force-checkbox" id="aug-2-checkbox"></td>
+      <td><input type="checkbox" class="force-checkbox" id="aug-3-checkbox"></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Augmentation<br></td>
+      <td><input type="checkbox" class="force-checkbox" id="aug-1-checkbox"></td>
+      <td><input type="checkbox" class="force-checkbox" id="aug-2-checkbox"></td>
+      <td><input type="checkbox" class="force-checkbox" id="aug-3-checkbox"></td>
+    </tr>
+    <tr>
+      <td>Cognition<br></td>
+      <td><input type="checkbox" class="force-checkbox" id="cog-1-checkbox"></td>
+      <td><input type="checkbox" class="force-checkbox" id="cog-2-checkbox"></td>
+      <td><input type="checkbox" class="force-checkbox" id="cog-3-checkbox"></td>
+    </tr>
+    <tr>
+      <td>Sourcery</td>
+      <td><input type="checkbox" class="force-checkbox" id="sor-1-checkbox"></td>
+      <td><input type="checkbox" class="force-checkbox" id="sor-2-checkbox"></td>
+      <td><input type="checkbox" class="force-checkbox" id="sor-3-checkbox"></td>
+    </tr>
+    <tr>
+      <td>Telekinesis</td>
+      <td><input type="checkbox" class="force-checkbox" id="tel-1-checkbox"></td>
+      <td><input type="checkbox" class="force-checkbox" id="tel-2-checkbox"></td>
+      <td><input type="checkbox" class="force-checkbox" id="tel-3-checkbox"></td>
+    </tr>
+    <tr>
+      <td>Technokinesis</td>
+      <td><input type="checkbox" class="force-checkbox" id="tec-1-checkbox"></td>
+      <td><input type="checkbox" class="force-checkbox" id="tec-2-checkbox"></td>
+      <td><input type="checkbox" class="force-checkbox" id="tec-3-checkbox"></td>
+    </tr>
+    <tr>
+      <td>Vitalism</td>
+      <td><input type="checkbox" class="force-checkbox" id="vit-1-checkbox"></td>
+      <td><input type="checkbox" class="force-checkbox" id="vit-2-checkbox"></td>
+      <td><input type="checkbox" class="force-checkbox" id="vit-3-checkbox"></td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,1298 @@
+var talenttreesjson = `{
+ "armor-specialist-talent-tree": {
+ "classes": [
+ "Soldier",
+ "gladiator",
+ "imperial-knight",
+ "jedi-knight",
+ "sith-apprentice"
+ ],
+ "description": "You can maximize the benefits of wearing Armor while reducing or eliminating some of its drawbacks.",
+ "talents": [
+ {
+ "name": "Armor Mastery",
+ "prerequisites": [
+ "Armored Defense"
+ ],
+ "description": "The maximum Dexterity bonus of your Armor improves by +1. You must be proficient with the Armor you are wearing to gain this benefit."
+ },
+ {
+ "name": "Armored Defense",
+ "description": "When calculating your Reflex Defense, you may add either your Heroic Level or your Armor bonus, whichever is higher. You must be proficient with the Armor you are wearing to gain this benefit."
+ },
+ {
+ "name": "Improved Armored Defense",
+ "prerequisites": [
+ "Armored Defense"
+ ],
+ "description": "When calculating your Reflex Defense, you may add your Heroic Level plus one-half your Armor bonus (rounded down), or your Armor bonus, whichever is higher. You must be proficient with the Armor you are wearing to gain this benefit."
+ },
+ {
+ "name": "Juggernaut",
+ "prerequisites": [
+ "Armored Defense"
+ ],
+ "description": "Your Armor does not reduce your Speed or the distance you can move while Running. You must be proficient with the Armor you are wearing to gain this benefit."
+ },
+ {
+ "name": "Second Skin",
+ "prerequisites": [
+ "Armored Defense"
+ ],
+ "description": "When wearing Armor with which you are proficient, your Armor bonus to your Reflex Defense and Equipment bonus to your Fortitude Defense each increases by +1."
+ }
+ ]
+ },
+ "awareness-talent-tree": {
+ "classes": [
+ "Scout",
+ "bounty-hunter",
+ "gladiator",
+ "gunslinger",
+ "martial-arts-master",
+ "pathfinder",
+ "vanguard"
+ ],
+ "description": "You are exceptionally good at noticing things and avoiding perilous situations.",
+ "talents": [
+ {
+ "name": "Acute Senses",
+ "description": "You may reroll any Perception check, but the result of the reroll must be accepted, even if it is worse. This Talent applies to Use Computer checks made to perceive enemy ships (see Use Sensors)."
+ },
+ {
+ "name": "Expert Tracker",
+ "prerequisites": [
+ "Acute Senses"
+ ],
+ "description": "You take no penalty on Survival checks made to Follow Tracks while moving your normal Speed."
+ },
+ {
+ "name": "Improved Initiative",
+ "prerequisites": [
+ "Acute Senses"
+ ],
+ "description": "You may choose to reroll any Initiative check, but the result of the reroll must be accepted, even if it is worse."
+ },
+ {
+ "name": "Keen Shot",
+ "prerequisites": [
+ "Acute Senses"
+ ],
+ "description": "You take no penalty on your attack roll when attacking a target with Concealment (but not Total Concealment)."
+ },
+ {
+ "name": "Uncanny Dodge I",
+ "prerequisites": [
+ "Acute Senses",
+ "Improved Initiative"
+ ],
+ "description": "You retain your Dexterity bonus to your Reflex Defense regardless of being caught Flat-Footed or struck by a hidden attacker. You still lose your Dexterity bonus to your Reflex Defense if you are Immobilized.If you are the Pilot, this Talent applies to your Vehicle."
+ },
+ {
+ "name": "Uncanny Dodge II",
+ "prerequisites": [
+ "Acute Senses",
+ "Improved Initiative",
+ "Uncanny Dodge I"
+ ],
+ "description": "You cannot be Flanked. You can react to opponents on opposite sides of you as easily as you can react to a single attacker.If you are the Pilot, this Talent applies to your Vehicle."
+ }
+ ]
+ },
+ "bounty-hunter-talent-tree": {
+ "classes": [
+ "bounty-hunter"
+ ],
+ "description": "You are among the finest Bounty Hunters in the galaxy, relying on the element of surprise and your hunter's instincts to catch your prey.",
+ "talents": [
+ {
+ "name": "Hunter's Mark",
+ "description": "If you Aim before making a ranged attack, you move the target character -1 step along the Condition Track if the attack deals damage. This Talent can be used only against characters, not objects or Vehicles."
+ },
+ {
+ "name": "Hunter's Target",
+ "prerequisites": [
+ "Hunter's Mark"
+ ],
+ "description": "Once per encounter as a Free Action, you may designate an opponent. For the rest of the encounter, when you succeed on a melee or ranged attack against that opponent, you gain a bonus on damage equal to your Class Level."
+ },
+ {
+ "name": "Notorious",
+ "description": "Your skill as a Bounty Hunter is known throughout the galaxy, even on fringe worlds. When you are not Disguised, you may reroll any Persuasion checks made to Intimidate, keeping the better of the two results."
+ },
+ {
+ "name": "Nowhere to Hide",
+ "description": "You may choose to reroll any Gather Information checks made to Locate Individual, but you must accept the result of the reroll, even if it is worse."
+ },
+ {
+ "name": "Relentless",
+ "prerequisites": [
+ "Hunter's Mark",
+ "Hunter's Target"
+ ],
+ "description": "This Talent applies only to an opponent you've designated as your Hunter's Target. Any attack or effect originating from the target that would normally move you along the Condition Track does not, in fact, move you along the Condition Track."
+ },
+ {
+ "name": "Ruthless Negotiator",
+ "prerequisites": [
+ "Notorious"
+ ],
+ "description": "When Haggling over the price of a bounty, you can reroll your Persuasion check, keeping the better result."
+ }
+ ]
+ },
+ "brawler-talent-tree": {
+ "classes": [
+ "Soldier",
+ "melee-duelist"
+ ],
+ "description": "You like to get 'up close and personal' with your enemies and engage them in melee combat.",
+ "talents": [
+ {
+ "name": "Expert Grappler",
+ "description": "You gain a +2 competence bonus on Grapple attacks."
+ },
+ {
+ "name": "Gun Club",
+ "description": "You can use a ranged weapon as a melee weapon without taking a penalty on your attack roll. The weapon is otherwise treated as a Club in all respects. If you are using a Rifle with a mounted Bayonet or Vibrobayonet, you may wield that weapon as a Double Weapon. The Bayonet or Vibrobayonet end is treated normally, and the other end is treated as a Club."
+ },
+ {
+ "name": "Melee Smash",
+ "description": "You deal +1 point of damage with melee attacks."
+ },
+ {
+ "name": "Stunning Strike",
+ "prerequisites": [
+ "Melee Smash"
+ ],
+ "description": "When you damage an opponent with a melee attack, your opponents move an additional -1 step along the Condition Track if your damage roll result equals or exceeds the target's Damage Threshold."
+ },
+ {
+ "name": "Unbalance Opponent",
+ "prerequisites": [
+ "Expert Grappler"
+ ],
+ "description": "You are skilled at keeping your opponents off balance in melee combat. At the beginning of your turn, you can choose to designate an opponent no more than one size category larger or smaller than you. That opponent doesn't get to add their Strength bonus on attack rolls when targeting you.(If the opponent has a Strength penalty, they still suffer from that penalty.) The opponent's Strength modifier applies to damage, as usual. You can select a new opponent on your next turn."
+ }
+ ]
+ },
+ "camouflage-talent-tree": {
+ "classes": [
+ "Scout",
+ "elite-trooper",
+ "infiltrator"
+ ],
+ "description": "You learn quickly how to blend in with your environment.",
+ "talents": [
+ {
+ "name": "Hidden Movement",
+ "prerequisites": [
+ "Improved Stealth"
+ ],
+ "description": "You're very good at hiding when mobile. You take no penalty on your Stealth check when moving your normal Speed. This Talent applies to Stealth checks made while Piloting a Starship (see Starship Stealth)."
+ },
+ {
+ "name": "Improved Stealth",
+ "description": "You may choose to reroll any Stealth check, but the result of the reroll must be accepted, even if it is worse. This Talent applies to Stealth checks made while Piloting a Starship (see Starship Stealth)."
+ },
+ {
+ "name": "Total Concealment",
+ "prerequisites": [
+ "Hidden Movement",
+ "Improved Stealth"
+ ],
+ "description": "Any situation that would give you Concealment grants you Total Concealment instead."
+ }
+ ]
+ },
+ "commando-talent-tree": {
+ "classes": [
+ "Soldier",
+ "elite-trooper",
+ "officer"
+ ],
+ "description": "You use advanced combat tactics to take down enemies quickly, shield your comrades, and endure whatever challenges are thrown your way.",
+ "talents": [
+ {
+ "name": "Battle Analysis",
+ "description": "As a Swift Action, you can make a DC 15 Knowledge (Tactics) check. If the check succeeds, you know which allies and opponents in your line of sight are reduced to at least half of their maximum total Hit Points. If you succeed at both a DC 15 Knowledge (Tactics) check and a DC 15 Use Computer check, you may use this Talent to determine what Vehicles are reduced to at least half their maximum Hit Points."
+ },
+ {
+ "name": "Cover Fire",
+ "prerequisites": [
+ "Battle Analysis"
+ ],
+ "description": "When you make a ranged attack with a Pistol or Rifle, all allies within 6 squares of you when you made the attack gain a +1 bonus to Reflex Defense until the start of your next turn. Allies within range don't need to be within your line of sight to gain the bonus."
+ },
+ {
+ "name": "Demolitionist",
+ "description": "When you use the Mechanics skill to Handle Explosives, the explosion deals +2 dice of damage. You may take this Talent multiple times; its effects stack."
+ },
+ {
+ "name": "Draw Fire",
+ "description": "You can distract opponents and convince them that you are the most tempting (or most dangerous) target in the area. As a Swift Action, make a Persuasion check and compare the result to the Will Defense of all opponents within line of sight. If the check result exceeds an opponent's Will Defense, that opponent cannot attack any character within 6 squares of you until the start of your next turn as long as you do not have Cover against that opponent. (The affected opponent may still attack you, however.) If you are the Pilot of a Vehicle, you may use this Talent to protect allied Vehicles. You may use it to protect Vehicles no more than one size category larger than your own."
+ },
+ {
+ "name": "Harm's Way",
+ "prerequisites": [
+ "Trained in Initiative"
+ ],
+ "description": "Once per round, you may spend a Swift Action to shield a single adjacent ally from attacks, taking the damage and suffering the ill effects in your ally's stead.Until the start of your next turn, any attack made against the protected ally targets you instead. You may elect not to shield your protected ally against a given attack, provided the decision is made before the attack roll is made.If you are the Pilot of a Vehicle, you may use this Talent to protect allied Vehicles. You may use it to protect Vehicles no more than one size category larger than your own."
+ },
+ {
+ "name": "Indomitable",
+ "description": "Once per day as a Swift Action, you can move +5 steps on the Condition Track. This does not remove any Persistent Conditions that may be affecting you. This Talent does not affect the Condition Track of a Vehicle. You can select this talent multiple times. Each time you select this Talent, you can use it one additional time per day."
+ },
+ {
+ "name": "Tough as Nails",
+ "description": "You can catch a Second Wind one extra time per day. If you have this Talent and the Extra Second Wind feat, you can catch your Second Wind a total of three times per day."
+ }
+ ]
+ },
+ "dark-side-devotee-talent-tree": {
+ "classes": [
+ "Force Acolyte"
+ ],
+ "description": "Your powerful negative emotions allow The Dark Side to flow through you, giving you great power.",
+ "talents": [
+ {
+ "name": "Channel Aggression",
+ "description": "If you succeed on an attack against a Flanked opponent, or any target that is denied its Dexterity bonus to Reflex Defense, you may spend a Force Point as a Free Action to deal additional damage to the target equal to 1d6 per Class Level (maximum 10d6)."
+ },
+ {
+ "name": "Channel Anger",
+ "prerequisites": [
+ "Channel Aggression"
+ ],
+ "description": "You let your anger swell into a Rage. As a Swift Action, you may spend a Force Point to gain a +2 Rage bonus on melee attack rolls and melee damage rolls for a number of rounds equal to 5 + your Constitution modifier. At the end of this duration, you move -1 step along the Condition Track.While Raging, you cannot use Skills that require patience and concentration, such as Mechanics, Stealth, or Use the Force."
+ },
+ {
+ "name": "Crippling Strike",
+ "prerequisites": [
+ "Channel Aggression"
+ ],
+ "description": "Whenever you score a Critical Hit, you may spend a Force Point to also reduce the target's Speed by half until they are fully healed (that is, restored to maximum Hit Points)."
+ },
+ {
+ "name": "Embrace the Dark Side",
+ "prerequisites": [
+ "Channel Aggression",
+ "Channel Anger"
+ ],
+ "description": "Whenever you use a Force Power with the descriptor, you may reroll your Use the Force check, but you must accept the result of the reroll, even if it is worse.Upon choosing this Talent, you can no longer use Force Powers with the descriptor."
+ }
+ ]
+ },
+ "duelist-talent-tree": {
+ "classes": [
+ "imperial-knight",
+ "jedi-knight",
+ "jedi-master",
+ "sith-apprentice"
+ ],
+ "description": "Through rigorous training and experience, you become one of the greatest swordfighters in the galaxy.",
+ "talents": [
+ {
+ "name": "Force Fortification",
+ "description": "As a Reaction, you can spend a Force Point to negate a Critical Hit scored against you, and take normal damage instead. You can spend this Force Point even if you've already spent a Force Point earlier in the round."
+ },
+ {
+ "name": "Greater Weapon Focus (Lightsabers)",
+ "prerequisites": [
+ "Weapon Focus (Lightsabers)"
+ ],
+ "description": "You gain a +1 bonus on melee attack rolls with Lightsabers. This bonus stacks with the bonus granted by the Weapon Focus (Lightsabers) feat."
+ },
+ {
+ "name": "Greater Weapon Specialization (Lightsabers)",
+ "prerequisites": [
+ "Weapon Specialization (Lightsabers)",
+ "Greater Weapon Focus (Lightsabers)"
+ ],
+ "description": "You gain a +2 bonus on melee damage rolls with Lightsabers. This bonus stacks with the bonus granted by the Weapon Specialization (Lightsabers) Talent."
+ },
+ {
+ "name": "Multiattack Proficiency (Lightsabers)",
+ "description": "Whenever you make multiple attacks with any type of Lightsaber as part of a Full Attack, you reduce the penalty on your attack rolls by 2. You can take this Talent multiple times; each time you take this Talent, you reduce the penalty on your attack rolls by an additional 2."
+ },
+ {
+ "name": "Severing Strike",
+ "prerequisites": [
+ "Maiming Foes"
+ ],
+ "description": "When you deal damage with a Lightsaber that is equal to or greater than both the target's current Hit Points and the target's Damage Threshold (that is, when you would deal enough damage to kill your target), you may choose to use this Talent.Instead of dealing full damage, you instead deal half damage to your target and move it -1 step on the Condition Track. In addition, you sever one of your target's arms at the wrist or elbow joint, or one of the target's legs at the knee or ankle joint (your choice).Severing part of an arm prevents the target from wielding weapons or using tools in that hand, and imposes a -5 penalty on Skill Checks and Ability Checks keyed to Strength and Dexterity.Severing part of a leg knocks the target Prone, reduces the target's Speed by half, reduces its Carrying Capacity by half, and imposes a -5 penalty on Skill Checks and Ability Checks keyed to Strength and Dexterity.Because of the severity of such an injury, losing part of a limb causes a Persistent Condition that can only be removed by having Surgery successfully performed on you. A Cybernetic Prosthesis negates these reductions and penalties."
+ }
+ ]
+ },
+ "expert-pilot-talent-tree": {
+ "classes": [
+ "ace-pilot"
+ ],
+ "description": "The Ace Pilot relies on finely honed instincts and years of pilot training to outmaneuver and destroy enemy Starships.",
+ "talents": [
+ {
+ "name": "Elusive Dogfighter",
+ "description": "When engaged in a Dogfight, any enemy pilot engaged in the same Dogfight takes a -10 penalty on attack rolls when you succeed on the opposed Pilot check."
+ },
+ {
+ "name": "Full Throttle",
+ "description": "You can Take 10 on Pilot checks made to Increase Vehicle Speed. In addition, when you use the All-Out Movement Action, your Vehicle moves up to five times its normal Speed (instead of the normal four times)."
+ },
+ {
+ "name": "Juke",
+ "prerequisites": [
+ "Vehicular Evasion"
+ ],
+ "description": "When you Fly Defensively as the Pilot of a Vehicle, you may negate a weapon hit on your Vehicle using the Vehicular Combat feat one additional time per round."
+ },
+ {
+ "name": "Keep it Together",
+ "description": "Once per encounter, when a Vehicle you're Piloting takes damage that equals or exceeds its Damage Threshold, your Vehicle avoids moving down the Condition Track."
+ },
+ {
+ "name": "Relentless Pursuit",
+ "description": "You may roll twice for any opposed Pilot check made to initiate a Dogfight, keeping the better result."
+ },
+ {
+ "name": "Vehicular Evasion",
+ "description": "If the Vehicle you are piloting is hit by an Area Attack, it takes half damage if the attack hits. If the Area Attack misses your Vehicle, it takes no damage. You cannot use this Talent when your Vehicle is stationary or disabled."
+ }
+ ]
+ },
+ "force-adept-talent-tree": {
+ "classes": [
+ "Force Acolyte",
+ "force-disciple"
+ ],
+ "description": "Force Adepts use The Force to survive on fringe worlds, and they often have signature Force Powers that they use particularly well.",
+ "talents": [
+ {
+ "name": "Force Power Adept",
+ "description": "You are skilled at using a particular Force Power. Select one Force Power you know. When using that Force Power, you have the option of spending a Force Point to make two Use the Force checks, keeping the better result. This Talent may be selected multiple times. Its effects do not stack. Each time you select this Talent, you must choose a different Force Power."
+ },
+ {
+ "name": "Force Treatment",
+ "prerequisites": [
+ "Jedi Healer Talent Tree"
+ ],
+ "description": "You can make a Use the Force check in place of a Treat Injury check. You are considered Trained in the Treat Injury Skill. If you are entitled to a Treat Injury check reroll, you may reroll your Use the Force check instead (subject to the same circumstances and limitations).In addition, you can administer First Aid, Treat Disease, Treat Poison, and Treat Radiation without the requisite Medical Kit or Medpac."
+ },
+ {
+ "name": "Fortified Body",
+ "prerequisites": [
+ "Equilibrium"
+ ],
+ "description": "The Force shields you against ailments, toxins, and radiation poisoning, making you immune to Disease, Poison, and Radiation."
+ }
+ ]
+ },
+ "force-item-talent-tree": {
+ "classes": [
+ "Force Acolyte"
+ ],
+ "description": "You can imbue Weapons and objects with the power of The Force.",
+ "talents": [
+ {
+ "name": "Attune Weapon",
+ "description": "You may spend a Force Point to attune a melee weapon. Attuning the weapon takes a Full-Round Action. From that point forward, whenever you wield the attuned weapon, you gain a +1 Force bonus on attack rolls. The weapon is attuned to you alone; others who wield the weapon do not gain the Force bonus."
+ },
+ {
+ "name": "Empower Weapon",
+ "description": "You may spend a Force Point to empower a melee weapon. Empowering the weapon takes a Full-Round Action. From that point forward, the Empowered Weapon deals an additional die of damage, but only when wielded by you. For example, an empowered Lightsaber deals 3d8 points of damage, instead of 2d8 points of damage. Others who wield the weapon do not gain the bonus damage die."
+ },
+ {
+ "name": "Force Talisman",
+ "description": "You may spend a Force Point to imbue a weapon or some other portable object with The Force, creating a Talisman that provides protection to you. Creating the Talisman takes a Full-Round Action. While you wear or carry the Talisman on your person, you gain a +1 Force bonus to one of your Defenses (Reflex Defense, Fortitude Defense, or Will Defense). You may only have one Force Talisman active at a given time, and if your Force Talisman is destroyed, you may not create another Force Talisman for 24 hours."
+ },
+ {
+ "name": "Greater Force Talisman",
+ "prerequisites": [
+ "Force Talisman"
+ ],
+ "description": "You may spend a Force Point to imbue a weapon or some other portable object with The Force, creating a Talisman that provides protection to you. Creating the Talisman takes a Full-Round Action.While you wear or carry the Talisman on your person, you gain a +1 Force bonus to all of your Defenses (Reflex Defense, Fortitude Defense, and Will Defense).You may only have one Greater Force Talisman active at a given time, and if your Greater Force Talisman is destroyed, you may not create another Greater Force Talisman (or regular Force Talisman) for 24 hours."
+ }
+ ]
+ },
+ "fortune-talent-tree": {
+ "classes": [
+ "Scoundrel",
+ "gunslinger"
+ ],
+ "description": "Many Scoundrels like to gamble with destiny, putting everything on the line and trusting fate (or The Force) to bring them fortune, fame, and success.",
+ "talents": [
+ {
+ "name": "Fool's Luck",
+ "description": "As a Standard Action, you can spend a Force Point to gain one of the following benefits for the rest of the encounter: +1 competence bonus to attack rolls +5 competence bonus on Skill Checks +1 competence bonus to all your Defenses If you use this Talent to grant yourself a luck bonus to your Defenses, this bonus also applies to the Defenses of any Vehicle you are on (even if you are not the Pilot)."
+ },
+ {
+ "name": "Fortune's Favor",
+ "description": "Whenever you score a Critical Hit with a melee or ranged attack, you gain a free Standard Action. You must take the extra Standard Action before the end of your turn, or else it is lost."
+ },
+ {
+ "name": "Gambler",
+ "description": "You gain a +2 competence bonus on Wisdom checks when you Gamble. You can select this Talent multiple times; each time you take this Talent, the competence bonus increases by +2."
+ },
+ {
+ "name": "Knack",
+ "description": "Once per day, you can reroll a Skill Check and take the better result. You can select this Talent multiple times; each time you select this Talent, you can use it one additional time per day."
+ },
+ {
+ "name": "Lucky Shot",
+ "prerequisites": [
+ "Knack"
+ ],
+ "description": "Once per day, you can reroll an attack roll and take the better result. You can select this Talent multiple times; each time you select this Talent, you can use it one additional time per day."
+ }
+ ]
+ },
+ "fringer-talent-tree": {
+ "classes": [
+ "Scout",
+ "outlaw"
+ ],
+ "description": "You're especially skilled at 'getting by' on backwater worlds.",
+ "talents": [
+ {
+ "name": "Barter",
+ "description": "You may reroll any Persuasion check made to Haggle. You must, however, accept the results of the reroll, even if it is worse."
+ },
+ {
+ "name": "Fringe Savant",
+ "description": "Whenever you roll a Natural 20 on a Skill Check during an encounter, you gain one temporary Force Point. If the Force Point is not used before the end of the encounter, it is lost."
+ },
+ {
+ "name": "Long Stride",
+ "description": "Your Speed increases by 2 squares if you are wearing Light Armor or no Armor. If you have a natural Fly, Climb, or Swim Speed, it increases by 2 squares as well. You cannot use this Talent if you are wearing Medium Armor or Heavy Armor."
+ },
+ {
+ "name": "Jury-Rigger",
+ "description": "You may reroll any Mechanics check made to Jury-Rig. You must, however, accept the result of the reroll, even if it is worse."
+ }
+ ]
+ },
+ "gunner-talent-tree": {
+ "classes": [
+ "ace-pilot"
+ ],
+ "description": "Many Starship Gunners are skilled both in and out of the cockpit and are deadly with ranged Weapons of any kind.",
+ "talents": [
+ {
+ "name": "Dogfight Gunner",
+ "prerequisites": [
+ "Expert Gunner"
+ ],
+ "description": "While your Vehicle is engaged in a Dogfight, you take no penalty on your attack rolls with Vehicle Weapons, even if you are not the Pilot."
+ },
+ {
+ "name": "Expert Gunner",
+ "description": "You gain a +1 bonus on attack rolls made using Vehicle Weapons."
+ },
+ {
+ "name": "Quick Trigger",
+ "prerequisites": [
+ "Expert Gunner"
+ ],
+ "description": "Whenever an enemy Vehicle moves out of your square, or an adjacent square, you may made a single attack against that Vehicle as an Attack of Opportunity."
+ },
+ {
+ "name": "System Hit",
+ "prerequisites": [
+ "Expert Gunner"
+ ],
+ "description": "Whenever you deal damage to a Vehicle that equals or exceeds its Damage Threshold, you move that Vehicle an additional -1 step on the Condition Track."
+ }
+ ]
+ },
+ "gunslinger-talent-tree": {
+ "classes": [
+ "gunslinger"
+ ],
+ "description": "You never travel anywhere without a blaster (or two), and you know how to handle yourself in a gunfight.",
+ "talents": [
+ {
+ "name": "Debilitating Shot",
+ "description": "If you Aim before making a ranged attack, you move the target character -1 step along the Condition Track if the attack deals damage. This Talent can be used only against characters, not objects or Vehicles."
+ },
+ {
+ "name": "Deceptive Shot",
+ "description": "Select one target in line of sight within 6 squares. You can spend two Swift Actions on the same turn to make a Deception check; if the check result equals or exceeds the target's Will Defense, the target is denied its Dexterity bonus to Reflex Defense against your attacks until the beginning of your next turn."
+ },
+ {
+ "name": "Improved Quick Draw",
+ "description": "If you are carrying a Pistol (either in your hand or in a holster), you may draw the Pistol and make a single attack during a Surprise Round, even if you are Surprised. If you are not Surprised, you may take any single Action of your choice, as normal."
+ },
+ {
+ "name": "Knockdown Shot",
+ "description": "If you Aim before making a ranged attack, and the attack hits, you knock the target Prone in addition to dealing damage. You can't use this Talent to knock down targets two or more size categories bigger than you."
+ },
+ {
+ "name": "Multiattack Proficiency (Pistols)",
+ "description": "Whenever you make multiple attacks with any type of Pistol as part of a Full Attack, you reduce the penalty on your attack rolls by 2. You can take this Talent multiple times; each time you take this Talent, you reduce the penalty on your attack rolls by an additional 2."
+ },
+ {
+ "name": "Ranged Disarm",
+ "description": "You can Disarm an opponent using a ranged attack. If your ranged Disarm attack fails, your opponent doesn't get to make a free attack against you."
+ },
+ {
+ "name": "Trigger Work",
+ "description": "You take no penalty on your attack roll when using the Rapid Shot feat."
+ }
+ ]
+ },
+ "infamy-talent-tree": {
+ "classes": [
+ "crime-lord",
+ "master-privateer"
+ ],
+ "description": "You are wanted in multiple systems for criminal acts; and your manner of doing business has earned you an unsavory reputation in the criminal underworld.",
+ "talents": [
+ {
+ "name": "Inspire Fear I",
+ "description": "Your infamy and reputation are such that any opponent whose level is equal to or less than your Character Level takes a -1 penalty on attack rolls and opposed Skill Checks made against you, as well as Use the Force checks made to activate Force Powers against you. This is a Mind-Affecting Fear effect."
+ },
+ {
+ "name": "Inspire Fear II",
+ "prerequisites": [
+ "Inspire Fear I"
+ ],
+ "description": "Your infamy and reputation are such that any opponent whose level is equal to or less than your Character Level takes a -2 penalty on attack rolls and opposed Skill Checks made against you, as well as Use the Force checks made to activate Force Powers against you. This is a Mind-Affecting Fear effect."
+ },
+ {
+ "name": "Inspire Fear III",
+ "prerequisites": [
+ "Inspire Fear I",
+ "Inspire Fear II"
+ ],
+ "description": "Your infamy and reputation are such that any opponent whose level is equal to or less than your Character Level takes a -5 penalty on attack rolls and opposed Skill Checks made against you, as well as Use the Force checks made to activate Force Powers against you. This is a Mind-Affecting Fear effect."
+ },
+ {
+ "name": "Notorious",
+ "description": "Your reputation as a Crime Lord is known throughout the galaxy, even on fringe worlds. When you are not Disguised, you may reroll any Persuasion checks made to Intimidate, keeping the better of the two results."
+ },
+ {
+ "name": "Shared Notoriety",
+ "prerequisites": [
+ "Notorious"
+ ],
+ "description": "When your Minions invoke your name, others take note. If you have Minions, they may reroll any Persuasion checks made to intimidate others, but the result of the reroll must be accepted, even if it is worse."
+ }
+ ]
+ },
+ "influence-talent-tree": {
+ "classes": [
+ "Noble",
+ "crime-lord"
+ ],
+ "description": "One of your greatest strengths is your ability to exert influence over your opponents.",
+ "talents": [
+ {
+ "name": "Presence",
+ "description": "You can make a Persuasion check to Intimidate a creature as a Standard Action (instead of a Full-Round Action)."
+ },
+ {
+ "name": "Demand Surrender",
+ "prerequisites": [
+ "Presence"
+ ],
+ "description": "Once per encounter, you can make a Persuasion check as a Standard Action to demand surrender from an opponent who has been reduced to one-half or less of its hit points. If your check result equals or exceeds the target's Will Defense, it surrenders to you and your allies, drops any weapons it is holding, and takes no hostile actions. If the target is higher level than you, it gains a +5 bonus to its Will Defense. If you or any of your allies attack it, it no longer submits to your will and can act normally. You can only use this Talent against a particular target once per encounter. This is a Mind-Affecting effect.Unlike other Mind-Affecting effects, you need only to hail a Vehicle to Demand Surrender. You can demand surrender of a vehicle that has been reduced to one-half or fewer of its hit points, even if the crew is uninjured. You make your check against the Vehicle's Commander; all Nonheroic crews are assumed to have a Will Defense of 10. If the CL of the target Vehicle is greater than your Heroic Level or the CL of your Vehicle, the target gains a +5 bonus to its Will Defense. You can't use this Talent to Demand Surrender from a Vehicle that is more than one size larger than yours under any circumstances- Star Destroyers don't surrender to X-Wings."
+ },
+ {
+ "name": "Improved Weaken Resolve",
+ "prerequisites": [
+ "Presence",
+ "Weaken Resolve"
+ ],
+ "description": "As Weaken Resolve, except that the target doesn't stop fleeing from you if it is wounded."
+ },
+ {
+ "name": "Weaken Resolve",
+ "prerequisites": [
+ "Presence"
+ ],
+ "description": "Once per round, when you deal damage equal to or greater than the target's Damage Threshold, you can make a Persuasion check as a Free Action; if the result equals or exceeds the target's Will Defense, you fill the target with terror, causing it to flee from you at top speed for 1 minute. The target can't take Standard Actions, Swift Actions, or Full-Round Actions while fleeing, but the target stops fleeing and can act normally if it is wounded. As a Free Action or Reaction, the target can spend a Force Point (if it has not already spent one earlier in the round) to negate the effect. The effect is automatically negated if the target's level is equal to or higher than your Character Level. This is a Mind-Affecting fear effect.Unlike with other Mind-Affecting effects, you need only to hail a Vehicle to weaken the crew's resolve. When you deal damage that equals or exceeds a Vehicle's Damage Threshold, you may use this Talent; in addition, you may Ready an Action to use this Talent after any Gunner on your Vehicle deals damage that equals or exceeds a Vehicle's Damage Threshold. You make your check against the Vehicle's Commander; all Nonheroic crews are assumed to have a Will Defense of 10. The effect is automatically negated if the target Vehicle's Challenge Level is greater than your Heroic Level or your Vehicle's Challenge Level."
+ }
+ ]
+ },
+ "inspiration-talent-tree": {
+ "classes": [
+ "Noble",
+ "droid-commander"
+ ],
+ "description": "You can often get results out of their friends, allies, and followers that other leaders cannot.",
+ "talents": [
+ {
+ "name": "Bolster Ally",
+ "description": "As a Standard Action, you can bolster an ally within line of sight, moving them +1 step along the Condition Track, and giving them a number of Bonus Hit Points equal to their Character Level, if they're at one-half their maximum Hit Points or less. Damage is subtracted from the Bonus Hit Points first, and any Bonus Hit Points remaining at the end of the encounter go away. You can't Bolster the same ally more than once in a single encounter, and you can't Bolster yourself."
+ },
+ {
+ "name": "Ignite Fervor",
+ "prerequisites": [
+ "Bolster Ally",
+ "Inspire Confidence"
+ ],
+ "description": "Whenever you hit an opponent with a melee or ranged attack, you can (as a Free Action) choose to give one ally within your line of sight a bonus to damage on their next attack equal to their Character Level. Once their fervor has been ignited, the affected ally doesn't need to remain within line of sight of you; if their next attack misses, they lose the bonus to damage granted by this Talent.You can't Ignite Fervor on yourself."
+ },
+ {
+ "name": "Inspire Confidence",
+ "description": "As a Standard Action, you can inspire confidence in all allies in your line of sight, granting them a +1 morale bonus on attack rolls, and a +1 morale bonus on Skill Checks for the rest of the encounter, or until you're unconscious or dead. Once Inspired, your allies don't need to remain within line of sight of you. You can't Inspire Confidence in yourself."
+ },
+ {
+ "name": "Inspire Haste",
+ "description": "As a Swift Action, you can encourage one of your allies within line of sight to make haste with a Skill Check. On that ally's next turn, that ally can make a Skill Check that normally requires a Standard Action, as a Move Action instead."
+ },
+ {
+ "name": "Inspire Zeal",
+ "prerequisites": [
+ "Bolster Ally",
+ "Inspire Confidence",
+ "Ignite Fervor"
+ ],
+ "description": "Whenever an ally within line of sight of you makes an attack that moves an opponent down the Condition Track (such as dealing damage that equals of exceeds the target's Damage Threshold), that ally moves the target an additional -1 step down the Condition Track."
+ }
+ ]
+ },
+ "jedi-consular-talent-tree": {
+ "classes": [
+ "jedi"
+ ],
+ "description": "Jedi that follow the path of the consular are skilled negotiators and talented ambassadors.",
+ "talents": [
+ {
+ "name": "Adept Negotiator",
+ "description": "As a Standard Action, you can weaken the resolve of one opponent with your words. The target must have an Intelligence of 3 or higher, and it must be able to see, hear, and understand you. Make a Persuasion check; if the result equals or exceeds the target's Will Defense, it moves -1 step along the Condition Track. The target gets a +5 bonus to its Will Defense if it is higher level than you. If the target reaches the end of its Condition Track, it does not fall unconscious, instead, it cannot attack you or your allies for the remainder of the encounter unless you or one of your allies attacks it or one of its allies first. This is a Mind-Affecting effect. You affect the Condition Track of the specific character (usually the Vehicle's Commander), not a Starship."
+ },
+ {
+ "name": "Force Persuasion",
+ "prerequisites": [
+ "Adept Negotiator"
+ ],
+ "description": "You can use your Use the Force modifier instead of your Persuasion check modifier when making a Persuasion check. You are considered Trained in the Persuasion skill. If you are entitled to a Persuasion check reroll, you may reroll your Use the Force check instead (subject to the same circumstances and limitations)."
+ },
+ {
+ "name": "Master Negotiator",
+ "prerequisites": [
+ "Adept Negotiator"
+ ],
+ "description": "If you successfully use the Adept Negotiator Talent, your target moves an additional -1 step along the Condition Track. This is a Mind-Affecting effect. You affect the Condition Track of the specific character (usually the Vehicle's Commander), not a Starship."
+ },
+ {
+ "name": "Skilled Advisor",
+ "description": "You can spend a Full-Round Action advising an ally, thereby granting them a +5 bonus on their next Skill Check. If you spend a Force Point, the bonus increases to +10. The target must be able to (and willing) to hear and understand your voice. You cannot advise yourself. This is a Mind-Affecting effect."
+ }
+ ]
+ },
+ "jedi-guardian-talent-tree": {
+ "classes": [
+ "jedi"
+ ],
+ "description": "Jedi that follow the path of the guardian are more combat-oriented than other Jedi, honing their skills to become deadly combatants.",
+ "talents": [
+ {
+ "name": "Acrobatic Recovery",
+ "description": "If any effect causes you to fall Prone, you can make a DC 20 Acrobatics check to remain on your feet."
+ },
+ {
+ "name": "Battle Meditation",
+ "description": "The Jedi technique known as Battle Meditation allows you and your allies to work together seamlessly and with a level of precision that can only come from The Force. As a Full-Round Action, you can spend a Force Point to give you and all allies within 6 squares of you a +1 insight bonus on attack rolls that lasts until the end of the encounter. This bonus does not extend to allies outside the range of the effect, even if they move within 6 squares of you later on. Allies who benefit from the Battle Meditation must remain within 6 squares of you to retain the insight bonus, and they lose it if you are knocked unconscious or killed. This is a Mind-Affecting effect. This affects all allied Gunners within 6 squares at Starship Scale."
+ },
+ {
+ "name": "Elusive Target",
+ "description": "When fighting an opponent or multiple opponents in melee, other opponents attempting to target you with ranged attacks take a -5 penalty. This penalty is in addition to the normal -5 penalty for firing into melee, making the penalty to target you -10."
+ },
+ {
+ "name": "Force Intuition",
+ "description": "You can use your Use the Force check modifier instead of your Initiative modifier when making Initiative checks. You are considered Trained in the Initiative skill. If you are entitled to an Initiative check reroll, you may reroll your Use the Force check instead (subject to the same circumstances and limitations). You may use this Talent to determine the Initiative of a Starship if you are the Pilot."
+ },
+ {
+ "name": "Resilience",
+ "description": "You can spend a Full-Round Action to move +2 steps up the Condition Track."
+ }
+ ]
+ },
+ "jedi-sentinel-talent-tree": {
+ "classes": [
+ "jedi"
+ ],
+ "description": "The Jedi that follow the path of the sentinel are the true enemies of The Dark Side, hunting down evil and stopping the spread of darkness wherever they go.",
+ "talents": [
+ {
+ "name": "Clear Mind",
+ "description": "You may reroll any opposed Use the Force check made to oppose Sense Force checks. You must take the result of the reroll, even if it is worse."
+ },
+ {
+ "name": "Dark Side Sense",
+ "description": "Jedi following the path of the Sentinel become exceptionally talented at rooting out evil. You may reroll any Use the Force check made to sense the presence and relative location of characters with a Dark Side Score of 1 or higher. You must take the result of the reroll, even if it is worse."
+ },
+ {
+ "name": "Dark Side Scourge",
+ "prerequisites": [
+ "Dark Side Sense"
+ ],
+ "description": "Against creatures with a Dark Side Score of 1 or higher, you deal extra damage on melee attacks equal to your Charisma bonus (minimum +1)."
+ },
+ {
+ "name": "Force Haze",
+ "prerequisites": [
+ "Clear Mind"
+ ],
+ "description": "You can spend a Force Point as a Standard Action to create a 'Haze' that hides you and your allies from the perception of others. You can hide a number of creatures in line of sight equal to your Class Level. Make a Use the Force check and compare the result to the Will Defense of any opponent that moves into line of sight of any creature hidden by your Force Haze. If your check result equals or exceeds the opponent's Will Defense, all hidden creatures are treated as if they had Total Concealment against the opponent.The Force Haze lasts for up to 1 minute but is dismissed instantly if anyone hidden by the Force Haze makes an attack.You may use this Talent to hide a single Vehicle while you are on board. The Vehicle can't have a size penalty to Reflex Defense, Initiative, or Pilot checks greater than your Heroic Level. Thus, a Gargantuan Starship (size penalty of -5) can be hidden only by a character of 5th level or higher."
+ },
+ {
+ "name": "Resist the Dark Side",
+ "prerequisites": [
+ "Dark Side Sense"
+ ],
+ "description": "You gain a +5 Force bonus to all Defense scores against Force Powers with the descriptor, and Force Powers originating from any dark Force-user (that is, any Force-use whose Dark Side Score equals their Wisdom score)."
+ }
+ ]
+ },
+ "leadership-talent-tree": {
+ "classes": [
+ "Noble",
+ "corporate-agent",
+ "droid-commander",
+ "officer"
+ ],
+ "description": "A born leader, you know how to change and lead your companions and followers to success.",
+ "talents": [
+ {
+ "name": "Born Leader",
+ "description": "Once per encounter, as a Swift Action, you grant all allies within your line of sight a +1 insight bonus on attack rolls. This effect lasts for as long as they remain within line of sight of you. An ally loses this bonus immediately if line of sight is broken or you are unconscious or dead."
+ },
+ {
+ "name": "Coordinate",
+ "description": "A Noble with this talent has a knack for getting people to work together. When you use this Talent as a Standard Action, all allies within your line of sight grant an additional +1 bonus when they use the Aid Another Action until the start of your next turn. You may select this Talent multiple times; each time you do, the bonus granted by the coordinate ability increases by 1 (to a maximum of +5)."
+ },
+ {
+ "name": "Distant Command",
+ "prerequisites": [
+ "Born Leader"
+ ],
+ "description": "Any ally who gains the benefit of your Born Leader Talent does not lose the benefit if their line of sight to you is broken."
+ },
+ {
+ "name": "Fearless Leader",
+ "prerequisites": [
+ "Born Leader"
+ ],
+ "description": "As a Swift Action, you can provide a courageous example for your allies. For the remainder of the encounter, your allies receive a +5 morale bonus to their Will Defense against any Fear effect. Your allies lose this benefit if they lose line of sight to you, or you are killed or knocked unconscious."
+ },
+ {
+ "name": "Rally",
+ "prerequisites": [
+ "Born Leader",
+ "Distant Command"
+ ],
+ "description": "Once per encounter, you can rally your allies and bring them back from the edge of defeat. As a Swift Action, any allies within your line of sight who have less than half their total hit points remaining gain a +2 morale bonus to their Reflex Defense and Will Defense, and a +2 bonus to all damage rolls for the remainder of the encounter.Unlike other Mind-Affecting Talents, Rally affects both allied Vehicles and characters with less than half their Hit Points. The Vehicle gains a +2 bonus to its Reflex Defense, all crewmembers gain a +2 bonus to their Will Defense so long as they are on board, and all Gunners gain a +2 bonus on damage with Weapon Systems (before multiplier, if any). Any crewmember who has less than half its Hit Points also gains the normal benefits of this Talent even if it leaves the Vehicle, but note that these bonuses do not stack."
+ },
+ {
+ "name": "Trust",
+ "prerequisites": [
+ "Born Leader",
+ "Coordinate"
+ ],
+ "description": "You can give up your Standard Action to give one ally within your line of sight an extra Standard Action or Move Action on their next turn, to do with as they please. The ally does not lose the Action if line of sight is later broken."
+ }
+ ]
+ },
+ "lightsaber-combat-talent-tree": {
+ "classes": [
+ "jedi",
+ "imperial-knight",
+ "jedi-knight",
+ "sith-apprentice"
+ ],
+ "description": "The Lightsaber is the chosen weapon of the Jedi. Not as clumsy or random as a blaster, the Lightsaber is an elegant weapon for a more civilized combatant.",
+ "talents": [
+ {
+ "name": "Block",
+ "prerequisites": [
+ "Saber Lock"
+ ],
+ "description": "As a Reaction, you may negate a melee attack by making a successful Use the Force check. The DC of the check is equal to the result of the attack roll you wish to negate, and you must take a cumulative -5 penalty on your Use the Force check for every time you have used Block or Deflect since the beginning of your last turn.You may use the Block Talent to negate melee Area Attacks, such as those made by the Whirlwind Attack Feat. If you succeed on the Use the Force check, you take half damage if the attack hits, and no damage if the attack misses. You may spend a Force Point to use this Talent to negate an attack against an adjacent character.You must have a Lightsaber drawn and ignited to use this Talent, and you must be aware of the attack and not Flat-Footed."
+ },
+ {
+ "name": "Deflect",
+ "description": "As a Reaction, you may negate a ranged attack by making a successful Use the Force check. The DC of the check is equal to the result of the attack roll you wish to negate, and you take a cumulative -5 penalty on your Use the Force check for every time you used Block or Deflect since the beginning of your last turn. You may spend a Force Point to use this Talent to negate an attack against an adjacent character. You can use this Talent to deflect some of the barrage of shots fired from a ranged weapon set on Autofire, or the Force Lightning Force Power. If you succeed on the Use the Force check, you take half damage if the attack hits, and no damage if the attack misses. You must have a Lightsaber drawn and ignited to use this Talent, and you must be aware of the attack and not Flat-Footed. This Talent cannot be used to negate attacks made by Colossal (Frigate) or larger-size Vehicles unless the attack is made with a Point-Defense Weapon System."
+ },
+ {
+ "name": "Lightsaber Defense",
+ "description": "As a Swift Action you can use your Lightsaber to parry your opponents' attacks, gaining a +1 deflection bonus to your Reflex Defense until the start of your next turn. You must have a Lightsaber drawn and ignited to use this Talent, and you don't gain the deflection bonus if you are Flat-Footed or otherwise unaware of the incoming attack. You can take this Talent multiple times; each time you take this Talent, the deflection bonus increases by +1 (maximum +3)."
+ },
+ {
+ "name": "Weapon Specialization (Lightsabers)",
+ "prerequisites": [
+ "Weapon Focus (Lightsabers)"
+ ],
+ "description": "You gain a +2 bonus on melee damage rolls with Lightsabers."
+ },
+ {
+ "name": "Lightsaber Throw",
+ "description": "You can throw a Lightsaber as a Standard Action, treating it as a Thrown weapon (without this Talent, a thrown Lightsaber is considered an Improvised Thrown Weapon). You are considered proficient with the thrown Lightsaber, and you apply the normal Range penalties to the attack roll. The thrown Lightsaber deals normal weapon damage if it hits. If your target is no more than 6 squares away, you can pull your Lightsaber back to your hand as a Swift Action by making a DC 20 Use the Force check."
+ },
+ {
+ "name": "Redirect Shot",
+ "prerequisites": [
+ "Deflect",
+ "Base Attack Bonus +5"
+ ],
+ "description": "This Talent allows you to redirect a deflected blaster bolt along a specific trajectory, so that it damages another creature or object in its path. Once per round when you successfully Deflect a blaster bolt, you can make an immediate ranged attack against another target with which you have line of sight.Apply the normal range penalties to the attack roll, not counting the distance the bolt traveled to reach you. If the attack succeeds, it deals normal weapon damage to the target. Only single blaster bolts can be redirected in this manner. Barrages from Autofire weapons and other types of projectiles can't be redirected."
+ }
+ ]
+ },
+ "lightsaber-forms-talent-tree": {
+ "classes": [
+ "jedi-knight"
+ ],
+ "description": "You have refined your knowledge of Lightsaber technique, your blade becoming an extension of yourself.",
+ "talents": [
+ {
+ "name": "Ataru",
+ "description": "You may add your Dexterity bonus (instead of your Strength bonus) on damage rolls when wielding a Lightsaber. When you wield a Lightsaber two-handed, you may apply double your Dexterity bonus (instead of double your Strength bonus) to the damage."
+ },
+ {
+ "name": "Djem So",
+ "description": "Once per round when an opponent hits you with a melee attack, you may spend a Force Point as a Reaction to make an immediate attack against that opponent."
+ },
+ {
+ "name": "Jar'Kai",
+ "prerequisites": [
+ "Lightsaber Defense",
+ "Niman"
+ ],
+ "description": "When you use the Lightsaber Defense Talent, you gain twice the normal deflection bonus to your Reflex Defense when you are wielding two Lightsabers."
+ },
+ {
+ "name": "Juyo",
+ "prerequisites": [
+ "Weapon Focus (Lightsabers)",
+ "Weapon Specialization (Lightsabers)",
+ "Base Attack Bonus +10"
+ ],
+ "description": "Once per encounter, you may spend a Force Point as a Swift Action to designate a single opponent in your line of sight. For the remainder of the encounter, you may reroll your first attack roll each round against that opponent, keeping the better of the two results."
+ },
+ {
+ "name": "Makashi",
+ "prerequisites": [
+ "Lightsaber Defense"
+ ],
+ "description": "When wielding a single Lightsaber in one hand, the deflection bonus you gain from the Lightsaber Defense Talent increases by 2 (to a maximum of +5)."
+ },
+ {
+ "name": "Niman",
+ "description": "When wielding a Lightsaber, you gain a +1 bonus to your Reflex Defense and Will Defense."
+ },
+ {
+ "name": "Shien",
+ "prerequisites": [
+ "Deflect",
+ "Redirect Shot"
+ ],
+ "description": "Whenever you redirect a deflected blaster bolt (see the Redirect Shot Talent), you gain a +5 bonus on your ranged attack roll."
+ },
+ {
+ "name": "Shii-Cho",
+ "prerequisites": [
+ "Block",
+ "Deflect"
+ ],
+ "description": "When using the Block or Deflect Talents, you only take a -2 penalty on your Use the Force check for every previous Block or Deflect attempt since your last turn."
+ },
+ {
+ "name": "Sokan",
+ "prerequisites": [
+ "Acrobatic Recovery"
+ ],
+ "description": "You may Take 10 on Acrobatics checks to Tumble, even when distracted or threatened. Additionally, each threatened or occupied square that you Tumble through only counts as 1 square of movement."
+ },
+ {
+ "name": "Soresu",
+ "prerequisites": [
+ "Block",
+ "Deflect"
+ ],
+ "description": "You may reroll a failed Use the Force check when using the Block or Deflect Talents."
+ },
+ {
+ "name": "Trakata",
+ "prerequisites": [
+ "Weapon Focus (Lightsabers)",
+ "Weapon Specialization (Lightsabers)",
+ "Base Attack Bonus +12"
+ ],
+ "description": "By harnessing the unique characteristics of a Lightsaber, you can catch your opponent off guard by quickly shutting off and reigniting the blade. When wielding a Lightsaber, you may spend two Swift Actions to make a Deception check to Feint in combat."
+ },
+ {
+ "name": "Vaapad",
+ "prerequisites": [
+ "Juyo",
+ "Weapon Focus (Lightsabers)",
+ "Weapon Specialization (Lightsabers)",
+ "Base Attack Bonus +12"
+ ],
+ "description": "When attacking with a Lightsaber, you score a critical hit on a natural roll of 19 or 20. However, a natural 19 is not considered an automatic hit; if you roll a natural 19 and still miss the target, you do not score a critical hit."
+ }
+ ]
+ },
+ "lineage-talent-tree": {
+ "classes": [
+ "Noble",
+ "corporate-agent"
+ ],
+ "description": "You lead a privileged life and reap the benefit of an upbringing beyond most citizens of the galaxy.",
+ "talents": [
+ {
+ "name": "Connections",
+ "description": "You are able to obtain Licensed, Restricted, Military, or Illegal equipment without having to pay a licensing fee or endure a background check, provided the total cost of the desired Equipment is equal to or less than your Character Level x 1,000 credits. In addition, when obtaining Equipment or Services through the Black Market, you reduce the black market cost multiplier by 1."
+ },
+ {
+ "name": "Educated",
+ "description": "Thanks to your well-rounded education, you may make any Knowledge check Untrained."
+ },
+ {
+ "name": "Spontaneous Skill",
+ "prerequisites": [
+ "Educated"
+ ],
+ "description": "Sometimes you surprise others with your skill. Once per day, you may make an Untrained skill check as though you were Trained in the Skill. Exception: you cannot use this Talent to make an Untrained Use the Force check as though you were Trained in the skill, unless you have the Force Sensitivity feat.You can select this Talent multiple times; each time you do, you can use it one additional time per day."
+ },
+ {
+ "name": "Wealth",
+ "description": "Each time you gain a level (including the level at which you select this Talent), you receive an amount of credits equal to 5,000 x your Class Level. You can spend these credits as you see fit. The credits appear in a civilized, accessible location of your choice or in your private bank account."
+ }
+ ]
+ },
+ "mastermind-talent-tree": {
+ "classes": [
+ "crime-lord"
+ ],
+ "description": "You have the ability to attract loyal minions and are skilled at redirecting allies on the battlefield.",
+ "talents": [
+ {
+ "name": "Attract Minion",
+ "description": "You attract a loyal Minion. The Minion is a Nonheroic character with a Class Level equal to three-quarters of your Character Level, rounded down. You may select this Talent multiple times; each time you select this Talent, you gain another Minion. Normally, you can have only one Minion with you at a time. Any other Minions you have are assumed to be looking after your various interests. If you lose a Minion, you can send for another Minion if you have one (although normal Travel Time still applies). Each Minion that accompanies you on an adventure is entitled to an equal share of the total Experience Points earned for that adventure. For example, a Minion that accompanies a party of five heroes on an adventure receives one-sixth of the XP that the group earns."
+ },
+ {
+ "name": "Impel Ally I",
+ "description": "You can spend a Swift Action to grant one ally the ability to move its normal speed. The ally must move immediately on your turn, before you do anything else, or else the opportunity is wasted. You can use this Talent up to three times on your turn (spending a Swift Action each time)."
+ },
+ {
+ "name": "Impel Ally II",
+ "prerequisites": [
+ "Impel Ally I"
+ ],
+ "description": "You can spend two Swift Actions to grant one ally the ability to take a Standard Action or Move Action. The ally must move immediately on your turn, before you do anything else, or else the opportunity is wasted."
+ }
+ ]
+ },
+ "military-tactics-talent-tree": {
+ "classes": [
+ "officer"
+ ],
+ "description": "You are an expert at leading troops into battle and using the battlefield to your advantage.",
+ "talents": [
+ {
+ "name": "Assault Tactics",
+ "description": "As a Move Action, you may designate a single creature or object as the target of an assault. If you succeed on a DC 15 Knowledge (Tactics) check, you and all allies able to hear and understand you deal an additional 1d6 points of damage to the target with each successful melee or ranged attack, until the start of your next turn. This is a Mind-Affecting effect."
+ },
+ {
+ "name": "Deployment Tactics",
+ "description": "You can use your tactical knowledge to direct allies in battle. As a Move Action, you can make a DC 15 Knowledge (Tactics) check. If the check succeeds, you and any allies that can see, hear, and understand you gain a +1 competence bonus on attack rolls against Flanked opponents, or a +1 dodge bonus to Reflex Defense against Attacks of Opportunity (character's choice). The bonus lasts until the start of your next turn. This is a Mind-Affecting effect. If you have the Born Leader Talent or the Battle Analysis Talent, the bonus granted by this Talent increases to +2."
+ },
+ {
+ "name": "Field Tactics",
+ "prerequisites": [
+ "Deployment Tactics"
+ ],
+ "description": "You know how to use existing terrain to your best advantage. By using a Move Action, you can make a DC 15 Knowledge (Tactics) check. If the check succeeds, you and all allies within 10 squares of you can use whatever Cover is available to gain a +10 Cover bonus to Reflex Defense (instead of the normal +5 Cover bonus). Allies must be able to hear and understand you to gain this benefit, and the bonus lasts until the start of your next turn. This Talent provides no benefit to anyone who doesn't have Cover. This is a Mind-Affecting effect."
+ },
+ {
+ "name": "One for the Team",
+ "prerequisites": [
+ "Deployment Tactics"
+ ],
+ "description": "As a Reaction, you can choose to take one-half or all of the damage dealt to an adjacent ally by a single attack. Similarly, as a Reaction, an adjacent ally can choose to take one-half or all of the damage dealt to you by a single attack (even if they don't have this Talent)."
+ },
+ {
+ "name": "Outmaneuver",
+ "prerequisites": [
+ "Deployment Tactics",
+ "Field Tactics"
+ ],
+ "description": "An Officer learns to counter the tactics of their enemies. As a Standard Action, you can make a DC 15 Knowledge (Tactics) check. If the check succeeds, opponents in your line of sight lose all competence, insight, and morale bonuses on attack rolls, as well as any dodge bonuses to Reflex Defense, until the start of your next turn.If one or more enemy Officers are within your line of sight, the highest level Officer among them can attempt to Oppose your Knowledge (Tactics) check as a Reaction. If their Skill Check result is higher than yours, your attempt to Outmaneuver your opponents fails."
+ },
+ {
+ "name": "Shift Defense I",
+ "description": "As a Swift Action, you can take a -2 penalty to one Defense (Reflex, Fortitude, or Will) to gain a +1 competence bonus to another Defense until the start of your next turn."
+ },
+ {
+ "name": "Shift Defense II",
+ "prerequisites": [
+ "Shift Defense I"
+ ],
+ "description": "As a Swift Action, you can take a -5 penalty to one Defense (Reflex, Fortitude, or Will) to gain a +2 competence bonus to another Defense until the start of your next turn."
+ },
+ {
+ "name": "Shift Defense III",
+ "prerequisites": [
+ "Shift Defense I",
+ "Shift Defense II"
+ ],
+ "description": "As a Swift Action, you can gain a +5 competence bonus to one Defense (Reflex, Fortitude, or Will) by taking a -5 penalty to your other two Defenses."
+ },
+ {
+ "name": "Tactical Edge",
+ "description": "You can use the Assault Tactics, Deployment Tactics, or Field Tactics Talent as a Swift Action, instead of a Move Action (provided you have the Talent in question)."
+ }
+ ]
+ },
+ "misfortune-talent-tree": {
+ "classes": [
+ "Scoundrel",
+ "assassin",
+ "bounty-hunter",
+ "saboteur"
+ ],
+ "description": "Your mother always said you were trouble. Now your enemies know it, too.",
+ "talents": [
+ {
+ "name": "Dastardly Strike",
+ "description": "Whenever you make a successful attack against an opponent that is denied its Dexterity bonus to Reflex Defense, the target moves -1 step along the Condition Track. This Talent can be used only against characters, not objects or Vehicles."
+ },
+ {
+ "name": "Disruptive",
+ "description": "By spending two Swift Actions, you can use your knack for causing trouble and instigating chaos to disrupt your enemies. Until the start of your next turn, you suppress all morale and insight bonuses applied to enemies in your line of sight."
+ },
+ {
+ "name": "Skirmisher",
+ "description": "If you move at least 2 squares before you attack and end your move in a different square from where you started, you gain a +1 bonus on attack rolls until the start of your next turn. You gain the benefit of this Talent with Weapon Systems only if you are the Vehicle's Pilot."
+ },
+ {
+ "name": "Sneak Attack",
+ "description": "Any time your opponent is Flat-Footed or otherwise denied its Dexterity bonus to Reflex Defense, you deal an additional 1d6 points of damage with a successful melee or ranged attack. You must be within 6 squares of the target to make a Sneak Attack with a ranged weapon. You may select this Talent multiple times. Each time you select it, your Sneak Attack damage increases by +1d6 (Maximum +10d6)."
+ },
+ {
+ "name": "Walk the Line",
+ "prerequisites": [
+ "Disruptive"
+ ],
+ "description": "As a Standard Action, you can do or say something that catches your enemies off guard. All opponents within 6 squares of you, and within your line of sight take a -2 penalty to their Defenses until the start of your next turn. The penalty is negated if line of sight is broken.This Talent has a range of 6 squares at Starship Scale."
+ }
+ ]
+ },
+ "sith-talent-tree": {
+ "classes": [
+ "sith-apprentice",
+ "sith-lord"
+ ],
+ "description": "The Sith believes in order through tyranny, conspiring to annihilate The Jedi and everything they stand for.",
+ "talents": [
+ {
+ "name": "Dark Healing",
+ "description": "You can spend a Force Point to heal wounds by drawing life energy from another creature within 6 squares of you. Using this ability is a Standard Action, and you must succeed on a ranged attack roll. If the attack equals or exceeds the target's Fortitude Defense, you deal 1d6 points of damage per Class Level to the target, and you heal an equal amount of damage. If the attack fails, there is no effect."
+ },
+ {
+ "name": "Dark Scourge",
+ "description": "You have dedicated your life to wiping out the Jedi, and your hatred of them knows no bounds. Against Jedi characters (that is, characters belonging to The Jedi), you gain a +1 Dark Side bonus on attack rolls."
+ },
+ {
+ "name": "Dark Side Adept",
+ "description": "Force Powers that are strongly tied to The Dark Side flow through you more easily. You can reroll any Use the Force check made when activating Force Powers with the descriptor, but you must keep the result of the reroll, even if it is worse."
+ },
+ {
+ "name": "Dark Side Master",
+ "prerequisites": [
+ "Dark Side Adept"
+ ],
+ "description": "Force Powers that are strongly tied to the Dark Side flow through you more easily. You can reroll any Use the Force check made when activating Force Powers with the descriptor, and can spend a Force Point to keep the better of the two results."
+ },
+ {
+ "name": "Force Deception",
+ "description": "You can use your Use the Force modifier instead of your Deception check modifier when making Deception checks, as you use The Force to cloak your vile treachery. You are considered Trained in the Deception skill. If you are entitled to a Deception check reroll, you may reroll your Use the Force check instead (subject to the same circumstances and limitations)."
+ },
+ {
+ "name": "Improved Dark Healing",
+ "prerequisites": [
+ "Dark Healing"
+ ],
+ "description": "Your Dark Healing Talent improves. The range of this ability increases to 12 squares, and even if that attack fails, the target takes half damage, while you heal an equal amount of damage."
+ },
+ {
+ "name": "Wicked Strike",
+ "prerequisites": [
+ "Weapon Focus (Lightsabers)",
+ "Weapon Specialization (Lightsabers)"
+ ],
+ "description": "When you score a critical hit with a Lightsaber, you may spend a Force Point to move the target -2 steps along the Condition Track."
+ }
+ ]
+ },
+ "slicer-talent-tree": {
+ "classes": [
+ "Scoundrel",
+ "outlaw",
+ "saboteur"
+ ],
+ "description": "You move like a ghost through The HoloNet and can hack into enemy mainframes and computer systems with astonishing grace.",
+ "talents": [
+ {
+ "name": "Gimmick",
+ "description": "You can Issue Routine Command to a computer as a Swift Action."
+ },
+ {
+ "name": "Master Slicer",
+ "prerequisites": [
+ "Gimmick"
+ ],
+ "description": "You may choose to reroll any Use Computer check made to Improve Access on a computer, keeping the better of the two results."
+ },
+ {
+ "name": "Trace",
+ "description": "You can substitute your Use Computer Skill for any Gather Information check as long as you have access to a computer network."
+ }
+ ]
+ },
+ "spacer-talent-tree": {
+ "classes": [
+ "Scoundrel",
+ "ace-pilot",
+ "master-privateer"
+ ],
+ "description": "You pron the space lanes seeking wealth, fame, adventure, or something more. You're also pretty good with Vehicles in general.",
+ "talents": [
+ {
+ "name": "Hyperdriven",
+ "description": "Once per day while aboard a Starship, you can add your Class Level as a bonus on a single attack roll, Skill Check, or Ability Check. The decision to add this bonus can be made after the result of the check is known."
+ },
+ {
+ "name": "Spacehound",
+ "description": "You take no penalty on attack rolls in Low Gravity or Zero Gravity environments, and you ignore the debilitating effects of Space Sickness. In addition, you are considered proficient with any Starship Weapon."
+ },
+ {
+ "name": "Starship Raider",
+ "prerequisites": [
+ "Spacehound"
+ ],
+ "description": "You gain a +1 bonus on attack rolls made while aboard a Starship. This bonus applies to attacks made with Starship Weapons, as well as personal weapons used aboard a Starship."
+ },
+ {
+ "name": "Stellar Warrior",
+ "prerequisites": [
+ "Spacehound"
+ ],
+ "description": "Whenever you roll a Natural 20 on an attack roll made aboard a Starship, you gain one temporary Force Point. If the Force Point is not used before the end of the encounter, it is lost. This Talent works with both Weapon Systems and personal weapons used aboard a Starship."
+ }
+ ]
+ },
+ "survivor-talent-tree": {
+ "classes": [
+ "Scout",
+ "enforcer",
+ "medic",
+ "outlaw",
+ "pathfinder",
+ "vanguard"
+ ],
+ "description": "As an explorer of dangerous places, you are trained to react to danger swiftly and adroitly, as well as navigate difficult terrain and reduce damage.",
+ "talents": [
+ {
+ "name": "Evasion",
+ "description": "If you are hit by an Area Attack, you take half damage if the attack hit you. If the area attack misses you, you take no damage. If you are the Pilot, this talent applies to your Vehicle."
+ },
+ {
+ "name": "Extreme Effort",
+ "description": "You can spend two Swift Actions to gain a +5 bonus on a single Strength check or Strength-based Skill Check made during the same round."
+ },
+ {
+ "name": "Sprint",
+ "description": "When you use the Run action, you can move up to five times your Speed (instead of up to four times)."
+ },
+ {
+ "name": "Surefooted",
+ "description": "Your Speed is not reduced by Difficult Terrain."
+ }
+ ]
+ },
+ "weapon-master-talent-tree": {
+ "classes": [
+ "elite-trooper"
+ ],
+ "description": "You are skilled at wielding a variety of weapons and can wield choice Weapons with deadly precision and force.",
+ "talents": [
+ {
+ "name": "Controlled Burst",
+ "description": "Your penalty when making an Autofire attack or using the Burst Fire feat is reduced to -2. In addition, if you Brace an Autofire-only weapon, you have no penalty on your attack roll."
+ },
+ {
+ "name": "Exotic Weapon Mastery",
+ "description": "You are considered proficient with any Exotic Weapon, even if you don't possess the appropriate Exotic Weapon Proficiency feat."
+ },
+ {
+ "name": "Greater Devastating Attack",
+ "prerequisites": [
+ "Greater Weapon Focus (Chosen Weapon)",
+ "Devastating Attack (Chosen Weapon)"
+ ],
+ "description": "Choose a single Exotic Weapon or weapon group with which you're proficient. Whenever you make a successful attack against a target using the chosen Exotic Weapon or weapon from the chosen group, you treat your target's Damage Threshold as if it were 10 points lower when determining the results of your attack.This replaces the effects of the Devastating Attack Talent."
+ },
+ {
+ "name": "Greater Penetrating Attack",
+ "prerequisites": [
+ "Greater Weapon Focus (Chosen Weapon)",
+ "Penetrating Attack (Chosen Weapon)"
+ ],
+ "description": "Choose a single Exotic Weapon or weapon group with which you're proficient. Whenever you make a successful attack against a target using the chosen Exotic Weapon or weapon from the chosen group, you treat your target's Damage Reduction as if it were 10 points lower when determining the results of your attack.This replaces the effects of the Penetrating Attack Talent."
+ },
+ {
+ "name": "Greater Weapon Focus",
+ "prerequisites": [
+ "Weapon Focus (Chosen Weapon)"
+ ],
+ "description": "Choose one Exotic Weapon or weapon group with which you're proficient. You gain a +1 bonus on attack rolls with the chosen Exotic Weapon or weapon from the chosen group. This bonus stacks with the bonus granted by the Weapon Focus feat. You may select this Talent multiple times. Each time you select this Talent, it applies to a different Exotic Weapon or weapon group."
+ },
+ {
+ "name": "Greater Weapon Specialization",
+ "prerequisites": [
+ "Greater Weapon Focus (Chosen Weapon)",
+ "Weapon Specialization (Chosen Weapon)"
+ ],
+ "description": "Choose one Exotic Weapon or one of the following weapon groups: Advanced Melee Weapons, Heavy Weapons, Pistols, Rifles, or Simple Weapons. You gain a +2 bonus on damage rolls with the chosen Exotic Weapon or a weapon from the chosen group. This bonus stacks with the bonus granted by the Weapon Specialization Talent.You may select this Talent multiple times. Each time you select this Talent, it applies to a different Exotic Weapon or weapon group."
+ },
+ {
+ "name": "Multiattack Proficiency (Heavy Weapons)",
+ "description": "Whenever you make multiple attacks with any type of Heavy Weapon as a Full-Round Action (see Full Attack), you reduce the penalty on your attack rolls by 2. You can take this Talent multiple times; each time you take this Talent, you reduce the penalty on your attack rolls by an additional 2."
+ },
+ {
+ "name": "Multiattack Proficiency (Rifles)",
+ "description": "Whenever you make multiple attacks with any type of Rifle as a Full-Round Action (see Full Attack), you reduce the penalty on your attack rolls by 2. You can take this Talent multiple times; each time you take this Talent, you reduce the penalty on your attack rolls by an additional 2."
+ }
+ ]
+ },
+ "weapon-specialist-talent-tree": {
+ "classes": [
+ "Soldier",
+ "melee-duelist"
+ ],
+ "description": "You are highly trained at using specific weapons.",
+ "talents": [
+ {
+ "name": "Devastating Attack",
+ "description": "Choose a single Exotic Weapon or weapon group with which you are proficient. Whenever you make a successful attack against a target using such a weapon, you treat your target's Damage Threshold as if it were 5 points lower when determining the result of your attack. If you select Heavy Weapons as the weapon group this Talent applies to, you may also use the Talent with Vehicle Weapon attacks. You may select this Talent multiple times. Each time you select this Talent, it applies to a different Exotic Weapon or weapon group."
+ },
+ {
+ "name": "Penetrating Attack",
+ "prerequisites": [
+ "Weapon Focus with chosen Exotic Weapon or Weapon Group"
+ ],
+ "description": "Choose a single Exotic Weapon or weapon group with which you are proficient. Whenever you make a successful attack against a target with such a weapon, you treat your target's Damage Reduction as if it were 5 points lower when determining the result of your attack. If you select Heavy Weapons as the weapon group this Talent applies to, you may also use the Talent with Vehicle Weapon attacks.You may select this Talent multiple times. Each time you select this Talent, it applies to a different Exotic Weapon or weapon group."
+ },
+ {
+ "name": "Weapon Specialization",
+ "prerequisites": [
+ "Weapon Focus with chosen Exotic Weapon or Weapon Group"
+ ],
+ "description": "Choose a single Exotic Weapon or weapon group with which you are proficient. You gain a +2 bonus on damage rolls with such weapons. If you select Heavy Weapons as the weapon group this Talent applies to, you may also use the Talent with Vehicle Weapon attacks.You may select this Talent multiple times. Each time you select this Talent, it applies to a different Exotic Weapon or weapon group."
+ }
+ ]
+ }
+ }`
