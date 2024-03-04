@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Character Editor</title>
+        <title>Stellar Fantacies' Character Editor</title>
+        <meta content="Character Editor" property="og:title" />
+        <meta content="Create and edit your character here!" property="og:description" />
+        <meta content="https://bregalad2.github.io/SWSE-Character-Creator/character_editor.html" property="og:url" />
+        <meta content="https://bregalad2.github.io/SWSE-Character-Creator/img/page_1.png" property="og:image" />
+        <meta content="#9b96ca" data-react-helmet="true" name="theme-color" />
         <link rel="stylesheet" href="character_editor.css" />
         <link rel="stylesheet" type="text/css" media="print" href="character-editor-print.css" />
     </head>
@@ -17,11 +22,11 @@
             </button>
             <button id="skills" onclick="skillsclick()">
                 <p1>Skills</p1><br>
-                <p2>more stuff!</p2>
+                <p2>Training, Focus</p2>
             </button>
             <button id="feats" onclick="featsclick()">
                 <p1>Feats</p1><br>
-                <p2>more stuff!</p2>
+                <p2>Languages</p2>
             </button>
             <button id="abilities" onclick="abilitiesclick()">
                 <p1>Abilities</p1><br>
@@ -29,81 +34,86 @@
             </button>
             <button id="talents" onclick="talentsclick()">
                 <p1>Talents</p1><br>
-                <p2>more stuff!</p2>
+                <p2>Per Level</p2>
             </button>
             <button id="forces" onclick="forcesclick()">
-                <p1>Force Things</p1><br>
-                <p2>more stuff!</p2>
+                <p1>Force Schools</p1><br>
+                <p2>Techniques, Secrets</p2>
             </button>
             <button id="inventory" onclick="inventoryclick()">
                 <p1>Inventory</p1><br>
-                <p2>more stuff!</p2>
+                <p2>Equipment</p2>
             </button>
             <button id="pdf" onclick="pdfclick()">
                 <p1>Display</p1><br>
-                <p2>Cool Text!</p2>
+                <p2>Print</p2>
             </button>
             <button id="download" onclick="downloadLocalStorageAsJSON()">
                 <p1>Download</p1><br>
-                <p2>As JSON File</p2>
+                <p2>Character File</p2>
             </button>
             <button id="upload" onclick="document.getElementById('uploader').click()">
                 <p1>Upload</p1><br>
-                <p2>A JSON File</p2>
+                <p2>Character File</p2>
             </button>
             <input type="file" id="uploader" style="visibility: hidden;" accept=".character" onchange="uploadJSONToLocalStorage(event)">
         </div>
         <div id="namediv" class="main">
-            <form>
-                <label>Your Name:</label>
-                <input type="text" id="playerform" name="playerform" onkeyup="save(this);">
-                <br>
-                <label>Your Character's Name:</label>
-                <input type="text" id="characterform" name="characterform" onkeyup="save(this);">
-                <br>
-                <label>Sex:</label>
-                <input type="text" id="sexform" name="sexform" onkeyup="save(this);" style="width:20px;">
-                <label>Age:</label>
-                <input type="text" id="ageform" name="ageform" onkeyup="save(this);" style="width:20px;">
-                <label>Height:</label>
-                <input type="text" id="heightform" name="heightform" onkeyup="save(this);" style="width:40px;">
-                <label>Weight:</label>
-                <input type="text" id="weightform" name="weightform" onkeyup="save(this);" style="width:40px;">
-                <br>
-                <label>Species:</label>
-                <select name="species" id="speciesform" onchange="changespecies();">
-                    <option value="Near-Human">Near Human</option>
-                    <option value="Bith">Bith</option>
-                    <option value="Bothan">Bothan</option>
-                    <option value="Cerean">Cerean</option>
-                    <option value="Clawdite">Clawdite</option>
-                    <option value="Codru-Ji">Codru-Ji</option>
-                    <option value="Devaronian">Devaronian</option>
-                    <option value="Duros">Duros</option>
-                    <option value="Ewok">Ewok</option>
-                    <option value="Falleen">Falleen</option>
-                    <option value="Gungan">Gungan</option>
-                    <option value="Hutt">Hutt</option>
-                    <option value="Jawa">Jawa</option>
-                    <option value="Kaleesh">Kaleesh</option>
-                    <option value="Kaminoan">Kaminoan</option>
-                    <option value="Kel-Dor">Kel Dor</option>
-                    <option value="Mon-Calamari">Mon Calamari</option>
-                    <option value="Nautolan">Nautolan</option>
-                    <option value="Quarren">Quarren</option>
-                    <option value="Rodian">Rodian</option>
-                    <option value="Togruta">Togruta</option>
-                    <option value="Trandoshan">Trandoshan</option>
-                    <option value="Twi'lek">Twi'lek</option>
-                    <option value="Wookiee">Wookiee</option>
-                    <option value="Zabrak">Zabrak</option>
-                </select>
-                <br>
-            </form>
-            <p class="descriptor" id="species-description"></p>
-            <p class="descriptor" id="species-names"></p>
-            <p class="descriptor" id="species-able-size-speed"></p>
-        <div id="bonus-traits" style="border: 0px;"></div>
+            <span id="namespan" class="leftspan">
+                <form>
+                    <label>Your Name:</label>
+                    <input type="text" id="playerform" name="playerform" onkeyup="save(this);">
+                    <br>
+                    <label>Your Character's Name:</label>
+                    <input type="text" id="characterform" name="characterform" onkeyup="save(this);">
+                    <br>
+                    <label>Sex:</label>
+                    <input type="text" id="sexform" name="sexform" onkeyup="save(this);" style="width:20px;">
+                    <label>Age:</label>
+                    <input type="text" id="ageform" name="ageform" onkeyup="save(this);" style="width:20px;">
+                    <label>Height:</label>
+                    <input type="text" id="heightform" name="heightform" onkeyup="save(this);" style="width:40px;">
+                    <label>Weight:</label>
+                    <input type="text" id="weightform" name="weightform" onkeyup="save(this);" style="width:40px;">
+                    <br>
+                    <label>Species:</label>
+                    <select name="species" id="speciesform" onchange="changespecies();document.getElementById('species-frame').src='https://starwars.fandom.com/wiki/'+this.value">
+                        <option value="Near-Human">Near Human</option>
+                        <option value="Bith">Bith</option>
+                        <option value="Bothan">Bothan</option>
+                        <option value="Cerean">Cerean</option>
+                        <option value="Clawdite">Clawdite</option>
+                        <option value="Codru-Ji">Codru-Ji</option>
+                        <option value="Devaronian">Devaronian</option>
+                        <option value="Duros">Duros</option>
+                        <option value="Ewok">Ewok</option>
+                        <option value="Falleen">Falleen</option>
+                        <option value="Gungan">Gungan</option>
+                        <option value="Hutt">Hutt</option>
+                        <option value="Jawa">Jawa</option>
+                        <option value="Kaleesh">Kaleesh</option>
+                        <option value="Kaminoan">Kaminoan</option>
+                        <option value="Kel-Dor">Kel Dor</option>
+                        <option value="Mon-Calamari">Mon Calamari</option>
+                        <option value="Nautolan">Nautolan</option>
+                        <option value="Quarren">Quarren</option>
+                        <option value="Rodian">Rodian</option>
+                        <option value="Togruta">Togruta</option>
+                        <option value="Trandoshan">Trandoshan</option>
+                        <option value="Twi'lek">Twi'lek</option>
+                        <option value="Wookiee">Wookiee</option>
+                        <option value="Zabrak">Zabrak</option>
+                    </select>
+                    <br>
+                </form>
+                <p class="descriptor" id="species-description"></p>
+                <p class="descriptor" id="species-names"></p>
+                <p class="descriptor" id="species-able-size-speed"></p>
+                <div id="bonus-traits" style="border: 0px;"></div>
+            </span>
+            <span id="speciesspan" class="rightspan">
+                <iframe src="about:blank" frameborder="0" id="species-frame"></iframe>
+            </span>
         </div>
         <div id="classdiv" class="main">
             <form>
@@ -126,16 +136,7 @@
             </form>
             <form id="multiclass">
                 <label>MultiClass:</label>
-                <select name="classes" id="class-2form" onchange="changeclass2(this);">
-                    <option value="">None</option>
-                    <option value="Force Acolyte">Force Acolyte</option>
-                    <option value="Noble">Noble</option>
-                    <option value="Scoundrel">Scoundrel</option>
-                    <option value="Scout">Scout</option>
-                    <option value="Soldier">Soldier</option>
-                    <option value="Technician">Technician</option>
-                </select>
-                <p id="class-2desc"></p>
+                <input type="text" id="class2form" onkeyup="save(this);">
             </form>
         </div>
         <div id="skillsdiv" class="main">
@@ -150,7 +151,7 @@
                     <tr class="guidebox">
                         <td>Acrobatics (Dex)</td>
                         <td><input type="checkbox" class="skill" id="acro-checkbox" name="acro" onclick="saveskill()" value="acro"></td>
-                        <td><input type="checkbox" class="skill" id="acro-2form" name="acro-2" onclick="saveskill()" value="acro-2"></td>
+                        <td><input type="checkbox" class="skill" id="acro -2-checkbox" name="acro-2" onclick="saveskill()" value="acro-2"></td>
                     </tr>
                     <tr>
                         <td>Climb (Str)</td>
@@ -160,17 +161,17 @@
                     <tr class="guidebox">
                         <td>Deception (Cha)</td>
                         <td><input type="checkbox" class="skill" id="dec-checkbox" name="dec" onclick="saveskill()" value="dec"></td>
-                        <td><input type="checkbox" class="skill" id="dec-2form" name="dec-2" onclick="saveskill()" value="dec-2"></td>
+                        <td><input type="checkbox" class="skill" id="dec-2-checkbox" name="dec-2" onclick="saveskill()" value="dec-2"></td>
                     </tr>
                     <tr>
                         <td>Endurance (Con)</td>
                         <td><input type="checkbox" class="skill" id="endu-checkbox" name="endu" onclick="saveskill()" value="endu"></td>
-                        <td><input type="checkbox" class="skill" id="endu-2form" name="endu-2" onclick="saveskill()" value="endu-2"></td>
+                        <td><input type="checkbox" class="skill" id="endu-2-checkbox" name="endu-2" onclick="saveskill()" value="endu-2"></td>
                     </tr>
                     <tr class="guidebox">
                         <td>Gather Information (Cha)</td>
                         <td><input type="checkbox" class="skill" id="info-checkbox" name="info" onclick="saveskill()" value="info"></td>
-                        <td><input type="checkbox" class="skill" id="info-2form" name="info-2" onclick="saveskill()" value="info-2"></td>
+                        <td><input type="checkbox" class="skill" id="info-2-checkbox" name="info-2" onclick="saveskill()" value="info-2"></td>
                     </tr>
                     <tr>
                         <td>Initiative (Dex)</td>
@@ -180,97 +181,97 @@
                     <tr class="guidebox">
                         <td>Jump (Str)</td>
                         <td><input type="checkbox" class="skill" id="jump-checkbox" name="jump" onclick="saveskill()" value="jump"></td>
-                        <td><input type="checkbox" class="skill" id="jump-2form" name="jump-2" onclick="saveskill()" value="jump-2"></td>
+                        <td><input type="checkbox" class="skill" id="jump-2-checkbox" name="jump-2" onclick="saveskill()" value="jump-2"></td>
                     </tr>
                     <tr>
                         <td>Knowledge: Bureaucracy (Int)</td>
                         <td><input type="checkbox" class="skill" id="bure-checkbox" name="bure" onclick="saveskill()" value="bure"></td>
-                        <td><input type="checkbox" class="skill" id="bure-2form" name="bure-2" onclick="saveskill()" value="bure-2"></td>
+                        <td><input type="checkbox" class="skill" id="bure-2-checkbox" name="bure-2" onclick="saveskill()" value="bure-2"></td>
                     </tr>
                     <tr class="guidebox">
                         <td>Knowledge: Galactic Lore (Int)</td>
                         <td><input type="checkbox" class="skill" id="lore-checkbox" name="lore" onclick="saveskill()" value="lore"></td>
-                        <td><input type="checkbox" class="skill" id="lore-2form" name="lore-2" onclick="saveskill()" value="lore-2"></td>
+                        <td><input type="checkbox" class="skill" id="lore-2-checkbox" name="lore-2" onclick="saveskill()" value="lore-2"></td>
                     </tr>
                     <tr>
                         <td>Knowledge: Life Science (Int)</td>
                         <td><input type="checkbox" class="skill" id="life-checkbox" name="life" onclick="saveskill()" value="life"></td>
-                        <td><input type="checkbox" class="skill" id="life-2form" name="life-2" onclick="saveskill()" value="life-2"></td>
+                        <td><input type="checkbox" class="skill" id="life-2-checkbox" name="life-2" onclick="saveskill()" value="life-2"></td>
                     </tr>
                     <tr class="guidebox">
                         <td>Knowledge: Physical Science (Int)</td>
                         <td><input type="checkbox" class="skill" id="phys-checkbox" name="phys" onclick="saveskill()" value="phys"></td>
-                        <td><input type="checkbox" class="skill" id="phys-2form" name="phys-2" onclick="saveskill()" value="phys-2"></td>
+                        <td><input type="checkbox" class="skill" id="phys-2-checkbox" name="phys-2" onclick="saveskill()" value="phys-2"></td>
                     </tr>
                     <tr>
                         <td>Knowledge: Social Science (Int)</td>
                         <td><input type="checkbox" class="skill" id="soci-checkbox" name="soci" onclick="saveskill()" value="soci"></td>
-                        <td><input type="checkbox" class="skill" id="soci-2form" name="soci-2" onclick="saveskill()" value="soci-2"></td>
+                        <td><input type="checkbox" class="skill" id="soci-2-checkbox" name="soci-2" onclick="saveskill()" value="soci-2"></td>
                     </tr>
                     <tr class="guidebox">
                         <td>Knowledge: Tactics (Int)</td>
                         <td><input type="checkbox" class="skill" id="tact-checkbox" name="tact" onclick="saveskill()" value="tact"></td>
-                        <td><input type="checkbox" class="skill" id="tact-2form" name="tact-2" onclick="saveskill()" value="tact-2"></td>
+                        <td><input type="checkbox" class="skill" id="tact-2-checkbox" name="tact-2" onclick="saveskill()" value="tact-2"></td>
                     </tr>
                     <tr>
                         <td>Knowledge: Technology (Int)</td>
                         <td><input type="checkbox" class="skill" id="tech-checkbox" name="tech" onclick="saveskill()" value="tech"></td>
-                        <td><input type="checkbox" class="skill" id="tech-2form" name="tech-2" onclick="saveskill()" value="tech-2"></td>
+                        <td><input type="checkbox" class="skill" id="tech-2-checkbox" name="tech-2" onclick="saveskill()" value="tech-2"></td>
                     </tr>
                     <tr class="guidebox">
                         <td>Mechanics (Int)</td>
                         <td><input type="checkbox" class="skill" id="mech-checkbox" name="mech" onclick="saveskill()" value="mech"></td>
-                        <td><input type="checkbox" class="skill" id="mech-2form" name="mech-2" onclick="saveskill()" value="mech-2"></td>
+                        <td><input type="checkbox" class="skill" id="mech-2-checkbox" name="mech-2" onclick="saveskill()" value="mech-2"></td>
                     </tr>
                     <tr>
                         <td>Perception (Wis)</td>
                         <td><input type="checkbox" class="skill" id="perc-checkbox" name="perc" onclick="saveskill()" value="perc"></td>
-                        <td><input type="checkbox" class="skill" id="perc-2form" name="perc-2" onclick="saveskill()" value="perc-2"></td>
+                        <td><input type="checkbox" class="skill" id="perc-2-checkbox" name="perc-2" onclick="saveskill()" value="perc-2"></td>
                     </tr>
                     <tr class="guidebox">
                         <td>Persuasion (Cha)</td>
                         <td><input type="checkbox" class="skill" id="pers-checkbox" name="pers" onclick="saveskill()" value="pers"></td>
-                        <td><input type="checkbox" class="skill" id="pers-2form" name="pers-2" onclick="saveskill()" value="pers-2"></td>
+                        <td><input type="checkbox" class="skill" id="pers-2-checkbox" name="pers-2" onclick="saveskill()" value="pers-2"></td>
                     </tr>
                     <tr>
                         <td>Pilot (Dex)</td>
                         <td><input type="checkbox" class="skill" id="pil-checkbox" name="pil" onclick="saveskill()" value="pil"></td>
-                        <td><input type="checkbox" class="skill" id="pil-2form" name="pil-2" onclick="saveskill()" value="pil-2"></td>
+                        <td><input type="checkbox" class="skill" id="pil-2-checkbox" name="pil-2" onclick="saveskill()" value="pil-2"></td>
                     </tr>
                     <tr class="guidebox">
                         <td>Ride (Dex)</td>
                         <td><input type="checkbox" class="skill" id="ride-checkbox" name="ride" onclick="saveskill()" value="ride"></td>
-                        <td><input type="checkbox" class="skill" id="ride-2form" name="ride-2" onclick="saveskill()" value="ride-2"></td>
+                        <td><input type="checkbox" class="skill" id="ride-2-checkbox" name="ride-2" onclick="saveskill()" value="ride-2"></td>
                     </tr>
                     <tr>
                         <td>Stealth (Dex)</td>
                         <td><input type="checkbox" class="skill" id="stea-checkbox" name="stea" onclick="saveskill()" value="stea"></td>
-                        <td><input type="checkbox" class="skill" id="stea-2form" name="stea-2" onclick="saveskill()" value="stea-2"></td>
+                        <td><input type="checkbox" class="skill" id="stea-2-checkbox" name="stea-2" onclick="saveskill()" value="stea-2"></td>
                     </tr>
                     <tr class="guidebox">
                         <td>Survival (Wis)</td>
                         <td><input type="checkbox" class="skill" id="surv-checkbox" name="surv" onclick="saveskill()" value="surv"></td>
-                        <td><input type="checkbox" class="skill" id="surv-2form" name="surv-2" onclick="saveskill()" value="surv-2"></td>
+                        <td><input type="checkbox" class="skill" id="surv-2-checkbox" name="surv-2" onclick="saveskill()" value="surv-2"></td>
                     </tr>
                     <tr>
                         <td>Swim (Str)</td>
                         <td><input type="checkbox" class="skill" id="swim-checkbox" name="swim" onclick="saveskill()" value="swim"></td>
-                        <td><input type="checkbox" class="skill" id="swim-2form" name="swim-2" onclick="saveskill()" value="swim-2"></td>
+                        <td><input type="checkbox" class="skill" id="swim-2-checkbox" name="swim-2" onclick="saveskill()" value="swim-2"></td>
                     </tr>
                     <tr class="guidebox">
                         <td>Treat Injury (Wis)</td>
                         <td><input type="checkbox" class="skill" id="inj-checkbox" name="inj" onclick="saveskill()" value="inj"></td>
-                        <td><input type="checkbox" class="skill" id="inj-2form" name="inj-2" onclick="saveskill()" value="inj-2"></td>
+                        <td><input type="checkbox" class="skill" id="inj-2-checkbox" name="inj-2" onclick="saveskill()" value="inj-2"></td>
                     </tr>
                     <tr>
                         <td>Use Computer (Int)</td>
                         <td><input type="checkbox" class="skill" id="comp-checkbox" name="comp" onclick="saveskill()" value="comp"></td>
-                        <td><input type="checkbox" class="skill" id="comp-2form" name="comp-2" onclick="saveskill()" value="comp-2"></td>
+                        <td><input type="checkbox" class="skill" id="comp-2-checkbox" name="comp-2" onclick="saveskill()" value="comp-2"></td>
                     </tr>
                     <tr class="guidebox">
                         <td>Use the Force (Cha/Will)</td>
                         <td><input type="checkbox" class="skill" id="forc-checkbox" name="forc" onclick="saveskill()" value="forc"></td>
-                        <td><input type="checkbox" class="skill" id="forc-2form" name="forc-2" onclick="saveskill()" value="forc-2"></td>
+                        <td><input type="checkbox" class="skill" id="forc-2-checkbox" name="forc-2" onclick="saveskill()" value="forc-2"></td>
                     </tr>
                 </table>
             </form>
@@ -569,64 +570,201 @@
         </div>
         <div id="forcesdiv" class="main">
             <form>
-                <label>Your Force Things:</label>
+                <label>Force Schooling:</label>
                 <table class="tables">
                     <thead>
                       <tr>
                         <td>Alchemy</td>
-                        <td><input type="checkbox" class="force-checkbox" value="X" onclick="save(this);" id="al-1form"></td>
-                        <td><input type="checkbox" class="force-checkbox" value="X" onclick="save(this);" id="al-2form"></td>
-                        <td><input type="checkbox" class="force-checkbox" value="X" onclick="save(this);" id="al-3form"></td>
+                        <td><input type="checkbox" class="force-checkbox" value="|" onclick="saveforce(this);" id="al-1form"></td>
+                        <td><input type="checkbox" class="force-checkbox" value="|" onclick="saveforce(this);" id="al-2form"></td>
+                        <td><input type="checkbox" class="force-checkbox" value="|" onclick="saveforce(this);" id="al-3form"></td>
                       </tr>
                     </thead>
                     <tbody>
                       <tr class="guidebox">
                         <td>Augmentation<br></td>
-                        <td><input type="checkbox" class="force-checkbox" value="X" onclick="save(this);" id="aug-1form"></td>
-                        <td><input type="checkbox" class="force-checkbox" value="X" onclick="save(this);" id="aug-2form"></td>
-                        <td><input type="checkbox" class="force-checkbox" value="X" onclick="save(this);" id="aug-3form"></td>
+                        <td><input type="checkbox" class="force-checkbox" value="|" onclick="saveforce(this);" id="aug-1form"></td>
+                        <td><input type="checkbox" class="force-checkbox" value="|" onclick="saveforce(this);" id="aug-2form"></td>
+                        <td><input type="checkbox" class="force-checkbox" value="|" onclick="saveforce(this);" id="aug-3form"></td>
                       </tr>
                       <tr>
                         <td>Cognition<br></td>
-                        <td><input type="checkbox" class="force-checkbox" value="X" onclick="save(this);" id="cog-1form"></td>
-                        <td><input type="checkbox" class="force-checkbox" value="X" onclick="save(this);" id="cog-2form"></td>
-                        <td><input type="checkbox" class="force-checkbox" value="X" onclick="save(this);" id="cog-3form"></td>
+                        <td><input type="checkbox" class="force-checkbox" value="|" onclick="saveforce(this);" id="cog-1form"></td>
+                        <td><input type="checkbox" class="force-checkbox" value="|" onclick="saveforce(this);" id="cog-2form"></td>
+                        <td><input type="checkbox" class="force-checkbox" value="|" onclick="saveforce(this);" id="cog-3form"></td>
                       </tr>
                       <tr class="guidebox">
                         <td>Sourcery</td>
-                        <td><input type="checkbox" class="force-checkbox" value="X" onclick="save(this);" id="sor-1form"></td>
-                        <td><input type="checkbox" class="force-checkbox" value="X" onclick="save(this);" id="sor-2form"></td>
-                        <td><input type="checkbox" class="force-checkbox" value="X" onclick="save(this);" id="sor-3form"></td>
+                        <td><input type="checkbox" class="force-checkbox" value="|" onclick="saveforce(this);" id="sor-1form"></td>
+                        <td><input type="checkbox" class="force-checkbox" value="|" onclick="saveforce(this);" id="sor-2form"></td>
+                        <td><input type="checkbox" class="force-checkbox" value="|" onclick="saveforce(this);" id="sor-3form"></td>
                       </tr>
                       <tr>
                         <td>Telekinesis</td>
-                        <td><input type="checkbox" class="force-checkbox" value="X" onclick="save(this);" id="tel-1form"></td>
-                        <td><input type="checkbox" class="force-checkbox" value="X" onclick="save(this);" id="tel-2form"></td>
-                        <td><input type="checkbox" class="force-checkbox" value="X" onclick="save(this);" id="tel-3form"></td>
+                        <td><input type="checkbox" class="force-checkbox" value="|" onclick="saveforce(this);" id="tel-1form"></td>
+                        <td><input type="checkbox" class="force-checkbox" value="|" onclick="saveforce(this);" id="tel-2form"></td>
+                        <td><input type="checkbox" class="force-checkbox" value="|" onclick="saveforce(this);" id="tel-3form"></td>
                       </tr>
                       <tr class="guidebox">
                         <td>Technokinesis</td>
-                        <td><input type="checkbox" class="force-checkbox" value="X" onclick="save(this);" id="tec-1form"></td>
-                        <td><input type="checkbox" class="force-checkbox" value="X" onclick="save(this);" id="tec-2form"></td>
-                        <td><input type="checkbox" class="force-checkbox" value="X" onclick="save(this);" id="tec-3form"></td>
+                        <td><input type="checkbox" class="force-checkbox" value="|" onclick="saveforce(this);" id="tec-1form"></td>
+                        <td><input type="checkbox" class="force-checkbox" value="|" onclick="saveforce(this);" id="tec-2form"></td>
+                        <td><input type="checkbox" class="force-checkbox" value="|" onclick="saveforce(this);" id="tec-3form"></td>
                       </tr>
                       <tr>
                         <td>Vitalism</td>
-                        <td><input type="checkbox" class="force-checkbox" value="X" onclick="save(this);" id="vit-1form"></td>
-                        <td><input type="checkbox" class="force-checkbox" value="X" onclick="save(this);" id="vit-2form"></td>
-                        <td><input type="checkbox" class="force-checkbox" value="X" onclick="save(this);" id="vit-3form"></td>
+                        <td><input type="checkbox" class="force-checkbox" value="|" onclick="saveforce(this);" id="vit-1form"></td>
+                        <td><input type="checkbox" class="force-checkbox" value="|" onclick="saveforce(this);" id="vit-2form"></td>
+                        <td><input type="checkbox" class="force-checkbox" value="|" onclick="saveforce(this);" id="vit-3form"></td>
                       </tr>
                     </tbody>
                   </table>
-
+                  <label>Force Techniques (ignore if you are below level 12, then add 1 per level if you are in a force prestegue class):</label><br>
+                  <input type="text" class="force-item" onkeyup="save(this);" id="force-teq-1form"><br>
+                  <input type="text" class="force-item" onkeyup="save(this);" id="force-teq-2form"><br>
+                  <input type="text" class="force-item" onkeyup="save(this);" id="force-teq-3form"><br>
+                  <input type="text" class="force-item" onkeyup="save(this);" id="force-teq-4form"><br>
+                  <label>Force Secrets (ignore if you are below level 12, then add 1 per level if you are in a force prestegue class):</label><br>
+                  <input type="text" class="force-item" onkeyup="save(this);" id="force-sec-1form"><br>
+                  <input type="text" class="force-item" onkeyup="save(this);" id="force-sec-2form"><br>
+                  <input type="text" class="force-item" onkeyup="save(this);" id="force-sec-3form"><br>
+                  <input type="text" class="force-item" onkeyup="save(this);" id="force-sec-4form"><br>
+                  <input type="text" class="force-item" onkeyup="save(this);" id="force-sec-5form"><br>
             </form>
         </div>
         <div id="inventorydiv" class="main">
-            <form>
-                <label>Your inventory:</label>
-            </form>
+            <span id="leftequipmentspan" class="leftspan">
+                <form>
+                    <label>Armor:</label><br>
+<svg width="440" height="525" viewBox="0 0 440 525" version="1.1" id="svg1" xml:space="preserve" inkscape:version="1.3.2 (091e20e, 2023-11-25)" sodipodi:docname="equipment.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+<sodipodi:namedview id="namedview1" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" inkscape:document-units="mm" inkscape:zoom="0.56050858" inkscape:cx="250.66521" inkscape:cy="78.500136" inkscape:window-width="1280" inkscape:window-height="667" inkscape:window-x="0" inkscape:window-y="25" inkscape:window-maximized="0" inkscape:current-layer="svg1" />
+<defs id="defs1"><rect   x="516.7536"   y="146.47211"   width="48.04285"   height="26.950867"   id="rect189" /></defs>
+<g id="g5" transform="matrix(1,0,0,0.95899054,-108.82974,-743.23202)">
+<image xlink:href="img/page_1.png" id="svg_1" height="1585" width="1225" y="2" x="0" style="display:inline" />
+</g>
+<g id="g1">
+<foreignobject width="250px" height="18px" x="35" y="20" id="armorp"><input type="text" class="equip-text" list="armor-list" id="armorform" name="armor" onkeyup="savearmor(this);" /></foreignobject>
+<foreignobject width="75px" height="18px" x="335" y="20" id="armor-speedp"><input type="text" class="equip-text" id="armor-speedform" name="armor-speed" onkeyup="save(this);" /></foreignobject>
+<foreignobject width="75px" height="18px" x="35" y="60" id="armor-ref-defp"><input type="text" class="equip-text" id="armor-ref-defform" name="armor-ref-def" onkeyup="save(this);" /></foreignobject>
+<foreignobject width="75px" height="18px" x="305" y="60" id="armor-fort-defp"><input type="text" class="equip-text" id="armor-fort-defform" name="armor-fort-def" onkeyup="save(this);" /></foreignobject>
+<foreignobject width="75px" height="18px" x="170" y="60" id="armor-dex-defp"><input type="text" class="equip-text" id="armor-dex-defform" name="armor-dex-def" onkeyup="save(this);" /></foreignobject>
+<foreignobject width="350px" height="18px" x="35" y="100" id="armor-notesp"><input type="text" class="equip-text" id="armor-notesform" name="armor-notes" onkeyup="save(this);" /></foreignobject>
+</g>
+<g id="g2" transform="translate(0,137)">
+<foreignobject width="250px" height="18px" x="35" y="20" id="weapon-1p"><input type="text" class="equip-text" list="weapon-list" id="weapon-1form" name="weapon-1" onkeyup="saveweapon(this);" /></foreignobject>
+<foreignobject width="75px" height="18px" x="335" y="20" id="weapon-1-rangep"><input type="text" class="equip-text" id="weapon-1-rangeform" name="weapon-1-range" onkeyup="save(this);" /></foreignobject>
+<foreignobject width="75px" height="18px" x="35" y="60" id="weapon-1-attp"><input type="text" class="equip-text" id="weapon-1-attform" name="weapon-1-att" onkeyup="save(this);" /></foreignobject>
+<foreignobject width="75px" height="18px" x="190" y="60" id="weapon-1-dmgp"><input type="text" class="equip-text" id="weapon-1-dmgform" name="weapon-1-dmg" onkeyup="save(this);" /></foreignobject>
+<foreignobject width="75px" height="18px" x="335" y="60" id="weapon-1-critp"><input type="text" class="equip-text" id="weapon-1-critform" name="weapon-1-crit" onkeyup="save(this);" /></foreignobject>
+<foreignobject width="75px" height="18px" x="335" y="100" id="weapon-1-typep"><input type="text" class="equip-text" id="weapon-1-typeform" name="weapon-1-type" onkeyup="save(this);" /></foreignobject>
+<foreignobject width="300px" height="18px" x="35" y="100" id="weapon-1-notesp"><input type="text" class="equip-text" id="weapon-1-notesform" name="weapon-1-notes" onkeyup="save(this);" /></foreignobject>
+</g>
+<g id="g3" transform="translate(0,260)">
+<foreignobject width="250px" height="18px" x="35" y="20" id="weapon-2p"><input type="text" class="equip-text" list="weapon-list" id="weapon-2form" name="weapon-1" onkeyup="saveweapon(this);" /></foreignobject>
+<foreignobject width="75px" height="18px" x="335" y="20" id="weapon-2-rangep"><input type="text" class="equip-text" id="weapon-2-rangeform" name="weapon-1-range" onkeyup="save(this);" /></foreignobject>
+<foreignobject width="75px" height="18px" x="35" y="60" id="weapon-2-attp"><input type="text" class="equip-text" id="weapon-2-attform" name="weapon-1-att" onkeyup="save(this);" /></foreignobject>
+<foreignobject width="75px" height="18px" x="190" y="60" id="weapon-2-dmgp"><input type="text" class="equip-text" id="weapon-2-dmgform" name="weapon-1-dmg" onkeyup="save(this);" /></foreignobject>
+<foreignobject width="75px" height="18px" x="335" y="60" id="weapon-2-critp"><input type="text" class="equip-text" id="weapon-2-critform" name="weapon-1-crit" onkeyup="save(this);" /></foreignobject>
+<foreignobject width="75px" height="18px" x="335" y="100" id="weapon-2-typep"><input type="text" class="equip-text" id="weapon-2-typeform" name="weapon-1-type" onkeyup="save(this);" /></foreignobject>
+<foreignobject width="300px" height="18px" x="35" y="100" id="weapon-2-notesp"><input type="text" class="equip-text" id="weapon-2-notesform" name="weapon-1-notes" onkeyup="save(this);" /></foreignobject>
+</g>
+<g id="g4" transform="translate(0,384)">
+<foreignobject width="250px" height="18px" x="35" y="20" id="weapon-3p"><input type="text" class="equip-text" list="weapon-list" id="weapon-3form" name="weapon-1" onkeyup="saveweapon(this);" /></foreignobject>
+<foreignobject width="75px" height="18px" x="335" y="20" id="weapon-3-rangep"><input type="text" class="equip-text" id="weapon-3-rangeform" name="weapon-1-range" onkeyup="save(this);" /></foreignobject>
+<foreignobject width="75px" height="18px" x="35" y="60" id="weapon-3-attp"><input type="text" class="equip-text" id="weapon-3-attform" name="weapon-1-att" onkeyup="save(this);" /></foreignobject>
+<foreignobject width="75px" height="18px" x="190" y="60" id="weapon-3-dmgp"><input type="text" class="equip-text" id="weapon-3-dmgform" name="weapon-1-dmg" onkeyup="save(this);" /></foreignobject>
+<foreignobject width="75px" height="18px" x="335" y="60" id="weapon-3-critp"><input type="text" class="equip-text" id="weapon-3-critform" name="weapon-1-crit" onkeyup="save(this);" /></foreignobject>
+<foreignobject width="75px" height="18px" x="335" y="100" id="weapon-3-typep"><input type="text" class="equip-text" id="weapon-3-typeform" name="weapon-1-type" onkeyup="save(this);" /></foreignobject>
+<foreignobject width="300px" height="18px" x="35" y="100" id="weapon-3-notesp"><input type="text" class="equip-text" id="weapon-3-notesform" name="weapon-1-notes" onkeyup="save(this);" /></foreignobject>
+</g>
+</svg>
+                        <datalist id="armor-list"></datalist>
+                        <datalist id="weapon-list"></datalist><br>
+                        <label id="inventorylabel"></label>
+                        <table class="tables">
+                            <thead>
+                              <tr>
+                                <th>Name</th>
+                                <th>Weight</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr class="guidebox">
+                                <td><input type="text" class="gear-text" id="gear-1form" name="gearform" onkeyup="save(this);" /></td>
+                                <td><input type="text" class="gear-weight" id="w-1form" name="gearweight" onkeyup="save(this);" /></td>
+                              </tr>
+                              <tr>
+                                <td><input type="text" class="gear-text" id="gear-2form" name="gearform" onkeyup="save(this);" /></td>
+                                <td><input type="text" class="gear-weight" id="w-2form" name="gearweight" onkeyup="save(this);" /></td>
+                              </tr>
+                              <tr class="guidebox">
+                                <td><input type="text" class="gear-text" id="gear-3form" name="gearform" onkeyup="save(this);" /></td>
+                                <td><input type="text" class="gear-weight" id="w-3form" name="gearweight" onkeyup="save(this);" /></td>
+                              </tr>
+                              <tr>
+                                <td><input type="text" class="gear-text" id="gear-4form" name="gearform" onkeyup="save(this);" /></td>
+                                <td><input type="text" class="gear-weight" id="w-4form" name="gearweight" onkeyup="save(this);" /></td>
+                              </tr>
+                              <tr class="guidebox">
+                                <td><input type="text" class="gear-text" id="gear-5form" name="gearform" onkeyup="save(this);" /></td>
+                                <td><input type="text" class="gear-weight" id="w-5form" name="gearweight" onkeyup="save(this);" /></td>
+                              </tr>
+                              <tr>
+                                <td><input type="text" class="gear-text" id="gear-6form" name="gearform" onkeyup="save(this);" /></td>
+                                <td><input type="text" class="gear-weight" id="w-6form" name="gearweight" onkeyup="save(this);" /></td>
+                              </tr>
+                              <tr class="guidebox">
+                                <td><input type="text" class="gear-text" id="gear-7form" name="gearform" onkeyup="save(this);" /></td>
+                                <td><input type="text" class="gear-weight" id="w-7form" name="gearweight" onkeyup="save(this);" /></td>
+                              </tr>
+                              <tr>
+                                <td><input type="text" class="gear-text" id="gear-8form" name="gearform" onkeyup="save(this);" /></td>
+                                <td><input type="text" class="gear-weight" id="w-8form" name="gearweight" onkeyup="save(this);" /></td>
+                              </tr>
+                              <tr class="guidebox">
+                                <td><input type="text" class="gear-text" id="gear-9form" name="gearform" onkeyup="save(this);" /></td>
+                                <td><input type="text" class="gear-weight" id="w-9form" name="gearweight" onkeyup="save(this);" /></td>
+                              </tr>
+                              <tr>
+                                <td><input type="text" class="gear-text" id="gear-10form" name="gearform" onkeyup="save(this);" /></td>
+                                <td><input type="text" class="gear-weight" id="w-10form" name="gearweight" onkeyup="save(this);" /></td>
+                              </tr>
+                              <tr class="guidebox">
+                                <td><input type="text" class="gear-text" id="gear-11form" name="gearform" onkeyup="save(this);" /></td>
+                                <td><input type="text" class="gear-weight" id="w-11form" name="gearweight" onkeyup="save(this);" /></td>
+                              </tr>
+                              <tr>
+                                <td><input type="text" class="gear-text" id="gear-12form" name="gearform" onkeyup="save(this);" /></td>
+                                <td><input type="text" class="gear-weight" id="w-12form" name="gearweight" onkeyup="save(this);" /></td>
+                              </tr>
+                              <tr class="guidebox">
+                                <td><input type="text" class="gear-text" id="gear-13form" name="gearform" onkeyup="save(this);" /></td>
+                                <td><input type="text" class="gear-weight" id="w-13form" name="gearweight" onkeyup="save(this);" /></td>
+                              </tr>
+                              <tr>
+                                <td><input type="text" class="gear-text" id="gear-14form" name="gearform" onkeyup="save(this);" /></td>
+                                <td><input type="text" class="gear-weight" id="w-14form" name="gearweight" onkeyup="save(this);" /></td>
+                              </tr>
+                              <tr class="guidebox">
+                                <td><input type="text" class="gear-text" id="gear-15form" name="gearform" onkeyup="save(this);" /></td>
+                                <td><input type="text" class="gear-weight" id="w-15form" name="gearweight" onkeyup="save(this);" /></td>
+                              </tr>
+                              <tr>
+                                <td><input type="text" class="gear-text" id="gear-16form" name="gearform" onkeyup="save(this);" /></td>
+                                <td><input type="text" class="gear-weight" id="w-16form" name="gearweight" onkeyup="save(this);" /></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          
+
+                    </form>
+                </span>
+                <span id="equipmentspan" class="rightspan">
+                    <iframe src="about:blank" frameborder="0" id="equipment-frame"></iframe>
+                </span>
         </div>
         <div id="pdfdiv" class="main">
+            <label class="noprint">Use ^P to print or download!</label>
 <svg width="1000" height="1245" viewBox="0 0 1000 1245" version="1.1" id="svg1" xml:space="preserve" inkscape:version="1.3.2 (091e20e, 2023-11-25)" sodipodi:docname="page_1.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
 <sodipodi:namedview id="namedview1" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" inkscape:document-units="mm" inkscape:zoom="0.85340482" inkscape:cx="727.08752" inkscape:cy="903.43994" inkscape:window-width="1280" inkscape:window-height="667" inkscape:window-x="0" inkscape:window-y="25" inkscape:window-maximized="0" inkscape:current-layer="layer1" />
 <defs id="defs1"><rect x="516.75358" y="146.4721" width="48.04285" height="26.950867" id="rect189" /></defs>
@@ -905,6 +1043,7 @@
 <text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="self-5" x="681.97412" y="713.61206" />
 <text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="self-6" x="683.14587" y="725.32983" />
 <text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="self-7" x="683.14587" y="738.21942" />
+<g transform="translate(0, 3)">
 <text xml:space="preserve" text-anchor="start" class="gear" font-family="Orbitron" id="gear-1" x="104.28814" y="812.04132" />
 <text xml:space="preserve" text-anchor="start" class="weight" font-family="Orbitron" id="w-1" x="324.58218" y="813.21313" />
 <text xml:space="preserve" text-anchor="start" class="gear" font-family="Orbitron" id="gear-2" x="104.28814" y="828.44623" />
@@ -939,6 +1078,7 @@
 <text xml:space="preserve" text-anchor="start" class="weight" font-family="Orbitron" id="w-16" x="323.4104" y="1069.8322" />
 <text xml:space="preserve" text-anchor="start" class="weight" font-family="Orbitron" id="total-weight" x="325.75397" y="1086.2371" />
 <text xml:space="preserve" text-anchor="start" class="weight" font-family="Orbitron" id="carry-cap" x="323.4104" y="1120.2188" />
+</g>
 <text xml:space="preserve" text-anchor="start" class="force-school" font-family="Orbitron" id="al-3" x="426.52676" y="851.88177" />
 <text xml:space="preserve" text-anchor="start" class="force-school" font-family="Orbitron" id="al-2" x="411.29367" y="853.05353" />
 <text xml:space="preserve" text-anchor="start" class="force-school" font-family="Orbitron" id="al-1" x="394.88879" y="851.88177" />
@@ -962,15 +1102,15 @@
 <text xml:space="preserve" text-anchor="start" class="force-school" font-family="Orbitron" id="vit-1" x="394.88879" y="998.35388" />
 <text xml:space="preserve" text-anchor="start" class="credits" font-family="Orbitron" id="credits" x="205.06094" y="1169.4333" />
 <text xml:space="preserve" text-anchor="start" class="force-uses" font-family="Orbitron" id="force-uses" x="535.50201" y="1076.8629" />
-<text xml:space="preserve" text-anchor="start" class="force-teq" font-family="Orbitron" id="force-teq-1" x="708.92499" y="842.50757" />
-<text xml:space="preserve" text-anchor="start" class="force-teq" font-family="Orbitron" id="force-teq-2" x="707.75323" y="853.05353" />
-<text xml:space="preserve" text-anchor="start" class="force-teq" font-family="Orbitron" id="force-teq-3" x="707.75323" y="858.91241" />
-<text xml:space="preserve" text-anchor="start" class="force-teq" font-family="Orbitron" id="force-teq-4" x="707.75323" y="869.45844" />
-<text xml:space="preserve" text-anchor="start" class="force-sec" font-family="Orbitron" id="force-sec-1" x="707.75323" y="913.9859" />
-<text xml:space="preserve" text-anchor="start" class="force-sec" font-family="Orbitron" id="force-sec-2" x="710.09674" y="923.36017" />
-<text xml:space="preserve" text-anchor="start" class="force-sec" font-family="Orbitron" id="force-sec-3" x="710.09674" y="933.90613" />
-<text xml:space="preserve" text-anchor="start" class="force-sec" font-family="Orbitron" id="force-sec-4" x="708.92499" y="942.10858" />
-<text xml:space="preserve" text-anchor="start" class="force-sec" font-family="Orbitron" id="force-sec-5" x="711.26855" y="951.48279" />
+<text xml:space="preserve" text-anchor="start" class="force-teq" font-family="Orbitron" id="force-teq-1" x="708" y="845.50757" />
+<text xml:space="preserve" text-anchor="start" class="force-teq" font-family="Orbitron" id="force-teq-2" x="708" y="856.05353" />
+<text xml:space="preserve" text-anchor="start" class="force-teq" font-family="Orbitron" id="force-teq-3" x="708" y="864.91241" />
+<text xml:space="preserve" text-anchor="start" class="force-teq" font-family="Orbitron" id="force-teq-4" x="708" y="873.45844" />
+<text xml:space="preserve" text-anchor="start" class="force-sec" font-family="Orbitron" id="force-sec-1" x="708" y="917.9859" />
+<text xml:space="preserve" text-anchor="start" class="force-sec" font-family="Orbitron" id="force-sec-2" x="708" y="927.36017" />
+<text xml:space="preserve" text-anchor="start" class="force-sec" font-family="Orbitron" id="force-sec-3" x="708" y="936.90613" />
+<text xml:space="preserve" text-anchor="start" class="force-sec" font-family="Orbitron" id="force-sec-4" x="708" y="947.10858" />
+<text xml:space="preserve" text-anchor="start" class="force-sec" font-family="Orbitron" id="force-sec-5" x="708" y="956.48279" />
 </g>
 </svg>
 
@@ -978,6 +1118,8 @@
         <script src="species.json"></script>
         <script src="class.json"></script>
         <script src="talent-trees.json"></script>
+        <script src="weapons.json"></script>
+        <script src="armor.json"></script>
         <script src="character_editor.js"></script>
     </body>
 </html>

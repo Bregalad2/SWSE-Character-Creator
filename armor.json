@@ -1,0 +1,712 @@
+armorjson = `{
+    "Armored Flight Suit": {
+    "name": "Armored Flight Suit",
+    "name_url": "https://swse.fandom.com/wiki/Armored_Flight_Suit",
+    "equip_bonus": "+2",
+    "armor_bonus": "+5",
+    "cost": "4000",
+    "max_dex_bonus": "+3",
+    "availibility": "Licensed",
+    "weight": "10 kg"
+  },
+  "Blast Helmet and Vest": {
+    "name": "Blast Helmet and Vest",
+    "name_url": "https://swse.fandom.com/wiki/Blast_Helmet_and_Vest",
+    "equip_bonus": "-",
+    "armor_bonus": "+2",
+    "cost": "500",
+    "max_dex_bonus": "+5",
+    "availibility": "-",
+    "weight": "3 kg"
+  },
+  "Combat Jumpsuit": {
+    "name": "Combat Jumpsuit",
+    "name_url": "https://swse.fandom.com/wiki/Combat_Jumpsuit",
+    "equip_bonus": "-",
+    "armor_bonus": "+4",
+    "cost": "1500",
+    "max_dex_bonus": "+4",
+    "availibility": "Licensed",
+    "weight": "8 kg"
+  },
+  "Padded Flight Suit": {
+    "name": "Padded Flight Suit",
+    "name_url": "https://swse.fandom.com/wiki/Padded_Flight_Suit",
+    "equip_bonus": "+1",
+    "armor_bonus": "+3",
+    "cost": "2000",
+    "max_dex_bonus": "+4",
+    "availibility": "-",
+    "weight": "5 kg"
+  },
+  "Stormtrooper Armor": {
+    "name": "Stormtrooper Armor",
+    "name_url": "https://swse.fandom.com/wiki/Stormtrooper_Armor",
+    "equip_bonus": "+2",
+    "armor_bonus": "+6",
+    "cost": "8000",
+    "max_dex_bonus": "+3",
+    "availibility": "Military, Rare",
+    "weight": "10 kg"
+  },
+  "Vonduun Crabshell": {
+    "name": "Vonduun Crabshell",
+    "name_url": "https://swse.fandom.com/wiki/Vonduun_Crabshell",
+    "equip_bonus": "+5",
+    "armor_bonus": "+5",
+    "cost": "-",
+    "max_dex_bonus": "+4",
+    "availibility": "Rare",
+    "weight": "5 kg"
+  },
+  "Energy Shields": {
+    "name": "Energy Shields",
+    "name_url": "https://swse.fandom.com/wiki/Energy_Shields",
+    "equip_bonus": "-",
+    "armor_bonus": "-",
+    "cost": "Varies",
+    "max_dex_bonus": "+2",
+    "availibility": "-",
+    "weight": "1 kg"
+  },
+  "Fiber Armor": {
+    "name": "Fiber Armor",
+    "name_url": "https://swse.fandom.com/wiki/Fiber_Armor",
+    "equip_bonus": "+1",
+    "armor_bonus": "+4",
+    "cost": "3000",
+    "max_dex_bonus": "+2",
+    "availibility": "Licensed",
+    "weight": "10 kg"
+  },
+  "Light Battle Armor": {
+    "name": "Light Battle Armor",
+    "name_url": "https://swse.fandom.com/wiki/Light_Battle_Armor",
+    "equip_bonus": "+2",
+    "armor_bonus": "+5",
+    "cost": "3500",
+    "max_dex_bonus": "+3",
+    "availibility": "Military",
+    "weight": "10 kg"
+  },
+  "Light Powered Battle Armor": {
+    "name": "Light Powered Battle Armor",
+    "name_url": "https://swse.fandom.com/wiki/Light_Powered_Battle_Armor",
+    "equip_bonus": "+2",
+    "armor_bonus": "+4",
+    "cost": "6500",
+    "max_dex_bonus": "+3",
+    "availibility": "Military",
+    "weight": "12 kg"
+  },
+  "Mandalorian Combat Suit": {
+    "name": "Mandalorian Combat Suit",
+    "name_url": "https://swse.fandom.com/wiki/Mandalorian_Combat_Suit",
+    "equip_bonus": "+1",
+    "armor_bonus": "+4",
+    "cost": "-",
+    "max_dex_bonus": "+5",
+    "availibility": "Military, Rare",
+    "weight": "8 kg"
+  },
+  "Neo-Crusader Light Armor": {
+    "name": "Neo-Crusader Light Armor",
+    "name_url": "https://swse.fandom.com/wiki/Neo-Crusader_Light_Armor",
+    "equip_bonus": "+2",
+    "armor_bonus": "+6",
+    "cost": "-",
+    "max_dex_bonus": "+3",
+    "availibility": "Rare",
+    "weight": "42 kg"
+  },
+  "Republic Light Armor": {
+    "name": "Republic Light Armor",
+    "name_url": "https://swse.fandom.com/wiki/Republic_Light_Armor",
+    "equip_bonus": "+1",
+    "armor_bonus": "+4",
+    "cost": "-",
+    "max_dex_bonus": "+3",
+    "availibility": "Military",
+    "weight": "7 kg"
+  },
+  "Half-Vest": {
+    "name": "Half-Vest",
+    "name_url": "https://swse.fandom.com/wiki/Half-Vest",
+    "equip_bonus": "-",
+    "armor_bonus": "+1",
+    "cost": "250",
+    "max_dex_bonus": "+5",
+    "availibility": "Restricted",
+    "weight": "2 kg"
+  },
+  "Light Beskar'gam": {
+    "name": "Light Beskar'gam",
+    "name_url": "https://swse.fandom.com/wiki/Light_Beskar%27gam",
+    "equip_bonus": "+2",
+    "armor_bonus": "+5",
+    "cost": "33500",
+    "max_dex_bonus": "+3",
+    "availibility": "Licensed, Rare",
+    "weight": "10 kg"
+  },
+  "Shadowsuit": {
+    "name": "Shadowsuit",
+    "name_url": "https://swse.fandom.com/wiki/Shadowsuit",
+    "equip_bonus": "+1",
+    "armor_bonus": "+1",
+    "cost": "600",
+    "max_dex_bonus": "+5",
+    "availibility": "Military",
+    "weight": "2 kg"
+  },
+  "Thinsuit": {
+    "name": "Thinsuit",
+    "name_url": "https://swse.fandom.com/wiki/Thinsuit",
+    "equip_bonus": "-",
+    "armor_bonus": "-",
+    "cost": "900",
+    "max_dex_bonus": "+6",
+    "availibility": "-",
+    "weight": "1 kg"
+  },
+  "Tracker Utility Vest": {
+    "name": "Tracker Utility Vest",
+    "name_url": "https://swse.fandom.com/wiki/Tracker_Utility_Vest",
+    "equip_bonus": "-",
+    "armor_bonus": "+1",
+    "cost": "300",
+    "max_dex_bonus": "+5",
+    "availibility": "-",
+    "weight": "0.5 kg"
+  },
+  "Galactic Alliance Armor": {
+    "name": "Galactic Alliance Armor",
+    "name_url": "https://swse.fandom.com/wiki/Galactic_Alliance_Armor",
+    "equip_bonus": "+1",
+    "armor_bonus": "+4",
+    "cost": "6000",
+    "max_dex_bonus": "+3",
+    "availibility": "Military",
+    "weight": "9 kg"
+  },
+  "Blinding Helmet": {
+    "name": "Blinding Helmet",
+    "name_url": "https://swse.fandom.com/wiki/Blinding_Helmet",
+    "equip_bonus": "+0",
+    "armor_bonus": "+0",
+    "cost": "200",
+    "max_dex_bonus": "-",
+    "availibility": "Rare",
+    "weight": "2 kg"
+  },
+  "Light Dark Armor": {
+    "name": "Light Dark Armor",
+    "name_url": "https://swse.fandom.com/wiki/Light_Dark_Armor",
+    "equip_bonus": "+3",
+    "armor_bonus": "+4",
+    "cost": "10000",
+    "max_dex_bonus": "+3",
+    "availibility": "Rare",
+    "weight": "10 kg"
+  },
+  "Light Jedi Battle Armor": {
+    "name": "Light Jedi Battle Armor",
+    "name_url": "https://swse.fandom.com/wiki/Light_Jedi_Battle_Armor",
+    "equip_bonus": "+3",
+    "armor_bonus": "+3",
+    "cost": "4000",
+    "max_dex_bonus": "+4",
+    "availibility": "Rare",
+    "weight": "6 kg"
+  },
+  "KZZ Riot Armor": {
+    "name": "KZZ Riot Armor",
+    "name_url": "https://swse.fandom.com/wiki/KZZ_Riot_Armor",
+    "equip_bonus": "+2",
+    "armor_bonus": "+2",
+    "cost": "2500",
+    "max_dex_bonus": "+5",
+    "availibility": "Military",
+    "weight": "6 kg"
+  },
+  "Seatrooper Armor": {
+    "name": "Seatrooper Armor",
+    "name_url": "https://swse.fandom.com/wiki/Seatrooper_Armor",
+    "equip_bonus": "+2",
+    "armor_bonus": "+4",
+    "cost": "6750",
+    "max_dex_bonus": "+2",
+    "availibility": "Military",
+    "weight": "14 kg"
+  },
+  "Shield Gauntlet": {
+    "name": "Shield Gauntlet",
+    "name_url": "https://swse.fandom.com/wiki/Shield_Gauntlet",
+    "equip_bonus": "-",
+    "armor_bonus": "-",
+    "cost": "1500",
+    "max_dex_bonus": "-",
+    "availibility": "Rare",
+    "weight": "1 kg"
+  },
+  "Marine Armor": {
+    "name": "Marine Armor",
+    "name_url": "https://swse.fandom.com/wiki/Marine_Armor",
+    "equip_bonus": "+2",
+    "armor_bonus": "+5",
+    "cost": "5000",
+    "max_dex_bonus": "+3",
+    "availibility": "Restricted",
+    "weight": "12 kg"
+  },
+  "Microbe Armor": {
+    "name": "Microbe Armor",
+    "name_url": "https://swse.fandom.com/wiki/Microbe_Armor",
+    "equip_bonus": "-",
+    "armor_bonus": "+2",
+    "cost": "4000",
+    "max_dex_bonus": "+3",
+    "availibility": "Licensed",
+    "weight": "6 kg"
+  },
+  "Stun Cloak": {
+    "name": "Stun Cloak",
+    "name_url": "https://swse.fandom.com/wiki/Stun_Cloak",
+    "equip_bonus": "-",
+    "armor_bonus": "+1",
+    "cost": "3500",
+    "max_dex_bonus": "+5",
+    "availibility": "Licensed",
+    "weight": "2 kg"
+  },
+  "Light Pressure Suit": {
+    "name": "Light Pressure Suit",
+    "name_url": "https://swse.fandom.com/wiki/Light_Pressure_Suit",
+    "equip_bonus": "+2",
+    "armor_bonus": "+5",
+    "cost": "4000",
+    "max_dex_bonus": "+3",
+    "availibility": "Rare",
+    "weight": "10 kg"
+  },
+  "Clone Trooper Armor, Light": {
+    "name": "Clone Trooper Armor, Light",
+    "name_url": "https://swse.fandom.com/wiki/Clone_Trooper_Armor,_Light",
+    "equip_bonus": "+1",
+    "armor_bonus": "+3",
+    "cost": "6000",
+    "max_dex_bonus": "+4",
+    "availibility": "Military, Rare",
+    "weight": "6 kg"
+  },
+  "Clone Trooper Armor, Phase I": {
+    "name": "Clone Trooper Armor, Phase I",
+    "name_url": "https://swse.fandom.com/wiki/Clone_Trooper_Armor,_Phase_I",
+    "equip_bonus": "+2",
+    "armor_bonus": "+5",
+    "cost": "8000",
+    "max_dex_bonus": "+1",
+    "availibility": "Military, Rare",
+    "weight": "38 kg"
+  },
+  "Mon Calamari Body Armor": {
+    "name": "Mon Calamari Body Armor",
+    "name_url": "https://swse.fandom.com/wiki/Mon_Calamari_Body_Armor",
+    "equip_bonus": "-",
+    "armor_bonus": "+4",
+    "cost": "4000",
+    "max_dex_bonus": "+4",
+    "availibility": "Rare",
+    "weight": "12 kg"
+  },
+  "Reinforced Leather Armor": {
+    "name": "Reinforced Leather Armor",
+    "name_url": "https://swse.fandom.com/wiki/Reinforced_Leather_Armor",
+    "equip_bonus": "+1",
+    "armor_bonus": "+3",
+    "cost": "750",
+    "max_dex_bonus": "+2",
+    "availibility": "-",
+    "weight": "4 kg"
+  },
+  "Red Guard Armor": {
+    "name": "Red Guard Armor",
+    "name_url": "https://swse.fandom.com/wiki/Red_Guard_Armor",
+    "equip_bonus": "+2",
+    "armor_bonus": "+6",
+    "cost": "16000",
+    "max_dex_bonus": "+4",
+    "availibility": "Military, Rare",
+    "weight": "16 kg"
+  },
+  "Storm Commando Armor": {
+    "name": "Storm Commando Armor",
+    "name_url": "https://swse.fandom.com/wiki/Storm_Commando_Armor",
+    "equip_bonus": "+2",
+    "armor_bonus": "+4",
+    "cost": "8500",
+    "max_dex_bonus": "+3",
+    "availibility": "Military, Rare",
+    "weight": "9 kg"
+  },
+  "Battle Armor": {
+    "name": "Battle Armor",
+    "name_url": "https://swse.fandom.com/wiki/Battle_Armor",
+    "equip_bonus": "+2",
+    "armor_bonus": "+8",
+    "cost": "7000",
+    "max_dex_bonus": "+2",
+    "availibility": "Military",
+    "weight": "16 kg"
+  },
+  "Ceremonial Armor": {
+    "name": "Ceremonial Armor",
+    "name_url": "https://swse.fandom.com/wiki/Ceremonial_Armor",
+    "equip_bonus": "-",
+    "armor_bonus": "+7",
+    "cost": "5000",
+    "max_dex_bonus": "+2",
+    "availibility": "Restricted",
+    "weight": "13 kg"
+  },
+  "Corellian Powersuit": {
+    "name": "Corellian Powersuit",
+    "name_url": "https://swse.fandom.com/wiki/Corellian_Powersuit",
+    "equip_bonus": "-",
+    "armor_bonus": "+7",
+    "cost": "10000",
+    "max_dex_bonus": "+3",
+    "availibility": "Restricted",
+    "weight": "20 kg"
+  },
+  "Mandalorian Battle Armor": {
+    "name": "Mandalorian Battle Armor",
+    "name_url": "https://swse.fandom.com/wiki/Mandalorian_Battle_Armor",
+    "equip_bonus": "+2",
+    "armor_bonus": "+8",
+    "cost": "-",
+    "max_dex_bonus": "+2",
+    "availibility": "Rare",
+    "weight": "18 kg"
+  },
+  "Mesh Armor": {
+    "name": "Mesh Armor",
+    "name_url": "https://swse.fandom.com/wiki/Mesh_Armor",
+    "equip_bonus": "+2",
+    "armor_bonus": "+6",
+    "cost": "6000",
+    "max_dex_bonus": "+2",
+    "availibility": "Restricted",
+    "weight": "13 kg"
+  },
+  "Powered Battle Armor": {
+    "name": "Powered Battle Armor",
+    "name_url": "https://swse.fandom.com/wiki/Powered_Battle_Armor",
+    "equip_bonus": "+2",
+    "armor_bonus": "+7",
+    "cost": "11000",
+    "max_dex_bonus": "+2",
+    "availibility": "Military",
+    "weight": "17 kg"
+  },
+  "Republic Combat Armor": {
+    "name": "Republic Combat Armor",
+    "name_url": "https://swse.fandom.com/wiki/Republic_Combat_Armor",
+    "equip_bonus": "+2",
+    "armor_bonus": "+6",
+    "cost": "-",
+    "max_dex_bonus": "+2",
+    "availibility": "Military",
+    "weight": "14 kg"
+  },
+  "Weave Armor": {
+    "name": "Weave Armor",
+    "name_url": "https://swse.fandom.com/wiki/Weave_Armor",
+    "equip_bonus": "+2",
+    "armor_bonus": "+6",
+    "cost": "5000",
+    "max_dex_bonus": "+3",
+    "availibility": "Restricted",
+    "weight": "15 kg"
+  },
+  "Medium Beskar'gam": {
+    "name": "Medium Beskar'gam",
+    "name_url": "https://swse.fandom.com/wiki/Medium_Beskar%27gam",
+    "equip_bonus": "+2",
+    "armor_bonus": "+8",
+    "cost": "37000",
+    "max_dex_bonus": "+2",
+    "availibility": "Restricted, Rare",
+    "weight": "17 kg"
+  },
+  "Model 210 Personal Armor": {
+    "name": "Model 210 Personal Armor",
+    "name_url": "https://swse.fandom.com/wiki/Model_210_Personal_Armor",
+    "equip_bonus": "+1",
+    "armor_bonus": "+7",
+    "cost": "16300",
+    "max_dex_bonus": "+3",
+    "availibility": "Military",
+    "weight": "17 kg"
+  },
+  "AV-1S Scout Armor": {
+    "name": "AV-1S Scout Armor",
+    "name_url": "https://swse.fandom.com/wiki/AV-1S_Scout_Armor",
+    "equip_bonus": "+2",
+    "armor_bonus": "+7",
+    "cost": "15000",
+    "max_dex_bonus": "+2",
+    "availibility": "Military",
+    "weight": "18 kg"
+  },
+  "Camo Armor": {
+    "name": "Camo Armor",
+    "name_url": "https://swse.fandom.com/wiki/Camo_Armor",
+    "equip_bonus": "-",
+    "armor_bonus": "+5",
+    "cost": "6000",
+    "max_dex_bonus": "+3",
+    "availibility": "Restricted",
+    "weight": "6 kg"
+  },
+  "Cortosis Gauntlet": {
+    "name": "Cortosis Gauntlet",
+    "name_url": "https://swse.fandom.com/wiki/Cortosis_Gauntlet",
+    "equip_bonus": "-",
+    "armor_bonus": "-",
+    "cost": "1500",
+    "max_dex_bonus": "-",
+    "availibility": "Rare",
+    "weight": "1 kg"
+  },
+  "Imperial Knight Armor": {
+    "name": "Imperial Knight Armor",
+    "name_url": "https://swse.fandom.com/wiki/Imperial_Knight_Armor",
+    "equip_bonus": "+2",
+    "armor_bonus": "+8",
+    "cost": "7000",
+    "max_dex_bonus": "+3",
+    "availibility": "Rare",
+    "weight": "16 kg"
+  },
+  "Knighthunter Armor": {
+    "name": "Knighthunter Armor",
+    "name_url": "https://swse.fandom.com/wiki/Knighthunter_Armor",
+    "equip_bonus": "+2",
+    "armor_bonus": "+7",
+    "cost": "6000",
+    "max_dex_bonus": "+3",
+    "availibility": "Military",
+    "weight": "13 kg"
+  },
+  "Dark Armor": {
+    "name": "Dark Armor",
+    "name_url": "https://swse.fandom.com/wiki/Dark_Armor",
+    "equip_bonus": "+4",
+    "armor_bonus": "+7",
+    "cost": "15000",
+    "max_dex_bonus": "+2",
+    "availibility": "Rare",
+    "weight": "16 kg"
+  },
+  "Jedi Battle Armor": {
+    "name": "Jedi Battle Armor",
+    "name_url": "https://swse.fandom.com/wiki/Jedi_Battle_Armor",
+    "equip_bonus": "+5",
+    "armor_bonus": "+5",
+    "cost": "6000",
+    "max_dex_bonus": "+3",
+    "availibility": "Rare",
+    "weight": "12 kg"
+  },
+  "Biohazard Suit": {
+    "name": "Biohazard Suit",
+    "name_url": "https://swse.fandom.com/wiki/Biohazard_Suit",
+    "equip_bonus": "+3",
+    "armor_bonus": "-",
+    "cost": "4000",
+    "max_dex_bonus": "+0",
+    "availibility": "Licensed",
+    "weight": "9 kg"
+  },
+  "Camo Scout Armor": {
+    "name": "Camo Scout Armor",
+    "name_url": "https://swse.fandom.com/wiki/Camo_Scout_Armor",
+    "equip_bonus": "+2",
+    "armor_bonus": "+6",
+    "cost": "6000",
+    "max_dex_bonus": "+3",
+    "availibility": "Licensed",
+    "weight": "12 kg"
+  },
+  "Katarn-Class Commando Armor": {
+    "name": "Katarn-Class Commando Armor",
+    "name_url": "https://swse.fandom.com/wiki/Katarn-Class_Commando_Armor",
+    "equip_bonus": "+4",
+    "armor_bonus": "+9",
+    "cost": "30000",
+    "max_dex_bonus": "+1",
+    "availibility": "Military",
+    "weight": "20 kg"
+  },
+  "M1-10 Stalker Armor": {
+    "name": "M1-10 Stalker Armor",
+    "name_url": "https://swse.fandom.com/wiki/M1-10_Stalker_Armor",
+    "equip_bonus": "-",
+    "armor_bonus": "+7",
+    "cost": "7500",
+    "max_dex_bonus": "+3",
+    "availibility": "Licensed",
+    "weight": "10 kg"
+  },
+  "Medium Pressure Suit": {
+    "name": "Medium Pressure Suit",
+    "name_url": "https://swse.fandom.com/wiki/Medium_Pressure_Suit",
+    "equip_bonus": "+2",
+    "armor_bonus": "+8",
+    "cost": "7000",
+    "max_dex_bonus": "+2",
+    "availibility": "Rare",
+    "weight": "16 kg"
+  },
+  "Armored Space Suit": {
+    "name": "Armored Space Suit",
+    "name_url": "https://swse.fandom.com/wiki/Armored_Space_Suit",
+    "equip_bonus": "+3",
+    "armor_bonus": "+9",
+    "cost": "12000",
+    "max_dex_bonus": "+1",
+    "availibility": "Restricted",
+    "weight": "35 kg"
+  },
+  "Heavy Battle Armor": {
+    "name": "Heavy Battle Armor",
+    "name_url": "https://swse.fandom.com/wiki/Heavy_Battle_Armor",
+    "equip_bonus": "+4",
+    "armor_bonus": "+10",
+    "cost": "15000",
+    "max_dex_bonus": "+1",
+    "availibility": "Military",
+    "weight": "30 kg"
+  },
+  "Heavy Powered Battle Armor": {
+    "name": "Heavy Powered Battle Armor",
+    "name_url": "https://swse.fandom.com/wiki/Heavy_Powered_Battle_Armor",
+    "equip_bonus": "+4",
+    "armor_bonus": "+9",
+    "cost": "19000",
+    "max_dex_bonus": "+1",
+    "availibility": "Military",
+    "weight": "32 kg"
+  },
+  "Matrix Armor": {
+    "name": "Matrix Armor",
+    "name_url": "https://swse.fandom.com/wiki/Matrix_Armor",
+    "equip_bonus": "+3",
+    "armor_bonus": "+9",
+    "cost": "9000",
+    "max_dex_bonus": "+1",
+    "availibility": "Restricted",
+    "weight": "25 kg"
+  },
+  "Neo-Crusader Assault Armor": {
+    "name": "Neo-Crusader Assault Armor",
+    "name_url": "https://swse.fandom.com/wiki/Neo-Crusader_Assault_Armor",
+    "equip_bonus": "+4",
+    "armor_bonus": "+10",
+    "cost": "-",
+    "max_dex_bonus": "+1",
+    "availibility": "Military, Rare",
+    "weight": "65 kg"
+  },
+  "Republic Heavy Armor": {
+    "name": "Republic Heavy Armor",
+    "name_url": "https://swse.fandom.com/wiki/Republic_Heavy_Armor",
+    "equip_bonus": "+3",
+    "armor_bonus": "+8",
+    "cost": "-",
+    "max_dex_bonus": "+1",
+    "availibility": "Military",
+    "weight": "26 kg"
+  },
+  "AV-1C Combat Armor": {
+    "name": "AV-1C Combat Armor",
+    "name_url": "https://swse.fandom.com/wiki/AV-1C_Combat_Armor",
+    "equip_bonus": "+4",
+    "armor_bonus": "+9",
+    "cost": "25000",
+    "max_dex_bonus": "+1",
+    "availibility": "Restricted, Rare",
+    "weight": "25 kg"
+  },
+  "Heavy Beskar'gam": {
+    "name": "Heavy Beskar'gam",
+    "name_url": "https://swse.fandom.com/wiki/Heavy_Beskar%27gam",
+    "equip_bonus": "+4",
+    "armor_bonus": "+10",
+    "cost": "45000",
+    "max_dex_bonus": "+1",
+    "availibility": "Restricted, Rare",
+    "weight": "32 kg"
+  },
+  "Vacuum Pod": {
+    "name": "Vacuum Pod",
+    "name_url": "https://swse.fandom.com/wiki/Vacuum_Pod",
+    "equip_bonus": "+1",
+    "armor_bonus": "+4",
+    "cost": "15000",
+    "max_dex_bonus": "+0",
+    "availibility": "-",
+    "weight": "35 kg"
+  },
+  "Venom Assault Armor": {
+    "name": "Venom Assault Armor",
+    "name_url": "https://swse.fandom.com/wiki/Venom_Assault_Armor",
+    "equip_bonus": "+4",
+    "armor_bonus": "+10",
+    "cost": "17000",
+    "max_dex_bonus": "+1",
+    "availibility": "Military",
+    "weight": "38 kg"
+  },
+  "Heavy Dark Armor": {
+    "name": "Heavy Dark Armor",
+    "name_url": "https://swse.fandom.com/wiki/Heavy_Dark_Armor",
+    "equip_bonus": "+5",
+    "armor_bonus": "+8",
+    "cost": "25000",
+    "max_dex_bonus": "+1",
+    "availibility": "Rare",
+    "weight": "30 kg"
+  },
+  "Orbalisk Armor": {
+    "name": "Orbalisk Armor",
+    "name_url": "https://swse.fandom.com/wiki/Orbalisk_Armor",
+    "equip_bonus": "+2",
+    "armor_bonus": "+10",
+    "cost": "-",
+    "max_dex_bonus": "+1",
+    "availibility": "Rare",
+    "weight": "26 kg"
+  },
+  "Zero-Gravity Stormtrooper Armor": {
+    "name": "Zero-Gravity Stormtrooper Armor",
+    "name_url": "https://swse.fandom.com/wiki/Zero-Gravity_Stormtrooper_Armor",
+    "equip_bonus": "+3",
+    "armor_bonus": "+9",
+    "cost": "21000",
+    "max_dex_bonus": "+0",
+    "availibility": "Military",
+    "weight": "38 kg"
+  },
+  "Heavy Pressure Suit": {
+    "name": "Heavy Pressure Suit",
+    "name_url": "https://swse.fandom.com/wiki/Heavy_Pressure_Suit",
+    "equip_bonus": "+3",
+    "armor_bonus": "+9",
+    "cost": "12000",
+    "max_dex_bonus": "+1",
+    "availibility": "Rare",
+    "weight": "35 kg"
+  }
+}`

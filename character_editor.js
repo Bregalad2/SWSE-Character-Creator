@@ -1,7 +1,9 @@
-species = JSON.parse(speciesstring)
-classes = JSON.parse(classstring)
-talenttrees = JSON.parse(talenttreesjson)
-feats_check = [
+const species = JSON.parse(speciesstring)
+const classes = JSON.parse(classstring)
+const talenttrees = JSON.parse(talenttreesjson)
+const armor = JSON.parse(armorjson)
+const weapons = JSON.parse(weaponjson)
+const feats_check = [
 "checkbox-acro-strike",
 "checkbox-armor-prof-light",
 "checkbox-armor-prof-med",
@@ -87,7 +89,7 @@ feats_check = [
 "checkbox-self-6",
 "checkbox-self-7"
 ]
-feats_text = [
+const feats_text = [
     "checkbox-exotic-weapon-1",
     "checkbox-exotic-weapon-2",
     "checkbox-exotic-weapon-3",
@@ -126,7 +128,7 @@ feats_text = [
     "checkbox-self-fill-6",
     "checkbox-self-fill-7"]
 
-languages=["language-1",
+const languages=["language-1",
 "language-2",
 "language-3",
 "language-4",
@@ -134,7 +136,7 @@ languages=["language-1",
 "language-6",
 "language-7"]
 
-abilities_forms = ["str-base",
+const abilities_forms = ["str-base",
 "str-override",
 "dex-base",
 "dex-override",
@@ -148,7 +150,7 @@ abilities_forms = ["str-base",
 "cha-override",
 "wil-base",
 "wil-override",]
-miscforms = ["torso-misc",
+const miscforms = ["torso-misc",
 "head-misc",
 "limb-misc",
 "dmg-red",
@@ -156,6 +158,36 @@ miscforms = ["torso-misc",
 "fort-misc",
 "ref-misc",
 "will-misc"
+]
+const armor_ids = [
+    "armor",
+    "armor-speed",
+    "armor-fort-def",
+    "armor-ref-def",
+    "armor-dex-def",
+    "armor-notes"]
+const weapon_ids = [
+    "weapon-1",
+    "weapon-1-range",
+    "weapon-1-att",
+    "weapon-1-dmg",
+    "weapon-1-crit",
+    "weapon-1-type",
+    "weapon-1-notes",
+    "weapon-2",
+    "weapon-2-range",
+    "weapon-2-att",
+    "weapon-2-dmg",
+    "weapon-2-crit",
+    "weapon-2-type",
+    "weapon-2-notes",
+    "weapon-3",
+    "weapon-3-range",
+    "weapon-3-att",
+    "weapon-3-dmg",
+    "weapon-3-crit",
+    "weapon-3-type",
+    "weapon-3-notes",
 ]
 
 function clickchange (name) {
@@ -227,7 +259,6 @@ function featsclick () {
     for (const feat of localStorage.getItem("feats").split(",")){
         if (feat) {
             document.getElementById(feat).checked = true
-            console.log(feat)
             if (feat.startsWith("checkbox-linguist")) {linguist += 2}
         }
     }
@@ -266,22 +297,16 @@ function talentsclick () {
     clickchange("talents")
     document.getElementById("talentslabel").innerHTML = "Talents (you have "+Math.ceil(localStorage.getItem("level")/2)+" talents based on your current level):"
     options = ""
-    for (var item of classes[localStorage.getItem("class")]["talents"]) {
-        options += "<option value=\""+item["name"]+"\">"+item["name"]+"</option>"
-    }
-    for (var item in talenttrees) {
-        if (localStorage.getItem("class") in talenttrees[item]["classes"]) {
-            for (var talent of item["talents"]) {
-                console.log(localStorage.getItem("class"),talenttrees[item]["classes"])
-                options += "<option value=\""+talent["name"]+"\">"+talent["name"]+"</option>"
-            }
+    for (const class_ in classes) {
+        for (const item of classes[class_]["talents"]) {
+            options += "<option value=\""+item["name"]+"\">"+item["name"]+"</option>"
         }
     }
-    if (localStorage.getItem("class-2")) {
-        console.log(localStorage.getItem("class-2"))
-        for (var item of classes[localStorage.getItem("class-2")]["talents"]) {
-        options += "<option value=\""+item["name"]+"\">"+item["name"]+"</option>"
-    }}
+    for (const item in talenttrees) {
+        for (const talent of talenttrees[item]["talents"]) {
+            options += "<option value=\""+talent["name"]+"\">"+talent["name"]+"</option>"
+        }
+    }
     document.getElementById("talents-list").innerHTML = options
     for (const number of Array(Math.ceil(parseInt(localStorage.getItem("level"))/2)+1).keys()) {
         talent = document.getElementById("talents-"+(number+1)+"form")
@@ -291,11 +316,39 @@ function talentsclick () {
 }
 function forcesclick () {
     clickchange("forces")
-    
+    for (const name of ["al","aug","cog","sor","tel","tec","vit"]) {
+        for (const number of [1, 2, 3]) {
+            document.getElementById(name+"-"+number+"form").checked = (localStorage.getItem(name+"-"+number) == "|")
+        }
+    }
+    for (const item of document.getElementsByClassName("force-item")){
+        item.value = localStorage.getItem(item.id.split("form")[0])
+    }
 }
 function inventoryclick () {
     clickchange("inventory")
-    
+    var armor_data_list = ""
+    var weapon_data_list = ""
+    for (const armor_ in armor) {
+        armor_data_list += "<option value=\""+armor_+"\">"+armor_+"</option>"
+    }
+    for (const weapon_ in weapons) {
+        weapon_data_list += "<option value=\""+weapon_+"\">"+weapon_+"</option>"
+    }
+    document.getElementById("armor-list").innerHTML = armor_data_list
+    document.getElementById("weapon-list").innerHTML = weapon_data_list
+    for (const armor_ of armor_ids) {
+        document.getElementById(armor_+'form').value = localStorage.getItem(armor_)
+    }
+    for (const weapon_ of weapon_ids) {
+        document.getElementById(weapon_+'form').value = localStorage.getItem(weapon_)
+    }
+    for (const number of Array(16).keys()) {
+        document.getElementById("gear-"+(number+1)+'form').value = localStorage.getItem("gear-"+(number+1))
+        document.getElementById("w-"+(number+1)+'form').value = localStorage.getItem("w-"+(number+1))
+    }
+    const limit = Math.round(((parseInt(localStorage.getItem("str-base"), 10)+(parseInt(localStorage.getItem("str-override"), 10) || 0)+species[localStorage.getItem("species")]["species-traits"]["ability-score-adjustment"]["str"])**2)/2)
+    document.getElementById("inventorylabel").innerHTML = "Your inventory (you can hold up to "+limit+"kg before being encumbered):"
 }
 function pdfclick () {
     clickchange("pdf")
@@ -312,7 +365,7 @@ function pdfclick () {
         document.getElementById("speed").innerHTML += "Swim: "+species[localStorage.getItem("species")]["species-traits"]["speed"]["swim"]
     } else {document.getElementById("speed").innerHTML +=(parseInt(species[localStorage.getItem("species")]["species-traits"]["speed"])+(parseInt(localStorage.getItem("speed")) || 0))}} catch (e) {console.log(e)}
     try{document.getElementById("species-1").innerHTML = localStorage.getItem("species-feats")} catch (e) {console.log(e)}
-    try{document.getElementById("classes").innerHTML = localStorage.getItem("class")+", "+ (localStorage.getItem("class-2") || " ")} catch (e) {console.log(e)}
+    try{document.getElementById("classes").innerHTML = localStorage.getItem("class")+", "+ (localStorage.getItem("class2") || " ")} catch (e) {console.log(e)}
     try{document.getElementById("level").innerHTML = localStorage.getItem("level")} catch (e) {console.log(e)}
     try{document.getElementById("force-points").innerHTML = parseInt(classes[localStorage.getItem("class")]["forcepoints"]+Math.floor(localStorage.getItem("level")/2))+(parseInt(localStorage.getItem("force-points")) || 0)} catch (e) {console.log(e)}
     try{document.getElementById("base-attack").innerHTML = classes[localStorage.getItem("class")]["classfeatures"]["base-attack-bonus"]+(parseInt(localStorage.getItem("base-attack"))|| 0)} catch (e) {console.log(e)}
@@ -360,14 +413,67 @@ function pdfclick () {
         console.log(id)
         document.getElementById(id).innerHTML = localStorage.getItem(id) || 0
     }} catch (e) {console.log(e)}
-    try{document.getElementById("fort-abil").innerHTML = result["con"]} catch (e) {console.log(e)}
-    try{document.getElementById("ref-abil").innerHTML = result["dex"]} catch (e) {console.log(e)}
-    try{document.getElementById("will-abil").innerHTML = result["wil"]} catch (e) {console.log(e)}
+    try{document.getElementById("fort-abil").innerHTML = Math.floor((result["con"]-10)/2)} catch (e) {console.log(e)}
+    try{document.getElementById("ref-abil").innerHTML = Math.min(Math.floor((result["dex"]-10)/2), (localStorage.getItem("armor-dex-def")||100))} catch (e) {console.log(e)}
+    try{document.getElementById("will-abil").innerHTML = Math.floor((result["wil"]-10)/2)} catch (e) {console.log(e)}
     try{
     for (const number of Array(Math.ceil(parseInt(localStorage.getItem("level"))/2)+1).keys()) {
         document.getElementById("talents-"+(number+1)).innerHTML = localStorage.getItem("talents-"+(number+1))
     }
     } catch (e) {console.log(e)}
+    try{
+    for (const name of ["al","aug","cog","sor","tel","tec","vit"]) {
+        for (const number of [1, 2, 3]) {
+            document.getElementById(name+"-"+number).innerHTML = localStorage.getItem(name+"-"+number)
+        }
+    }
+    } catch (e) {console.log(e)}
+    try{
+        for (const item of document.getElementsByClassName("force-teq")) {
+            item.innerHTML = localStorage.getItem(item.id)
+        }
+        for (const item of document.getElementsByClassName("force-sec")) {
+            item.innerHTML = localStorage.getItem(item.id)
+        }
+    } catch (e) {console.log(e)}
+    try{
+        for (const armor_ of armor_ids) {
+            document.getElementById(armor_).innerHTML = localStorage.getItem(armor_)
+        }
+        for (const weapon_ of weapon_ids) {
+            document.getElementById(weapon_).innerHTML = localStorage.getItem(weapon_)
+        }
+        for (const number of Array(16).keys()) {
+            document.getElementById("gear-"+(number+1)).innerHTML = localStorage.getItem("gear-"+(number+1))
+            document.getElementById("w-"+(number+1)).innerHTML = localStorage.getItem("w-"+(number+1))
+        }
+        const limit = Math.round(((parseInt(localStorage.getItem("str-base"), 10)+(parseInt(localStorage.getItem("str-override"), 10) || 0)+species[localStorage.getItem("species")]["species-traits"]["ability-score-adjustment"]["str"])**2)/2)
+        document.getElementById("carry-cap").innerHTML = limit
+    } catch (e) {console.log(e)}
+    try{
+        document.getElementById("ref-armor").innerHTML = localStorage.getItem("armor-ref-def") || 0
+        document.getElementById("fort-armor").innerHTML = localStorage.getItem("armor-fort-def") || 0
+        document.getElementById("torso-fort").innerHTML = localStorage.getItem("armor-fort-def") || 0
+        document.getElementById("will-armor").innerHTML = "0"
+    } catch (e) {console.log(e)}
+    try{
+        for (const type of ["ref", "will", "fort"]){
+            value = 0
+            for (const additive of ["lvl", "armor", "abil", "class", "misc"]) {
+              value += parseInt(document.getElementById(type+"-"+additive).innerHTML)
+            }
+            document.getElementById(type+"-def").innerHTML = value
+        }
+    } catch (e) {console.log(e)}
+    try {
+        document.getElementById("torso").innerHTML = parseInt(document.getElementById("torso-fort").innerHTML, 10) + parseInt(document.getElementById("torso-misc").innerHTML, 10) + 10
+        document.getElementById("torso-head").innerHTML = parseInt(document.getElementById("torso").innerHTML, 10)/2+parseInt(document.getElementById("torso-fort").innerHTML, 10)
+        document.getElementById("torso-limb").innerHTML = parseInt(document.getElementById("torso").innerHTML, 10)/2
+        document.getElementById("head").innerHTML = parseInt(document.getElementById("head-misc").innerHTML, 10) + parseInt(document.getElementById("torso-head").innerHTML, 10)
+        document.getElementById("limb").innerHTML = parseInt(document.getElementById("limb-misc").innerHTML, 10) + parseInt(document.getElementById("torso-limb").innerHTML, 10)
+    } catch (e) {console.log(e)}
+
+
 }
 function downloadLocalStorageAsJSON() {
     let localStorageData = {};
@@ -481,26 +587,6 @@ function changeclass (element) {
     document.getElementById("class-desc").innerHTML += " and "+classes[currentclass]["classfeatures"]["starting-skills"]+" other starting skills of your choice."
     
 }
-function changeclass2 (element) {
-    currentclass = element.value
-    save(element)
-    if (!currentclass) {
-        document.getElementById("class-2desc").innerHTML = ""
-        return
-    }
-    document.getElementById("class-2desc").innerHTML = classes[currentclass]["abilities"]+" You also receive "
-    if (classes[currentclass]["classfeatures"]["defense-bonuses"]["Fortitude"]) {
-        document.getElementById("class-2desc").innerHTML += "+"+classes[currentclass]["classfeatures"]["defense-bonuses"]["Fortitude"]+" to your Fortitude defence, "
-    }
-    if (classes[currentclass]["classfeatures"]["defense-bonuses"]["Reflex"]) {
-        document.getElementById("class-2desc").innerHTML += "+"+classes[currentclass]["classfeatures"]["defense-bonuses"]["Reflex"]+" to your Reflex defence, "
-    }
-    if (classes[currentclass]["classfeatures"]["defense-bonuses"]["Will"]) {
-        document.getElementById("class-2desc").innerHTML += "+"+classes[currentclass]["classfeatures"]["defense-bonuses"]["Will"]+" to your Will defence, "
-    }
-    document.getElementById("class-2desc").innerHTML += classes[currentclass]["classfeatures"]["other-feats"].join(", ")
-    document.getElementById("class-2desc").innerHTML += " and "+classes[currentclass]["classfeatures"]["starting-skills"]+" other starting skills of your choice."
-}
 
 function saveskill () {
     checked_skills = ""
@@ -565,24 +651,30 @@ function savetalent (select) {
     save(select)
     var label = document.getElementById(select.id.split("form")[0]+"desc")
     label.innerHTML = ""
-    for (var item of classes[localStorage.getItem("class")]["talents"]) {
-        if (item["name"] == select.value) {
-            label.innerHTML += item["description"]+"<br>"
-            if (item["prerequisites"].length>1) {
-            label.innerHTML += "Make sure you meet the prerequisites: "+item["prerequisites"].join(", ")+"."
-            } else if (item["prerequisites"].length==1) {
-                label.innerHTML += "Make sure you meet the prerequisite "+item["prerequisites"]+"."
+    for (const talent_tree in talenttrees) {
+        for (talent of talenttrees[talent_tree]["talents"]) {
+            if (talent["name"] == select.value) {
+                label.innerHTML += "Avalible to classes "+talenttrees[talent_tree]["classes"].join(", ")+"<br>"
+                label.innerHTML += talent["description"]+"<br>"
+                if (talent["prerequisites"]) {
+                    if (talent["prerequisites"].length>1) {
+                    label.innerHTML += "Make sure you meet the prerequisites: "+talent["prerequisites"].join(", ")+"."
+                    } else if (talent["prerequisites"].length==1) {
+                        label.innerHTML += "Make sure you meet the prerequisite "+talent["prerequisites"]+"."
+                    }
+                }
+                return
             }
-            return
         }
     }
-    if (localStorage.getItem("class-2")) {
-        for (var item of classes[localStorage.getItem("class-2")]["talents"]) {
+    for (const class_ in classes) {
+        for (const item of classes[class_]["talents"]) {
+            
             if (item["name"] == select.value) {
+                label.innerHTML += "Avalible to class "+class_+"<br>"
                 label.innerHTML += item["description"]+"<br>"
                 if (item["prerequisites"].length>1) {
                 label.innerHTML += "Make sure you meet the prerequisites: "+item["prerequisites"].join(", ")+"."
-                return
                 } else if (item["prerequisites"].length==1) {
                     label.innerHTML += "Make sure you meet the prerequisite "+item["prerequisites"]+"."
                 }
@@ -590,5 +682,45 @@ function savetalent (select) {
             }
         }
     }
-    
+}
+function saveforce (element) {
+    if (element.checked) {
+        localStorage.setItem(element.id.split("form")[0], "|")
+    } else (localStorage.setItem(element.id.split("form")[0], " "))
+}
+function savearmor(element) {
+    save(element)
+    for (const armor_ in armor) {
+        if (element.value == armor_) {
+            document.getElementById("equipment-frame").src = armor[armor_]["name_url"]
+            document.getElementById(element.id.split("form")[0]+"-fort-defform").value = armor[armor_]["equip_bonus"]
+            document.getElementById(element.id.split("form")[0]+"-ref-defform").value = armor[armor_]["armor_bonus"]
+            document.getElementById(element.id.split("form")[0]+"-dex-defform").value = armor[armor_]["max_dex_bonus"]
+            document.getElementById("gear-1form").value = armor_
+            save(document.getElementById("gear-1form"))
+            document.getElementById("w-1form").value = armor[armor_]["weight"]
+            save(document.getElementById("w-1form"))
+        }
+        for (const element of document.getElementsByClassName("equip-text")) {
+            save(element)
+        }
+    }
+}
+function saveweapon(element) {
+    save(element)
+    for (const weapon_ in weapons) {
+        if (element.value == weapon_) {
+            document.getElementById("equipment-frame").src = weapons[weapon_]["name_url"]
+            document.getElementById(element.id.split("form")[0]+"-dmgform").value = weapons[weapon_]["damage"]
+            document.getElementById("gear-"+(parseInt(element.id.split("-")[1], 10)+1)+"form").value = weapon_
+            save(document.getElementById("gear-"+(parseInt(element.id.split("-")[1], 10)+1)+"form"))
+            if (weapons[weapon_]["weight"].endsWith(" kg")) {
+                document.getElementById("w-"+(parseInt(element.id.split("-")[1], 10)+1)+"form").value = weapons[weapon_]["weight"]
+                save(document.getElementById("w-"+(parseInt(element.id.split("-")[1], 10)+1)+"form"))
+            }
+        }
+    }
+    for (const element of document.getElementsByClassName("equip-text")) {
+        save(element)
+    }
 }
