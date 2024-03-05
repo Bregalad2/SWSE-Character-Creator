@@ -622,6 +622,8 @@
                       </tr>
                     </tbody>
                   </table>
+                  <label>Dark Side (starts at 1 for light side characters, or wisdom+1 for dark side characters):</label><br>
+                  <input type="text" class="force-item" onkeyup="save(this);" id="dark-sideform"><br>
                   <label>Force Techniques (ignore if you are below level 12, then add 1 per level if you are in a force prestegue class):</label><br>
                   <input type="text" class="force-item" onkeyup="save(this);" id="force-teq-1form"><br>
                   <input type="text" class="force-item" onkeyup="save(this);" id="force-teq-2form"><br>
@@ -784,6 +786,7 @@
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="14px" id="height" y="306.5" x="537" stroke-width="0" stroke="#000000" fill="#000000" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="14px" id="weight" y="307.5" x="622" stroke-width="0" stroke="#000000" fill="#000000" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="destiny" y="341.5" x="232" stroke-width="0" stroke="#000000" fill="#000000" />
+<text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="dark-side" y="710" x="770" stroke-width="0" stroke="#000000" fill="#000000" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="str-score" y="384.5" x="251" stroke-width="0" stroke="#000000" fill="#000000" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="str-mod" y="384.5" x="318" stroke-width="0" stroke="#000000" fill="#000000" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="dex-score" y="416.5" x="250" stroke-width="0" stroke="#000000" fill="#000000" />
@@ -881,13 +884,14 @@
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="inj-2" y="1279.5" x="693" stroke-width="0" stroke="#000000" fill="#000000" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="comp-2" y="1300.5" x="693" stroke-width="0" stroke="#000000" fill="#000000" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="forc-2" y="1321.5" x="693" stroke-width="0" stroke="#000000" fill="#000000" />
+<g id="g11" transform="translate(0,4.5)">
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="armor" y="810" x="125" stroke-width="0" stroke="#000000" fill="#000000" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="armor-speed" y="810" x="366" stroke-width="0" stroke="#000000" fill="#000000" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="armor-ref-def" y="843" x="123" stroke-width="0" stroke="#000000" fill="#000000" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="armor-fort-def" y="843" x="230" stroke-width="0" stroke="#000000" fill="#000000" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="armor-dex-def" y="843" x="333" stroke-width="0" stroke="#000000" fill="#000000" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="armor-notes" y="877" x="122" stroke-width="0" stroke="#000000" fill="#000000" style="display:inline" />
-<g id="g4">
+<g id="g8">
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="weapon-1" y="926" x="124" stroke-width="0" stroke="#000000" fill="#000000" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="weapon-1-range" y="927" x="364" stroke-width="0" stroke="#000000" fill="#000000" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="weapon-1-att" y="960" x="123" stroke-width="0" stroke="#000000" fill="#000000" inkscape:label="svg_129" />
@@ -913,6 +917,7 @@
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="weapon-3-crit" y="960" x="369" stroke-width="0" stroke="#000000" fill="#000000" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="weapon-3-type" y="991" x="366" stroke-width="0" stroke="#000000" fill="#000000" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="weapon-3-notes" y="993" x="121" stroke-width="0" stroke="#000000" fill="#000000" />
+</g>
 </g>
 </g>
 </svg>

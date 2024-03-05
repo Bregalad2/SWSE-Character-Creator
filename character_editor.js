@@ -435,6 +435,7 @@ function pdfclick () {
         for (const item of document.getElementsByClassName("force-sec")) {
             item.innerHTML = localStorage.getItem(item.id)
         }
+        document.getElementById("dark-side").innerHTML = localStorage.getItem("dark-side")
     } catch (e) {console.log(e)}
     try{
         for (const armor_ of armor_ids) {
@@ -451,9 +452,9 @@ function pdfclick () {
         document.getElementById("carry-cap").innerHTML = limit
     } catch (e) {console.log(e)}
     try{
-        document.getElementById("ref-armor").innerHTML = localStorage.getItem("armor-ref-def") || 0
-        document.getElementById("fort-armor").innerHTML = localStorage.getItem("armor-fort-def") || 0
-        document.getElementById("torso-fort").innerHTML = localStorage.getItem("armor-fort-def") || 0
+        document.getElementById("ref-armor").innerHTML = parseInt(localStorage.getItem("armor-ref-def")) || 0
+        document.getElementById("fort-armor").innerHTML = parseInt(localStorage.getItem("armor-fort-def")) || 0
+        document.getElementById("torso-fort").innerHTML = parseInt(localStorage.getItem("armor-fort-def")) || 0
         document.getElementById("will-armor").innerHTML = "0"
     } catch (e) {console.log(e)}
     try{
