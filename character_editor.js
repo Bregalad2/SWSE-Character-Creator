@@ -472,6 +472,7 @@ function pdfclick () {
         document.getElementById("head").innerHTML = parseInt(document.getElementById("head-misc").innerHTML, 10) + parseInt(document.getElementById("torso-head").innerHTML, 10)
         document.getElementById("limb").innerHTML = parseInt(document.getElementById("limb-misc").innerHTML, 10) + parseInt(document.getElementById("torso-limb").innerHTML, 10)
     } catch (e) {console.log(e)}
+    try {document.getElementById("portrait").href.baseVal = localStorage.getItem("portrait")}catch (e) {console.log(e)}
 
 
 }
