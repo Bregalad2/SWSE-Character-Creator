@@ -3,6 +3,9 @@ const classes = JSON.parse(classstring)
 const talenttrees = JSON.parse(talenttreesjson)
 const armor = JSON.parse(armorjson)
 const weapons = JSON.parse(weaponjson)
+
+var mywindow = undefined;
+
 const feats_check = [
 "checkbox-acro-strike",
 "checkbox-armor-prof-light",
@@ -410,11 +413,10 @@ function pdfclick () {
         document.getElementById(key+"-mod").innerHTML = Math.floor((result[key]-10)/2)
     }} catch (e) {console.log(e)}
     try{for (var id of miscforms) {
-        console.log(id)
         document.getElementById(id).innerHTML = localStorage.getItem(id) || 0
     }} catch (e) {console.log(e)}
     try{document.getElementById("fort-abil").innerHTML = Math.floor((result["con"]-10)/2)} catch (e) {console.log(e)}
-    try{document.getElementById("ref-abil").innerHTML = Math.min(Math.floor((result["dex"]-10)/2), (localStorage.getItem("armor-dex-def")||100))} catch (e) {console.log(e)}
+    try{document.getElementById("ref-abil").innerHTML = Math.min(Math.floor((result["dex"]-10)/2), (localStorage.getItem("armor-dex-def") || 100))} catch (e) {console.log(e)}
     try{document.getElementById("will-abil").innerHTML = Math.floor((result["wil"]-10)/2)} catch (e) {console.log(e)}
     try{
     for (const number of Array(Math.ceil(parseInt(localStorage.getItem("level"))/2)+1).keys()) {
@@ -496,7 +498,7 @@ function downloadLocalStorageAsJSON() {
 
 function uploadJSONToLocalStorage(event) {
     pdfclick()
-    const file = event.target.files[0];
+    const file = event.target.files[0]
     if (!file) return;
     let reader = new FileReader();
     reader.onload = function(event) {
@@ -726,3 +728,90 @@ function saveweapon(element) {
         save(element)
     }
 }
+function logsheet() {
+    if (document.getElementById("logsheet").style.display == "none") {
+        document.getElementById("logsheet").style.display = "block"
+    } else {
+        document.getElementById("logsheet").style.display = "none"
+    }
+    filllogsheet()
+}
+function filllogsheet() {
+    document.getElementById("characterform2").value = localStorage.getItem("character")
+    document.getElementById("playerform2").value = localStorage.getItem("player")
+    document.getElementById("sheetnumberform2").value = (parseInt(localStorage.getItem("sheet-number"), 10)+1) || "1"
+    document.getElementById("campaigntitleform2").value = localStorage.getItem("campaign-title")
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
+    document.getElementById("sessiondateform2").value = mm + '/' + dd + '/' + yyyy
+    document.getElementById("sessionlengthform2").value = localStorage.getItem("hours-session")
+
+    // LEVELS Form
+    document.getElementById("levelform2").value = localStorage.getItem("level")
+    document.getElementById("checkpointsform2").value = localStorage.getItem("checkpoints")
+    document.getElementById("endlevelform2").value = localStorage.getItem("level")
+
+    // INVENTORY Form
+    document.getElementById("creditsform2").value = localStorage.getItem("credits")
+    document.getElementById("endcreditsform2").value = localStorage.getItem("credits")
+
+    // RENOWN Form
+    document.getElementById("renownform2").value = localStorage.getItem("renown")
+    document.getElementById("renownendform2").value = localStorage.getItem("renown")
+
+    // DM Form
+    document.getElementById("dmcontactform2").value = localStorage.getItem("dm-contact-info")
+
+    // OPTIONAL Form
+    document.getElementById("honerform2").value = localStorage.getItem("honor-code")
+    document.getElementById("startinghonerform2").value = localStorage.getItem("honor")
+    document.getElementById("honerendform2").value = localStorage.getItem("honor")
+
+    document.getElementById("downtimeform2").value = localStorage.getItem("downtime")
+    document.getElementById("downtimechangeform2").value = localStorage.getItem("downtime")
+    document.getElementById("lifeexpenceform2").value = localStorage.getItem("lifestyle-expenses")
+
+    // Additional Notes
+    document.getElementById("notesform2").value = localStorage.getItem("notes")
+}
+function savetwo(elem) {
+    // Mapping between element IDs and corresponding localStorage keys
+    var idToKeyMap = {
+        "sheetnumberform2": "sheet-number",
+        "campaigntitleform2": "campaign-title",
+        "sessionlengthform2": "hours-session",
+        "endlevelform2": "level",
+        "endcheckpointsform2": "checkpoints",
+        "endcreditsform2": "credits",
+        "endrenownform2": "renown",
+        "dmcontactform2": "dm-contact-info",
+        "honerform2": "honor-code",
+        "endhonerform2": "honor",
+        "downtimeform2": "downtime",
+        "lifeexpenceform2": "lifestyle-expenses",
+        "notesform2": "notes"
+    };
+
+    // Get the corresponding localStorage key for the given element ID
+    var localStorageKey = idToKeyMap[elem.id];
+
+    // If a corresponding key is found, save the value to localStorage
+    if (localStorageKey) {
+        localStorage.setItem(localStorageKey, elem.value);
+    } else {
+        localStorage.setItem(elem.id.split("form2")[0], elem.value)
+    }
+}
+function downloadlogsheet() {
+    var logSheetContent = document.getElementById("logsheet").innerText;
+    var blob = new Blob([logSheetContent], { type: "text/plain" });
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = localStorage.getItem("character")+"-logsheet-"+localStorage.getItem("sheet-number")+".txt";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+}
+

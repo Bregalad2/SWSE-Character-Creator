@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="440"
+   height="525"
+   viewBox="0 0 440 525"
+   version="1.1"
+   id="svg1"
+   xml:space="preserve"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   sodipodi:docname="example.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+<sodipodi:namedview
+   id="namedview1"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   inkscape:document-units="mm"
+   inkscape:zoom="0.74500124"
+   inkscape:cx="255.70427"
+   inkscape:cy="271.14049"
+   inkscape:window-width="1280"
+   inkscape:window-height="667"
+   inkscape:window-x="0"
+   inkscape:window-y="25"
+   inkscape:window-maximized="0"
+   inkscape:current-layer="svg1" />
+<defs
+   id="defs1"><rect
+     x="516.7536"
+     y="146.47211"
+     width="48.04285"
+     height="26.950867"
+     id="rect189" /></defs>
+<g
+   id="g5"
+   transform="matrix(1.3211313,0,0,1.1540458,-196.28071,-954.04962)">
+<image
+   xlink:href="img/page_1.svg"
+   id="svg_1"
+   height="1266.8403"
+   width="959.94214"
+   y="207.15993"
+   x="53.371326"
+   style="display:inline" />
+</g>
+<g
+   id="g1">
+<foreignobject
+   width="250px"
+   height="18px"
+   x="35"
+   y="20"
+   id="armorp"><input
+     type="text"
+     class="equip-text"
+     list="armor-list"
+     id="armorform"
+     name="armor"
+     onkeyup="savearmor(this);" /></foreignobject>
+<foreignobject
+   width="75px"
+   height="18px"
+   x="335"
+   y="20"
+   id="armor-speedp"><input
+     type="text"
+     class="equip-text"
+     id="armor-speedform"
+     name="armor-speed"
+     onkeyup="save(this);" /></foreignobject>
+<foreignobject
+   width="75px"
+   height="18px"
+   x="35"
+   y="60"
+   id="armor-ref-defp"><input
+     type="text"
+     class="equip-text"
+     id="armor-ref-defform"
+     name="armor-ref-def"
+     onkeyup="save(this);" /></foreignobject>
+<foreignobject
+   width="75px"
+   height="18px"
+   x="305"
+   y="60"
+   id="armor-fort-defp"><input
+     type="text"
+     class="equip-text"
+     id="armor-fort-defform"
+     name="armor-fort-def"
+     onkeyup="save(this);" /></foreignobject>
+<foreignobject
+   width="75px"
+   height="18px"
+   x="170"
+   y="60"
+   id="armor-dex-defp"><input
+     type="text"
+     class="equip-text"
+     id="armor-dex-defform"
+     name="armor-dex-def"
+     onkeyup="save(this);" /></foreignobject>
+<foreignobject
+   width="350px"
+   height="18px"
+   x="35"
+   y="100"
+   id="armor-notesp"><input
+     type="text"
+     class="equip-text"
+     id="armor-notesform"
+     name="armor-notes"
+     onkeyup="save(this);" /></foreignobject>
+</g>
+<g
+   id="g2"
+   transform="translate(0,137)">
+<foreignobject
+   width="250px"
+   height="18px"
+   x="35"
+   y="20"
+   id="weapon-1p"><input
+     type="text"
+     class="equip-text"
+     list="weapon-list"
+     id="weapon-1form"
+     name="weapon-1"
+     onkeyup="saveweapon(this);" /></foreignobject>
+<foreignobject
+   width="75px"
+   height="18px"
+   x="335"
+   y="20"
+   id="weapon-1-rangep"><input
+     type="text"
+     class="equip-text"
+     id="weapon-1-rangeform"
+     name="weapon-1-range"
+     onkeyup="save(this);" /></foreignobject>
+<foreignobject
+   width="75px"
+   height="18px"
+   x="35"
+   y="60"
+   id="weapon-1-attp"><input
+     type="text"
+     class="equip-text"
+     id="weapon-1-attform"
+     name="weapon-1-att"
+     onkeyup="save(this);" /></foreignobject>
+<foreignobject
+   width="75px"
+   height="18px"
+   x="190"
+   y="60"
+   id="weapon-1-dmgp"><input
+     type="text"
+     class="equip-text"
+     id="weapon-1-dmgform"
+     name="weapon-1-dmg"
+     onkeyup="save(this);" /></foreignobject>
+<foreignobject
+   width="75px"
+   height="18px"
+   x="335"
+   y="60"
+   id="weapon-1-critp"><input
+     type="text"
+     class="equip-text"
+     id="weapon-1-critform"
+     name="weapon-1-crit"
+     onkeyup="save(this);" /></foreignobject>
+<foreignobject
+   width="75px"
+   height="18px"
+   x="335"
+   y="100"
+   id="weapon-1-typep"><input
+     type="text"
+     class="equip-text"
+     id="weapon-1-typeform"
+     name="weapon-1-type"
+     onkeyup="save(this);" /></foreignobject>
+<foreignobject
+   width="300px"
+   height="18px"
+   x="35"
+   y="100"
+   id="weapon-1-notesp"><input
+     type="text"
+     class="equip-text"
+     id="weapon-1-notesform"
+     name="weapon-1-notes"
+     onkeyup="save(this);" /></foreignobject>
+</g>
+<g
+   id="g3"
+   transform="translate(0,260)">
+<foreignobject
+   width="250px"
+   height="18px"
+   x="35"
+   y="20"
+   id="weapon-2p"><input
+     type="text"
+     class="equip-text"
+     list="weapon-list"
+     id="weapon-2form"
+     name="weapon-1"
+     onkeyup="saveweapon(this);" /></foreignobject>
+<foreignobject
+   width="75px"
+   height="18px"
+   x="335"
+   y="20"
+   id="weapon-2-rangep"><input
+     type="text"
+     class="equip-text"
+     id="weapon-2-rangeform"
+     name="weapon-1-range"
+     onkeyup="save(this);" /></foreignobject>
+<foreignobject
+   width="75px"
+   height="18px"
+   x="35"
+   y="60"
+   id="weapon-2-attp"><input
+     type="text"
+     class="equip-text"
+     id="weapon-2-attform"
+     name="weapon-1-att"
+     onkeyup="save(this);" /></foreignobject>
+<foreignobject
+   width="75px"
+   height="18px"
+   x="190"
+   y="60"
+   id="weapon-2-dmgp"><input
+     type="text"
+     class="equip-text"
+     id="weapon-2-dmgform"
+     name="weapon-1-dmg"
+     onkeyup="save(this);" /></foreignobject>
+<foreignobject
+   width="75px"
+   height="18px"
+   x="335"
+   y="60"
+   id="weapon-2-critp"><input
+     type="text"
+     class="equip-text"
+     id="weapon-2-critform"
+     name="weapon-1-crit"
+     onkeyup="save(this);" /></foreignobject>
+<foreignobject
+   width="75px"
+   height="18px"
+   x="335"
+   y="100"
+   id="weapon-2-typep"><input
+     type="text"
+     class="equip-text"
+     id="weapon-2-typeform"
+     name="weapon-1-type"
+     onkeyup="save(this);" /></foreignobject>
+<foreignobject
+   width="300px"
+   height="18px"
+   x="35"
+   y="100"
+   id="weapon-2-notesp"><input
+     type="text"
+     class="equip-text"
+     id="weapon-2-notesform"
+     name="weapon-1-notes"
+     onkeyup="save(this);" /></foreignobject>
+</g>
+<g
+   id="g4"
+   transform="translate(0,384)">
+<foreignobject
+   width="250px"
+   height="18px"
+   x="35"
+   y="20"
+   id="weapon-3p"><input
+     type="text"
+     class="equip-text"
+     list="weapon-list"
+     id="weapon-3form"
+     name="weapon-1"
+     onkeyup="saveweapon(this);" /></foreignobject>
+<foreignobject
+   width="75px"
+   height="18px"
+   x="335"
+   y="20"
+   id="weapon-3-rangep"><input
+     type="text"
+     class="equip-text"
+     id="weapon-3-rangeform"
+     name="weapon-1-range"
+     onkeyup="save(this);" /></foreignobject>
+<foreignobject
+   width="75px"
+   height="18px"
+   x="35"
+   y="60"
+   id="weapon-3-attp"><input
+     type="text"
+     class="equip-text"
+     id="weapon-3-attform"
+     name="weapon-1-att"
+     onkeyup="save(this);" /></foreignobject>
+<foreignobject
+   width="75px"
+   height="18px"
+   x="190"
+   y="60"
+   id="weapon-3-dmgp"><input
+     type="text"
+     class="equip-text"
+     id="weapon-3-dmgform"
+     name="weapon-1-dmg"
+     onkeyup="save(this);" /></foreignobject>
+<foreignobject
+   width="75px"
+   height="18px"
+   x="335"
+   y="60"
+   id="weapon-3-critp"><input
+     type="text"
+     class="equip-text"
+     id="weapon-3-critform"
+     name="weapon-1-crit"
+     onkeyup="save(this);" /></foreignobject>
+<foreignobject
+   width="75px"
+   height="18px"
+   x="335"
+   y="100"
+   id="weapon-3-typep"><input
+     type="text"
+     class="equip-text"
+     id="weapon-3-typeform"
+     name="weapon-1-type"
+     onkeyup="save(this);" /></foreignobject>
+<foreignobject
+   width="300px"
+   height="18px"
+   x="35"
+   y="100"
+   id="weapon-3-notesp"><input
+     type="text"
+     class="equip-text"
+     id="weapon-3-notesform"
+     name="weapon-1-notes"
+     onkeyup="save(this);" /></foreignobject>
+</g>
+</svg>
