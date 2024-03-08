@@ -812,18 +812,21 @@ function savetwo(elem) {
         localStorage.setItem(elem.id.split("form2")[0], elem.value)
     }
 }
-function downloadLogSheet() {
+
+function gettext (child) {
+    if (child.tagName.toLowerCase() == "input") {
+        return child.value;
+    } else if (child.innerText) {
+        return "\n"+child.innerText;
+    }
+}
+function downloadlogsheet() {
     var logSheetElement = document.getElementById("logsheet");
     var logSheetContent = "";
-    for (var i = 0; i < logSheetElement.children.length; i++) {
-        var child = logSheetElement.children[i];
-        if (child.tagName.toLowerCase() === "form") {
-            for (var j = 0; j < child.elements.length; j++) {
-                var input = child.elements[j];
-                logSheetContent += input.value + "\n";
-            }
-        } else {
-            logSheetContent += child.innerText + "\n";
+    for (const child of logSheetElement.children) {
+        logSheetContent += (gettext(child) || " ")
+        for (const grandchild of child.children) {
+            logSheetContent += (gettext(grandchild) || " ")
         }
     }
     var blob = new Blob([logSheetContent], { type: "text/plain" });
