@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Stellar Fantacies' Character Editor</title>
-        <meta content="Character Editor" property="og:title" />
+        <meta content="SWSE Character Editor" property="og:title" />
         <meta content="Create and edit your Star wars Stellar Fantacies character here!" property="og:description" />
         <meta content="https://bregalad2.github.io/SWSE-Character-Creator/character_editor.html" property="og:url" />
         <meta content="https://bregalad2.github.io/SWSE-Character-Creator/img/page_1.svg" property="og:image" />
@@ -48,14 +48,6 @@
                 <p1>Display</p1><br>
                 <p2>Print</p2>
             </button>
-            <button id="download" onclick="downloadLocalStorageAsJSON()">
-                <p1>Download</p1><br>
-                <p2>Character File</p2>
-            </button>
-            <button id="upload" onclick="document.getElementById('uploader').click()">
-                <p1>Upload</p1><br>
-                <p2>Character File</p2>
-            </button>
             <input type="file" id="uploader" style="visibility: hidden;" accept=".character" onchange="uploadJSONToLocalStorage(event)">
         </div>
         <div id="namediv" class="main">
@@ -78,6 +70,9 @@
                     <br>
                     <label>Your Character's Image URL (optional):</label>
                     <input type="text" id="portraitform" name="portraitform" onkeyup="save(this);">
+                    <br>
+                    <label>Your Character's Destiny (optional):</label>
+                    <input type="text" id="destinyform" name="portraitform" onkeyup="save(this);">
                     <br>
                     <label>Species:</label>
                     <select name="species" id="speciesform" onchange="changespecies();document.getElementById('species-frame').src='https://starwars.fandom.com/wiki/'+this.value">
@@ -393,8 +388,9 @@
 <sodipodi:namedview id="feat-namedview2" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" inkscape:document-units="mm" inkscape:zoom="0.85340482" inkscape:cx="246.65902" inkscape:cy="434.72921" inkscape:window-width="1280" inkscape:window-height="667" inkscape:window-x="0" inkscape:window-y="25" inkscape:window-maximized="0" inkscape:current-layer="layer1" />
 <defs id="feat-defs2" />
 <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="feat-layer1" transform="translate(-370.28148,-70.306611)">
-    <image preserveAspectRatio="none" xlink:href="img/page_2.svg" id="image1" inkscape:transform-center-x="20.135593" inkscape:transform-center-y="-10.067797" width="970" y="47" x="16" height="1216" />
-<foreignobject width="18px" height="18px" id="feat-armor-prof-light" x="404" y="149"><input type="checkbox" class="feat-checkbox" id="checkbox-armor-prof-light" name="checkbox-armor-prof-light" value="checkbox-armor-prof-light" onclick="featclick(this);" /></foreignobject>
+<image preserveAspectRatio="none" xlink:href="img/page_2.svg" id="image1" inkscape:transform-center-x="20.135593" inkscape:transform-center-y="-10.067797" width="970" y="47" x="16" height="1216" />
+<foreignobject width="18px" height="18px" id="feat-acro-strike" x="404" y="136"><input type="checkbox" class="feat-checkbox" id="checkbox-acro-strike" name="checkbox-armor-prof-light" value="checkbox-armor-prof-light" onclick="featclick(this);"></foreignobject>
+<foreignobject width="18px" height="18px" id="feat-armor-prof-light" x="404" y="149"><input type="checkbox" class="feat-checkbox" id="checkbox-armor-prof-light" name="checkbox-armor-prof-light" value="checkbox-armor-prof-light" onclick="featclick(this);"></foreignobject>
 <foreignobject width="18px" height="18px" id="feat-armor-prof-med" x="431" y="161"><input type="checkbox" class="feat-checkbox" id="checkbox-armor-prof-med" name="checkbox-armor-prof-med" value="checkbox-armor-prof-med" onclick="featclick(this);" /></foreignobject>
 <foreignobject width="18px" height="18px" id="feat-armor-prof-heavy" x="458" y="173"><input type="checkbox" class="feat-checkbox" id="checkbox-armor-prof-heavy" name="checkbox-armor-prof-heavy" value="checkbox-armor-prof-heavy" onclick="featclick(this);" /></foreignobject>
 <foreignobject width="18px" height="18px" id="feat-bantha-rush" x="404" y="185"><input type="checkbox" class="feat-checkbox" id="checkbox-bantha-rush" name="checkbox-bantha-rush" value="checkbox-bantha-rush" onclick="featclick(this);" /></foreignobject>
@@ -800,6 +796,8 @@
 </svg>
                         <datalist id="armor-list"></datalist>
                         <datalist id="weapon-list"></datalist><br>
+                        <label>Shield Maximum (if you have one):</label>
+                        <input type="text" id="shieldform" onkeyup="save(this);">
                         <label id="inventorylabel"></label>
                         <table class="tables">
                             <thead>
@@ -884,7 +882,15 @@
                 </span>
         </div>
         <div id="pdfdiv" class="main">
-            <label class="noprint">Use ^P to print or download!</label>
+            <label class="noprint">Use ^P to print or download!</label><br>
+            <button class="noprint" id="download" onclick="downloadLocalStorageAsJSON()" style="border-radius: 4px;height: auto;">
+                <p1>Download</p1><br>
+                <p2>Character File</p2>
+            </button>
+            <button class="noprint" id="upload" onclick="document.getElementById('uploader').click()" style="border-radius: 4px;height: auto;">
+                <p1>Upload</p1><br>
+                <p2>Character File</p2>
+            </button><br><br>
 <svg width="1000" height="1245" viewBox="0 0 1000 1245" version="1.1" id="svg5" xml:space="preserve" inkscape:version="1.3.2 (091e20e, 2023-11-25)" sodipodi:docname="example.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
 <sodipodi:namedview id="namedview9" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" inkscape:document-units="mm" inkscape:zoom="0.85599166" inkscape:cx="550.82313" inkscape:cy="267.52597" inkscape:window-width="1280" inkscape:window-height="667" inkscape:window-x="0" inkscape:window-y="25" inkscape:window-maximized="0" inkscape:current-layer="g9" />
 <defs id="defs9"><rect   x="516.75358" y="146.4721" width="48.04285" height="26.950867" id="rect188" /></defs>
@@ -895,6 +901,7 @@
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="15.9173px" id="player" y="214.59125" x="488.46344" stroke-width="0" stroke="#000000" fill="#000000" transform="scale(1.0051929,0.99483391)" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="15.9173px" id="classes" y="248.63635" x="237.62489" stroke-width="0" stroke="#000000" fill="#000000" transform="scale(1.0051929,0.99483391)" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="13.9277px" id="level" y="248.63635" x="615.11853" stroke-width="0" stroke="#000000" fill="#000000" transform="scale(1.0051929,0.99483391)" />
+<text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="13.9277px" id="checkpoints" y="318.71619" x="615.11853" stroke-width="0" stroke="#000000" fill="#000000" transform="scale(1.0051929,0.99483391)" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="15.9173px" id="species" y="282.68146" x="237.62491" stroke-width="0" stroke="#000000" fill="#000000" transform="scale(1.0051929,0.99483391)" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="13.9277px" id="sex" y="282.68146" x="416.18234" stroke-width="0" stroke="#000000" fill="#000000" transform="scale(1.0051929,0.99483391)" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="13.9277px" id="age" y="282.68146" x="472.37521" stroke-width="0" stroke="#000000" fill="#000000" transform="scale(1.0051929,0.99483391)" />
@@ -902,8 +909,8 @@
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="13.9277px" id="weight" y="283.67627" x="614.12372" stroke-width="0" stroke="#000000" fill="#000000" transform="scale(1.0051929,0.99483391)" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="15.9173px" id="destiny" y="318.71619" x="236.63008" stroke-width="0" stroke="#000000" fill="#000000" transform="scale(1.0051929,0.99483391)" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="dark-side" y="705.10138" x="695.00275" stroke-width="0" stroke="#000000" fill="#000000" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="dark-side-0" y="705.14722" x="752.34229" stroke-width="0" stroke="#000000" fill="#000000" inkscape:label="dark-side-wis" />
-<text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="dark-side-0-0" y="705.6637" x="814.34351" stroke-width="0" stroke="#000000" fill="#000000" />
+<text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="dark-side-wis" y="705.14722" x="752.34229" stroke-width="0" stroke="#000000" fill="#000000" inkscape:label="dark-side-wis" />
+<text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="dark-side-total" y="705.6637" x="814.34351" stroke-width="0" stroke="#000000" fill="#000000" />
 <g id="g22" transform="matrix(0.98892289,0,0,1.183036,7.4346864,-105.88632)"><text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="str-score" y="384.5" x="251" stroke-width="0" stroke="#000000" fill="#000000" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="str-mod" y="384.5" x="318" stroke-width="0" stroke="#000000" fill="#000000" />
 <text xml:space="preserve" text-anchor="start" font-family="Orbitron" font-size="16px" id="dex-score" y="416.5" x="250" stroke-width="0" stroke="#000000" fill="#000000" />
@@ -1048,8 +1055,10 @@
 <svg width="1000" height="1245" viewBox="0 0 1000 1245" version="1.1" id="svg2" xml:space="preserve" inkscape:version="1.3.2 (091e20e, 2023-11-25)" sodipodi:docname="example.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
 <defs id="defs2"><rect   x="516.75358" y="146.4721" width="48.04285" height="26.950867" id="rect190"/></defs>
 <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1">
-<image width="1000" height="1243.568" preserveAspectRatio="none" xlink:href="img/page_2.svg" id="image1" x="-0.43862459" y="5" inkscape:transform-center-x="20.135593" inkscape:transform-center-y="-10.067797" />
-<g id="g32" transform="matrix(1.0454358,0,0,1.0303515,-18.32568,-31.332953)"><text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="acro-strike" x="404.263" y="135.92612" />
+<image width="1000" height="1243.568" preserveAspectRatio="none" xlink:href="img/page_2.svg" id="image6" x="-0.43862459" y="5" inkscape:transform-center-x="20.135593" inkscape:transform-center-y="-10.067797" />
+<g id="g32" transform="matrix(1.0454358,0,0,1.0303515,-18.32568,-31.332953)">
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="acro-strike" x="404.263" y="135.92612" />
+<text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="armor-prof-light" x="404.263" y="150.53343" />
 <text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="armor-prof-med" x="431.21387" y="160.53343" />
 <text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="armor-prof-heavy" x="458.16473" y="173.42297" />
 <text xml:space="preserve" text-anchor="start" class="feat" font-family="Orbitron" id="bantha-rush" x="403.09122" y="185.14075" />

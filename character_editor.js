@@ -227,6 +227,7 @@ function nameclick () {
     document.getElementById("heightform").value = localStorage.getItem("height")
     document.getElementById("ageform").value = localStorage.getItem("age")
     document.getElementById("sexform").value = localStorage.getItem("sex")
+    document.getElementById("destinyform").value = localStorage.getItem("destiny")
     changespecies()
 }
 function classclick () {
@@ -261,6 +262,7 @@ function featsclick () {
     linguist = 0
     for (const feat of localStorage.getItem("feats").split(",")){
         if (feat) {
+            console.log(feat)
             document.getElementById(feat).checked = true
             if (feat.startsWith("checkbox-linguist")) {linguist += 2}
         }
@@ -346,6 +348,7 @@ function inventoryclick () {
     for (const weapon_ of weapon_ids) {
         document.getElementById(weapon_+'form').value = localStorage.getItem(weapon_)
     }
+    document.getElementById("shieldform").value = localStorage.getItem("shield")
     for (const number of Array(16).keys()) {
         document.getElementById("gear-"+(number+1)+'form').value = localStorage.getItem("gear-"+(number+1))
         document.getElementById("w-"+(number+1)+'form').value = localStorage.getItem("w-"+(number+1))
@@ -362,12 +365,14 @@ function pdfclick () {
     try{document.getElementById("weight").innerHTML = localStorage.getItem("weight")} catch (e) {console.log(e)}
     try{document.getElementById("age").innerHTML = localStorage.getItem("age")} catch (e) {console.log(e)}
     try{document.getElementById("sex").innerHTML = localStorage.getItem("sex")} catch (e) {console.log(e)}
+    try{document.getElementById("destiny").innerHTML = localStorage.getItem("destiny")} catch (e) {console.log(e)}
+    try{document.getElementById("checkpoints").innerHTML = localStorage.getItem("checkpoints")} catch (e) {console.log(e)}
     try{document.getElementById("speed").innerHTML = ""} catch (e) {console.log(e)}
     try{if (isNaN(species[localStorage.getItem("species")]["species-traits"]["speed"])) {
         document.getElementById("speed").innerHTML += "Land: "+(parseInt(species[localStorage.getItem("species")]["species-traits"]["speed"]["land"])+(parseInt(localStorage.getItem("speed") || 0)))+", <br>"
         document.getElementById("speed").innerHTML += "Swim: "+species[localStorage.getItem("species")]["species-traits"]["speed"]["swim"]
     } else {document.getElementById("speed").innerHTML +=(parseInt(species[localStorage.getItem("species")]["species-traits"]["speed"])+(parseInt(localStorage.getItem("speed")) || 0))}} catch (e) {console.log(e)}
-    try{document.getElementById("species-1").innerHTML = localStorage.getItem("species-feats")} catch (e) {console.log(e)}
+    try{document.getElementById("species-notes-1").innerHTML = localStorage.getItem("species-feats")} catch (e) {console.log(e)}
     try{document.getElementById("classes").innerHTML = localStorage.getItem("class")+", "+ (localStorage.getItem("class2") || " ")} catch (e) {console.log(e)}
     try{document.getElementById("level").innerHTML = localStorage.getItem("level")} catch (e) {console.log(e)}
     try{document.getElementById("force-points").innerHTML = parseInt(classes[localStorage.getItem("class")]["forcepoints"]+Math.floor(localStorage.getItem("level")/2))+(parseInt(localStorage.getItem("force-points")) || 0)} catch (e) {console.log(e)}
@@ -438,6 +443,8 @@ function pdfclick () {
             item.innerHTML = localStorage.getItem(item.id)
         }
         document.getElementById("dark-side").innerHTML = localStorage.getItem("dark-side")
+        document.getElementById("dark-side-wis").innerHTML = result["wis"]
+        document.getElementById("dark-side-total").innerHTML = Math.floor(parseInt(localStorage.getItem("dark-side"))-result["wis"])
     } catch (e) {console.log(e)}
     try{
         for (const armor_ of armor_ids) {
@@ -475,7 +482,8 @@ function pdfclick () {
         document.getElementById("head").innerHTML = parseInt(document.getElementById("head-misc").innerHTML, 10) + parseInt(document.getElementById("torso-head").innerHTML, 10)
         document.getElementById("limb").innerHTML = parseInt(document.getElementById("limb-misc").innerHTML, 10) + parseInt(document.getElementById("torso-limb").innerHTML, 10)
     } catch (e) {console.log(e)}
-    try {document.getElementById("portrait").href.baseVal = localStorage.getItem("portrait")}catch (e) {console.log(e)}
+    try {document.getElementById("portrait").href.baseVal = localStorage.getItem("portrait")} catch (e) {console.log(e)}
+    try {document.getElementById("shield").innerHTML = localStorage.getItem("shield")} catch (e) {console.log(e)}
 
 
 }
@@ -804,14 +812,26 @@ function savetwo(elem) {
         localStorage.setItem(elem.id.split("form2")[0], elem.value)
     }
 }
-function downloadlogsheet() {
-    var logSheetContent = document.getElementById("logsheet").innerText;
+function downloadLogSheet() {
+    var logSheetElement = document.getElementById("logsheet");
+    var logSheetContent = "";
+    for (var i = 0; i < logSheetElement.children.length; i++) {
+        var child = logSheetElement.children[i];
+        if (child.tagName.toLowerCase() === "form") {
+            for (var j = 0; j < child.elements.length; j++) {
+                var input = child.elements[j];
+                logSheetContent += input.value + "\n";
+            }
+        } else {
+            logSheetContent += child.innerText + "\n";
+        }
+    }
     var blob = new Blob([logSheetContent], { type: "text/plain" });
     var a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
-    a.download = localStorage.getItem("character")+"-logsheet-"+localStorage.getItem("sheet-number")+".txt";
+    a.download = localStorage.getItem("character") + "-logsheet-" + localStorage.getItem("sheet-number") + ".txt";
+
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
 }
-
