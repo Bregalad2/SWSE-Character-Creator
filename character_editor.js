@@ -816,7 +816,7 @@ function savetwo(elem) {
 function gettext (child) {
     if (child.tagName.toLowerCase() == "input") {
         return child.value;
-    } else if (child.innerText) {
+    } else if (child.tagName.toLowerCase() == "label") {
         return "\n"+child.innerText;
     }
 }
