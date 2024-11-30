@@ -616,6 +616,7 @@ function saveskill () {
 }
 
 function featclick (button) {
+    if (localStorage.getItem("feats") == null) {localStorage.setItem("feats", "")}
     if (button.type == "checkbox") {
         feats = localStorage.getItem("feats").split(",")
         if ((button.checked) && !(button.value in feats)) {
