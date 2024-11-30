@@ -254,6 +254,7 @@ function skillsclick () {
 }
 function featsclick () {
     clickchange("feats")
+    if (localStorage.getItem("feats") == null) {localStorage.setItem("feats", "")}
     if (classes[localStorage.getItem("class")]["classfeatures"]["other-feats"].length+Math.floor(localStorage.getItem("level")/2)) <= localStorage.getItem("feats").split(",").length-1) {
         document.getElementById("class-feats").innerHTML = "Feats (you have reached your maximum, make sure you are leveling yourself up correcly before continuing):"
     } else {
